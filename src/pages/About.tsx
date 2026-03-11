@@ -30,7 +30,7 @@ const values = [
 ];
 
 const differentials = [
-  'Engenheiro Civil - CREA-SP em análise',
+  'Engenheiro Civil - CREA-SP 5071806455',
   'Atendimento personalizado e humanizado',
   'Orçamento sem compromisso',
   'Prazos rigorosamente cumpridos',
