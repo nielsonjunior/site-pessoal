@@ -107,7 +107,7 @@ export function CTA() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Registro Profissional</p>
                   <p className="text-lg font-semibold text-[#0F1A2E]">
-                    CREA-SP: Em análise
+                    CREA-SP: 5071806455
                   </p>
                 </div>
               </div>
