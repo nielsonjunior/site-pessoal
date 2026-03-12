@@ -127,7 +127,7 @@ export function LandingPage() {
             >
               <div className="inline-flex items-center gap-2 bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4" />
-                CREA-SP: Em análise
+                CREA-SP: 5071806455
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
