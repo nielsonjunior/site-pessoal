@@ -46,7 +46,7 @@ export function CTA() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
-                href="https://wa.me/5516996166997"
+                href="https://wa.me/5565996946861"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[#0F1A2E] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all flex items-center justify-center gap-2"
@@ -77,7 +77,7 @@ export function CTA() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Telefone/WhatsApp</p>
                   <a 
-                    href="tel:+5516996166997" 
+                    href="tel:+5565996946861" 
                     className="text-lg font-semibold text-[#0F1A2E] hover:text-[#1B3B6C] transition-colors"
                   >
                     (16) 99616-6997
