@@ -37,20 +37,20 @@ const differentials = [
   'Garantia em todos os serviços',
   'Tecnologia atualizada nos projetos',
   'Suporte técnico contínuo',
-  'Atendimento em Campinas e região',
+  'Atendimento em Cáceres-MT e região',
 ];
 
 export function About() {
   return (
     <>
       <SEO
-        title="Sobre - Nielson Pinheiro | Engenheiro Civil em Campinas"
-        description="Conheça Nielson Pinheiro de Castilho Junior, Engenheiro Civil em Campinas e região. Especialista em projetos, regularização de imóveis, ART e laudos técnicos."
+        title="Sobre - Nielson Pinheiro | Engenheiro Civil em Cáceres-MT"
+        description="Conheça Nielson Pinheiro de Castilho Junior, Engenheiro Civil em Cáceres e região. Especialista em projetos, regularização de imóveis, ART e laudos técnicos."
         keywords={[
           'Nielson Pinheiro engenheiro',
-          'engenheiro civil Campinas',
+          'engenheiro civil Cáceres',
           'engenheiro Nielson',
-          'engenharia Campinas'
+          'engenharia Cáceres'
         ]}
       />
 
@@ -70,7 +70,7 @@ export function About() {
               Nielson Pinheiro de Castilho Junior
             </h1>
             <p className="text-white/70 text-lg">
-              Engenheiro Civil em Campinas e região, oferecendo serviços de qualidade 
+              Engenheiro Civil em Cáceres e região, oferecendo serviços de qualidade 
               com dedicação e compromisso em cada projeto.
             </p>
           </motion.div>
@@ -136,7 +136,7 @@ export function About() {
               <div className="space-y-4 text-gray-600 mb-8">
                 <p>
                   Sou Nielson Pinheiro de Castilho Junior, Engenheiro Civil apaixonado por 
-                  transformar projetos em realidade. Atuo em Campinas e região, oferecendo 
+                  transformar projetos em realidade. Atuo em Cáceres e região, oferecendo 
                   serviços de engenharia civil com foco em qualidade, segurança e satisfação 
                   dos meus clientes.
                 </p>
@@ -158,8 +158,8 @@ export function About() {
                   <Shield className="w-6 h-6 text-[#0F1A2E]" />
                 </div>
                 <div>
-                  <p className="font-semibold text-[#0F1A2E]">CREA-SP</p>
-                  <p className="text-sm text-gray-600">Registro Profissional: Em análise</p>
+                  <p className="font-semibold text-[#0F1A2E]">CREA </p>
+                  <p className="text-sm text-gray-600">Registro Profissional: 5071806455</p>
                 </div>
               </div>
             </motion.div>
@@ -264,8 +264,8 @@ export function About() {
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-[#F4C430]" />
-                    <a href="tel:+5516996166997" className="hover:text-[#F4C430] transition-colors">
-                      (16) 99616-6997
+                    <a href="tel:+5565996946861" className="hover:text-[#F4C430] transition-colors">
+                      (65) 99694-6861
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
@@ -276,7 +276,7 @@ export function About() {
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="w-5 h-5 text-[#F4C430]" />
-                    <span>Av. Monte Castelo, 368 - Campinas/SP</span>
+                    <span>Rua Culturam, 161 - Cáceres/MT</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[#F4C430]" />
