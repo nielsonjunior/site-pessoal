@@ -39,8 +39,8 @@ const stats = [
 ];
 
 const differentials = [
-  'Engenheiro Civil - CREA-SP em análise',
-  'Atendimento em Campinas e região',
+  'Engenheiro Civil - CREA-SP',
+  'Atendimento em Cáceres e região',
   'Atendimento personalizado e humanizado',
   'Orçamento sem compromisso',
   'Prazos rigorosamente cumpridos',
@@ -115,7 +115,7 @@ export function About() {
 
             <div className="space-y-4 text-gray-600 mb-8">
               <p>
-                Sou Nielson Pinheiro de Castilho Junior, Engenheiro Civil em Campinas e região. 
+                Sou Nielson Pinheiro de Castilho Junior, Engenheiro Civil em Cáceres e região. 
                 Ofereço soluções completas em engenharia civil, desde regularização de imóveis 
                 até projetos de reforma e ampliação.
               </p>
