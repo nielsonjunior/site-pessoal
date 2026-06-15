@@ -29,8 +29,8 @@ export function SEO({
     'ART',
     'laudos técnicos',
     'reformas',
-    'São Paulo',
-    'Grande SP'
+    'Cáceres',
+    'Mato Grosso'
   ];
   
   const allKeywords = [...defaultKeywords, ...keywords].join(', ');
