@@ -67,21 +67,21 @@ export function Header() {
             <span className="flex items-center gap-1">
               <Phone className="w-4 h-4" />
               <a
-                href="tel:+5516996166997"
+                href="tel:+5565996946861"
                 className="hover:text-[#F4C430] transition-colors"
               >
-                (16) 99616-6997
+                (65) 99694-6861
               </a>
             </span>
             <span className="hidden sm:inline">|</span>
-            <span className="hidden sm:inline">CREA-SP: Em análise</span>
+            <span className="hidden sm:inline">CREA-SP</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="hidden md:inline">
-              Atendimento em Campinas e região
+              Atendimento em Cáceres e região
             </span>
             <a
-              href="https://wa.me/5516996166997"
+              href="https://wa.me/5565996946861"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25D366] text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-[#128C7E] transition-colors"
@@ -249,7 +249,7 @@ export function Header() {
                     Solicitar Orçamento
                   </Link>
                   <a
-                    href="https://wa.me/5516996166997"
+                    href="https://wa.me/5565996946861"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 bg-[#25D366] text-white px-6 py-3 rounded-lg font-medium text-center block hover:bg-[#128C7E] transition-colors"
