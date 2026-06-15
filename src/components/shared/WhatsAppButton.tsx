@@ -8,7 +8,7 @@ interface WhatsAppButtonProps {
 }
 
 export function WhatsAppButton({ 
-  phoneNumber = '5516996166997',
+  phoneNumber = '5565996946861',
   message = 'Olá! Gostaria de solicitar um orçamento para serviços de engenharia civil.' 
 }: WhatsAppButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
