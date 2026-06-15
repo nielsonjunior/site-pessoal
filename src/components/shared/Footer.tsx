@@ -45,7 +45,7 @@ export function Footer() {
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               Engenheiro Civil especializado em projetos, regularização de
-              imóveis, ART e laudos técnicos. Atendimento em Campinas e região.
+              imóveis, ART e laudos técnicos. Atendimento em Cáceres e região.
             </p>
             <div className="flex gap-3">
               <span className="text-gray-500 text-sm">
@@ -97,10 +97,10 @@ export function Footer() {
                 <div>
                   <p className="text-sm text-gray-400">Telefone/WhatsApp</p>
                   <a
-                    href="tel:+5516996166997"
+                    href="tel:+5565996946861"
                     className="text-white hover:text-[#F4C430] transition-colors"
                   >
-                    (16) 99616-6997
+                    (65) 99694-6861
                   </a>
                 </div>
               </li>
@@ -121,9 +121,9 @@ export function Footer() {
                 <div>
                   <p className="text-sm text-gray-400">Endereço</p>
                   <p className="text-white">
-                    Av. Monte Castelo, 368 - Jardim Proença
+                    Rua Culturama, 161 - Jardim Proença
                     <br />
-                    Campinas - SP, 13026-241
+                    Cáceres - MT, 78201-105
                   </p>
                 </div>
               </li>
@@ -168,7 +168,7 @@ export function Footer() {
           </div>
           <div className="mt-4 pt-4 border-t border-white/5 text-center">
             <p className="text-gray-500 text-xs">
-              Engenheiro Civil - CREA-SP: Em análise | Responsável Técnico:
+              Engenheiro Civil - CREA-SP | Responsável Técnico:
               Nielson Pinheiro de Castilho Junior
             </p>
           </div>
