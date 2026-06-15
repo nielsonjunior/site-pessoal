@@ -89,7 +89,7 @@ export function Cities() {
                 Não encontrou sua cidade?
               </h3>
               <p className="text-gray-600 mb-6">
-                Atendo em Campinas e toda a região metropolitana. 
+                Atendo em Cáceres e toda a região metropolitana. 
                 Entre em contato para verificar disponibilidade de 
                 atendimento na sua cidade.
               </p>
@@ -102,7 +102,7 @@ export function Cities() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="https://wa.me/5516996166997"
+                  href="https://wa.me/5565996946861"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-[#1B3B6C] border-2 border-[#1B3B6C] px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-all flex items-center justify-center gap-2"
@@ -115,12 +115,12 @@ export function Cities() {
             <div className="relative">
               <img
                 src="/images/map-sao-paulo.jpg"
-                alt="Mapa de atendimento - Região de Campinas"
+                alt="Mapa de atendimento - Região de Cáceres"
                 className="w-full h-64 object-cover rounded-xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1B3B6C]/50 to-transparent rounded-xl" />
               <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold">Região de Campinas</p>
+                <p className="text-white font-semibold">Região de Cáceres</p>
                 <p className="text-white/80 text-sm">+10 cidades atendidas</p>
               </div>
             </div>
