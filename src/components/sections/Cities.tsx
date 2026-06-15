@@ -20,10 +20,10 @@ export function Cities() {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F1A2E] mb-6">
             Cidades Atendidas em{' '}
-            <span className="text-[#1B3B6C]">Campinas e Região</span>
+            <span className="text-[#1B3B6C]">Cáceres e Região</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Ofereço serviços de engenharia civil em Campinas e diversas cidades 
+            Ofereço serviços de engenharia civil em Cáceres e diversas cidades 
             da região metropolitana, sempre com qualidade e compromisso.
           </p>
         </motion.div>
