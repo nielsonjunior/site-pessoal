@@ -137,7 +137,7 @@ export function Budget() {
   return (
     <>
       <SEO
-        title="Solicitar Orçamento - Engenheiro Civil em São Paulo"
+        title="Solicitar Orçamento - Engenheiro Civil em Cáceres"
         description="Solicite um orçamento gratuito para serviços de engenharia civil. ART, regularização, reformas, laudos e mais. Resposta em até 24h!"
         keywords={[
           "orçamento engenharia civil",
@@ -462,7 +462,7 @@ export function Budget() {
                     atendimento mais rápido.
                   </p>
                   <a
-                    href="https://wa.me/5516996166997?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+                    href="https://wa.me/5565996946861?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-[#25D366] px-4 py-3 rounded-xl font-medium hover:bg-gray-100 transition-all w-full inline-flex items-center justify-center gap-2"
@@ -485,7 +485,7 @@ export function Budget() {
                     className="flex items-center gap-2 text-[#1B3B6C] font-medium"
                   >
                     <Phone className="w-5 h-5" />
-                    (16) 99616-6997
+                    (64) 99694-6861
                   </a>
                 </div>
               </motion.div>
