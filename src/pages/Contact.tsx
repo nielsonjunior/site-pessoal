@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Telefone/WhatsApp',
-    content: '(16) 99616-6997',
-    link: 'tel:+5516996166997',
+    content: '(65) 99694-6861',
+    link: 'tel:+5565996946861',
     linkText: 'Ligar agora',
   },
   {
@@ -25,7 +25,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Endereço',
-    content: 'Av. Monte Castelo, 368 - Jardim Proença, Campinas - SP',
+    content: 'Rua Culturama, 161 - Jardim Proença, Cáceres - MT',
     link: 'https://maps.google.com',
     linkText: 'Ver no mapa',
     external: true,
@@ -64,11 +64,11 @@ export function Contact() {
   return (
     <>
       <SEO
-        title="Contato - Nielson Pinheiro | Engenheiro Civil em Campinas"
-        description="Entre em contato com Nielson Pinheiro, Engenheiro Civil em Campinas e região. Atendimento personalizado. Orçamento sem compromisso!"
+        title="Contato - Nielson Pinheiro | Engenheiro Civil em Cáceres"
+        description="Entre em contato com Nielson Pinheiro, Engenheiro Civil em Cáceres e região. Atendimento personalizado. Orçamento sem compromisso!"
         keywords={[
           'contato engenheiro civil',
-          'engenheiro civil Campinas',
+          'engenheiro civil Cáceres',
           'Nielson Pinheiro contato',
           'orçamento engenharia Campinas'
         ]}
@@ -282,7 +282,7 @@ export function Contact() {
                   diretamente conosco. Atendimento rápido e personalizado.
                 </p>
                 <a
-                  href="https://wa.me/5516996166997?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+                  href="https://wa.me/5565996946861?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-[#25D366] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all w-full inline-flex items-center justify-center gap-2"
@@ -303,7 +303,7 @@ export function Contact() {
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#F4C430]" />
-                    <span>Registro: 1234567890</span>
+                    <span>Registro: 5071806455</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#F4C430]" />
@@ -330,7 +330,7 @@ export function Contact() {
               Nossa Localização
             </h2>
             <p className="text-gray-600">
-              Atendemos em toda a Grande São Paulo e região metropolitana
+              Atendemos em toda a Cáceres e região 
             </p>
           </motion.div>
 
