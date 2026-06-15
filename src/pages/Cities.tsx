@@ -5,7 +5,7 @@ import { SEO } from '@/components/shared';
 import { cities } from '@/data';
 
 const benefits = [
-  'Atendimento rápido em Campinas e região',
+  'Atendimento rápido em Cáceres e região',
   'Conhecimento das legislações locais',
   'Atendimento personalizado',
   'Orçamento sem compromisso',
@@ -16,13 +16,13 @@ export function Cities() {
   return (
     <>
       <SEO
-        title="Cidades Atendidas - Engenheiro Civil Campinas e Região"
-        description="Atendemos em Campinas, Valinhos, Vinhedo, Hortolândia, Sumaré e toda a região. Engenheiro civil perto de você!"
+        title="Cidades Atendidas - Engenheiro Civil Cáceres e Região"
+        description="Atendemos em Cáceres, Cuiaba, Mirassol D'Oeste, Várzea Grande, Porto Esperidião e toda a região. Engenheiro civil perto de você!"
         keywords={[
-          'engenheiro civil Campinas',
-          'engenheiro civil Valinhos',
-          'engenheiro civil Vinhedo',
-          'engenheiro civil região Campinas'
+          'engenheiro civil Cáceres',
+          'engenheiro civil Cuiaba',
+          'engenheiro civil Varzea Grande',
+          'engenheiro civil região Cáceres'
         ]}
       />
 
@@ -42,7 +42,7 @@ export function Cities() {
               Cidades Atendidas
             </h1>
             <p className="text-white/70 text-lg">
-              Oferecemos serviços de engenharia civil em Campinas e toda a região 
+              Oferecemos serviços de engenharia civil em Cáceres e toda a região 
               metropolitana, sempre com qualidade e compromisso.
             </p>
           </motion.div>
@@ -98,9 +98,7 @@ export function Cities() {
                 Atendimento Local com Qualidade Garantida
               </h2>
               <p className="text-gray-600 mb-8">
-                Nossa presença em múltiplas cidades da Grande São Paulo nos permite 
-                oferecer um atendimento próximo e personalizado, com conhecimento 
-                das particularidades de cada região.
+               Nossa atuação em Cáceres-MT e região nos permite oferecer um atendimento próximo, personalizado e eficiente, com conhecimento das características locais, necessidades dos clientes e particularidades técnicas de cada projeto.
               </p>
 
               <div className="space-y-4">
@@ -132,16 +130,16 @@ export function Cities() {
                   Não encontrou sua cidade?
                 </h3>
                 <p className="text-white/80 mb-6">
-                  Atendemos em Campinas e toda a região metropolitana. 
+                  Atendemos em Cáceres e toda a região metropolitana. 
                   Entre em contato para verificar disponibilidade na sua região.
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="tel:+5516996166997"
+                    href="tel:+5565996946861"
                     className="flex items-center gap-3 text-white hover:text-[#F4C430] transition-colors"
                   >
                     <Phone className="w-5 h-5" />
-                    (16) 99616-6997
+                    (65) 99694-6861
                   </a>
                   <Link
                     to="/orcamento"
@@ -167,10 +165,10 @@ export function Cities() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
-              Engenheiro Civil em Campinas
+              Engenheiro Civil em Cáceres
             </h2>
             <p className="text-[#0F1A2E]/80 text-lg mb-8 max-w-2xl mx-auto">
-              Atendemos em Campinas e toda a região metropolitana. Solicite um orçamento 
+              Atendemos em Cáceres e toda a região metropolitana. Solicite um orçamento 
               e descubra como posso ajudar no seu projeto.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -182,7 +180,7 @@ export function Cities() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
-                href="https://wa.me/5516996166997"
+                href="https://wa.me/5565996946861"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[#0F1A2E] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center gap-2"
