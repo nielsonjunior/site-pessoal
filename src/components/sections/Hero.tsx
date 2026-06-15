@@ -55,7 +55,7 @@ export function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F1A2E] leading-tight mb-6"
             >
               Engenheiro Civil em{' '}
-              <span className="text-[#1B3B6C]">Campinas</span>{' '}
+              <span className="text-[#1B3B6C]">Cáceres</span>{' '}
               e Região
             </motion.h1>
 
@@ -68,7 +68,7 @@ export function Hero() {
             >
               Transformo suas ideias em realidade com precisão técnica e excelência. 
               Especialista em regularização de imóveis, ART, reformas e laudos técnicos 
-              em Campinas e região metropolitana.
+              em Cáceres e região metropolitana.
             </motion.p>
 
             {/* Features */}
@@ -105,7 +105,7 @@ export function Hero() {
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
-                href="https://wa.me/5516996166997"
+                href="https://wa.me/5565996946861"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[#1B3B6C] border-2 border-[#1B3B6C] px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-all flex items-center justify-center gap-2"
@@ -127,7 +127,7 @@ export function Hero() {
                   <Shield className="w-5 h-5 text-[#1B3B6C]" />
                   <div>
                     <p className="font-bold text-[#0F1A2E]">CREA-SP</p>
-                    <p className="text-xs text-gray-500">Em análise</p>
+                    <p className="text-xs text-gray-500"></p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
