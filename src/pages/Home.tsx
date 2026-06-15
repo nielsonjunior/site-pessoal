@@ -5,16 +5,16 @@ export function Home() {
   return (
     <>
       <SEO
-        title="Nielson Pinheiro | Engenheiro Civil em Campinas - Projetos e Regularização"
-        description="Engenheiro Civil em Campinas e região. Nielson Pinheiro - especialista em regularização de imóveis, ART, reformas e laudos técnicos. Orçamento grátis!"
+        title="Nielson Pinheiro | Engenheiro Civil em Cáceres - Projetos e Regularização"
+        description="Engenheiro Civil em Cáceres e região. Nielson Pinheiro - especialista em regularização de imóveis, ART, reformas e laudos técnicos. Orçamento grátis!"
         keywords={[
           'Nielson Pinheiro engenheiro',
-          'engenheiro civil Campinas',
-          'regularização de imóveis Campinas',
-          'ART Campinas',
-          'laudos técnicos Campinas',
-          'projetos de reforma Campinas',
-          'engenharia civil região Campinas'
+          'engenheiro civil Cáceres',
+          'regularização de imóveis Cáceres',
+          'ART Cáceres',
+          'laudos técnicos Cáceres',
+          'projetos de reforma Cáceres',
+          'engenharia civil região Cáceres'
         ]}
       />
       <Hero />
