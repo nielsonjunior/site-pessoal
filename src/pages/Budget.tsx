@@ -509,7 +509,7 @@ export function Budget() {
                     Atendimento de segunda a sexta, das 8h às 18h.
                   </p>
                   <a
-                    href="tel:+5565996946861"
+                    href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2 text-[#1B3B6C] font-medium"
                   >
                     <Phone className="w-5 h-5" />

@@ -135,7 +135,7 @@ export function Cities() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="tel:+5565996946861"
+                    href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-3 text-white hover:text-[#F4C430] transition-colors"
                   >
                     <Phone className="w-5 h-5" />

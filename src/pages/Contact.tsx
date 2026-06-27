@@ -12,8 +12,8 @@ const contactInfo = [
     icon: Phone,
     title: 'Telefone/WhatsApp',
     content: '(65) 99694-6861',
-    link: 'tel:+5565996946861',
-    linkText: 'Ligar agora',
+    link: 'https://wa.me/5565996946861',
+    linkText: 'Chamar no WhatsApp',
   },
   {
     icon: Mail,

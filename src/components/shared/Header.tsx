@@ -67,7 +67,7 @@ export function Header() {
             <span className="flex items-center gap-1">
               <Phone className="w-4 h-4" />
               <a
-                href="tel:+5565996946861"
+                href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
                 className="hover:text-[#F4C430] transition-colors"
               >
                 (65) 99694-6861

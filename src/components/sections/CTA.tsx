@@ -77,7 +77,7 @@ export function CTA() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Telefone/WhatsApp</p>
                   <a 
-                    href="tel:+5565996946861" 
+                    href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" 
                     className="text-lg font-semibold text-[#0F1A2E] hover:text-[#1B3B6C] transition-colors"
                   >
                     (65) 99694-6861

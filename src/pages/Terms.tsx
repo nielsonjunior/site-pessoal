@@ -80,7 +80,7 @@ export function Terms() {
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>E-mail: nielsin.junior@gmail.com</li>
-                <li>WhatsApp: (65) 99694-6861</li>
+                <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#1B3B6C] hover:underline">(65) 99694-6861</a></li>
                 <li>Responsável: Nielson Pinheiro de Castilho Junior</li>
                 <li>CREA 5071806455 — Cáceres, MT</li>
               </ul>

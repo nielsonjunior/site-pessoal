@@ -264,7 +264,7 @@ export function About() {
                 <div className="space-y-4 mb-8">
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-[#F4C430]" />
-                    <a href="tel:+5565996946861" className="hover:text-[#F4C430] transition-colors">
+                    <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="hover:text-[#F4C430] transition-colors">
                       (65) 99694-6861
                     </a>
                   </div>
