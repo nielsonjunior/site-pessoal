@@ -87,7 +87,7 @@ export const faqs: FAQ[] = [
   {
     id: "14",
     question: "Vocês atendem em quais cidades?",
-    answer: "Atendemos em toda a Grande São Paulo e região metropolitana, incluindo São Paulo, Guarulhos, Osasco, Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema, Barueri, Cotia, Embu das Artes e outras cidades da região. Para projetos maiores, atendemos em todo o estado de São Paulo.",
+    answer: "Atendemos em Cáceres-MT e toda a região, incluindo Mirassol d'Oeste, Araputanga, São José dos Quatro Marcos, Barra do Bugres, Lambari d'Oeste, Porto Esperidião, Indiavaí, Glória d'Oeste, Salto do Céu, Reserva do Cabaçal e Pontes e Lacerda. Para projetos específicos, consulte disponibilidade para cidades mais distantes.",
     category: "Atendimento"
   },
   {

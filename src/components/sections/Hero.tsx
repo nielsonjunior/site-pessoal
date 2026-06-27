@@ -126,8 +126,8 @@ export function Hero() {
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-[#1B3B6C]" />
                   <div>
-                    <p className="font-bold text-[#0F1A2E]">CREA-SP</p>
-                    <p className="text-xs text-gray-500"></p>
+                    <p className="font-bold text-[#0F1A2E]">CREA</p>
+                    <p className="text-xs text-gray-500">5071806455</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">

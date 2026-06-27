@@ -12,3 +12,5 @@ export { WhatIsART } from "./WhatIsART";
 export { WhyHireEngineer } from "./WhyHireEngineer";
 export { LegalRequirements } from "./LegalRequirements";
 export { NotFound } from "./NotFound";
+export { Privacy } from "./Privacy";
+export { Terms } from "./Terms";

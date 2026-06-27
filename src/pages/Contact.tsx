@@ -70,7 +70,7 @@ export function Contact() {
           'contato engenheiro civil',
           'engenheiro civil Cáceres',
           'Nielson Pinheiro contato',
-          'orçamento engenharia Campinas'
+          'orçamento engenharia Cáceres MT'
         ]}
       />
 
@@ -299,7 +299,7 @@ export function Contact() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#F4C430]" />
-                    <span>Engenheiro Civil registrado no CREA-SP</span>
+                    <span>Engenheiro Civil registrado no CREA 5071806455</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-[#F4C430]" />

@@ -8,94 +8,112 @@ export interface City {
 
 export const cities: City[] = [
   {
-    name: "Campinas",
-    state: "SP",
-    slug: "campinas",
-    description: "Atendimento principal em Campinas e toda a região metropolitana com serviços de engenharia civil de alta qualidade.",
+    name: "Cáceres",
+    state: "MT",
+    slug: "caceres",
+    description: "Cidade sede do escritório. Atendimento completo em Cáceres e toda a região com serviços de engenharia civil de alta qualidade, incluindo ART, regularização, reformas e laudos técnicos.",
     neighborhoods: [
-      "Centro", "Jardim Proença", "Jardim das Oliveiras", "Cambuí", "Taquaral",
-      "Jardim das Oliveiras", "Barão Geraldo", "Joaquim Egídio", "Nova Campinas", "Jardim das Oliveiras"
+      "Centro", "Jardim Guanabara", "Nova Esperança", "Coophamil",
+      "Jardim Ipanema", "São Luís", "Jardim Expander", "Aeroporto"
     ]
   },
   {
-    name: "Valinhos",
-    state: "SP",
-    slug: "valinhos",
-    description: "Serviços de engenharia civil em Valinhos e região, com atendimento rápido e profissional.",
+    name: "Mirassol d'Oeste",
+    state: "MT",
+    slug: "mirassol-doeste",
+    description: "Atendimento em Mirassol d'Oeste para regularização de imóveis, ART, projetos de reforma e laudos técnicos. Engenheiro civil com conhecimento da legislação local.",
     neighborhoods: [
-      "Centro", "Vila Santana", "Jardim Paiquerê", "Vila Boa Esperança", "Jardim São Marcos"
+      "Centro", "Residencial dos Lagos", "Jardim Paulista", "Vila Nova", "Jardim Florianópolis"
     ]
   },
   {
-    name: "Vinhedo",
-    state: "SP",
-    slug: "vinhedo",
-    description: "Engenheiro civil em Vinhedo para todos os tipos de projetos e regularizações.",
+    name: "Araputanga",
+    state: "MT",
+    slug: "araputanga",
+    description: "Serviços de engenharia civil em Araputanga para projetos residenciais, comerciais e regularização de imóveis junto à prefeitura local.",
     neighborhoods: [
-      "Centro", "Jardim São Marcos", "Vila Capuava", "Jardim das Oliveiras", "Parque das Colinas"
+      "Centro", "Jardim Brasil", "Vila Esperança", "Jardim das Palmeiras"
     ]
   },
   {
-    name: "Hortolândia",
-    state: "SP",
-    slug: "hortolandia",
-    description: "Atendimento especializado em Hortolândia para projetos e regularização de imóveis.",
+    name: "São José dos Quatro Marcos",
+    state: "MT",
+    slug: "sao-jose-quatro-marcos",
+    description: "Engenheiro civil em São José dos Quatro Marcos para ART, regularização de imóveis, reformas e laudos técnicos com atendimento rápido.",
     neighborhoods: [
-      "Centro", "Jardim Amanda", "Jardim das Oliveiras", "Parque Hortolândia", "Jardim São Francisco"
+      "Centro", "Jardim Bela Vista", "Vila Industrial", "Residencial Primavera"
     ]
   },
   {
-    name: "Sumaré",
-    state: "SP",
-    slug: "sumare",
-    description: "Serviços completos de engenharia civil em Sumaré com atendimento personalizado.",
+    name: "Barra do Bugres",
+    state: "MT",
+    slug: "barra-do-bugres",
+    description: "Atendimento em Barra do Bugres para projetos e regularização de imóveis, reformas residenciais e comerciais com garantia de qualidade.",
     neighborhoods: [
-      "Centro", "Jardim das Oliveiras", "Vila Santana", "Jardim São Marcos", "Parque das Colinas"
+      "Centro", "Jardim Primavera", "Vila Operária", "Jardim das Acácias"
     ]
   },
   {
-    name: "Paulínia",
-    state: "SP",
-    slug: "paulinia",
-    description: "Engenharia civil de excelência em Paulínia.",
+    name: "Lambari d'Oeste",
+    state: "MT",
+    slug: "lambari-doeste",
+    description: "Serviços completos de engenharia civil em Lambari d'Oeste, com atendimento personalizado para regularização e projetos de reforma.",
     neighborhoods: [
-      "Centro", "Jardim das Oliveiras", "Vila Santana", "Jardim São Marcos", "Parque das Colinas"
+      "Centro", "Jardim Novo Mundo", "Vila São Francisco"
     ]
   },
   {
-    name: "Indaiatuba",
-    state: "SP",
-    slug: "indaiatuba",
-    description: "Atendimento em Indaiatuba para projetos, reformas e regularização de imóveis.",
+    name: "Porto Esperidião",
+    state: "MT",
+    slug: "porto-esperidiao",
+    description: "Engenheiro civil em Porto Esperidião e região da fronteira com a Bolívia. Atendimento para projetos rurais, urbanos e regularização.",
     neighborhoods: [
-      "Centro", "Jardim das Oliveiras", "Vila Santana", "Jardim São Marcos", "Parque das Colinas"
+      "Centro", "Vila São Paulo", "Jardim América"
     ]
   },
   {
-    name: "Americana",
-    state: "SP",
-    slug: "americana",
-    description: "Engenheiro civil em Americana para projetos residenciais e comerciais.",
+    name: "Indiavaí",
+    state: "MT",
+    slug: "indiavai",
+    description: "Atendimento em Indiavaí para regularização de imóveis e projetos de engenharia civil residenciais e comerciais.",
     neighborhoods: [
-      "Centro", "Jardim das Oliveiras", "Vila Santana", "Jardim São Marcos", "Parque das Colinas"
+      "Centro", "Jardim Progresso"
     ]
   },
   {
-    name: "Nova Odessa",
-    state: "SP",
-    slug: "nova-odessa",
-    description: "Serviços de engenharia civil em Nova Odessa e região.",
+    name: "Glória d'Oeste",
+    state: "MT",
+    slug: "gloria-doeste",
+    description: "Serviços de engenharia civil em Glória d'Oeste, com foco em regularização de imóveis e laudos técnicos.",
     neighborhoods: [
-      "Centro", "Jardim das Oliveiras", "Vila Santana", "Jardim São Marcos", "Parque das Colinas"
+      "Centro", "Jardim das Flores", "Vila Real"
     ]
   },
   {
-    name: "Santa Bárbara d'Oeste",
-    state: "SP",
-    slug: "santa-barbara-doeste",
-    description: "Atendimento em Santa Bárbara d'Oeste para projetos e regularizações.",
+    name: "Salto do Céu",
+    state: "MT",
+    slug: "salto-do-ceu",
+    description: "Atendimento em Salto do Céu para projetos de engenharia civil, regularização e ART com conhecimento da legislação municipal.",
     neighborhoods: [
-      "Centro", "Jardim das Oliveiras", "Vila Santana", "Jardim São Marcos", "Parque das Colinas"
+      "Centro", "Jardim Vitória"
+    ]
+  },
+  {
+    name: "Reserva do Cabaçal",
+    state: "MT",
+    slug: "reserva-do-cabacal",
+    description: "Engenheiro civil atendendo em Reserva do Cabaçal para projetos de regularização, ART e laudos técnicos.",
+    neighborhoods: [
+      "Centro", "Setor A", "Setor B"
+    ]
+  },
+  {
+    name: "Pontes e Lacerda",
+    state: "MT",
+    slug: "pontes-e-lacerda",
+    description: "Serviços de engenharia civil em Pontes e Lacerda, atendimento para regularização de imóveis, ART e projetos de reforma e ampliação.",
+    neighborhoods: [
+      "Centro", "Jardim Paraíso", "Vila Industrial", "Bairro Novo"
     ]
   }
 ];

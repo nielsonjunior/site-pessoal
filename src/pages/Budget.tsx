@@ -47,16 +47,18 @@ const propertyTypes = [
 ];
 
 const cities = [
-  "São Paulo",
-  "Guarulhos",
-  "Osasco",
-  "Santo André",
-  "São Bernardo do Campo",
-  "São Caetano do Sul",
-  "Diadema",
-  "Barueri",
-  "Cotia",
-  "Embu das Artes",
+  "Cáceres",
+  "Mirassol d'Oeste",
+  "Araputanga",
+  "São José dos Quatro Marcos",
+  "Barra do Bugres",
+  "Lambari d'Oeste",
+  "Porto Esperidião",
+  "Indiavaí",
+  "Glória d'Oeste",
+  "Salto do Céu",
+  "Reserva do Cabaçal",
+  "Pontes e Lacerda",
   "Outra",
 ];
 
@@ -82,11 +84,10 @@ export function Budget() {
     );
   };
 
-  const WHATSAPP_NUMBER = "5516996166997";
+  const WHATSAPP_NUMBER = "5565996946861";
+  const EMAIL = "nielsin.junior@gmail.com";
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const buildMessage = () => {
     const selectedServiceLabels = selectedServices
       .map((id) => services.find((s) => s.id === id)?.label)
       .filter(Boolean) as string[];
@@ -99,29 +100,44 @@ export function Budget() {
         (c) => c.toLowerCase().replace(/\s+/g, "-") === formData.city,
       ) || formData.city;
 
-    let message = `🏗️ *Solicitação de Orçamento*\n\n`;
-    message += `*Nome:* ${formData.name}\n`;
-    message += `*Telefone:* ${formData.phone}\n`;
-    if (formData.city) message += `*Cidade:* ${cityLabel}\n`;
+    let message = `🏗️ Solicitação de Orçamento\n\n`;
+    message += `Nome: ${formData.name}\n`;
+    message += `Telefone: ${formData.phone}\n`;
+    if (formData.email) message += `E-mail: ${formData.email}\n`;
+    if (formData.city) message += `Cidade: ${cityLabel}\n`;
     if (formData.propertyType)
-      message += `*Tipo de Imóvel:* ${propertyTypeLabel}\n`;
+      message += `Tipo de Imóvel: ${propertyTypeLabel}\n`;
     if (formData.propertySize)
-      message += `*Metragem:* ${formData.propertySize} m²\n`;
+      message += `Metragem: ${formData.propertySize} m²\n`;
 
     if (selectedServiceLabels.length > 0) {
-      message += `\n*Serviços Desejados:*\n`;
+      message += `\nServiços Desejados:\n`;
       selectedServiceLabels.forEach((label) => {
         message += `✅ ${label}\n`;
       });
     }
 
     if (formData.message) {
-      message += `\n*Detalhes do Projeto:*\n${formData.message}`;
+      message += `\nDetalhes do Projeto:\n${formData.message}`;
     }
+    return message;
+  };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = buildMessage();
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     setLastWhatsappUrl(url);
     window.open(url, "_blank");
+    setIsSubmitted(true);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = buildMessage();
+    const subject = encodeURIComponent("Solicitação de Orçamento - Site");
+    const body = encodeURIComponent(message);
+    window.open(`mailto:${EMAIL}?subject=${subject}&body=${body}`, "_blank");
     setIsSubmitted(true);
   };
 
@@ -269,7 +285,7 @@ export function Budget() {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            placeholder="(16) 99616-6997"
+                            placeholder="(65) 9 9999-9999"
                             required
                           />
                         </div>
@@ -396,14 +412,26 @@ export function Budget() {
                       </div>
                     </div>
 
-                    <Button
-                      type="submit"
-                      className="w-full btn-primary flex items-center justify-center gap-2"
-                      disabled={selectedServices.length === 0}
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      Enviar pelo WhatsApp
-                    </Button>
+                    <div className="grid grid-cols-2 gap-3">
+                      <Button
+                        type="submit"
+                        onClick={handleSubmit}
+                        className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2"
+                        disabled={selectedServices.length === 0}
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        WhatsApp
+                      </Button>
+                      <Button
+                        type="button"
+                        onClick={handleEmailSubmit}
+                        className="w-full btn-primary flex items-center justify-center gap-2"
+                        disabled={selectedServices.length === 0}
+                      >
+                        <MessageCircle className="w-4 h-4" />
+                        E-mail
+                      </Button>
+                    </div>
 
                     <p className="text-xs text-gray-500 text-center mt-4">
                       * Campos obrigatórios. Seus dados estão seguros e não
@@ -481,11 +509,11 @@ export function Budget() {
                     Atendimento de segunda a sexta, das 8h às 18h.
                   </p>
                   <a
-                    href="tel:+5516996166997"
+                    href="tel:+5565996946861"
                     className="flex items-center gap-2 text-[#1B3B6C] font-medium"
                   >
                     <Phone className="w-5 h-5" />
-                    (64) 99694-6861
+                    (65) 99694-6861
                   </a>
                 </div>
               </motion.div>

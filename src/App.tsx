@@ -13,6 +13,8 @@ import { LandingPage } from "@/pages/LandingPage";
 import { WhatIsART } from "@/pages/WhatIsART";
 import { WhyHireEngineer } from "@/pages/WhyHireEngineer";
 import { LegalRequirements } from "@/pages/LegalRequirements";
+import { Privacy } from "@/pages/Privacy";
+import { Terms } from "@/pages/Terms";
 import { NotFound } from "@/pages/NotFound";
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
                 path="/requisitos-legais"
                 element={<LegalRequirements />}
               />
+              <Route path="/privacidade" element={<Privacy />} />
+              <Route path="/termos" element={<Terms />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

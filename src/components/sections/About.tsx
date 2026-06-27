@@ -39,7 +39,7 @@ const stats = [
 ];
 
 const differentials = [
-  'Engenheiro Civil - CREA-SP',
+  'Engenheiro Civil - CREA 5071806455',
   'Atendimento em Cáceres e região',
   'Atendimento personalizado e humanizado',
   'Orçamento sem compromisso',

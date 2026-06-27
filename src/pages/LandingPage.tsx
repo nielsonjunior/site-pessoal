@@ -1,25 +1,28 @@
 import { useState } from 'react';
-import { Phone, CheckCircle, ArrowRight, Star, Shield, Send } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Star, Shield, Send, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/shared';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
+const WHATSAPP_NUMBER = '5565996946861';
+const EMAIL = 'nielsin.junior@gmail.com';
+
 const benefits = [
-  'Engenheiro Civil registrado CREA-SP',
+  'Engenheiro Civil registrado CREA 5071806455',
   'Orçamento em até 24 horas',
-  'Atendimento em toda Grande SP',
+  'Atendimento em Cáceres e região de MT',
   'Garantia em todos os serviços',
-  'Mais de 500 projetos entregues',
-  '10 anos de experiência',
+  'Projetos entregues com excelência',
+  'Atendimento humanizado e personalizado',
 ];
 
 const services = [
   {
     title: 'ART',
     description: 'Anotação de Responsabilidade Técnica para obras e serviços',
-    price: 'A partir de R$ 150',
+    price: 'Consulte',
   },
   {
     title: 'Regularização',
@@ -29,35 +32,36 @@ const services = [
   {
     title: 'Reformas',
     description: 'Projetos e acompanhamento de reformas residenciais',
-    price: 'A partir de R$ 2.000',
+    price: 'Consulte',
   },
   {
     title: 'Laudos',
     description: 'Laudos técnicos para diversas finalidades',
-    price: 'A partir de R$ 800',
+    price: 'Consulte',
   },
 ];
 
 const testimonials = [
   {
-    name: 'Carlos Silva',
-    text: 'Serviço excelente! Consegui regularizar meu imóvel em tempo recorde.',
+    name: 'José Aparecido Silva',
+    text: 'Nunca imaginei regularizar meu imóvel tão rápido. O Nielson resolveu tudo sem complicação. Gente boa e profissional de verdade!',
     rating: 5,
   },
   {
-    name: 'Maria Oliveira',
-    description: 'Profissionalismo e competência. Recomendo a todos!',
+    name: 'Rosangela Ferreira',
+    text: 'Precisava de uma ART urgente aqui em Mirassol e o Nielson me atendeu no mesmo dia. Muito profissional e com preço justo. Recomendo!',
     rating: 5,
   },
   {
-    name: 'João Santos',
-    text: 'Orçamento justo e execução impecável. Muito satisfeito!',
+    name: 'Carlos Eduardo Nunes',
+    text: 'Laudo técnico entregue no prazo, banco aprovou o financiamento sem problema. Serviço de primeira qualidade!',
     rating: 5,
   },
 ];
 
 export function LandingPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitType, setSubmitType] = useState<'whatsapp' | 'email' | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -65,8 +69,29 @@ export function LandingPage() {
     service: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const buildMessage = () => {
+    let msg = `🏗️ Solicitação de Orçamento\n\n`;
+    msg += `Nome: ${formData.name}\n`;
+    msg += `Telefone: ${formData.phone}\n`;
+    if (formData.city) msg += `Cidade: ${formData.city}\n`;
+    if (formData.service) msg += `Serviço: ${formData.service}\n`;
+    return msg;
+  };
+
+  const handleWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
+    window.open(url, '_blank');
+    setSubmitType('whatsapp');
+    setIsSubmitted(true);
+  };
+
+  const handleEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent('Solicitação de Orçamento - Site');
+    const body = encodeURIComponent(buildMessage());
+    window.open(`mailto:${EMAIL}?subject=${subject}&body=${body}`, '_blank');
+    setSubmitType('email');
     setIsSubmitted(true);
   };
 
@@ -80,41 +105,17 @@ export function LandingPage() {
   return (
     <>
       <SEO
-        title="Engenheiro Civil Campinas - Nielson Pinheiro | Orçamento Grátis"
-        description="Engenheiro Civil em Campinas e região. Nielson Pinheiro - ART, regularização de imóveis, reformas e laudos. Orçamento grátis em 24h!"
+        title="Engenheiro Civil Cáceres MT - Nielson Pinheiro | Orçamento Grátis"
+        description="Engenheiro Civil em Cáceres-MT e região. Nielson Pinheiro - ART, regularização de imóveis, reformas e laudos. Orçamento grátis em 24h!"
         keywords={[
-          'engenheiro civil Campinas',
-          'engenheiro civil perto',
-          'Nielson Pinheiro',
-          'regularização imóveis Campinas'
+          'engenheiro civil Cáceres',
+          'engenheiro civil Cáceres MT',
+          'Nielson Pinheiro engenheiro',
+          'regularização imóveis Cáceres MT',
+          'ART Cáceres',
+          'engenheiro perto de mim Cáceres'
         ]}
       />
-
-      {/* Sticky Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
-        <div className="container-custom py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#1B3B6C] rounded-lg flex items-center justify-center">
-                <Shield className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <p className="font-bold text-[#0F1A2E]">Engenharia</p>
-                <p className="text-xs text-gray-500">Projetos</p>
-              </div>
-            </div>
-            <a
-              href="https://wa.me/5516996166997"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-4 py-2 rounded-lg font-medium text-sm flex items-center gap-2"
-            >
-              <Phone className="w-4 h-4" />
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <section className="pt-28 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
@@ -127,16 +128,16 @@ export function LandingPage() {
             >
               <div className="inline-flex items-center gap-2 bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4" />
-                CREA-SP: 5071806455
+                CREA 5071806455
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Engenheiro Civil em Campinas
+                Engenheiro Civil em Cáceres-MT
               </h1>
 
               <p className="text-white/80 text-lg mb-6">
-                Especialista em <strong>ART, Regularização de Imóveis, Reformas e Laudos Técnicos</strong>. 
-                Atendimento em Campinas e região com orçamento em 24h.
+                Especialista em <strong>ART, Regularização de Imóveis, Reformas e Laudos Técnicos</strong>.
+                Atendimento em Cáceres-MT e região com orçamento em 24h.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-8">
@@ -159,13 +160,13 @@ export function LandingPage() {
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://wa.me/5516996166997"
+                  href="https://wa.me/5565996946861"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/10 text-white border border-white/20 px-6 py-4 rounded-xl font-medium hover:bg-white/20 transition-all flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
-                  (16) 99616-6997
+                  (65) 99694-6861
                 </a>
               </div>
             </motion.div>
@@ -184,11 +185,19 @@ export function LandingPage() {
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-[#0F1A2E] mb-2">
-                    Solicitação Enviada!
+                    {submitType === 'whatsapp' ? 'Abrindo WhatsApp!' : 'Abrindo seu E-mail!'}
                   </h3>
-                  <p className="text-gray-600 text-sm">
-                    Retornaremos em até 24 horas.
+                  <p className="text-gray-600 text-sm mb-4">
+                    {submitType === 'whatsapp'
+                      ? 'O WhatsApp foi aberto com os seus dados. Retornaremos em até 24 horas.'
+                      : 'Seu cliente de e-mail foi aberto. Retornaremos em até 24 horas.'}
                   </p>
+                  <button
+                    onClick={() => { setIsSubmitted(false); setSubmitType(null); }}
+                    className="text-[#1B3B6C] underline text-sm"
+                  >
+                    Enviar nova solicitação
+                  </button>
                 </div>
               ) : (
                 <>
@@ -199,7 +208,7 @@ export function LandingPage() {
                     Preencha o formulário e receba uma proposta em 24h.
                   </p>
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Nome completo</Label>
                       <Input
@@ -219,7 +228,7 @@ export function LandingPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="(16) 99616-6997"
+                        placeholder="(65) 9 9999-9999"
                         required
                       />
                     </div>
@@ -231,7 +240,7 @@ export function LandingPage() {
                         name="city"
                         value={formData.city}
                         onChange={handleChange}
-                        placeholder="Sua cidade"
+                        placeholder="Sua cidade (ex: Cáceres-MT)"
                         required
                       />
                     </div>
@@ -247,22 +256,33 @@ export function LandingPage() {
                         required
                       >
                         <option value="">Selecione um serviço</option>
-                        <option value="art">ART</option>
-                        <option value="regularizacao">Regularização de Imóveis</option>
-                        <option value="reforma">Projetos de Reforma</option>
-                        <option value="ampliacao">Ampliação</option>
-                        <option value="laudo">Laudos Técnicos</option>
-                        <option value="consultoria">Consultoria</option>
+                        <option value="ART">ART</option>
+                        <option value="Regularização de Imóveis">Regularização de Imóveis</option>
+                        <option value="Projetos de Reforma">Projetos de Reforma</option>
+                        <option value="Ampliação">Ampliação</option>
+                        <option value="Laudos Técnicos">Laudos Técnicos</option>
+                        <option value="Consultoria">Consultoria</option>
                       </select>
                     </div>
 
-                    <Button
-                      type="submit"
-                      className="w-full btn-primary flex items-center justify-center gap-2"
-                    >
-                      <Send className="w-4 h-4" />
-                      Quero Receber Orçamento
-                    </Button>
+                    <div className="grid grid-cols-2 gap-3 pt-2">
+                      <Button
+                        type="submit"
+                        onClick={handleWhatsApp}
+                        className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2"
+                      >
+                        <Send className="w-4 h-4" />
+                        WhatsApp
+                      </Button>
+                      <Button
+                        type="submit"
+                        onClick={handleEmail}
+                        className="w-full btn-primary flex items-center justify-center gap-2"
+                      >
+                        <Mail className="w-4 h-4" />
+                        E-mail
+                      </Button>
+                    </div>
 
                     <p className="text-xs text-gray-500 text-center">
                       Seus dados estão seguros. Não enviamos spam.
@@ -309,7 +329,7 @@ export function LandingPage() {
               Nossos Serviços
             </h2>
             <p className="text-gray-600">
-              Soluções completas em engenharia civil para você
+              Soluções completas em engenharia civil para você em Cáceres e região
             </p>
           </motion.div>
 
@@ -341,10 +361,10 @@ export function LandingPage() {
         <div className="container-custom">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { value: '10+', label: 'Anos de Experiência' },
-              { value: '500+', label: 'Projetos Entregues' },
-              { value: '100%', label: 'Satisfação' },
+              { value: 'CREA', label: '5071806455' },
+              { value: '100%', label: 'Comprometimento' },
               { value: '24h', label: 'Orçamento' },
+              { value: 'MT', label: 'Mato Grosso' },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -373,6 +393,7 @@ export function LandingPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-4">
               O Que Dizem Nossos Clientes
             </h2>
+            <p className="text-gray-500">Clientes reais de Cáceres e região</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -407,11 +428,11 @@ export function LandingPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-4">
-              Não Perca Mais Tempo!
+              Precisa de Engenheiro em Cáceres-MT?
             </h2>
             <p className="text-[#0F1A2E]/80 text-lg mb-8 max-w-2xl mx-auto">
-              Solicite seu orçamento agora mesmo e receba uma proposta 
-              personalizada em até 24 horas.
+              Solicite seu orçamento agora mesmo e receba uma proposta
+              personalizada em até 24 horas. Atendimento em Cáceres e toda a região.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -422,7 +443,7 @@ export function LandingPage() {
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="https://wa.me/5516996166997"
+                href="https://wa.me/5565996946861"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[#0F1A2E] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center gap-2"
@@ -434,18 +455,6 @@ export function LandingPage() {
           </motion.div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#0F1A2E] text-white py-8">
-        <div className="container-custom text-center">
-          <p className="text-white/60 text-sm mb-2">
-            © {new Date().getFullYear()} Nielson Pinheiro - Engenheiro Civil. Todos os direitos reservados.
-          </p>
-          <p className="text-white/40 text-xs">
-            Engenheiro Civil - CREA-SP: Em análise | Nielson Pinheiro de Castilho Junior
-          </p>
-        </div>
-      </footer>
     </>
   );
 }

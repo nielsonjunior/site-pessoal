@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HardHat, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { HardHat, Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 
 const footerLinks = {
   servicos: [
@@ -19,7 +19,7 @@ const footerLinks = {
   ],
   recursos: [
     { name: "O que é ART?", href: "/o-que-e-art" },
-    { name: "Regularização", href: "/regularizacao-imoveis" },
+    { name: "Regularização de Imóveis", href: "/servicos/regularizacao-imoveis" },
     { name: "Por Que Contratar?", href: "/por-que-contratar-engenheiro" },
     { name: "Requisitos Legais", href: "/requisitos-legais" },
     { name: "Solicitar Orçamento", href: "/orcamento" },
@@ -39,19 +39,27 @@ export function Footer() {
                 <HardHat className="w-7 h-7 text-[#0F1A2E]" />
               </div>
               <div>
-                <h3 className="font-bold text-lg leading-tight">Engenharia</h3>
-                <p className="text-sm text-gray-400">Projetos</p>
+                <h3 className="font-bold text-lg leading-tight">Nielson Pinheiro</h3>
+                <p className="text-sm text-gray-400">Engenheiro Civil</p>
               </div>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               Engenheiro Civil especializado em projetos, regularização de
-              imóveis, ART e laudos técnicos. Atendimento em Cáceres e região.
+              imóveis, ART e laudos técnicos. Atendimento em Cáceres e toda
+              a região de Mato Grosso.
             </p>
             <div className="flex gap-3">
-              <span className="text-gray-500 text-sm">
-                Redes sociais em breve
-              </span>
+              <a
+                href="https://www.instagram.com/npcastilho.eng"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram @npcastilho.eng"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#F4C430] transition-colors group"
+              >
+                <Instagram className="w-5 h-5 text-white group-hover:text-[#0F1A2E]" />
+              </a>
             </div>
+            <p className="text-gray-500 text-xs mt-3">@npcastilho.eng</p>
           </div>
 
           {/* Services */}
@@ -119,11 +127,9 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-gray-400">Endereço</p>
+                  <p className="text-sm text-gray-400">Localização</p>
                   <p className="text-white">
-                    Rua Culturama, 161 - Jardim Proença
-                    <br />
-                    Cáceres - MT, 78201-105
+                    Cáceres - MT
                   </p>
                 </div>
               </li>
@@ -148,8 +154,7 @@ export function Footer() {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Engenharia Projetos. Todos os
-              direitos reservados.
+              © {new Date().getFullYear()} Nielson Pinheiro - Engenheiro Civil. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-6">
               <Link
@@ -168,8 +173,7 @@ export function Footer() {
           </div>
           <div className="mt-4 pt-4 border-t border-white/5 text-center">
             <p className="text-gray-500 text-xs">
-              Engenheiro Civil - CREA-SP | Responsável Técnico:
-              Nielson Pinheiro de Castilho Junior
+              Engenheiro Civil - CREA 5071806455 | Responsável Técnico: Nielson Pinheiro de Castilho Junior | Cáceres-MT
             </p>
           </div>
         </div>

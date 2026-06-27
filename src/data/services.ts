@@ -27,7 +27,7 @@ export const services: Service[] = [
       "Responsabilidade técnica documentada"
     ],
     icon: "FileCheck",
-    image: "/images/service-art.jpg",
+    image: "/images/engineer-office.jpg",
     slug: "art-anotacao-responsabilidade-tecnica",
     keywords: ["ART", "Anotação de Responsabilidade Técnica", "engenheiro ART", "regularização ART", "CREA"],
     metaTitle: "ART - Anotação de Responsabilidade Técnica | Engenheiro Civil",
@@ -47,7 +47,7 @@ export const services: Service[] = [
       "Acesso a serviços públicos"
     ],
     icon: "Home",
-    image: "/images/service-regularization.jpg",
+    image: "/images/engineer-site.jpg",
     slug: "regularizacao-imoveis",
     keywords: ["regularização de imóveis", "habite-se", "imóvel irregular", "regularização de obra", "engenheiro regularização"],
     metaTitle: "Regularização de Imóveis | Habite-se e Documentação",
@@ -67,7 +67,7 @@ export const services: Service[] = [
       "Documentação técnica completa"
     ],
     icon: "Hammer",
-    image: "/images/service-renovation.jpg",
+    image: "/images/hero-house.jpg",
     slug: "projetos-reforma",
     keywords: ["projeto de reforma", "reforma residencial", "reforma comercial", "engenheiro reforma", "reforma apartamento"],
     metaTitle: "Projetos de Reforma Residencial e Comercial",
@@ -87,7 +87,7 @@ export const services: Service[] = [
       "Valorização do patrimônio"
     ],
     icon: "Maximize2",
-    image: "/images/service-expansion.jpg",
+    image: "/images/about-detail.jpg",
     slug: "ampliacao-imoveis",
     keywords: ["ampliação de imóveis", "aumentar casa", "construir segundo andar", "ampliação residencial", "engenheiro ampliação"],
     metaTitle: "Ampliação de Imóveis | Projetos de Ampliação Residencial",
@@ -107,7 +107,7 @@ export const services: Service[] = [
  "Assinatura CREA válida"
     ],
     icon: "ClipboardCheck",
-    image: "/images/service-report.jpg",
+    image: "/images/about-engineer.jpg",
     slug: "laudos-tecnicos",
     keywords: ["laudo técnico", "avaliação estrutural", "vistoria de imóveis", "perícia judicial", "laudo engenheiro"],
     metaTitle: "Laudos Técnicos | Avaliação Estrutural e Vistorias",
@@ -127,7 +127,7 @@ export const services: Service[] = [
       "Tomada de decisão embasada"
     ],
     icon: "Users",
-    image: "/images/service-consulting.jpg",
+    image: "/images/engineer-site.jpg",
     slug: "consultoria-engenharia",
     keywords: ["consultoria engenharia", "consultoria construção civil", "assessoria técnica obra", "gestão de obras"],
     metaTitle: "Consultoria em Engenharia Civil | Assessoria Técnica",

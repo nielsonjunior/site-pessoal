@@ -201,7 +201,7 @@ export function WhatIsART() {
             </h3>
             <p className="text-white/80 mb-6">
               Entre em contato e solicite sua ART com um engenheiro civil
-              registrado no CREA-SP.
+              registrado no CREA (5071806455).
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

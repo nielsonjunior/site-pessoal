@@ -80,7 +80,7 @@ export function CTA() {
                     href="tel:+5565996946861" 
                     className="text-lg font-semibold text-[#0F1A2E] hover:text-[#1B3B6C] transition-colors"
                   >
-                    (16) 99616-6997
+                    (65) 99694-6861
                   </a>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export function CTA() {
                 <div>
                   <p className="text-sm text-gray-500 mb-1">Registro Profissional</p>
                   <p className="text-lg font-semibold text-[#0F1A2E]">
-                    CREA-SP: 5071806455
+                    CREA 5071806455
                   </p>
                 </div>
               </div>

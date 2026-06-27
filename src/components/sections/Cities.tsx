@@ -114,9 +114,10 @@ export function Cities() {
             </div>
             <div className="relative">
               <img
-                src="/images/map-sao-paulo.jpg"
-                alt="Mapa de atendimento - Região de Cáceres"
+                src="/images/map-caceres.jpg"
+                alt="Mapa de atendimento - Região de Cáceres MT"
                 className="w-full h-64 object-cover rounded-xl"
+                onError={(e) => { (e.target as HTMLImageElement).src = '/images/about-detail.jpg'; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1B3B6C]/50 to-transparent rounded-xl" />
               <div className="absolute bottom-4 left-4 right-4">

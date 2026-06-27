@@ -74,7 +74,7 @@ export function Header() {
               </a>
             </span>
             <span className="hidden sm:inline">|</span>
-            <span className="hidden sm:inline">CREA-SP</span>
+            <span className="hidden sm:inline">CREA 5071806455</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="hidden md:inline">
@@ -109,14 +109,14 @@ export function Header() {
                     isScrolled ? "text-[#1B3B6C]" : "text-[#1B3B6C]"
                   }`}
                 >
-                  Engenharia
+                  Nielson Pinheiro
                 </h1>
                 <p
                   className={`text-xs transition-colors ${
                     isScrolled ? "text-gray-600" : "text-gray-600"
                   }`}
                 >
-                  Projetos
+                  Engenheiro Civil | CREA 5071806455
                 </p>
               </div>
             </Link>
