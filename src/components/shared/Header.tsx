@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown, HardHat } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -100,16 +100,18 @@ export function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[#1B3B6C] rounded-lg flex items-center justify-center">
-                <HardHat className="w-6 h-6 text-white" />
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="NP Castilho Engenharia"
+                className="w-12 h-12 object-contain rounded-full"
+              />
               <div className="hidden sm:block">
                 <h1
                   className={`font-bold text-lg leading-tight transition-colors ${
                     isScrolled ? "text-[#1B3B6C]" : "text-[#1B3B6C]"
                   }`}
                 >
-                  Nielson Pinheiro
+                  Nielson P. de Castilho Júnior
                 </h1>
                 <p
                   className={`text-xs transition-colors ${

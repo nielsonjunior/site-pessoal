@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HardHat, Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 
 const footerLinks = {
   servicos: [
@@ -35,12 +35,14 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-[#F4C430] rounded-lg flex items-center justify-center">
-                <HardHat className="w-7 h-7 text-[#0F1A2E]" />
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="NP Castilho Engenharia"
+                className="w-14 h-14 object-contain rounded-full"
+              />
               <div>
-                <h3 className="font-bold text-lg leading-tight">Nielson Pinheiro</h3>
-                <p className="text-sm text-gray-400">Engenheiro Civil</p>
+                <h3 className="font-bold text-lg leading-tight">Nielson P. de Castilho Júnior</h3>
+                <p className="text-sm text-gray-400">Engenheiro Civil | CREA 5071806455</p>
               </div>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
