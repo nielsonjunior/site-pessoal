@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, CheckCircle, ArrowRight, Star, Shield, Send, Mail } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Star, Send, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/shared';
 import { Button } from '@/components/ui/button';
