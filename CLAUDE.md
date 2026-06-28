@@ -14,6 +14,13 @@ mencionam São Paulo, mas o conteúdo real do site é de **Cáceres-MT** (telefo
 (65), CREA-MT, cidades de MT). Use sempre o conteúdo real como fonte de verdade.
 Telefone/WhatsApp oficial: **+55 65 99694-6861** (`https://wa.me/5565996946861`).
 
+## Repositório & fluxo de entrega
+
+- **GitHub:** `https://github.com/nielsonjunior/site-npcastilho` (privado), branch `main`.
+- `gh` CLI instalado e autenticado (conta `nielsonjunior`).
+- **O dono quer acompanhar pelo GitHub:** ao concluir uma fase/feature (com testes
+  verdes), fazer `git commit` e `git push` para o `main`. Não commitar com testes vermelhos.
+
 ## Stack
 
 - **React 19** + **TypeScript** (strict) + **Vite 7**
