@@ -81,8 +81,9 @@ npx playwright install   # 1ª vez (baixa o navegador Chromium para E2E)
 
 npm run dev              # dev server em http://localhost:5173
 npm run build            # tsc -b && vite build (typecheck + bundle); prebuild gera sitemap
-npm run build:static     # build + prerender (HTML estático por rota) — usar p/ produção/Vercel
-npm run prerender        # só o prerender (requer dist já buildado + Chromium)
+npm run build:static     # build + build:server (SSR) + prerender — usado pela Vercel
+npm run build:server     # bundle SSR (vite --ssr) usado pelo prerender
+npm run prerender        # só o prerender (requer dist/ e dist-server/ já buildados)
 npm run gen:sitemap      # regenera public/sitemap.xml a partir de src/data
 npm run gen:og           # regenera public/images/og-image.jpg (Playwright)
 npm run lint             # eslint
@@ -130,10 +131,13 @@ Detalhes do harness de testes: **`docs/TESTING.md`**.
 
 ## SEO / Rendering (ver `docs/SEO-PLAN.md`)
 
-- **SSG por pré-render (Playwright):** `scripts/prerender.mjs` serve o `dist`, visita
-  cada rota no Chromium e salva HTML estático (com as meta do Helmet) em
-  `dist/<rota>/index.html`. Para produção use **`npm run build:static`**. Na Vercel,
-  Build Command = `npx playwright install chromium && npm run build:static`.
+- **SSG por pré-render (SSR Node-only, sem navegador):** `npm run build:static` =
+  build cliente + `build:server` (bundle SSR `vite build --ssr src/entry-server.tsx`)
+  + `scripts/prerender.mjs`, que usa `renderToString`/`StaticRouter`/Helmet para gerar
+  `dist/<rota>/index.html` com conteúdo + título/meta/canonical/JSON-LD. **Roda só em
+  Node** (Chromium do Playwright NÃO funciona no build da Vercel). O `vercel.json` já
+  define `buildCommand: npm run build:static`. `AppShell` é o app sem Router (usado por
+  `App.tsx`/BrowserRouter no cliente e `entry-server.tsx`/StaticRouter no SSR).
 - **Fonte única de domínio/NAP:** `src/config/site.ts` (usado por SEO, canonical,
   sitemap, Analytics e — futuramente — JSON-LD). Domínio: `https://www.npcastilho.eng.br`.
 - **SEO por página:** componente `SEO` (`src/components/shared/SEO.tsx`) gera title,
