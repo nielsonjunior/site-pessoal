@@ -27,6 +27,31 @@ export function Analytics() {
     });
   }, [pathname, search]);
 
+  // Rastreio de lead: qualquer clique em link de WhatsApp ou telefone dispara o
+  // evento `generate_lead` (delegação global, pega todos os CTAs do site).
+  // Marque `generate_lead` como conversão no GA4. No-op se o gtag não existir.
+  useEffect(() => {
+    function onClick(e: MouseEvent) {
+      const el = e.target as HTMLElement | null;
+      const link = el?.closest?.("a") as HTMLAnchorElement | null;
+      if (!link) return;
+      const href = link.href || "";
+      let method: string | null = null;
+      if (/wa\.me|api\.whatsapp\.com/i.test(href)) method = "whatsapp";
+      else if (href.startsWith("tel:")) method = "phone";
+      if (!method) return;
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          method,
+          link_url: href,
+          page_path: window.location.pathname,
+        });
+      }
+    }
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   if (!GA_ENABLED) return null;
 
   return (
