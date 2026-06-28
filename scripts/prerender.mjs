@@ -1,18 +1,13 @@
 /**
- * Pre-renderiza cada rota para HTML estatico (SSG via Playwright).
- * Roda DEPOIS do `vite build`. Serve o dist com o preview do Vite, visita cada
- * rota no Chromium, deixa o React + Helmet renderizarem e salva o HTML completo
- * (com title/meta/canonical/conteudo) em dist/<rota>/index.html.
+ * Pré-render SEM navegador (SSG): usa o bundle SSR (dist-server/entry-server.js)
+ * para renderizar cada rota com react-dom/server e injeta o HTML + as meta do
+ * Helmet no template do cliente (dist/index.html), salvando dist/<rota>/index.html.
  *
- * Resultado: crawlers e previews sociais recebem HTML pronto; o JS hidrata/
- * re-renderiza normalmente no cliente.
- *
- * Uso: `npm run build:static` (build + prerender).
+ * Roda só em Node (confiável na Vercel — sem Chromium). Uso: `npm run build:static`.
  */
-import { preview } from "vite";
-import { chromium } from "playwright";
-import { mkdirSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
+import { pathToFileURL } from "node:url";
 import {
   serviceSlugs,
   citySlugs,
@@ -20,12 +15,21 @@ import {
 } from "./site-routes.mjs";
 
 const distDir = join(process.cwd(), "dist");
+const serverEntry = join(process.cwd(), "dist-server", "entry-server.js");
+
 if (!existsSync(join(distDir, "index.html"))) {
-  console.error("[prerender] dist/ nao encontrado. Rode `npm run build` antes.");
+  console.error("[prerender] dist/index.html não encontrado. Rode o build antes.");
+  process.exit(1);
+}
+if (!existsSync(serverEntry)) {
+  console.error("[prerender] dist-server/entry-server.js não encontrado. Rode o build:server antes.");
   process.exit(1);
 }
 
-// Todas as rotas navegaveis (espelha src/App.tsx).
+const template = readFileSync(join(distDir, "index.html"), "utf8");
+const { render } = await import(pathToFileURL(serverEntry).href);
+
+// Todas as rotas navegáveis (espelha src/AppShell.tsx).
 const staticPaths = [
   "/",
   "/servicos",
@@ -48,41 +52,33 @@ const dynamicPaths = [
 ];
 const paths = [...staticPaths, ...dynamicPaths];
 
-const server = await preview({ preview: { port: 4173, strictPort: true } });
-const base = server.resolvedUrls.local[0].replace(/\/$/, "");
-
-const browser = await chromium.launch();
-const page = await browser.newPage();
-page.setDefaultNavigationTimeout(30_000);
-
-// IMPORTANTE: capturamos TODAS as rotas primeiro e so depois escrevemos os
-// arquivos. Se escrevessemos durante o loop, sobrescrever dist/index.html
-// contaminaria as proximas rotas (servidas via fallback SPA do preview).
-const captured = [];
+let count = 0;
+let failed = 0;
 for (const p of paths) {
-  await page.goto(base + p, { waitUntil: "networkidle" });
-  // Dispara as animacoes whileInView (framer-motion, once:true) para o conteudo
-  // ficar visivel/presente no snapshot estatico.
-  await page.evaluate(async () => {
-    window.scrollTo(0, document.body.scrollHeight);
-    await new Promise((r) => setTimeout(r, 250));
-    window.scrollTo(0, 0);
-    await new Promise((r) => setTimeout(r, 150));
-    document.documentElement.setAttribute("data-prerendered", "true");
-  });
-  const html =
-    "<!DOCTYPE html>\n" +
-    (await page.evaluate(() => document.documentElement.outerHTML));
-  const outPath =
-    p === "/" ? join(distDir, "index.html") : join(distDir, p, "index.html");
-  captured.push({ outPath, html });
+  try {
+    const { html, helmet } = render(p);
+    const head = [
+      helmet?.title?.toString() ?? "",
+      helmet?.meta?.toString() ?? "",
+      helmet?.link?.toString() ?? "",
+      helmet?.script?.toString() ?? "",
+    ].join("");
+
+    const page = template
+      .replace("<html", '<html data-prerendered="true"')
+      .replace("</head>", `${head}</head>`)
+      .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+
+    const outPath =
+      p === "/" ? join(distDir, "index.html") : join(distDir, p, "index.html");
+    mkdirSync(dirname(outPath), { recursive: true });
+    writeFileSync(outPath, page, "utf8");
+    count++;
+  } catch (e) {
+    console.warn(`[prerender] FALHOU ${p}: ${e?.message ?? e}`);
+    failed++;
+  }
 }
 
-await browser.close();
-await server.httpServer.close();
-
-for (const { outPath, html } of captured) {
-  mkdirSync(dirname(outPath), { recursive: true });
-  writeFileSync(outPath, html, "utf8");
-}
-console.log(`[prerender] ${captured.length} rotas geradas em dist/`);
+console.log(`[prerender] ${count} rotas geradas, ${failed} falha(s)`);
+if (count === 0) process.exit(1);

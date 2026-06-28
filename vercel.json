@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx playwright install chromium && npm run build:static",
+  "buildCommand": "npm run build:static",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
