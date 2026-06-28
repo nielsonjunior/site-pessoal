@@ -3,6 +3,8 @@ import {
   MessageCircle,
   CheckCircle,
   Phone,
+  Mail,
+  Loader2,
   Calculator,
   FileCheck,
   Home,
@@ -62,8 +64,11 @@ const cities = [
   "Outra",
 ];
 
+type SubmitStatus = "idle" | "sending" | "whatsapp" | "sent" | "error";
+
 export function Budget() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const [lastWhatsappUrl, setLastWhatsappUrl] = useState("");
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [formData, setFormData] = useState({
@@ -123,22 +128,82 @@ export function Budget() {
     return message;
   };
 
+  const buildFields = () => {
+    const selectedServiceLabels = selectedServices
+      .map((id) => services.find((s) => s.id === id)?.label)
+      .filter(Boolean) as string[];
+    const propertyTypeLabel =
+      propertyTypes.find((t) => t.value === formData.propertyType)?.label || "";
+    const cityLabel =
+      cities.find(
+        (c) => c.toLowerCase().replace(/\s+/g, "-") === formData.city,
+      ) || formData.city;
+    return { selectedServiceLabels, propertyTypeLabel, cityLabel };
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (selectedServices.length === 0) return;
     const message = buildMessage();
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     setLastWhatsappUrl(url);
     window.open(url, "_blank");
-    setIsSubmitted(true);
+    setStatus("whatsapp");
   };
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  // Envia o orçamento por e-mail de verdade (sem mailto), via FormSubmit.
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const message = buildMessage();
-    const subject = encodeURIComponent("Solicitação de Orçamento - Site");
-    const body = encodeURIComponent(message);
-    window.open(`mailto:${EMAIL}?subject=${subject}&body=${body}`, "_blank");
-    setIsSubmitted(true);
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      selectedServices.length === 0
+    ) {
+      setErrorMsg(
+        "Preencha nome, e-mail, telefone e selecione ao menos um serviço.",
+      );
+      setStatus("error");
+      return;
+    }
+    setStatus("sending");
+    setErrorMsg("");
+    const { selectedServiceLabels, propertyTypeLabel, cityLabel } = buildFields();
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: "Solicitação de Orçamento - Site",
+          _template: "table",
+          Nome: formData.name,
+          "E-mail": formData.email,
+          Telefone: formData.phone,
+          Cidade: cityLabel || "-",
+          "Tipo de Imóvel": propertyTypeLabel || "-",
+          Metragem: formData.propertySize ? `${formData.propertySize} m²` : "-",
+          "Serviços Desejados": selectedServiceLabels.join(", ") || "-",
+          Detalhes: formData.message || "-",
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && (data.success === "true" || data.success === true)) {
+        setStatus("sent");
+      } else {
+        setErrorMsg(
+          "Não foi possível enviar agora. Tente novamente ou use o WhatsApp.",
+        );
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg(
+        "Falha de conexão. Tente novamente ou use o WhatsApp.",
+      );
+      setStatus("error");
+    }
   };
 
   const handleChange = (
@@ -199,30 +264,46 @@ export function Budget() {
                 transition={{ duration: 0.6 }}
                 className="bg-white border border-gray-100 rounded-2xl p-8 shadow-lg"
               >
-                {isSubmitted ? (
+                {status === "whatsapp" || status === "sent" ? (
                   <div className="text-center py-12">
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">
-                      Redirecionando para o WhatsApp!
-                    </h2>
-                    <p className="text-gray-600 mb-6">
-                      O WhatsApp foi aberto com o resumo do seu orçamento. Caso
-                      não tenha aberto automaticamente,{" "}
-                      <a
-                        href={lastWhatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#25D366] underline font-medium"
-                      >
-                        clique aqui
-                      </a>
-                      .
-                    </p>
+                    {status === "sent" ? (
+                      <>
+                        <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+                          Orçamento enviado! ✅
+                        </h2>
+                        <p className="text-gray-600 mb-6">
+                          Recebi sua solicitação por e-mail e retornarei em até
+                          24 horas. Se preferir falar agora, é só chamar no
+                          WhatsApp.
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+                          Redirecionando para o WhatsApp!
+                        </h2>
+                        <p className="text-gray-600 mb-6">
+                          O WhatsApp foi aberto com o resumo do seu orçamento.
+                          Caso não tenha aberto automaticamente,{" "}
+                          <a
+                            href={lastWhatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#25D366] underline font-medium"
+                          >
+                            clique aqui
+                          </a>
+                          .
+                        </p>
+                      </>
+                    )}
                     <Button
                       onClick={() => {
-                        setIsSubmitted(false);
+                        setStatus("idle");
+                        setErrorMsg("");
                         setLastWhatsappUrl("");
                         setSelectedServices([]);
                         setFormData({
@@ -412,12 +493,18 @@ export function Budget() {
                       </div>
                     </div>
 
+                    {status === "error" && errorMsg && (
+                      <div className="mb-4 rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                        {errorMsg}
+                      </div>
+                    )}
+
                     <div className="grid grid-cols-2 gap-3">
                       <Button
                         type="submit"
                         onClick={handleSubmit}
                         className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2"
-                        disabled={selectedServices.length === 0}
+                        disabled={selectedServices.length === 0 || status === "sending"}
                       >
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp
@@ -426,10 +513,19 @@ export function Budget() {
                         type="button"
                         onClick={handleEmailSubmit}
                         className="w-full btn-primary flex items-center justify-center gap-2"
-                        disabled={selectedServices.length === 0}
+                        disabled={selectedServices.length === 0 || status === "sending"}
                       >
-                        <MessageCircle className="w-4 h-4" />
-                        E-mail
+                        {status === "sending" ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            Enviando...
+                          </>
+                        ) : (
+                          <>
+                            <Mail className="w-4 h-4" />
+                            Enviar por e-mail
+                          </>
+                        )}
                       </Button>
                     </div>
 
