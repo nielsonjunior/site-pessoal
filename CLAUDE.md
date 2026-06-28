@@ -16,10 +16,13 @@ Telefone/WhatsApp oficial: **+55 65 99694-6861** (`https://wa.me/5565996946861`)
 
 ## Repositório & fluxo de entrega
 
-- **GitHub:** `https://github.com/nielsonjunior/site-npcastilho` (privado), branch `main`.
+- **GitHub:** `https://github.com/nielsonjunior/site-pessoal` (público), branch `main`,
+  remote `origin`. **Conectado à Vercel** → todo push no `main` dispara deploy automático.
 - `gh` CLI instalado e autenticado (conta `nielsonjunior`).
-- **O dono quer acompanhar pelo GitHub:** ao concluir uma fase/feature (com testes
-  verdes), fazer `git commit` e `git push` para o `main`. Não commitar com testes vermelhos.
+- **O dono acompanha pelo deploy:** ao concluir uma fase/feature (com testes verdes),
+  fazer `git commit` e `git push origin main`. Nunca commitar com testes vermelhos.
+- **Build na Vercel:** os scripts em `scripts/` não importam `.ts` (leem slugs por texto
+  em `scripts/site-routes.mjs`) para o build não depender da versão do Node.
 
 ## Stack
 

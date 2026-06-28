@@ -1,16 +1,22 @@
 /**
- * Gera public/sitemap.xml a partir das rotas estaticas + dados (servicos/cidades).
- * Roda no build (ver package.json) e tambem via `npm run gen:sitemap`.
- * Importa os .ts de dados diretamente (type-stripping nativo do Node >= 22.6).
+ * Gera public/sitemap.xml a partir das rotas estaticas + dados (servicos/cidades/
+ * regularizacao). Roda no build (ver package.json) e via `npm run gen:sitemap`.
+ * Lê os slugs por texto (scripts/site-routes.mjs) — sem importar .ts, para o
+ * build funcionar em qualquer versão de Node (ex.: Vercel).
  */
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { SITE, canonicalUrlFor } from "../src/config/site.ts";
-import { services } from "../src/data/services.ts";
-import { cities } from "../src/data/cities.ts";
-import { regularizationTypes } from "../src/data/regularizacao.ts";
+import {
+  SITE_URL,
+  canonicalPath,
+  serviceSlugs,
+  citySlugs,
+  regularizationSlugs,
+} from "./site-routes.mjs";
 
-// Rotas estaticas indexaveis. /contato e omitida (canonical -> /orcamento).
+const loc = (p) => `${SITE_URL}${canonicalPath(p)}`;
+
+// Rotas estaticas indexaveis. /contato é canonicalizada para /orcamento.
 const staticRoutes = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/servicos", priority: "0.9", changefreq: "monthly" },
@@ -26,13 +32,13 @@ const staticRoutes = [
 ];
 
 const dynamicRoutes = [
-  ...services.map((s) => ({ path: `/servicos/${s.slug}`, priority: "0.8", changefreq: "monthly" })),
-  ...regularizationTypes.map((t) => ({
-    path: `/servicos/regularizacao-imoveis/${t.slug}`,
+  ...serviceSlugs.map((s) => ({ path: `/servicos/${s}`, priority: "0.8", changefreq: "monthly" })),
+  ...regularizationSlugs.map((s) => ({
+    path: `/servicos/regularizacao-imoveis/${s}`,
     priority: "0.8",
     changefreq: "monthly",
   })),
-  ...cities.map((c) => ({ path: `/cidades/${c.slug}`, priority: "0.7", changefreq: "monthly" })),
+  ...citySlugs.map((s) => ({ path: `/cidades/${s}`, priority: "0.7", changefreq: "monthly" })),
 ];
 
 const all = [...staticRoutes, ...dynamicRoutes];
@@ -41,7 +47,7 @@ const lastmod = new Date().toISOString().split("T")[0];
 const body = all
   .map(
     ({ path, priority, changefreq }) => `  <url>
-    <loc>${canonicalUrlFor(path)}</loc>
+    <loc>${loc(path)}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
@@ -55,6 +61,5 @@ ${body}
 </urlset>
 `;
 
-const out = join(process.cwd(), "public", "sitemap.xml");
-writeFileSync(out, xml, "utf8");
-console.log(`sitemap.xml gerado com ${all.length} URLs (dominio: ${SITE.url})`);
+writeFileSync(join(process.cwd(), "public", "sitemap.xml"), xml, "utf8");
+console.log(`sitemap.xml gerado com ${all.length} URLs (dominio: ${SITE_URL})`);

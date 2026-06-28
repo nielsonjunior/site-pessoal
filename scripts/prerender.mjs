@@ -13,9 +13,11 @@ import { preview } from "vite";
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
-import { services } from "../src/data/services.ts";
-import { cities } from "../src/data/cities.ts";
-import { regularizationTypes } from "../src/data/regularizacao.ts";
+import {
+  serviceSlugs,
+  citySlugs,
+  regularizationSlugs,
+} from "./site-routes.mjs";
 
 const distDir = join(process.cwd(), "dist");
 if (!existsSync(join(distDir, "index.html"))) {
@@ -40,9 +42,9 @@ const staticPaths = [
   "/termos",
 ];
 const dynamicPaths = [
-  ...services.map((s) => `/servicos/${s.slug}`),
-  ...regularizationTypes.map((t) => `/servicos/regularizacao-imoveis/${t.slug}`),
-  ...cities.map((c) => `/cidades/${c.slug}`),
+  ...serviceSlugs.map((s) => `/servicos/${s}`),
+  ...regularizationSlugs.map((s) => `/servicos/regularizacao-imoveis/${s}`),
+  ...citySlugs.map((s) => `/cidades/${s}`),
 ];
 const paths = [...staticPaths, ...dynamicPaths];
 
