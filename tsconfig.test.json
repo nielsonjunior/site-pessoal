@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true,
+    "types": ["vite/client", "vitest/globals", "node"]
+  },
+  "include": [
+    "src",
+    "src/test",
+    "tests",
+    "vitest.config.ts",
+    "playwright.config.ts"
+  ]
+}
