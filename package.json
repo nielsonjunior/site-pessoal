@@ -7,6 +7,7 @@
     "dev": "vite",
     "gen:sitemap": "node scripts/gen-sitemap.mjs",
     "gen:og": "node scripts/gen-og-image.mjs",
+    "gen:map": "node scripts/gen-map-image.mjs",
     "prebuild": "node scripts/gen-sitemap.mjs",
     "build": "tsc -b && vite build",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist-server --emptyOutDir",
