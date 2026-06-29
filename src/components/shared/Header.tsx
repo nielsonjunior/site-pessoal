@@ -145,25 +145,28 @@ export function Header() {
                   <AnimatePresence>
                     {link.dropdown && activeDropdown === link.name && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50"
+                        exit={{ opacity: 0, y: 8 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        /* pt-2 cria uma "ponte" sobre o vão, sem fechar o menu ao mover o mouse */
+                        className="absolute top-full left-0 pt-2 w-56 z-[60]"
                       >
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            className={`block px-4 py-3 text-sm transition-colors ${
-                              isActive(item.href)
-                                ? "bg-[#1B3B6C]/10 text-[#1B3B6C]"
-                                : "text-gray-700 hover:bg-gray-50 hover:text-[#1B3B6C]"
-                            }`}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
+                        <div className="bg-white rounded-xl shadow-2xl ring-1 ring-black/5 border border-gray-100 overflow-hidden">
+                          {link.dropdown.map((item) => (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              className={`block px-4 py-3 text-sm transition-colors ${
+                                isActive(item.href)
+                                  ? "bg-[#1B3B6C]/10 text-[#1B3B6C]"
+                                  : "text-gray-700 hover:bg-gray-50 hover:text-[#1B3B6C]"
+                              }`}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
                       </motion.div>
                     )}
                   </AnimatePresence>

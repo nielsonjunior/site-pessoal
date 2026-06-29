@@ -30,6 +30,25 @@ test.describe("navegacao desktop", () => {
     await expect(page).toHaveURL(/\/orcamento$/);
   });
 
+  test("dropdown de Serviços abre e permite navegar", async ({ page }) => {
+    await page.goto("/");
+    await page
+      .getByRole("link", { name: "Serviços", exact: true })
+      .first()
+      .hover();
+    await expect(
+      page
+        .locator("header")
+        .getByRole("link", { name: "Todos os Serviços", exact: true }),
+    ).toBeVisible();
+    // clica num item do dropdown (escopo no header para não pegar o do rodapé)
+    await page
+      .locator("header")
+      .getByRole("link", { name: "Regularização", exact: true })
+      .click();
+    await expect(page).toHaveURL(/\/servicos\/regularizacao-imoveis$/);
+  });
+
   test("header tem fundo opaco no topo (legibilidade em pagina escura)", async ({
     page,
   }) => {
