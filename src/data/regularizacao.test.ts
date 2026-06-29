@@ -6,11 +6,11 @@ import {
 } from "./regularizacao";
 
 describe("data/regularizacao", () => {
-  it("tem os 6 tipos de regularização", () => {
-    expect(regularizationTypes).toHaveLength(6);
+  it("tem os 7 tipos de regularização/compliance", () => {
+    expect(regularizationTypes).toHaveLength(7);
   });
 
-  it("inclui os tipos esperados", () => {
+  it("inclui os tipos esperados (incluindo AVCB)", () => {
     const slugs = getAllRegularizationSlugs();
     expect(slugs).toEqual(
       expect.arrayContaining([
@@ -20,6 +20,7 @@ describe("data/regularizacao", () => {
         "unificacao-de-lote",
         "retificacao-administrativa",
         "instituicao-de-condominio",
+        "avcb",
       ]),
     );
   });
@@ -34,6 +35,7 @@ describe("data/regularizacao", () => {
       expect(t.whatIsIt.length, `whatIsIt de ${t.slug}`).toBeGreaterThan(20);
       expect(t.ifNotResolved.length, `ifNotResolved de ${t.slug}`).toBeGreaterThan(20);
       expect(t.benefit, `benefit de ${t.slug}`).toBeTruthy();
+      expect(t.leigoSituacao, `leigoSituacao de ${t.slug}`).toBeTruthy();
       expect(t.icon, `icon de ${t.slug}`).toBeTruthy();
       expect(t.symptoms.length, `symptoms de ${t.slug}`).toBeGreaterThanOrEqual(2);
       expect(t.howWeSolve.length, `howWeSolve de ${t.slug}`).toBeGreaterThanOrEqual(3);

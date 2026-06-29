@@ -14,6 +14,7 @@ import {
   Layers,
   Ruler,
   Building2,
+  Flame,
 } from "lucide-react";
 import { SEO, JsonLd } from "@/components/shared";
 import { RegularizacaoDiagnostico } from "@/components/sections/RegularizacaoDiagnostico";
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ElementType> = {
   Layers,
   Ruler,
   Building2,
+  Flame,
 };
 
 const wa = (msg: string) =>

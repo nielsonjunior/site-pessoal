@@ -13,6 +13,7 @@ import {
   Layers,
   Ruler,
   Building2,
+  Flame,
 } from "lucide-react";
 import { SEO, JsonLd } from "@/components/shared";
 import { SITE } from "@/config/site";
@@ -30,6 +31,7 @@ const iconMap: Record<string, React.ElementType> = {
   Layers,
   Ruler,
   Building2,
+  Flame,
 };
 
 const PILLAR = "/servicos/regularizacao-imoveis";

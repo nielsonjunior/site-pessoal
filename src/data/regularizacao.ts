@@ -17,6 +17,8 @@ export interface RegularizationType {
   title: string;
   /** Tradução em uma linha, na língua do leigo. */
   leigoTitle: string;
+  /** Frase na 1ª pessoa, como o cliente leigo descreve a própria situação. */
+  leigoSituacao: string;
   /** Pergunta-gancho que fala a dor do cliente (título da página-filha). */
   painHook: string;
   /** "Você se identifica?" — sintomas que o cliente reconhece. */
@@ -40,6 +42,7 @@ export const regularizationTypes: RegularizationType[] = [
     slug: "desdobro",
     title: "Desdobro de Lote",
     leigoTitle: "Repartir um terreno em dois ou mais, cada um com documento próprio",
+    leigoSituacao: "Quero dividir meu terreno em 2 (ou mais)",
     painHook: "Precisa dividir seu terreno (entre filhos ou para vender um pedaço) e não sabe como?",
     symptoms: [
       "Quero vender só uma parte do terreno, mas é tudo um documento só",
@@ -66,6 +69,7 @@ export const regularizationTypes: RegularizationType[] = [
     slug: "remembramento",
     title: "Remembramento de Lotes",
     leigoTitle: "Juntar terrenos vizinhos para formar um único lote maior",
+    leigoSituacao: "Comprei os terrenos do lado e quero juntar num só",
     painHook: "Comprou os terrenos ao lado e quer fazer uma obra maior, mas são documentos separados?",
     symptoms: [
       "Tenho lotes vizinhos e quero construir algo grande nos dois",
@@ -92,6 +96,7 @@ export const regularizationTypes: RegularizationType[] = [
     slug: "usucapiao",
     title: "Usucapião (apoio técnico)",
     leigoTitle: "A casa é sua na prática, mas não está no seu nome — colocar no seu nome",
+    leigoSituacao: "A casa é minha, mas não está no meu nome",
     painHook: "Mora ou usa um imóvel há muitos anos, mas ele nunca foi para o seu nome?",
     symptoms: [
       "Moro aqui há mais de 5/10 anos e não tenho escritura no meu nome",
@@ -118,6 +123,7 @@ export const regularizationTypes: RegularizationType[] = [
     slug: "unificacao-de-lote",
     title: "Unificação de Lote (matrículas)",
     leigoTitle: "Transformar várias matrículas (documentos) em uma só",
+    leigoSituacao: "Tenho mais de um documento do mesmo imóvel",
     painHook: "Seu imóvel tem mais de um documento/matrícula e isso complica tudo?",
     symptoms: [
       "Meu terreno tem duas ou mais matrículas no cartório",
@@ -144,6 +150,7 @@ export const regularizationTypes: RegularizationType[] = [
     slug: "retificacao-administrativa",
     title: "Retificação Administrativa de Área",
     leigoTitle: "Corrigir a metragem/limites quando o documento não bate com o real",
+    leigoSituacao: "A medida da escritura não bate com o terreno",
     painHook: "A metragem da sua escritura é diferente do tamanho real do terreno?",
     symptoms: [
       "O tamanho no documento não confere com o do terreno",
@@ -170,6 +177,7 @@ export const regularizationTypes: RegularizationType[] = [
     slug: "instituicao-de-condominio",
     title: "Instituição de Condomínio",
     leigoTitle: "Dar documento próprio a cada casa/apartamento de um mesmo terreno",
+    leigoSituacao: "Tenho vários imóveis num terreno e quero vender separado",
     painHook: "Tem várias casas ou apartamentos num só terreno e não consegue vender separado?",
     symptoms: [
       "Construí várias unidades no mesmo lote e quero vender cada uma",
@@ -190,6 +198,33 @@ export const regularizationTypes: RegularizationType[] = [
       "Cada unidade vira um imóvel vendável e financiável — destravando o valor do seu empreendimento.",
     icon: "Building2",
     keywords: ["instituição de condomínio", "documento individual de apartamento", "condomínio Cáceres"],
+  },
+  {
+    id: "7",
+    slug: "avcb",
+    title: "Regularização no Corpo de Bombeiros (AVCB)",
+    leigoTitle: "O alvará do Corpo de Bombeiros que seu comércio precisa para funcionar legalizado",
+    leigoSituacao: "Meu comércio precisa do alvará do Bombeiro",
+    painHook: "Seu comércio precisa do alvará do Bombeiro e você não sabe por onde começar?",
+    symptoms: [
+      "A fiscalização ou a prefeitura está exigindo o AVCB",
+      "Vou abrir ou reformar um comércio e preciso liberar no Bombeiro",
+      "Tenho medo de multa ou de ter o comércio interditado",
+    ],
+    whatIsIt:
+      "O AVCB (Auto de Vistoria do Corpo de Bombeiros) é o documento que comprova que o imóvel tem as medidas de segurança contra incêndio exigidas por lei. É obrigatório para a maioria dos comércios, prédios e locais que recebem público.",
+    ifNotResolved:
+      "Sem o AVCB, seu comércio pode ser multado, ter o alvará de funcionamento negado e até ser interditado — sem falar no risco real de segurança para clientes e funcionários.",
+    howWeSolve: [
+      "Vistoria do imóvel e análise das exigências do Corpo de Bombeiros",
+      "Projeto de prevenção e combate a incêndio + ART",
+      "Protocolo e acompanhamento junto ao Corpo de Bombeiros",
+      "Emissão do AVCB (alvará liberado)",
+    ],
+    benefit:
+      "Comércio legalizado, sem risco de multa ou interdição e seguro para clientes e funcionários.",
+    icon: "Flame",
+    keywords: ["AVCB", "Corpo de Bombeiros", "alvará do bombeiro", "AVCB Cáceres", "projeto de incêndio"],
   },
 ];
 

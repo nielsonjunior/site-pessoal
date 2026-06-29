@@ -30,6 +30,7 @@ export const dynamicRoutes: RouteFixture[] = [
   { path: "/servicos/art-anotacao-responsabilidade-tecnica" },
   { path: "/servicos/regularizacao-imoveis/desdobro" },
   { path: "/servicos/regularizacao-imoveis/usucapiao" },
+  { path: "/servicos/regularizacao-imoveis/avcb" },
   { path: "/cidades/caceres" },
 ];
 

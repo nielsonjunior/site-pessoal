@@ -139,6 +139,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.npcastilho.eng.br/servicos/regularizacao-imoveis/avcb</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.npcastilho.eng.br/cidades/caceres</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
