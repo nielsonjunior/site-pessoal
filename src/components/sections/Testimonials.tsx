@@ -117,7 +117,7 @@ export function Testimonials() {
           </div>
         </div>
 
-        {/* Trust Badges */}
+        {/* Credenciais reais (sem números inventados) */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,10 +126,10 @@ export function Testimonials() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {[
-            { value: '4.9', label: 'Avaliação Média' },
-            { value: '500+', label: 'Clientes Atendidos' },
-            { value: '98%', label: 'Taxa de Recomendação' },
-            { value: '0', label: 'Reclamações' },
+            { value: 'CREA', label: 'Registro 5071806455' },
+            { value: '12', label: 'Cidades atendidas' },
+            { value: '24h', label: 'Resposta ao orçamento' },
+            { value: 'Grátis', label: 'Orçamento sem compromisso' },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-[#F4C430]">{stat.value}</p>

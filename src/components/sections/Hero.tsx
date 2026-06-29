@@ -66,9 +66,9 @@ export function Hero() {
               transition={{ delay: 0.5 }}
               className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed"
             >
-              Transformo suas ideias em realidade com precisão técnica e excelência. 
-              Especialista em regularização de imóveis, ART, reformas e laudos técnicos 
-              em Cáceres e região metropolitana.
+              Regularize e valorize seu imóvel em Cáceres-MT. Resolvo a papelada que
+              trava a venda, o financiamento e a herança — desdobro, usucapião, AVCB,
+              ART e laudos técnicos. Orçamento grátis pelo WhatsApp.
             </motion.p>
 
             {/* Features */}
@@ -133,15 +133,15 @@ export function Hero() {
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-[#1B3B6C]" />
                   <div>
-                    <p className="font-bold text-[#0F1A2E]">100%</p>
-                    <p className="text-xs text-gray-500">Comprometimento</p>
+                    <p className="font-bold text-[#0F1A2E]">+12</p>
+                    <p className="text-xs text-gray-500">Cidades atendidas</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5 text-[#1B3B6C]" />
                   <div>
                     <p className="font-bold text-[#0F1A2E]">24h</p>
-                    <p className="text-xs text-gray-500">Orçamento</p>
+                    <p className="text-xs text-gray-500">Resposta</p>
                   </div>
                 </div>
               </div>

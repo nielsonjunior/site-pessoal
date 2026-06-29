@@ -40,4 +40,13 @@ test.describe("Home — foco em regularização", () => {
     // faixa de valorização
     await expect(page.getByText(/valoriza at[eé]\s*30%/i).first()).toBeVisible();
   });
+
+  test("credibilidade honesta (sem números fictícios)", async ({ page }) => {
+    await page.goto("/");
+    const body = await page.locator("body").innerText();
+    expect(body).not.toContain("500+");
+    expect(body).not.toMatch(/Reclamações/i);
+    expect(body).toMatch(/Cidades atendidas/i);
+    expect(body).toContain("CREA 5071806455");
+  });
 });

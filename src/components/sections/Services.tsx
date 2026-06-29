@@ -25,15 +25,15 @@ export function Services() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block bg-[#F4C430]/20 text-[#1B3B6C] px-4 py-2 rounded-full text-sm font-medium mb-4">
-            Nossos Serviços
+            Também atuo em
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F1A2E] mb-6">
-            Soluções Completas em{' '}
+            Outros serviços de{' '}
             <span className="text-[#1B3B6C]">Engenharia Civil</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Oferecemos uma gama completa de serviços de engenharia civil, 
-            desde a regularização de imóveis até projetos complexos de construção.
+            Além da regularização, atendo obras e projetos: ART, reformas,
+            ampliações, laudos técnicos e consultoria.
           </p>
         </motion.div>
 
