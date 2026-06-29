@@ -116,8 +116,12 @@ export function About() {
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="/images/about-detail.jpg"
-                  alt="Engenheiro Civil trabalhando"
+                  alt="Engenheiro civil Nielson Pinheiro em projeto na região de Cáceres-MT"
                   className="w-full h-[500px] object-cover"
+                  width={800}
+                  height={500}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="absolute -bottom-6 -right-6 w-full h-full border-4 border-[#F4C430] rounded-2xl -z-10" />

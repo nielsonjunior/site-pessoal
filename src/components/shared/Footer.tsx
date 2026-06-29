@@ -39,6 +39,10 @@ export function Footer() {
                 src="/images/logo.png"
                 alt="NP Castilho Engenharia"
                 className="w-14 h-14 object-cover rounded-full"
+                width={56}
+                height={56}
+                loading="lazy"
+                decoding="async"
               />
               <div>
                 <h3 className="font-bold text-lg leading-tight">Nielson P. de Castilho Júnior</h3>

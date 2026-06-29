@@ -104,6 +104,9 @@ export function Header() {
                 src="/images/logo.png"
                 alt="NP Castilho Engenharia"
                 className="w-12 h-12 object-cover rounded-full"
+                width={48}
+                height={48}
+                decoding="async"
               />
               <div className="hidden sm:block">
                 <span className="block font-bold text-lg leading-tight text-[#1B3B6C]">

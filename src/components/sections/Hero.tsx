@@ -158,8 +158,12 @@ export function Hero() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="/images/hero-house.jpg"
-                alt="Projeto de Engenharia Civil - Casa Moderna"
+                alt="Projeto de engenharia civil em Cáceres-MT - casa moderna"
                 className="w-full h-[500px] object-cover"
+                width={800}
+                height={500}
+                fetchPriority="high"
+                decoding="async"
               />
               {/* Overlay Card */}
               <motion.div

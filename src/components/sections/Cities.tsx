@@ -115,9 +115,12 @@ export function Cities() {
             <div className="relative">
               <img
                 src="/images/map-caceres.jpg"
-                alt="Mapa de atendimento - Região de Cáceres MT"
+                alt="Área de atendimento - Cáceres-MT e região"
                 className="w-full h-64 object-cover rounded-xl"
-                onError={(e) => { (e.target as HTMLImageElement).src = '/images/about-detail.jpg'; }}
+                width={1000}
+                height={600}
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1B3B6C]/50 to-transparent rounded-xl" />
               <div className="absolute bottom-4 left-4 right-4">
