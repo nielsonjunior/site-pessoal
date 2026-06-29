@@ -5,3 +5,4 @@ export { Testimonials } from './Testimonials';
 export { CTA } from './CTA';
 export { Cities } from './Cities';
 export { SituacoesRegularizacao } from './SituacoesRegularizacao';
+export { VoceSabia } from './VoceSabia';

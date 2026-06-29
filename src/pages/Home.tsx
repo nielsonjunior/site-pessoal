@@ -1,5 +1,5 @@
 import { SEO } from '@/components/shared';
-import { Hero, Services, About, Testimonials, CTA, Cities, SituacoesRegularizacao } from '@/components/sections';
+import { Hero, Services, About, Testimonials, CTA, Cities, SituacoesRegularizacao, VoceSabia } from '@/components/sections';
 
 export function Home() {
   return (
@@ -19,6 +19,7 @@ export function Home() {
       />
       <Hero />
       <SituacoesRegularizacao />
+      <VoceSabia />
       <Services />
       <About />
       <Testimonials />
