@@ -74,7 +74,7 @@ export function RegularizacaoDetalhe() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-28 pb-4 bg-gray-50">
+      <div className="pt-32 pb-4 bg-gray-50">
         <div className="container-custom">
           <nav className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
             <Link to="/" className="hover:text-[#1B3B6C] transition-colors">

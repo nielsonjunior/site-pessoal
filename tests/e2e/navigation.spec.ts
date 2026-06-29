@@ -62,6 +62,19 @@ test.describe("navegacao desktop", () => {
     expect(bg).not.toBe("transparent");
   });
 
+  test("breadcrumb não fica escondido sob o header fixo", async ({ page }) => {
+    await page.goto("/servicos/regularizacao-imoveis/desdobro");
+    const headerBottom = await page
+      .locator("header")
+      .evaluate((el) => el.getBoundingClientRect().bottom);
+    const bcTop = await page
+      .locator("nav")
+      .filter({ hasText: "Desdobro de Lote" })
+      .first()
+      .evaluate((el) => el.getBoundingClientRect().top);
+    expect(bcTop).toBeGreaterThanOrEqual(headerBottom);
+  });
+
   test("logo retorna para a home", async ({ page }) => {
     await page.goto("/sobre");
     // O alt do logo tambem aparece no rodape; escopo no header.
