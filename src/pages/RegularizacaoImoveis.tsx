@@ -178,16 +178,17 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Faixa de valorização */}
-      <section className="py-12 bg-[#F4C430]">
+      <section className="py-12 bg-[#0F1A2E]">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
             <div className="flex items-center gap-4">
-              <TrendingUp className="w-12 h-12 text-[#0F1A2E] flex-shrink-0" />
+              <TrendingUp className="w-12 h-12 text-[#F4C430] flex-shrink-0" />
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-[#0F1A2E]">
-                  Imóvel regularizado valoriza até {VALORIZATION_MAX}
+                <p className="text-2xl md:text-3xl font-bold text-white">
+                  Imóvel regularizado{" "}
+                  <span className="text-[#F4C430]">valoriza até {VALORIZATION_MAX}</span>
                 </p>
-                <p className="text-[#0F1A2E]/80">
+                <p className="text-white/70">
                   Documentação em dia transforma seu imóvel em patrimônio que rende.
                 </p>
               </div>
@@ -196,7 +197,7 @@ export function RegularizacaoImoveis() {
               href={wa("Olá! Quero saber quanto meu imóvel pode valorizar com a regularização.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#0F1A2E] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] transition-all whitespace-nowrap"
+              className="btn-accent whitespace-nowrap"
             >
               Falar com o engenheiro
             </a>

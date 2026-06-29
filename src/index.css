@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -52,21 +52,22 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-[#1B3B6C] text-white px-6 py-3 rounded-lg font-medium 
-           hover:bg-[#2C4F8C] transition-all duration-300 
-           hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-[#1B3B6C] text-white px-6 py-3 rounded-xl font-medium
+           hover:bg-[#2C4F8C] transition-all duration-300
+           hover:shadow-brand hover:-translate-y-0.5;
   }
-  
+
   .btn-accent {
-    @apply bg-[#F4C430] text-[#0F1A2E] px-6 py-3 rounded-lg font-semibold
+    @apply bg-[#F4C430] text-[#0F1A2E] px-6 py-3 rounded-xl font-semibold
            hover:bg-[#E5B520] transition-all duration-300
-           hover:shadow-lg hover:-translate-y-0.5;
+           hover:shadow-brand hover:-translate-y-0.5;
   }
   
   .section-padding {
@@ -82,7 +83,7 @@
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-brand-lg hover:-translate-y-1;
   }
   
   .gradient-blue {

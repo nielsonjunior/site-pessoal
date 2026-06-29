@@ -260,7 +260,7 @@ export function CityDetail() {
       )}
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#F4C430] to-[#E5B520]">
+      <section className="section-padding bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -268,17 +268,17 @@ export function CityDetail() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
-              Engenheiro Civil em {city.name}
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Engenheiro Civil em <span className="text-[#F4C430]">{city.name}</span>
             </h2>
-            <p className="text-[#0F1A2E]/80 text-lg mb-8 max-w-2xl mx-auto">
-              Não perca tempo. Solicite um orçamento agora mesmo e transforme 
+            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+              Não perca tempo. Solicite um orçamento agora mesmo e transforme
               seu projeto em realidade com a ajuda de um profissional qualificado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/orcamento"
-                className="bg-[#0F1A2E] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1B3B6C] transition-all inline-flex items-center justify-center gap-2"
+                className="btn-accent px-8 py-4 inline-flex items-center justify-center gap-2"
               >
                 Solicitar Orçamento
                 <ArrowRight className="w-5 h-5" />
