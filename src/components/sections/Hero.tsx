@@ -159,7 +159,7 @@ export function Hero() {
               <img
                 src="/images/hero-house.jpg"
                 alt="Projeto de engenharia civil em Cáceres-MT - casa moderna"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
                 width={800}
                 height={500}
                 fetchPriority="high"
@@ -189,7 +189,7 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.2 }}
-              className="absolute -top-4 -right-4 bg-[#1B3B6C] text-white rounded-xl p-4 shadow-xl"
+              className="hidden lg:block absolute -top-4 -right-4 bg-[#1B3B6C] text-white rounded-xl p-4 shadow-xl"
             >
               <p className="text-2xl font-bold">24h</p>
               <p className="text-xs opacity-80">Emergências</p>
@@ -203,7 +203,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

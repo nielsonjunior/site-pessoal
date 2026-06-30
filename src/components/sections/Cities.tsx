@@ -13,7 +13,7 @@ export function Cities() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
         >
           <span className="inline-block bg-[#F4C430]/20 text-[#1B3B6C] px-4 py-2 rounded-full text-sm font-medium mb-4">
             Onde Atuamos
@@ -37,6 +37,9 @@ export function Cities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
+              /* No celular mostramos só as 3 primeiras; o resto aparece a partir
+                 do breakpoint sm. O botão "Ver Todas" leva à lista completa. */
+              className={index >= 3 ? "hidden sm:block" : ""}
             >
               <Link
                 to={`/cidades/${city.slug}`}
