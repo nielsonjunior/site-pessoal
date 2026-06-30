@@ -95,6 +95,42 @@ export const faqs: FAQ[] = [
     question: "Como solicito um orçamento?",
     answer: "Você pode solicitar um orçamento através do formulário em nosso site, pelo WhatsApp, telefone ou e-mail. Para um orçamento mais preciso, recomendamos agendar uma visita técnica ao imóvel. Durante a visita, avaliamos as necessidades específicas e apresentamos proposta detalhada em até 48 horas.",
     category: "Orçamento"
+  },
+  {
+    id: "16",
+    question: "Onde encontrar um engenheiro civil em Cáceres-MT?",
+    answer: "Nielson P. de Castilho Júnior é Engenheiro Civil registrado no CREA (5071806455), com atendimento em Cáceres-MT e região. Você fala diretamente com o engenheiro pelo WhatsApp (65) 99694-6861 e recebe orçamento grátis. Atendo regularização de imóveis, ART, reformas, ampliações, laudos técnicos e AVCB.",
+    category: "Atendimento"
+  },
+  {
+    id: "17",
+    question: "Vocês fazem engenharia civil em Cáceres e região?",
+    answer: "Sim. Ofereço serviços completos de engenharia civil em Cáceres-MT e em mais de 12 cidades da região, com responsabilidade técnica (ART) e registro no CREA. Da regularização de imóveis a projetos de reforma e ampliação, é só me chamar no WhatsApp para um orçamento sem compromisso.",
+    category: "Atendimento"
+  },
+  {
+    id: "18",
+    question: "O que é o AVCB e como conseguir o alvará do Corpo de Bombeiros?",
+    answer: "O AVCB (Auto de Vistoria do Corpo de Bombeiros) é o documento que comprova que seu imóvel tem as medidas de segurança contra incêndio exigidas por lei — obrigatório para a maioria dos comércios e locais com público. Eu faço a vistoria, o projeto de prevenção e combate a incêndio com ART, o protocolo no Corpo de Bombeiros e acompanho até a emissão do alvará.",
+    category: "AVCB"
+  },
+  {
+    id: "19",
+    question: "A casa é minha na prática, mas não está no meu nome. Como resolver?",
+    answer: "Quem mora ou usa um imóvel há vários anos pode ter direito de colocá-lo no seu nome pela usucapião. Eu entro com a parte técnica que viabiliza o processo (levantamento, planta, memorial e ART), hoje muitas vezes feito direto no cartório. Assim seu imóvel vira patrimônio de verdade, podendo ser vendido e financiado.",
+    category: "Regularização"
+  },
+  {
+    id: "20",
+    question: "Como faço para dividir meu terreno em dois (desdobro)?",
+    answer: "O desdobro é o processo que divide oficialmente um terreno em dois ou mais lotes, cada um com documento próprio. Sem ele, não dá para vender ou transferir só uma parte. Eu cuido da medição, do projeto, da ART e do protocolo na prefeitura até cada lote ter sua matrícula. Fale comigo para avaliar o seu caso.",
+    category: "Regularização"
+  },
+  {
+    id: "21",
+    question: "Imóvel regularizado valoriza mesmo? Quanto?",
+    answer: "Sim. Um imóvel com toda a documentação em dia pode valer até cerca de 30% mais e ainda pode ser financiado pelo banco e vendido com segurança jurídica. Regularizar (desdobro, usucapião, retificação, instituição de condomínio) transforma seu imóvel em um patrimônio que rende.",
+    category: "Regularização"
   }
 ];
 
