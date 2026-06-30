@@ -58,14 +58,14 @@ export function Header() {
     >
       {/* Top Bar */}
       <div
-        className={`bg-[#1B3B6C] text-white text-sm py-2 transition-all duration-300 ${
+        className={`bg-[#1B3B6C] text-white text-xs sm:text-sm py-2 transition-all duration-300 ${
           isScrolled ? "hidden" : "block"
         }`}
       >
-        <div className="container-custom flex justify-between items-center">
-          <div className="flex items-center gap-4">
+        <div className="container-custom flex justify-between items-center gap-2">
+          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             <span className="flex items-center gap-1">
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 flex-shrink-0" />
               <a
                 href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
                 className="hover:text-[#F4C430] transition-colors"
@@ -84,7 +84,7 @@ export function Header() {
               href="https://wa.me/5565996946861"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-[#128C7E] transition-colors"
+              className="hidden sm:inline-block bg-[#25D366] text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-[#128C7E] transition-colors"
             >
               WhatsApp
             </a>

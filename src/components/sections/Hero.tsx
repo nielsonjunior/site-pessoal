@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#F8F9FA] via-white to-[#E8EEF5]">
+    <section className="relative lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#F8F9FA] via-white to-[#E8EEF5]">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -28,8 +28,8 @@ export function Hero() {
         className="absolute bottom-20 left-10 w-96 h-96 bg-[#F4C430]/10 rounded-full blur-3xl"
       />
 
-      <div className="container-custom relative z-10 pt-32 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container-custom relative z-10 pt-32 pb-12 lg:pb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -52,7 +52,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F1A2E] leading-tight mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F1A2E] leading-tight mb-6"
             >
               Engenheiro Civil em{' '}
               <span className="text-[#1B3B6C]">Cáceres</span>{' '}
@@ -64,7 +64,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed"
+              className="text-base md:text-xl text-gray-600 mb-8 leading-relaxed"
             >
               Regularize e valorize seu imóvel em Cáceres-MT. Resolvo a papelada que
               trava a venda, o financiamento e a herança — desdobro, usucapião, AVCB,
