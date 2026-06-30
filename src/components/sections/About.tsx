@@ -1,41 +1,12 @@
 import { Link } from 'react-router-dom';
 import { CheckCircle, Award, Users, Building2, ArrowRight } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
-interface CounterProps {
-  end: number;
-  suffix?: string;
-  duration?: number;
-}
-
-function Counter({ end, suffix = '', duration = 2 }: CounterProps) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (isInView) {
-      let startTime: number;
-      const animate = (currentTime: number) => {
-        if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-        setCount(Math.floor(progress * end));
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      requestAnimationFrame(animate);
-    }
-  }, [isInView, end, duration]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-}
-
+// Credenciais reais (sem números inventados — o dono está começando).
 const stats = [
-  { number: 100, suffix: '%', label: 'Comprometimento', icon: Award },
-  { number: 24, suffix: 'h', label: 'Orçamento Rápido', icon: Building2 },
-  { number: 100, suffix: '%', label: 'Satisfação', icon: Users },
+  { value: 'CREA', label: 'Registrado', icon: Award },
+  { value: '+12', label: 'Cidades', icon: Building2 },
+  { value: '24h', label: 'Resposta', icon: Users },
 ];
 
 const differentials = [
@@ -92,7 +63,7 @@ export function About() {
                         <stat.icon className="w-5 h-5 text-[#1B3B6C]" />
                       </div>
                       <p className="text-2xl font-bold text-[#1B3B6C]">
-                        <Counter end={stat.number} suffix={stat.suffix} />
+                        {stat.value}
                       </p>
                       <p className="text-xs text-gray-500">{stat.label}</p>
                     </div>

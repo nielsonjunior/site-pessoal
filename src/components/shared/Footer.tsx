@@ -13,7 +13,7 @@ const footerLinks = {
   empresa: [
     { name: "Sobre Nós", href: "/sobre" },
     { name: "Cidades Atendidas", href: "/cidades" },
-    { name: "Depoimentos", href: "/#depoimentos" },
+    { name: "Por que confiar", href: "/#depoimentos" },
     { name: "FAQ", href: "/faq" },
     { name: "Orçamento", href: "/orcamento" },
   ],
