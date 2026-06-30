@@ -99,20 +99,20 @@ export function Header() {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" className="flex items-center gap-2 min-w-0">
               <img
                 src="/images/logo.png"
                 alt="NP Castilho Engenharia"
-                className="w-12 h-12 object-cover rounded-full"
+                className="w-12 h-12 object-cover rounded-full flex-shrink-0"
                 width={48}
                 height={48}
                 decoding="async"
               />
-              <div className="hidden sm:block">
-                <span className="block font-bold text-lg leading-tight text-[#1B3B6C]">
+              <div className="min-w-0">
+                <span className="block font-bold text-sm sm:text-lg leading-tight text-[#1B3B6C]">
                   Nielson P. de Castilho Júnior
                 </span>
-                <span className="block text-xs text-gray-600">
+                <span className="block text-[11px] sm:text-xs text-gray-600 leading-tight">
                   Engenheiro Civil | CREA 5071806455
                 </span>
               </div>
