@@ -45,7 +45,16 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
+  /* Impede rolagem/transbordo horizontal em todo o site (ex.: seções com
+     animação whileInView que entram deslocadas no eixo X). `clip` não cria
+     contexto de rolagem, então não quebra `position: sticky`. */
+  html,
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
