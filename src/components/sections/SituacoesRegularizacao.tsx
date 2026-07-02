@@ -3,40 +3,49 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   Phone,
-  Scissors,
-  Combine,
-  KeyRound,
-  Layers,
+  FileCheck,
+  HardHat,
+  AlertTriangle,
   Ruler,
-  Building2,
   Flame,
+  Droplets,
+  KeyRound,
+  Scissors,
+  Search,
 } from "lucide-react";
 import { SITE } from "@/config/site";
-import { regularizationTypes } from "@/data";
+import { casos } from "@/data";
 import { fadeUp, stagger, inView } from "@/lib/motion";
+import { Aurora } from "@/components/shared/Aurora";
 
 const iconMap: Record<string, React.ElementType> = {
-  Scissors,
-  Combine,
-  KeyRound,
-  Layers,
+  FileCheck,
+  HardHat,
+  AlertTriangle,
   Ruler,
-  Building2,
   Flame,
+  Droplets,
+  KeyRound,
+  Scissors,
+  Search,
 };
 
-const PILLAR = "/servicos/regularizacao-imoveis";
 const wa = (msg: string) =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
 
 /**
- * Seção da home: "Qual é o seu caso?" — apresenta as situações de regularização/
- * compliance na voz do cliente (leigo), com link para a página detalhada + WhatsApp.
+ * Seção da home "Qual é o seu caso?" (tema premium escuro) — situações na voz
+ * do cliente (leigo), com link para a página detalhada + WhatsApp.
  */
 export function SituacoesRegularizacao() {
   return (
-    <section className="section-padding bg-[#F8F9FA]" id="situacoes">
-      <div className="container-custom">
+    <section
+      id="situacoes"
+      className="relative overflow-hidden bg-[#060D1E] text-white section-padding"
+    >
+      <Aurora className="opacity-40" />
+
+      <div className="relative z-10 container-custom">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -44,15 +53,15 @@ export function SituacoesRegularizacao() {
           variants={fadeUp}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <span className="inline-block bg-[#1B3B6C]/10 text-[#1B3B6C] px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227]">
             Resolvo a dor do seu imóvel
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-4">
+          <h2 className="mt-4 font-display text-3xl md:text-4xl font-semibold text-white">
             Qual é o seu caso?
           </h2>
-          <p className="text-gray-600 text-lg">
-            Você não precisa saber o nome técnico. Me diga a sua situação que eu
-            cuido de tudo — da papelada à solução.
+          <p className="mt-3 text-[#b9c8e0] text-lg">
+            Você não precisa saber o nome técnico. Se identificar com uma frase,
+            o problema é seu — e tem solução.
           </p>
         </motion.div>
 
@@ -63,38 +72,38 @@ export function SituacoesRegularizacao() {
           variants={stagger}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {regularizationTypes.map((t) => {
-            const Icon = iconMap[t.icon] || Scissors;
+          {casos.map((c) => {
+            const Icon = iconMap[c.icon] || FileCheck;
             return (
               <motion.article
-                key={t.id}
+                key={c.id}
                 variants={fadeUp}
-                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm card-hover flex flex-col text-center"
+                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-colors hover:border-[#B9F227]/40 hover:bg-[#B9F227]/[0.05]"
               >
-                <div className="w-12 h-12 bg-[#1B3B6C]/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <Icon className="w-6 h-6 text-[#1B3B6C]" />
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#B9F227]/15 text-[#B9F227]">
+                  <Icon className="h-6 w-6" />
                 </div>
-                <p className="text-lg font-semibold text-[#0F1A2E] leading-snug mb-1">
-                  “{t.leigoSituacao}”
+                <p className="font-display text-lg font-semibold leading-snug text-white">
+                  {c.frase}
                 </p>
-                <p className="text-xs uppercase tracking-wide text-gray-400 mb-5">
-                  {t.title}
+                <p className="mb-5 mt-1 text-xs uppercase tracking-wide text-[#8ea3c2]">
+                  {c.tag}
                 </p>
                 <div className="mt-auto flex flex-col gap-2">
                   <Link
-                    to={`${PILLAR}/${t.slug}`}
-                    className="inline-flex items-center justify-center gap-1 w-full border-2 border-[#1B3B6C] text-[#1B3B6C] px-4 py-2.5 rounded-xl font-medium hover:bg-[#1B3B6C] hover:text-white transition-colors"
+                    to={c.href}
+                    className="inline-flex w-full items-center justify-center gap-1 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 font-medium text-white transition-colors hover:bg-white/10"
                   >
                     Saiba mais
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
                   <a
-                    href={wa(`Olá! ${t.leigoSituacao}. Pode me ajudar?`)}
+                    href={wa(c.waMsg)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full bg-[#25D366] text-white px-4 py-2.5 rounded-xl font-medium hover:bg-[#128C7E] transition-colors"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
                   >
-                    <Phone className="w-4 h-4" />
+                    <Phone className="h-4 w-4" />
                     Resolver no WhatsApp
                   </a>
                 </div>
