@@ -48,9 +48,8 @@ describe("Budget — envio do orçamento por e-mail", () => {
     await user.click(screen.getAllByRole("checkbox")[0]); // só seleciona serviço
     await user.click(screen.getByRole("button", { name: /Enviar por e-mail/i }));
 
-    expect(
-      screen.getByText(/Preencha nome, e-mail, telefone/i),
-    ).toBeInTheDocument();
+    // Validação (zod) barra o envio e exibe o 1º erro (nome vazio).
+    expect(screen.getByText(/Informe seu nome/i)).toBeInTheDocument();
     expect(fetch).not.toHaveBeenCalled();
   });
 });

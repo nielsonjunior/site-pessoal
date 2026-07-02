@@ -27,6 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { leadWhatsappSchema, leadEmailSchema, validate } from "@/lib/validation";
 
 const services = [
   {
@@ -143,7 +144,21 @@ export function Budget() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (selectedServices.length === 0) return;
+    if (selectedServices.length === 0) {
+      setErrorMsg("Selecione ao menos um serviço.");
+      setStatus("error");
+      return;
+    }
+    const err = validate(leadWhatsappSchema, {
+      name: formData.name,
+      phone: formData.phone,
+    });
+    if (err) {
+      setErrorMsg(err);
+      setStatus("error");
+      return;
+    }
+    setErrorMsg("");
     const message = buildMessage();
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     setLastWhatsappUrl(url);
@@ -154,15 +169,18 @@ export function Budget() {
   // Envia o orçamento por e-mail de verdade (sem mailto), via FormSubmit.
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      selectedServices.length === 0
-    ) {
-      setErrorMsg(
-        "Preencha nome, e-mail, telefone e selecione ao menos um serviço.",
-      );
+    if (selectedServices.length === 0) {
+      setErrorMsg("Selecione ao menos um serviço.");
+      setStatus("error");
+      return;
+    }
+    const err = validate(leadEmailSchema, {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+    });
+    if (err) {
+      setErrorMsg(err);
       setStatus("error");
       return;
     }

@@ -5,6 +5,7 @@ import { SEO } from '@/components/shared';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { leadWhatsappSchema, validate } from '@/lib/validation';
 
 const WHATSAPP_NUMBER = '5565996946861';
 const EMAIL = 'nielsin.junior@gmail.com';
@@ -63,6 +64,8 @@ const compromissos = [
 export function LandingPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitType, setSubmitType] = useState<'whatsapp' | 'email' | null>(null);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [sending, setSending] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -81,19 +84,62 @@ export function LandingPage() {
 
   const handleWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
+    const err = validate(leadWhatsappSchema, {
+      name: formData.name,
+      phone: formData.phone,
+    });
+    if (err) {
+      setErrorMsg(err);
+      return;
+    }
+    setErrorMsg('');
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(buildMessage())}`;
     window.open(url, '_blank');
     setSubmitType('whatsapp');
     setIsSubmitted(true);
   };
 
-  const handleEmail = (e: React.FormEvent) => {
+  // Envia por e-mail de verdade (via FormSubmit), sem abrir cliente de e-mail (mailto).
+  const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent('Solicitação de Orçamento - Site');
-    const body = encodeURIComponent(buildMessage());
-    window.open(`mailto:${EMAIL}?subject=${subject}&body=${body}`, '_blank');
-    setSubmitType('email');
-    setIsSubmitted(true);
+    const err = validate(leadWhatsappSchema, {
+      name: formData.name,
+      phone: formData.phone,
+    });
+    if (err) {
+      setErrorMsg(err);
+      return;
+    }
+    setSending(true);
+    setErrorMsg('');
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: 'Solicitação de Orçamento - Landing',
+          _template: 'table',
+          Nome: formData.name,
+          Telefone: formData.phone,
+          Cidade: formData.city || '-',
+          Serviço: formData.service || '-',
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && (data.success === 'true' || data.success === true)) {
+        setSubmitType('email');
+        setIsSubmitted(true);
+      } else {
+        setErrorMsg('Não foi possível enviar agora. Tente pelo WhatsApp.');
+      }
+    } catch {
+      setErrorMsg('Falha de conexão. Tente pelo WhatsApp.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -186,12 +232,12 @@ export function LandingPage() {
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-[#0F1A2E] mb-2">
-                    {submitType === 'whatsapp' ? 'Abrindo WhatsApp!' : 'Abrindo seu E-mail!'}
+                    {submitType === 'whatsapp' ? 'Abrindo WhatsApp!' : 'Orçamento enviado!'}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
                     {submitType === 'whatsapp'
                       ? 'O WhatsApp foi aberto com os seus dados. Retornarei em até 24 horas.'
-                      : 'Seu cliente de e-mail foi aberto. Retornarei em até 24 horas.'}
+                      : 'Recebi sua solicitação por e-mail e retornarei em até 24 horas.'}
                   </p>
                   <button
                     onClick={() => { setIsSubmitted(false); setSubmitType(null); }}
@@ -266,22 +312,30 @@ export function LandingPage() {
                       </select>
                     </div>
 
+                    {errorMsg && (
+                      <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                        {errorMsg}
+                      </div>
+                    )}
+
                     <div className="grid grid-cols-2 gap-3 pt-2">
                       <Button
                         type="submit"
                         onClick={handleWhatsApp}
+                        disabled={sending}
                         className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2"
                       >
                         <Send className="w-4 h-4" />
                         WhatsApp
                       </Button>
                       <Button
-                        type="submit"
+                        type="button"
                         onClick={handleEmail}
+                        disabled={sending}
                         className="w-full btn-primary flex items-center justify-center gap-2"
                       >
                         <Mail className="w-4 h-4" />
-                        E-mail
+                        {sending ? 'Enviando...' : 'E-mail'}
                       </Button>
                     </div>
 
