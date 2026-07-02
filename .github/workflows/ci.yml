@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Cancela execuções antigas do mesmo branch/PR.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Lint, build e testes
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências (lockfile)
+        run: npm ci
+
+      - name: Auditoria de dependências (bloqueia em vulnerabilidade alta+)
+        run: npm audit --audit-level=high --omit=dev
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build de produção (SSG)
+        run: npm run build:static
+
+      - name: Testes unitários (Vitest)
+        run: npm run test
+
+      - name: Instalar navegador do Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Testes E2E (Playwright)
+        run: npm run test:e2e
