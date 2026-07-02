@@ -26,7 +26,7 @@ export function ServiceDetail() {
   const otherServices = services.filter(s => s.id !== service.id).slice(0, 3);
 
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title={service.metaTitle}
         description={service.metaDescription}
@@ -48,20 +48,20 @@ export function ServiceDetail() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-32 pb-4 bg-gray-50">
+      <div className="pt-32 pb-4 bg-[#0A1428] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-[#1B3B6C] transition-colors">Início</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#93a7c6]">
+            <Link to="/" className="hover:text-white transition-colors">Início</Link>
             <span>/</span>
-            <Link to="/servicos" className="hover:text-[#1B3B6C] transition-colors">Serviços</Link>
+            <Link to="/servicos" className="hover:text-white transition-colors">Serviços</Link>
             <span>/</span>
-            <span className="text-[#1B3B6C]">{service.title}</span>
+            <span className="text-[#B9F227]">{service.title}</span>
           </nav>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="py-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -78,10 +78,10 @@ export function ServiceDetail() {
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="w-20 h-20 bg-[#F4C430]/20 rounded-2xl flex items-center justify-center mb-6">
-                  <Icon className="w-10 h-10 text-[#F4C430]" />
+                <div className="w-20 h-20 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center mb-6">
+                  <Icon className="w-10 h-10 text-[#B9F227]" />
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
                   {service.title}
                 </h1>
                 <p className="text-white/70 text-lg mb-8">
@@ -108,8 +108,8 @@ export function ServiceDetail() {
               </div>
 
               <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-[#2C4F8C] to-[#1B3B6C] rounded-2xl flex items-center justify-center">
-                  <Icon className="w-32 h-32 text-white/20" />
+                <div className="aspect-video bg-white/[0.03] border border-white/10 rounded-2xl flex items-center justify-center">
+                  <Icon className="w-32 h-32 text-[#B9F227]/25" />
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ export function ServiceDetail() {
       </section>
 
       {/* Content Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main Content */}
@@ -129,16 +129,16 @@ export function ServiceDetail() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-3xl font-bold text-[#0F1A2E] mb-6">
+                <h2 className="font-display text-3xl font-bold text-white mb-6">
                   Sobre o Serviço
                 </h2>
-                <div className="prose prose-lg max-w-none text-gray-600 mb-12">
+                <div className="max-w-none text-[#b9c8e0] leading-relaxed space-y-4 mb-12">
                   {service.fullDescription.split('\n\n').map((paragraph, index) => (
-                    <p key={index} className="mb-4">{paragraph}</p>
+                    <p key={index}>{paragraph}</p>
                   ))}
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#0F1A2E] mb-6">
+                <h3 className="font-display text-2xl font-bold text-white mb-6">
                   Benefícios
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -149,10 +149,10 @@ export function ServiceDetail() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl"
+                      className="flex items-start gap-3 p-4 rounded-xl border border-white/10 bg-white/[0.03]"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{benefit}</span>
+                      <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#cbd7e8]">{benefit}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -169,11 +169,11 @@ export function ServiceDetail() {
                 className="sticky top-32"
               >
                 {/* CTA Card */}
-                <div className="bg-[#1B3B6C] rounded-2xl p-6 mb-6">
+                <div className="rounded-2xl border border-[#B9F227]/25 bg-[#0A1428] p-6 mb-6 shadow-[0_0_50px_-20px_rgba(185,242,39,.35)]">
                   <h3 className="text-xl font-bold text-white mb-4">
                     Solicite um Orçamento
                   </h3>
-                  <p className="text-white/70 text-sm mb-6">
+                  <p className="text-[#b9c8e0] text-sm mb-6">
                     Entre em contato agora e receba um orçamento personalizado para seu projeto.
                   </p>
                   <Link
@@ -195,8 +195,8 @@ export function ServiceDetail() {
                 </div>
 
                 {/* Other Services */}
-                <div className="bg-white border border-gray-100 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-[#0F1A2E] mb-4">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <h3 className="text-lg font-bold text-white mb-4">
                     Outros Serviços
                   </h3>
                   <div className="space-y-3">
@@ -204,15 +204,15 @@ export function ServiceDetail() {
                       <Link
                         key={otherService.id}
                         to={`/servicos/${otherService.slug}`}
-                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                        className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 transition-colors"
                       >
-                        <div className="w-10 h-10 bg-[#1B3B6C]/10 rounded-lg flex items-center justify-center">
+                        <div className="w-10 h-10 bg-[#B9F227]/15 rounded-lg flex items-center justify-center">
                           {(() => {
                             const OtherIcon = iconMap[otherService.icon] || FileCheck;
-                            return <OtherIcon className="w-5 h-5 text-[#1B3B6C]" />;
+                            return <OtherIcon className="w-5 h-5 text-[#B9F227]" />;
                           })()}
                         </div>
-                        <span className="text-sm font-medium text-gray-700">
+                        <span className="text-sm font-medium text-[#cbd7e8]">
                           {otherService.title}
                         </span>
                       </Link>
@@ -226,7 +226,7 @@ export function ServiceDetail() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-[#F8F9FA]">
+      <section className="section-padding bg-[#0A1428]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -235,24 +235,24 @@ export function ServiceDetail() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl font-bold text-[#0F1A2E] mb-6">
+            <h2 className="font-display text-3xl font-bold text-white mb-6">
               Dúvidas sobre {service.title}?
             </h2>
-            <p className="text-gray-600 mb-8">
-              Confira nossa página de perguntas frequentes ou entre em contato 
+            <p className="text-[#b9c8e0] mb-8">
+              Confira nossa página de perguntas frequentes ou entre em contato
               para tirar todas as suas dúvidas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/faq"
-                className="btn-primary inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-7 py-3.5 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
               >
                 Ver FAQ
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 to="/orcamento"
-                className="bg-white text-[#1B3B6C] border-2 border-[#1B3B6C] px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-3.5 font-medium text-white transition-colors hover:bg-white/10"
               >
                 Fale Conosco
               </Link>
@@ -260,6 +260,6 @@ export function ServiceDetail() {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
