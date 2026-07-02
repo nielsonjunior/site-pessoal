@@ -48,12 +48,12 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <span className="inline-block bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block bg-[#B9F227]/20 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-4">
             Por que me escolher
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Por que confiar no meu{" "}
-            <span className="text-[#F4C430]">trabalho</span>
+            <span className="text-[#B9F227]">trabalho</span>
           </h2>
           <p className="text-white/70 text-lg">
             Atendo Cáceres e região com o compromisso de fazer cada projeto com
@@ -71,8 +71,8 @@ export function Testimonials() {
               transition={{ delay: i * 0.1 }}
               className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-2xl p-6"
             >
-              <div className="w-12 h-12 bg-[#F4C430]/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                <c.icon className="w-6 h-6 text-[#F4C430]" />
+              <div className="w-12 h-12 bg-[#B9F227]/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                <c.icon className="w-6 h-6 text-[#B9F227]" />
               </div>
               <div>
                 <h3 className="text-white font-semibold mb-1">{c.title}</h3>
@@ -92,7 +92,7 @@ export function Testimonials() {
         >
           {credenciais.map((s, i) => (
             <div key={i} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-[#F4C430]">
+              <p className="text-3xl md:text-4xl font-bold text-[#B9F227]">
                 {s.value}
               </p>
               <p className="text-white/70 text-sm">{s.label}</p>

@@ -16,7 +16,7 @@ export function CTA() {
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Pronto para transformar seu projeto em{' '}
-              <span className="text-[#F4C430]">realidade</span>?
+              <span className="text-[#B9F227]">realidade</span>?
             </h2>
             <p className="text-white/80 text-lg mb-8">
               Entre em contato agora mesmo e solicite um orçamento sem compromisso.
@@ -31,7 +31,7 @@ export function CTA() {
                 { icon: CheckCircle, text: 'Orçamento Grátis' },
               ].map((feature, index) => (
                 <div key={index} className="flex items-center gap-2 text-white/90">
-                  <feature.icon className="w-5 h-5 text-[#F4C430]" />
+                  <feature.icon className="w-5 h-5 text-[#B9F227]" />
                   <span className="font-medium">{feature.text}</span>
                 </div>
               ))}
@@ -95,7 +95,7 @@ export function CTA() {
                   <p className="text-lg font-semibold text-[#0F1A2E]">
                     Seg - Sex: 8h às 18h
                   </p>
-                  <p className="text-sm text-[#F4C430] font-medium">
+                  <p className="text-sm text-[#B9F227] font-medium">
                     Emergências: 24h
                   </p>
                 </div>

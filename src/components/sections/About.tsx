@@ -20,7 +20,7 @@ const differentials = [
 
 export function About() {
   return (
-    <section className="section-padding bg-[#F8F9FA]" id="sobre">
+    <section className="relative overflow-hidden bg-[#060D1E] text-white section-padding" id="sobre">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
@@ -46,7 +46,7 @@ export function About() {
               </div>
 
               {/* Decorative Border (só desktop — no mobile ficava pra fora/torta) */}
-              <div className="hidden lg:block absolute -bottom-6 -right-6 w-full h-full border-4 border-[#F4C430] rounded-2xl -z-10" />
+              <div className="hidden lg:block absolute -bottom-6 -right-6 w-full h-full border-4 border-[#B9F227]/60 rounded-2xl -z-10" />
 
               {/* Stats Card */}
               <motion.div
@@ -54,18 +54,18 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="absolute -bottom-10 left-4 right-4 sm:left-6 sm:right-6 bg-white rounded-xl shadow-xl p-4 sm:p-6"
+                className="absolute -bottom-10 left-4 right-4 sm:left-6 sm:right-6 rounded-xl border border-white/10 bg-[#0A1428]/95 backdrop-blur-sm p-4 sm:p-6 shadow-xl"
               >
                 <div className="grid grid-cols-3 gap-2 sm:gap-4">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#1B3B6C]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C]" />
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#B9F227]/15 rounded-lg flex items-center justify-center mx-auto mb-2">
+                        <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#B9F227]" />
                       </div>
-                      <p className="text-lg sm:text-2xl font-bold text-[#1B3B6C] leading-tight">
+                      <p className="font-display text-lg sm:text-2xl font-bold text-white leading-tight">
                         {stat.value}
                       </p>
-                      <p className="text-[11px] sm:text-xs text-gray-500 leading-tight">{stat.label}</p>
+                      <p className="text-[11px] sm:text-xs text-[#93a7c6] leading-tight">{stat.label}</p>
                     </div>
                   ))}
                 </div>
@@ -79,24 +79,25 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="mt-14 lg:mt-0"
           >
-            <span className="inline-block bg-[#F4C430]/20 text-[#1B3B6C] px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
               Sobre Mim
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-white mb-6">
               Nielson Pinheiro de Castilho Junior
             </h2>
 
-            <div className="space-y-4 text-gray-600 mb-8">
+            <div className="space-y-4 text-[#b9c8e0] mb-8">
               <p>
-                Sou Nielson Pinheiro de Castilho Junior, Engenheiro Civil em Cáceres e região. 
-                Ofereço soluções completas em engenharia civil, desde regularização de imóveis 
+                Sou Nielson Pinheiro de Castilho Junior, Engenheiro Civil em Cáceres e região.
+                Ofereço soluções completas em engenharia civil, desde regularização de imóveis
                 até projetos de reforma e ampliação.
               </p>
               <p>
-                Minha missão é proporcionar segurança, qualidade e inovação em cada projeto, 
-                sempre respeitando normas técnicas e prazos estabelecidos. Trabalho com 
+                Minha missão é proporcionar segurança, qualidade e inovação em cada projeto,
+                sempre respeitando normas técnicas e prazos estabelecidos. Trabalho com
                 transparência e ética, construindo relacionamentos duradouros com meus clientes.
               </p>
             </div>
@@ -112,8 +113,8 @@ export function About() {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start gap-2"
                 >
-                  <CheckCircle className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-700">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-[#cbd7e8]">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -121,7 +122,7 @@ export function About() {
             {/* CTA */}
             <Link
               to="/sobre"
-              className="btn-primary inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-3.5 font-medium text-white transition-colors hover:bg-white/10"
             >
               Conheça Minha História
               <ArrowRight className="w-5 h-5" />

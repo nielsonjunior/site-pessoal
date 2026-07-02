@@ -5,7 +5,7 @@ import { cities } from '@/data';
 
 export function Cities() {
   return (
-    <section className="section-padding bg-white" id="cidades">
+    <section className="relative overflow-hidden bg-[#0A1428] text-white section-padding" id="cidades">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -15,15 +15,15 @@ export function Cities() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
         >
-          <span className="inline-block bg-[#F4C430]/20 text-[#1B3B6C] px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
             Onde Atuamos
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F1A2E] mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6">
             Cidades Atendidas em{' '}
-            <span className="text-[#1B3B6C]">Cáceres e Região</span>
+            <span className="text-[#B9F227]">Cáceres e Região</span>
           </h2>
-          <p className="text-gray-600 text-lg">
-            Ofereço serviços de engenharia civil em Cáceres e diversas cidades 
+          <p className="text-[#b9c8e0] text-lg">
+            Ofereço serviços de engenharia civil em Cáceres e diversas cidades
             da região metropolitana, sempre com qualidade e compromisso.
           </p>
         </motion.div>
@@ -43,16 +43,16 @@ export function Cities() {
             >
               <Link
                 to={`/cidades/${city.slug}`}
-                className="group flex items-center gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#1B3B6C] transition-all duration-300"
+                className="group flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-colors duration-300 hover:border-[#B9F227]/40 hover:bg-[#B9F227]/[0.05]"
               >
-                <div className="w-10 h-10 bg-[#1B3B6C]/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                  <MapPin className="w-5 h-5 text-[#1B3B6C] group-hover:text-white transition-colors" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#B9F227]/15">
+                  <MapPin className="h-5 w-5 text-[#B9F227]" />
                 </div>
                 <div>
-                  <p className="font-medium text-[#0F1A2E] group-hover:text-white transition-colors">
+                  <p className="font-medium text-white">
                     {city.name}
                   </p>
-                  <p className="text-xs text-gray-500 group-hover:text-white/70 transition-colors">
+                  <p className="text-xs text-[#93a7c6]">
                     {city.state}
                   </p>
                 </div>
@@ -71,7 +71,7 @@ export function Cities() {
         >
           <Link
             to="/cidades"
-            className="inline-flex items-center gap-2 text-[#1B3B6C] font-medium hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-[#B9F227] font-medium hover:gap-3 transition-all"
           >
             Ver Todas as Cidades
             <ArrowRight className="w-5 h-5" />
@@ -84,22 +84,22 @@ export function Cities() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-16 bg-[#F8F9FA] rounded-2xl p-6 sm:p-8"
+          className="mt-16 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+              <h3 className="font-display text-2xl font-bold text-white mb-4">
                 Não encontrou sua cidade?
               </h3>
-              <p className="text-gray-600 mb-6">
-                Atendo em Cáceres e toda a região metropolitana. 
-                Entre em contato para verificar disponibilidade de 
+              <p className="text-[#b9c8e0] mb-6">
+                Atendo em Cáceres e toda a região metropolitana.
+                Entre em contato para verificar disponibilidade de
                 atendimento na sua cidade.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contato"
-                  className="btn-primary inline-flex items-center justify-center gap-2 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#B9F227] px-6 py-3 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
                 >
                   Entre em Contato
                   <ArrowRight className="w-5 h-5" />
@@ -108,7 +108,7 @@ export function Cities() {
                   href="https://wa.me/5565996946861"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-[#1B3B6C] border-2 border-[#1B3B6C] px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-all flex items-center justify-center gap-2 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-[#25D366] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
                 >
                   <Phone className="w-5 h-5" />
                   WhatsApp

@@ -52,8 +52,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md transition-shadow duration-300 ${
-        isScrolled ? "shadow-lg" : "shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#0A1428]/85 backdrop-blur-md border-b border-white/10 transition-shadow duration-300 ${
+        isScrolled ? "shadow-[0_10px_30px_-15px_rgba(0,0,0,0.6)]" : ""
       }`}
     >
       {/* Top Bar */}
@@ -109,10 +109,10 @@ export function Header() {
                 decoding="async"
               />
               <div className="min-w-0">
-                <span className="block font-bold text-sm sm:text-lg leading-tight text-[#1B3B6C]">
+                <span className="block font-bold text-sm sm:text-lg leading-tight text-white">
                   Nielson P. de Castilho Júnior
                 </span>
-                <span className="block text-[11px] sm:text-xs text-gray-600 leading-tight">
+                <span className="block text-[11px] sm:text-xs text-gray-400 leading-tight">
                   Engenheiro Civil | CREA 5071806455
                 </span>
               </div>
@@ -133,8 +133,8 @@ export function Header() {
                     to={link.href}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-1 ${
                       isActive(link.href)
-                        ? "text-[#1B3B6C] bg-[#1B3B6C]/10"
-                        : "text-gray-700 hover:text-[#1B3B6C] hover:bg-gray-100"
+                        ? "text-[#B9F227] bg-white/10"
+                        : "text-gray-200 hover:text-white hover:bg-white/10"
                     }`}
                   >
                     {link.name}
@@ -152,15 +152,15 @@ export function Header() {
                         /* pt-2 cria uma "ponte" sobre o vão, sem fechar o menu ao mover o mouse */
                         className="absolute top-full left-0 pt-2 w-56 z-[60]"
                       >
-                        <div className="bg-white rounded-xl shadow-2xl ring-1 ring-black/5 border border-gray-100 overflow-hidden">
+                        <div className="bg-[#0A1428] rounded-xl shadow-2xl ring-1 ring-white/10 border border-white/10 overflow-hidden">
                           {link.dropdown.map((item) => (
                             <Link
                               key={item.name}
                               to={item.href}
                               className={`block px-4 py-3 text-sm transition-colors ${
                                 isActive(item.href)
-                                  ? "bg-[#1B3B6C]/10 text-[#1B3B6C]"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-[#1B3B6C]"
+                                  ? "bg-white/10 text-[#B9F227]"
+                                  : "text-gray-200 hover:bg-white/5 hover:text-white"
                               }`}
                             >
                               {item.name}
@@ -186,12 +186,12 @@ export function Header() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={isMobileMenuOpen}
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-gray-700" />
+                <X className="w-6 h-6 text-gray-100" />
               ) : (
-                <Menu className="w-6 h-6 text-gray-700" />
+                <Menu className="w-6 h-6 text-gray-100" />
               )}
             </button>
           </div>
@@ -206,7 +206,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-gray-100 shadow-lg overflow-hidden"
+            className="lg:hidden bg-[#0A1428] border-t border-white/10 shadow-lg overflow-hidden"
           >
             <div className="container-custom py-4">
               <div className="flex flex-col gap-2">
@@ -216,22 +216,22 @@ export function Header() {
                       to={link.href}
                       className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                         isActive(link.href)
-                          ? "bg-[#1B3B6C] text-white"
-                          : "text-gray-700 hover:bg-gray-100"
+                          ? "bg-white/10 text-[#B9F227]"
+                          : "text-gray-200 hover:bg-white/10"
                       }`}
                     >
                       {link.name}
                     </Link>
                     {link.dropdown && (
-                      <div className="ml-4 mt-1 border-l-2 border-gray-200 pl-4">
+                      <div className="ml-4 mt-1 border-l-2 border-white/10 pl-4">
                         {link.dropdown.slice(1).map((item) => (
                           <Link
                             key={item.name}
                             to={item.href}
                             className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
                               isActive(item.href)
-                                ? "text-[#1B3B6C] font-medium"
-                                : "text-gray-600 hover:text-[#1B3B6C]"
+                                ? "text-[#B9F227] font-medium"
+                                : "text-gray-400 hover:text-white"
                             }`}
                           >
                             {item.name}
@@ -241,7 +241,7 @@ export function Header() {
                     )}
                   </div>
                 ))}
-                <div className="mt-4 pt-4 border-t border-gray-100">
+                <div className="mt-4 pt-4 border-t border-white/10">
                   <Link
                     to="/orcamento"
                     className="btn-accent w-full text-center block"
