@@ -76,15 +76,15 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-4 mb-8"
+              className="flex items-center justify-between sm:justify-start gap-2 sm:gap-4 mb-8"
             >
               {[
                 'Atendimento 24h',
                 'Orçamento Grátis',
                 'Garantia de Qualidade'
               ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-2 text-sm text-gray-600">
-                  <CheckCircle className="w-4 h-4 text-[#F4C430]" />
+                <div key={index} className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-sm text-gray-600 whitespace-nowrap">
+                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#F4C430] flex-shrink-0" />
                   {feature}
                 </div>
               ))}
@@ -122,26 +122,26 @@ export function Hero() {
               transition={{ delay: 0.9 }}
               className="mt-10 pt-8 border-t border-gray-200"
             >
-              <div className="flex flex-wrap items-center gap-6">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-[#1B3B6C]" />
+              <div className="flex items-center justify-between sm:justify-start gap-3 sm:gap-6">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C] flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-[#0F1A2E]">CREA</p>
-                    <p className="text-xs text-gray-500">5071806455</p>
+                    <p className="font-bold text-sm sm:text-base text-[#0F1A2E] leading-tight">CREA</p>
+                    <p className="text-[10px] sm:text-xs text-gray-500 leading-tight">5071806455</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-[#1B3B6C]" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C] flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-[#0F1A2E]">+12</p>
-                    <p className="text-xs text-gray-500">Cidades atendidas</p>
+                    <p className="font-bold text-sm sm:text-base text-[#0F1A2E] leading-tight">+12</p>
+                    <p className="text-[10px] sm:text-xs text-gray-500 leading-tight">Cidades atendidas</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-[#1B3B6C]" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C] flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-[#0F1A2E]">24h</p>
-                    <p className="text-xs text-gray-500">Resposta</p>
+                    <p className="font-bold text-sm sm:text-base text-[#0F1A2E] leading-tight">24h</p>
+                    <p className="text-[10px] sm:text-xs text-gray-500 leading-tight">Resposta</p>
                   </div>
                 </div>
               </div>

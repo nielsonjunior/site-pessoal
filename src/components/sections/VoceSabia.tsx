@@ -107,7 +107,7 @@ export function VoceSabia() {
           variants={fadeUp}
           className="mt-12 bg-[#0F1A2E] rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left"
         >
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-4">
             <TrendingUp className="w-12 h-12 text-[#F4C430] flex-shrink-0" />
             <div>
               <p className="text-2xl md:text-3xl font-bold text-white">

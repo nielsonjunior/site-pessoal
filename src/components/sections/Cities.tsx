@@ -84,7 +84,7 @@ export function Cities() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-16 bg-[#F8F9FA] rounded-2xl p-8"
+          className="mt-16 bg-[#F8F9FA] rounded-2xl p-6 sm:p-8"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -99,7 +99,7 @@ export function Cities() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contato"
-                  className="btn-primary inline-flex items-center justify-center gap-2"
+                  className="btn-primary inline-flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   Entre em Contato
                   <ArrowRight className="w-5 h-5" />
@@ -108,28 +108,23 @@ export function Cities() {
                   href="https://wa.me/5565996946861"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-[#1B3B6C] border-2 border-[#1B3B6C] px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-all flex items-center justify-center gap-2"
+                  className="bg-white text-[#1B3B6C] border-2 border-[#1B3B6C] px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-all flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   <Phone className="w-5 h-5" />
                   WhatsApp
                 </a>
               </div>
             </div>
-            <div className="relative">
+            <div>
               <img
                 src="/images/map-caceres.jpg"
-                alt="Área de atendimento - Cáceres-MT e região"
-                className="w-full h-64 object-cover rounded-xl"
+                alt="Área de atendimento em engenharia civil - Cáceres-MT e 12 cidades da região"
+                className="w-full h-auto rounded-xl shadow-sm"
                 width={1000}
                 height={600}
                 loading="lazy"
                 decoding="async"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1B3B6C]/50 to-transparent rounded-xl" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-white font-semibold">Região de Cáceres</p>
-                <p className="text-white/80 text-sm">+10 cidades atendidas</p>
-              </div>
             </div>
           </div>
         </motion.div>

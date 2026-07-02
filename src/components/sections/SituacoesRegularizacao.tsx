@@ -69,9 +69,9 @@ export function SituacoesRegularizacao() {
               <motion.article
                 key={t.id}
                 variants={fadeUp}
-                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm card-hover flex flex-col"
+                className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm card-hover flex flex-col text-center"
               >
-                <div className="w-12 h-12 bg-[#1B3B6C]/10 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-[#1B3B6C]/10 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <Icon className="w-6 h-6 text-[#1B3B6C]" />
                 </div>
                 <p className="text-lg font-semibold text-[#0F1A2E] leading-snug mb-1">

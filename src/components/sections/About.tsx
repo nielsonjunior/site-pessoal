@@ -45,8 +45,8 @@ export function About() {
                 />
               </div>
 
-              {/* Decorative Border */}
-              <div className="absolute -bottom-6 -right-6 w-full h-full border-4 border-[#F4C430] rounded-2xl -z-10" />
+              {/* Decorative Border (só desktop — no mobile ficava pra fora/torta) */}
+              <div className="hidden lg:block absolute -bottom-6 -right-6 w-full h-full border-4 border-[#F4C430] rounded-2xl -z-10" />
 
               {/* Stats Card */}
               <motion.div
@@ -54,18 +54,18 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="absolute -bottom-10 left-6 right-6 bg-white rounded-xl shadow-xl p-6"
+                className="absolute -bottom-10 left-4 right-4 sm:left-6 sm:right-6 bg-white rounded-xl shadow-xl p-4 sm:p-6"
               >
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-2 sm:gap-4">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center">
-                      <div className="w-10 h-10 bg-[#1B3B6C]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
-                        <stat.icon className="w-5 h-5 text-[#1B3B6C]" />
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#1B3B6C]/10 rounded-lg flex items-center justify-center mx-auto mb-2">
+                        <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C]" />
                       </div>
-                      <p className="text-2xl font-bold text-[#1B3B6C]">
+                      <p className="text-lg sm:text-2xl font-bold text-[#1B3B6C] leading-tight">
                         {stat.value}
                       </p>
-                      <p className="text-xs text-gray-500">{stat.label}</p>
+                      <p className="text-[11px] sm:text-xs text-gray-500 leading-tight">{stat.label}</p>
                     </div>
                   ))}
                 </div>
