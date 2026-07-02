@@ -1,218 +1,123 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Phone, Clock, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight, Phone } from 'lucide-react';
+import { Aurora } from '@/components/shared/Aurora';
+import { SITE } from '@/config/site';
 
+const wa = (msg: string) =>
+  `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+const stats = [
+  { value: '+12', label: 'Cidades atendidas' },
+  { value: 'até 30%', label: 'de valorização possível', accent: true },
+  { value: '24h', label: 'Resposta no WhatsApp' },
+];
+
+/**
+ * Hero (tema premium escuro) — headline de dor + fundo aurora.
+ * Mantém o termo-chave "Engenheiro Civil em Cáceres" no eyebrow (SEO).
+ */
 export function Hero() {
   return (
-    <section className="relative lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#F8F9FA] via-white to-[#E8EEF5]">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(#1B3B6C 1px, transparent 1px),
-            linear-gradient(90deg, #1B3B6C 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
+    <section className="relative overflow-hidden bg-[#060D1E] text-white lg:min-h-[92vh] flex items-center">
+      <Aurora />
+      {/* borda interna sutil, como um "frame" premium */}
+      <div className="pointer-events-none absolute inset-3 sm:inset-4 rounded-3xl border border-white/10" />
 
-      {/* Floating Shapes */}
-      <motion.div
-        animate={{ y: [0, -20, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-20 right-20 w-64 h-64 bg-[#1B3B6C]/5 rounded-full blur-3xl"
-      />
-      <motion.div
-        animate={{ y: [0, 20, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-20 left-10 w-96 h-96 bg-[#F4C430]/10 rounded-full blur-3xl"
-      />
-
-      <div className="container-custom relative z-10 pt-32 pb-12 lg:pb-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+      <div className="relative z-10 container-custom pt-32 pb-16 lg:pt-40 lg:pb-24">
+        <div className="max-w-3xl mx-auto text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs sm:text-sm font-medium text-[#cfe0f6] backdrop-blur-sm"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-[#1B3B6C]/10 text-[#1B3B6C] px-4 py-2 rounded-full text-sm font-medium mb-6"
-            >
-              <Shield className="w-4 h-4" />
-              Nielson Pinheiro - Engenheiro Civil
-            </motion.div>
+            <span className="h-1.5 w-1.5 rounded-full bg-[#B9F227] shadow-[0_0_10px_#B9F227]" />
+            Engenheiro Civil em Cáceres-MT e região
+          </motion.span>
 
-            {/* Main Heading */}
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F1A2E] leading-tight mb-6"
-            >
-              Engenheiro Civil em{' '}
-              <span className="text-[#1B3B6C]">Cáceres</span>{' '}
-              e Região
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="mt-6 font-display font-semibold leading-[1.05] text-white text-[34px] sm:text-5xl lg:text-6xl"
+          >
+            Seu imóvel é seu.{' '}
+            <span className="text-[#B9F227] [text-shadow:0_0_34px_rgba(185,242,39,.35)]">
+              O papel comprova isso?
+            </span>
+          </motion.h1>
 
-            {/* Subheading */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="text-base md:text-xl text-gray-600 mb-8 leading-relaxed"
-            >
-              Regularize e valorize seu imóvel em Cáceres-MT. Resolvo a papelada que
-              trava a venda, o financiamento e a herança — desdobro, usucapião, AVCB,
-              ART e laudos técnicos. Orçamento grátis pelo WhatsApp.
-            </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mx-auto mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#b9c8e0]"
+          >
+            Sem a documentação em dia, não dá pra{' '}
+            <b className="font-semibold text-white">vender, financiar nem deixar de herança</b>{' '}
+            — e você pode estar perdendo até 30% do valor. Eu resolvo a papelada.
+            Você fala direto comigo.
+          </motion.p>
 
-            {/* Features */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="flex items-center justify-between sm:justify-start gap-2 sm:gap-4 mb-8"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+          >
+            <a
+              href="#situacoes"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#B9F227] px-7 py-4 text-[15px] font-semibold text-[#0a1706] font-display shadow-[0_14px_40px_-10px_rgba(185,242,39,.6)] transition-transform hover:-translate-y-0.5"
             >
-              {[
-                'Atendimento 24h',
-                'Orçamento Grátis',
-                'Garantia de Qualidade'
-              ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-sm text-gray-600 whitespace-nowrap">
-                  <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#F4C430] flex-shrink-0" />
-                  {feature}
-                </div>
-              ))}
-            </motion.div>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="flex flex-col sm:flex-row gap-4"
+              Descobrir o meu caso
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-black/10">
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </a>
+            <a
+              href={wa('Olá! Preciso resolver a documentação do meu imóvel. Pode me ajudar?')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-4 text-[15px] font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/10"
             >
-              <Link
-                to="/orcamento"
-                className="btn-accent flex items-center justify-center gap-2 text-lg"
-              >
-                Solicitar Orçamento
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <a
-                href="https://wa.me/5565996946861"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-[#1B3B6C] border-2 border-[#1B3B6C] px-6 py-3 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-all flex items-center justify-center gap-2"
-              >
-                <Phone className="w-5 h-5" />
-                Falar no WhatsApp
-              </a>
-            </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-              className="mt-10 pt-8 border-t border-gray-200"
-            >
-              <div className="flex items-center justify-between sm:justify-start gap-3 sm:gap-6">
-                <div className="flex items-center gap-1.5 sm:gap-2">
-                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C] flex-shrink-0" />
-                  <div>
-                    <p className="font-bold text-sm sm:text-base text-[#0F1A2E] leading-tight">CREA</p>
-                    <p className="text-[10px] sm:text-xs text-gray-500 leading-tight">5071806455</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1.5 sm:gap-2">
-                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C] flex-shrink-0" />
-                  <div>
-                    <p className="font-bold text-sm sm:text-base text-[#0F1A2E] leading-tight">+12</p>
-                    <p className="text-[10px] sm:text-xs text-gray-500 leading-tight">Cidades atendidas</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-1.5 sm:gap-2">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[#1B3B6C] flex-shrink-0" />
-                  <div>
-                    <p className="font-bold text-sm sm:text-base text-[#0F1A2E] leading-tight">24h</p>
-                    <p className="text-[10px] sm:text-xs text-gray-500 leading-tight">Resposta</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              <Phone className="h-4 w-4" />
+              Falar no WhatsApp
+            </a>
           </motion.div>
 
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative"
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="mt-4 text-xs sm:text-sm text-[#8ea3c2]"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/images/hero-house.jpg"
-                alt="Projeto de engenharia civil em Cáceres-MT - casa moderna"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
-                width={800}
-                height={500}
-                fetchPriority="high"
-                decoding="async"
-              />
-              {/* Overlay Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 }}
-                className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#F4C430] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-6 h-6 text-[#0F1A2E]" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#0F1A2E]">Serviço Garantido</p>
-                    <p className="text-sm text-gray-600">Qualidade e segurança em todos os projetos</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            Análise gratuita · resposta em 24h · CREA 5071806455
+          </motion.p>
 
-            {/* Floating Stats */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2 }}
-              className="hidden lg:block absolute -top-4 -right-4 bg-[#1B3B6C] text-white rounded-xl p-4 shadow-xl"
-            >
-              <p className="text-2xl font-bold">24h</p>
-              <p className="text-xs opacity-80">Emergências</p>
-            </motion.div>
+          {/* stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="relative mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/10 pt-8"
+          >
+            {stats.map((s, i) => (
+              <div key={i} className="text-center">
+                <p className="font-display text-xl sm:text-3xl font-semibold text-white leading-none">
+                  {s.accent ? (
+                    <>até <span className="text-[#B9F227]">30%</span></>
+                  ) : (
+                    s.value
+                  )}
+                </p>
+                <p className="mt-2 text-[11px] sm:text-sm text-[#93a7c6] leading-tight">
+                  {s.label}
+                </p>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-[#1B3B6C]/30 rounded-full flex justify-center pt-2"
-        >
-          <div className="w-1.5 h-3 bg-[#1B3B6C] rounded-full" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

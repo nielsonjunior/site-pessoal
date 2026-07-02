@@ -23,6 +23,7 @@ test.describe("navegacao desktop", () => {
 
   test("CTA 'Solicitar Orçamento' leva para /orcamento", async ({ page }) => {
     await page.goto("/");
+    // Desktop: CTA no header. Mobile: link no rodapé (ambos visíveis sem menu).
     await page
       .getByRole("link", { name: /Solicitar Orçamento/i })
       .first()
