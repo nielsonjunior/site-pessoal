@@ -10,7 +10,7 @@ export function Privacy() {
         noIndex={true}
       />
 
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -28,16 +28,16 @@ export function Privacy() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-3xl mx-auto prose prose-lg">
+      <section className="section-padding bg-[#060D1E]">
+        <div className="container-custom max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8 text-gray-700"
+            className="space-y-8 text-[#b9c8e0]"
           >
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">1. Informações Coletadas</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">1. Informações Coletadas</h2>
               <p>
                 Coletamos apenas as informações que você nos fornece voluntariamente ao preencher
                 formulários de contato ou orçamento, como: nome completo, telefone, e-mail e cidade.
@@ -47,7 +47,7 @@ export function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">2. Uso das Informações</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">2. Uso das Informações</h2>
               <p>
                 As informações coletadas são utilizadas para: responder às suas solicitações de
                 orçamento, enviar propostas personalizadas e manter contato referente aos serviços
@@ -56,7 +56,7 @@ export function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">3. Cookies</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">3. Cookies</h2>
               <p>
                 Este site pode utilizar cookies básicos para melhorar a experiência de navegação.
                 Nenhum dado pessoal é armazenado por meio de cookies.
@@ -64,25 +64,25 @@ export function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">4. Seus Direitos (LGPD)</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">4. Seus Direitos (LGPD)</h2>
               <p>
                 Conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem o direito
                 de solicitar acesso, correção ou exclusão dos seus dados pessoais. Para exercer
                 esses direitos, entre em contato pelo e-mail{" "}
-                <a href="mailto:nielsin.junior@gmail.com" className="text-[#1B3B6C] hover:underline">
+                <a href="mailto:nielsin.junior@gmail.com" className="text-[#B9F227] hover:underline">
                   nielsin.junior@gmail.com
                 </a>.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">5. Contato</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">5. Contato</h2>
               <p>
                 Dúvidas sobre esta política? Entre em contato:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>E-mail: nielsin.junior@gmail.com</li>
-                <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#1B3B6C] hover:underline">(65) 99694-6861</a></li>
+                <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#B9F227] hover:underline">(65) 99694-6861</a></li>
                 <li>Responsável: Nielson Pinheiro de Castilho Junior</li>
                 <li>CREA 5071806455 — Cáceres, MT</li>
               </ul>

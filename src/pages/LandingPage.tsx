@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, CheckCircle, ArrowRight, Star, Send, Mail } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Star, Send, Mail, ShieldCheck, MessageCircle, Calculator } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/shared';
 import { Button } from '@/components/ui/button';
@@ -14,7 +14,7 @@ const benefits = [
   'Orçamento em até 24 horas',
   'Atendimento em Cáceres e região de MT',
   'Garantia em todos os serviços',
-  'Projetos entregues com excelência',
+  'Responsabilidade técnica (ART) em cada serviço',
   'Atendimento humanizado e personalizado',
 ];
 
@@ -41,21 +41,22 @@ const services = [
   },
 ];
 
-const testimonials = [
+// Compromissos verificáveis (o dono está começando — sem depoimentos inventados).
+const compromissos = [
   {
-    name: 'José Aparecido Silva',
-    text: 'Nunca imaginei regularizar meu imóvel tão rápido. O Nielson resolveu tudo sem complicação. Gente boa e profissional de verdade!',
-    rating: 5,
+    icon: ShieldCheck,
+    title: 'Engenheiro registrado no CREA',
+    text: 'Responsabilidade técnica (CREA 5071806455) e ART em cada serviço.',
   },
   {
-    name: 'Rosangela Ferreira',
-    text: 'Precisava de uma ART urgente aqui em Mirassol e o Nielson me atendeu no mesmo dia. Muito profissional e com preço justo. Recomendo!',
-    rating: 5,
+    icon: MessageCircle,
+    title: 'Atendimento direto comigo',
+    text: 'Do orçamento à entrega, você fala diretamente com o engenheiro.',
   },
   {
-    name: 'Carlos Eduardo Nunes',
-    text: 'Laudo técnico entregue no prazo, banco aprovou o financiamento sem problema. Serviço de primeira qualidade!',
-    rating: 5,
+    icon: Calculator,
+    title: 'Orçamento grátis e sem compromisso',
+    text: 'Você sabe o que vai pagar antes de decidir. Resposta em até 24h.',
   },
 ];
 
@@ -103,7 +104,7 @@ export function LandingPage() {
   };
 
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title="Engenheiro Civil Cáceres MT - Nielson Pinheiro | Orçamento Grátis"
         description="Engenheiro Civil em Cáceres-MT e região. Nielson Pinheiro - ART, regularização de imóveis, reformas e laudos. Orçamento grátis em 24h!"
@@ -118,7 +119,7 @@ export function LandingPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="pt-28 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -126,17 +127,17 @@ export function LandingPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 bg-[#B9F227]/15 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4" />
                 CREA 5071806455
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Engenheiro Civil em Cáceres-MT
               </h1>
 
               <p className="text-white/80 text-lg mb-6">
-                Especialista em <strong>ART, Regularização de Imóveis, Reformas e Laudos Técnicos</strong>.
+                Especialista em <strong className="text-white">ART, Regularização de Imóveis, Reformas e Laudos Técnicos</strong>.
                 Atendimento em Cáceres-MT e região com orçamento em 24h.
               </p>
 
@@ -171,7 +172,7 @@ export function LandingPage() {
               </div>
             </motion.div>
 
-            {/* Quick Form */}
+            {/* Quick Form (cartão branco de propósito — inputs claros) */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -189,8 +190,8 @@ export function LandingPage() {
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
                     {submitType === 'whatsapp'
-                      ? 'O WhatsApp foi aberto com os seus dados. Retornaremos em até 24 horas.'
-                      : 'Seu cliente de e-mail foi aberto. Retornaremos em até 24 horas.'}
+                      ? 'O WhatsApp foi aberto com os seus dados. Retornarei em até 24 horas.'
+                      : 'Seu cliente de e-mail foi aberto. Retornarei em até 24 horas.'}
                   </p>
                   <button
                     onClick={() => { setIsSubmitted(false); setSubmitType(null); }}
@@ -296,7 +297,7 @@ export function LandingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-[#060D1E]">
         <div className="container-custom">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {benefits.map((benefit, index) => (
@@ -306,10 +307,10 @@ export function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl"
+                className="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/[0.03]"
               >
-                <CheckCircle className="w-5 h-5 text-[#F4C430] flex-shrink-0" />
-                <span className="text-gray-700 text-sm font-medium">{benefit}</span>
+                <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0" />
+                <span className="text-[#cbd7e8] text-sm font-medium">{benefit}</span>
               </motion.div>
             ))}
           </div>
@@ -317,7 +318,7 @@ export function LandingPage() {
       </section>
 
       {/* Services */}
-      <section className="section-padding bg-[#F8F9FA]">
+      <section className="section-padding bg-[#0A1428]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -325,10 +326,10 @@ export function LandingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-4">
-              Nossos Serviços
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              Meus Serviços
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#b9c8e0]">
               Soluções completas em engenharia civil para você em Cáceres e região
             </p>
           </motion.div>
@@ -341,15 +342,15 @@ export function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 text-center shadow-sm"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center"
               >
-                <h3 className="text-xl font-bold text-[#0F1A2E] mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-[#93a7c6] text-sm mb-4">
                   {service.description}
                 </p>
-                <p className="text-[#1B3B6C] font-semibold">{service.price}</p>
+                <p className="text-[#B9F227] font-semibold">{service.price}</p>
               </motion.div>
             ))}
           </div>
@@ -362,7 +363,7 @@ export function LandingPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
               { value: 'CREA', label: '5071806455' },
-              { value: '100%', label: 'Comprometimento' },
+              { value: '+12', label: 'Cidades atendidas' },
               { value: '24h', label: 'Orçamento' },
               { value: 'MT', label: 'Mato Grosso' },
             ].map((stat, index) => (
@@ -373,7 +374,7 @@ export function LandingPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <p className="text-3xl md:text-4xl font-bold text-[#F4C430]">{stat.value}</p>
+                <p className="font-display text-3xl md:text-4xl font-bold text-[#B9F227]">{stat.value}</p>
                 <p className="text-white/70 text-sm">{stat.label}</p>
               </motion.div>
             ))}
@@ -381,8 +382,8 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-padding bg-white">
+      {/* Por que confiar (sem depoimentos inventados) */}
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -390,29 +391,27 @@ export function LandingPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-4">
-              O Que Dizem Nossos Clientes
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              Por que confiar no meu trabalho
             </h2>
-            <p className="text-gray-500">Clientes reais de Cáceres e região</p>
+            <p className="text-[#b9c8e0]">Atendo Cáceres e região com seriedade, técnica e transparência.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
+            {compromissos.map((c, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-2xl p-6"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-[#F4C430] text-[#F4C430]" />
-                  ))}
+                <div className="w-12 h-12 bg-[#B9F227]/15 rounded-xl flex items-center justify-center mb-4">
+                  <c.icon className="w-6 h-6 text-[#B9F227]" />
                 </div>
-                <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
-                <p className="font-semibold text-[#0F1A2E]">{testimonial.name}</p>
+                <h3 className="font-semibold text-white mb-1">{c.title}</h3>
+                <p className="text-[#93a7c6] text-sm leading-relaxed">{c.text}</p>
               </motion.div>
             ))}
           </div>
@@ -420,24 +419,24 @@ export function LandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#F4C430] to-[#E5B520]">
+      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Precisa de Engenheiro em Cáceres-MT?
             </h2>
-            <p className="text-[#0F1A2E]/80 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
               Solicite seu orçamento agora mesmo e receba uma proposta
               personalizada em até 24 horas. Atendimento em Cáceres e toda a região.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#orcamento"
-                className="bg-[#0F1A2E] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1B3B6C] transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-8 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
               >
                 Solicitar Orçamento Agora
                 <ArrowRight className="w-5 h-5" />
@@ -446,7 +445,7 @@ export function LandingPage() {
                 href="https://wa.me/5565996946861"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-[#0F1A2E] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
               >
                 <Phone className="w-5 h-5" />
                 Falar no WhatsApp
@@ -455,6 +454,6 @@ export function LandingPage() {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

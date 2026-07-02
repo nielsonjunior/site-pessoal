@@ -28,7 +28,7 @@ const consequences = [
 
 export function WhatIsART() {
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title="O que é ART - Anotação de Responsabilidade Técnica | Guia Completo"
         description="Entenda o que é ART, por que ela é obrigatória, quando emitir e como funciona. Guia completo sobre Anotação de Responsabilidade Técnica."
@@ -42,20 +42,20 @@ export function WhatIsART() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-28 pb-4 bg-gray-50">
+      <div className="pt-28 pb-4 bg-[#0A1428] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-[#1B3B6C] transition-colors">
+          <nav className="flex items-center gap-2 text-sm text-[#93a7c6]">
+            <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
             <span>/</span>
-            <span className="text-[#1B3B6C]">O que é ART</span>
+            <span className="text-[#B9F227]">O que é ART</span>
           </nav>
         </div>
       </div>
 
       {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="py-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -71,11 +71,11 @@ export function WhatIsART() {
             </Link>
 
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20 bg-[#F4C430]/20 rounded-2xl flex items-center justify-center">
-                <FileCheck className="w-10 h-10 text-[#F4C430]" />
+              <div className="w-20 h-20 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <FileCheck className="w-10 h-10 text-[#B9F227]" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white">
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
                   O que é ART?
                 </h1>
                 <p className="text-white/70 text-lg">
@@ -88,32 +88,32 @@ export function WhatIsART() {
       </section>
 
       {/* Content */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="prose prose-lg max-w-none"
+            className="max-w-none"
           >
-            <h2 className="text-3xl font-bold text-[#0F1A2E] mb-6">
+            <h2 className="font-display text-3xl font-bold text-white mb-6">
               Entendendo a ART
             </h2>
 
-            <p className="text-gray-600 mb-6">
-              A <strong>Anotação de Responsabilidade Técnica (ART)</strong> é um
+            <p className="text-[#b9c8e0] mb-6 leading-relaxed">
+              A <strong className="text-white">Anotação de Responsabilidade Técnica (ART)</strong> é um
               documento emitido pelos Conselhos Regionais de Engenharia e
               Agronomia (CREA) que identifica o profissional responsável técnico
               pela execução de obras, serviços, empreitadas ou atividades
               técnicas.
             </p>
 
-            <div className="bg-[#F8F9FA] rounded-2xl p-8 my-8">
-              <h3 className="text-xl font-bold text-[#0F1A2E] mb-4">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 my-8">
+              <h3 className="text-xl font-bold text-white mb-4">
                 Por que a ART é obrigatória?
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-[#b9c8e0] mb-4">
                 A ART é obrigatória por lei federal e serve para:
               </p>
               <ul className="space-y-3">
@@ -125,62 +125,62 @@ export function WhatIsART() {
                   "Viabilizar a contratação de seguros e garantias",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0 mt-0.5" />
+                    <span className="text-[#cbd7e8]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <h3 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+            <h3 className="font-display text-2xl font-bold text-white mb-4">
               Quando emitir a ART?
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-[#b9c8e0] mb-4">
               A ART deve ser emitida em diversas situações:
             </p>
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {whenToIssue.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl"
+                  className="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/[0.03]"
                 >
-                  <CheckCircle className="w-5 h-5 text-[#1B3B6C] flex-shrink-0" />
-                  <span className="text-gray-700">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0" />
+                  <span className="text-[#cbd7e8]">{item}</span>
                 </div>
               ))}
             </div>
 
-            <h3 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+            <h3 className="font-display text-2xl font-bold text-white mb-4">
               Como emitir a ART?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-[#b9c8e0] mb-6 leading-relaxed">
               A emissão da ART é feita através do sistema online do CREA, pelo
               próprio profissional engenheiro ou empresa contratada. O processo
               é simples e rápido, e o documento é emitido em formato digital com
               validade jurídica.
             </p>
 
-            <div className="bg-red-50 rounded-2xl p-8 my-8">
-              <h3 className="text-xl font-bold text-red-800 mb-4">
+            <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-8 my-8">
+              <h3 className="text-xl font-bold text-red-300 mb-4">
                 Consequências de não ter ART
               </h3>
-              <p className="text-red-700 mb-4">
+              <p className="text-red-200/90 mb-4">
                 A ausência da ART pode acarretar sérios problemas:
               </p>
               <ul className="space-y-3">
                 {consequences.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0" />
-                    <span className="text-red-700">{item}</span>
+                    <span className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
+                    <span className="text-red-200/90">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <h3 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+            <h3 className="font-display text-2xl font-bold text-white mb-4">
               Conclusão
             </h3>
-            <p className="text-gray-600 mb-8">
+            <p className="text-[#b9c8e0] mb-8 leading-relaxed">
               A ART é um documento fundamental para a regularidade técnica e
               legal de obras e serviços de engenharia. Sempre contrate um
               profissional registrado no CREA e exija a emissão da ART para
@@ -194,12 +194,12 @@ export function WhatIsART() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-12 bg-[#1B3B6C] rounded-2xl p-8 text-center"
+            className="mt-12 rounded-2xl border border-[#B9F227]/25 bg-[#0A1428] p-8 text-center shadow-[0_0_50px_-20px_rgba(185,242,39,.35)]"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="font-display text-2xl font-bold text-white mb-4">
               Precisa de uma ART?
             </h3>
-            <p className="text-white/80 mb-6">
+            <p className="text-[#b9c8e0] mb-6">
               Entre em contato e solicite sua ART com um engenheiro civil
               registrado no CREA (5071806455).
             </p>
@@ -224,6 +224,6 @@ export function WhatIsART() {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

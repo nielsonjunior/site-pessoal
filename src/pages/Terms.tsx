@@ -10,7 +10,7 @@ export function Terms() {
         noIndex={true}
       />
 
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -28,16 +28,16 @@ export function Terms() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8 text-gray-700"
+            className="space-y-8 text-[#b9c8e0]"
           >
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">1. Aceitação dos Termos</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">1. Aceitação dos Termos</h2>
               <p>
                 Ao acessar e utilizar este site, você concorda com os presentes Termos de Uso.
                 Este site é operado por Nielson Pinheiro de Castilho Junior, Engenheiro Civil
@@ -46,7 +46,7 @@ export function Terms() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">2. Uso do Site</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">2. Uso do Site</h2>
               <p>
                 Este site tem finalidade informativa e comercial, destinado a apresentar os
                 serviços de engenharia civil oferecidos. As informações sobre preços e prazos
@@ -56,7 +56,7 @@ export function Terms() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">3. Propriedade Intelectual</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">3. Propriedade Intelectual</h2>
               <p>
                 Todo o conteúdo deste site — textos, imagens, logotipos e layout — é de
                 propriedade de Nielson Pinheiro de Castilho Junior. É proibida a reprodução
@@ -65,7 +65,7 @@ export function Terms() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">4. Limitação de Responsabilidade</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">4. Limitação de Responsabilidade</h2>
               <p>
                 As informações deste site são fornecidas em caráter geral e não substituem
                 uma consulta técnica profissional. Para projetos específicos, recomendamos
@@ -74,13 +74,13 @@ export function Terms() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">5. Contato</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">5. Contato</h2>
               <p>
                 Para dúvidas sobre estes termos:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>E-mail: nielsin.junior@gmail.com</li>
-                <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#1B3B6C] hover:underline">(65) 99694-6861</a></li>
+                <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#B9F227] hover:underline">(65) 99694-6861</a></li>
                 <li>Responsável: Nielson Pinheiro de Castilho Junior</li>
                 <li>CREA 5071806455 — Cáceres, MT</li>
               </ul>

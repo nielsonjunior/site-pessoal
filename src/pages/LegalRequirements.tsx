@@ -55,7 +55,7 @@ const penalties = [
 
 export function LegalRequirements() {
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title="Requisitos Legais - Engenharia Civil"
         description="Conheça os requisitos legais para obras e serviços de engenharia civil. Legislação, documentação necessária e normas técnicas."
@@ -68,7 +68,7 @@ export function LegalRequirements() {
       />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -76,14 +76,14 @@ export function LegalRequirements() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <div className="w-20 h-20 bg-[#F4C430]/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Scale className="w-10 h-10 text-[#F4C430]" />
+            <div className="w-20 h-20 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Scale className="w-10 h-10 text-[#B9F227]" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
               Requisitos Legais
             </h1>
             <p className="text-white/70 text-lg">
-              Conheça a legislação e documentação necessária para obras 
+              Conheça a legislação e documentação necessária para obras
               e serviços de engenharia civil.
             </p>
           </motion.div>
@@ -91,18 +91,18 @@ export function LegalRequirements() {
       </section>
 
       {/* Legal Framework */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
               Marco Legal da Engenharia
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#b9c8e0]">
               A profissão de engenheiro civil é regulamentada por diversas leis e normas
             </p>
           </motion.div>
@@ -115,12 +115,12 @@ export function LegalRequirements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-gray-50 rounded-2xl"
+                className="p-6 rounded-2xl border border-white/10 bg-white/[0.03]"
               >
-                <h3 className="text-lg font-semibold text-[#1B3B6C] mb-2">
+                <h3 className="text-lg font-semibold text-[#B9F227] mb-2">
                   {item.law}
                 </h3>
-                <p className="text-gray-600">{item.description}</p>
+                <p className="text-[#b9c8e0]">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -128,18 +128,18 @@ export function LegalRequirements() {
       </section>
 
       {/* Required Documents */}
-      <section className="section-padding bg-[#F8F9FA]">
+      <section className="section-padding bg-[#0A1428]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
               Documentação Necessária
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#b9c8e0]">
               Conheça os principais documentos exigidos para obras e serviços
             </p>
           </motion.div>
@@ -152,16 +152,16 @@ export function LegalRequirements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm"
+                className="flex gap-4 p-6 rounded-2xl border border-white/10 bg-white/[0.03]"
               >
-                <div className="w-14 h-14 bg-[#1B3B6C]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <doc.icon className="w-7 h-7 text-[#1B3B6C]" />
+                <div className="w-14 h-14 bg-[#B9F227]/15 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <doc.icon className="w-7 h-7 text-[#B9F227]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-[#0F1A2E] mb-2">
+                  <h3 className="text-lg font-semibold text-white mb-2">
                     {doc.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{doc.description}</p>
+                  <p className="text-[#93a7c6] text-sm">{doc.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -170,7 +170,7 @@ export function LegalRequirements() {
       </section>
 
       {/* Penalties */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -179,14 +179,14 @@ export function LegalRequirements() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
-                <AlertTriangle className="w-8 h-8 text-red-600" />
+              <div className="w-16 h-16 bg-red-500/15 rounded-2xl flex items-center justify-center mb-6">
+                <AlertTriangle className="w-8 h-8 text-red-400" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
                 Penalidades por Descumprimento
               </h2>
-              <p className="text-gray-600 mb-8">
-                O não cumprimento das normas legais pode acarretar diversas penalidades 
+              <p className="text-[#b9c8e0] mb-8">
+                O não cumprimento das normas legais pode acarretar diversas penalidades
                 para o profissional e para o proprietário da obra:
               </p>
 
@@ -200,8 +200,8 @@ export function LegalRequirements() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <span className="w-2 h-2 bg-red-500 rounded-full" />
-                    <span className="text-gray-700">{penalty}</span>
+                    <span className="w-2 h-2 bg-red-400 rounded-full" />
+                    <span className="text-[#cbd7e8]">{penalty}</span>
                   </motion.div>
                 ))}
               </div>
@@ -212,13 +212,13 @@ export function LegalRequirements() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-[#1B3B6C] rounded-2xl p-8 text-white"
+              className="rounded-2xl border border-white/10 bg-[#0A1428] p-8 text-white"
             >
-              <h3 className="text-2xl font-bold mb-4">
+              <h3 className="font-display text-2xl font-bold mb-4">
                 Garanta a Regularidade do seu Projeto
               </h3>
-              <p className="text-white/80 mb-6">
-                Conte com um engenheiro civil registrado no CREA para garantir 
+              <p className="text-[#b9c8e0] mb-6">
+                Conte com um engenheiro civil registrado no CREA para garantir
                 que seu projeto esteja em total conformidade com a legislação.
               </p>
               <div className="space-y-4">
@@ -245,31 +245,31 @@ export function LegalRequirements() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#F4C430] to-[#E5B520]">
+      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
               Precisa de Ajuda com a Documentação?
             </h2>
-            <p className="text-[#0F1A2E]/80 text-lg mb-8 max-w-2xl mx-auto">
-              Nossa equipe pode auxiliar em todo o processo de regularização 
+            <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
+              Posso auxiliar em todo o processo de regularização
               e obtenção de documentos para sua obra.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/orcamento"
-                className="bg-[#0F1A2E] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1B3B6C] transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-8 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
               >
                 Fale Conosco
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 to="/servicos/regularizacao-imoveis"
-                className="bg-white text-[#0F1A2E] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 font-medium text-white transition-colors hover:bg-white/10"
               >
                 Serviço de Regularização
               </Link>
@@ -277,6 +277,6 @@ export function LegalRequirements() {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

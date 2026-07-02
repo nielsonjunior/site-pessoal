@@ -26,7 +26,7 @@ export function FAQ() {
   };
 
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title="Perguntas Frequentes - Engenharia Civil"
         description="Tire suas dúvidas sobre engenharia civil, ART, regularização de imóveis, reformas e muito mais. Confira nossas respostas!"
@@ -40,7 +40,7 @@ export function FAQ() {
       <JsonLd data={faqPageSchema(faqs)} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -48,26 +48,26 @@ export function FAQ() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
               FAQ
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Perguntas Frequentes
             </h1>
             <p className="text-white/70 text-lg mb-8">
-              Tire suas dúvidas sobre nossos serviços de engenharia civil. 
-              Se não encontrar o que procura, entre em contato conosco.
+              Tire suas dúvidas sobre os serviços de engenharia civil.
+              Se não encontrar o que procura, entre em contato.
             </p>
 
             {/* Search */}
             <div className="relative max-w-xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#93a7c6]" />
               <input
                 type="text"
                 placeholder="Buscar pergunta..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-xl border-0 focus:ring-2 focus:ring-[#F4C430]"
+                className="w-full pl-12 pr-4 py-4 rounded-xl border border-white/15 bg-white/10 text-white placeholder:text-[#93a7c6] focus:outline-none focus:ring-2 focus:ring-[#B9F227]"
               />
             </div>
           </motion.div>
@@ -75,15 +75,15 @@ export function FAQ() {
       </section>
 
       {/* Categories */}
-      <section className="py-8 bg-white border-b border-gray-100">
+      <section className="py-8 bg-[#0A1428] border-b border-white/10">
         <div className="container-custom">
           <div className="flex flex-wrap gap-3 justify-center">
             <button
               onClick={() => setSelectedCategory(null)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === null
-                  ? 'bg-[#1B3B6C] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-[#B9F227] text-[#0a1706]'
+                  : 'bg-white/5 text-[#cbd7e8] border border-white/10 hover:bg-white/10'
               }`}
             >
               Todas
@@ -94,8 +94,8 @@ export function FAQ() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'bg-[#1B3B6C] text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-[#B9F227] text-[#0a1706]'
+                    : 'bg-white/5 text-[#cbd7e8] border border-white/10 hover:bg-white/10'
                 }`}
               >
                 {category}
@@ -106,7 +106,7 @@ export function FAQ() {
       </section>
 
       {/* FAQ List */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom max-w-4xl">
           <div className="space-y-4">
             {filteredFaqs.map((faq, index) => (
@@ -116,20 +116,20 @@ export function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="border border-gray-100 rounded-xl overflow-hidden"
+                className="rounded-xl border border-white/10 bg-white/[0.03] overflow-hidden"
               >
                 <button
                   onClick={() => toggleFaq(faq.id)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="px-3 py-1 bg-[#1B3B6C]/10 text-[#1B3B6C] rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 bg-[#B9F227]/15 text-[#B9F227] rounded-full text-xs font-medium">
                       {faq.category}
                     </span>
-                    <span className="font-medium text-[#0F1A2E]">{faq.question}</span>
+                    <span className="font-medium text-white">{faq.question}</span>
                   </div>
                   <ChevronDown
-                    className={`w-5 h-5 text-gray-400 transition-transform ${
+                    className={`w-5 h-5 text-[#93a7c6] flex-shrink-0 transition-transform ${
                       openId === faq.id ? 'rotate-180' : ''
                     }`}
                   />
@@ -145,9 +145,7 @@ export function FAQ() {
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-6 pt-2">
-                        <div className="pl-[88px]">
-                          <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                        </div>
+                        <p className="text-[#b9c8e0] leading-relaxed">{faq.answer}</p>
                       </div>
                     </motion.div>
                   )}
@@ -158,7 +156,7 @@ export function FAQ() {
 
           {filteredFaqs.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-gray-500">
+              <p className="text-[#93a7c6]">
                 Nenhuma pergunta encontrada. Tente outra busca ou entre em contato.
               </p>
             </div>
@@ -167,7 +165,7 @@ export function FAQ() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#F4C430] to-[#E5B520]">
+      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -176,11 +174,11 @@ export function FAQ() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-4">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
                 Ainda tem dúvidas?
               </h2>
-              <p className="text-[#0F1A2E]/80 text-lg">
-                Nossa equipe está pronta para ajudar. Entre em contato e teremos 
+              <p className="text-white/70 text-lg">
+                Estou pronto para ajudar. Entre em contato e terei
                 prazer em esclarecer todas as suas questões.
               </p>
             </motion.div>
@@ -194,7 +192,7 @@ export function FAQ() {
             >
               <Link
                 to="/orcamento"
-                className="bg-[#0F1A2E] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1B3B6C] transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-8 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
               >
                 Fale Conosco
                 <ArrowRight className="w-5 h-5" />
@@ -203,7 +201,7 @@ export function FAQ() {
                 href="https://wa.me/5565996946861"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-[#0F1A2E] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
               >
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp
@@ -212,6 +210,6 @@ export function FAQ() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
