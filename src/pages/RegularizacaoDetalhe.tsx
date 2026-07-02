@@ -51,7 +51,7 @@ export function RegularizacaoDetalhe() {
   const others = regularizationTypes.filter((t) => t.id !== item.id);
 
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title={`${item.title} em Cáceres-MT`}
         description={`${item.painHook} ${item.benefit} Engenheiro registrado no CREA — fale no WhatsApp.`}
@@ -74,28 +74,28 @@ export function RegularizacaoDetalhe() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-32 pb-4 bg-gray-50">
+      <div className="pt-32 pb-4 bg-[#0A1428] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-[#1B3B6C] transition-colors">
+          <nav className="flex flex-wrap items-center gap-2 text-sm text-[#93a7c6]">
+            <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
             <span>/</span>
-            <Link to="/servicos" className="hover:text-[#1B3B6C] transition-colors">
+            <Link to="/servicos" className="hover:text-white transition-colors">
               Serviços
             </Link>
             <span>/</span>
-            <Link to={PILLAR} className="hover:text-[#1B3B6C] transition-colors">
+            <Link to={PILLAR} className="hover:text-white transition-colors">
               Regularização
             </Link>
             <span>/</span>
-            <span className="text-[#1B3B6C]">{item.title}</span>
+            <span className="text-[#B9F227]">{item.title}</span>
           </nav>
         </div>
       </div>
 
       {/* Hero / Dor */}
-      <section className="py-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="py-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <Link
             to={PILLAR}
@@ -110,13 +110,13 @@ export function RegularizacaoDetalhe() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <div className="w-16 h-16 bg-[#F4C430]/20 rounded-2xl flex items-center justify-center mb-6">
-              <Icon className="w-8 h-8 text-[#F4C430]" />
+            <div className="w-16 h-16 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center mb-6">
+              <Icon className="w-8 h-8 text-[#B9F227]" />
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               {item.title} em Cáceres-MT
             </h1>
-            <p className="text-[#F4C430] text-lg md:text-xl font-medium mb-4">
+            <p className="text-[#B9F227] text-lg md:text-xl font-medium mb-4">
               {item.painHook}
             </p>
             <p className="text-white/80 text-lg mb-8">{item.leigoTitle}.</p>
@@ -134,7 +134,7 @@ export function RegularizacaoDetalhe() {
       </section>
 
       {/* Conteúdo PASPA */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main */}
@@ -145,17 +145,17 @@ export function RegularizacaoDetalhe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-2xl font-bold text-[#0F1A2E] mb-6">
+                <h2 className="font-display text-2xl font-bold text-white mb-6">
                   Você se identifica?
                 </h2>
                 <div className="grid sm:grid-cols-1 gap-3">
                   {item.symptoms.map((s, i) => (
                     <div
                       key={i}
-                      className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl"
+                      className="flex items-start gap-3 p-4 rounded-xl border border-white/10 bg-white/[0.03]"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{s}</span>
+                      <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#cbd7e8]">{s}</span>
                     </div>
                   ))}
                 </div>
@@ -167,10 +167,10 @@ export function RegularizacaoDetalhe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+                <h2 className="font-display text-2xl font-bold text-white mb-4">
                   O que é {item.title.toLowerCase()}?
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-[#b9c8e0] text-lg leading-relaxed">
                   {item.whatIsIt}
                 </p>
               </motion.div>
@@ -180,13 +180,13 @@ export function RegularizacaoDetalhe() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-red-50 border border-red-100 rounded-2xl p-6"
+                className="rounded-2xl border border-red-500/20 bg-red-500/10 p-6"
               >
-                <h2 className="flex items-center gap-2 text-xl font-bold text-[#0F1A2E] mb-3">
-                  <AlertTriangle className="w-6 h-6 text-red-500" />
+                <h2 className="flex items-center gap-2 text-xl font-bold text-white mb-3">
+                  <AlertTriangle className="w-6 h-6 text-red-400" />
                   O que acontece se você não resolver
                 </h2>
-                <p className="text-gray-700 leading-relaxed">{item.ifNotResolved}</p>
+                <p className="text-[#cbd7e8] leading-relaxed">{item.ifNotResolved}</p>
               </motion.div>
 
               {/* Como eu resolvo */}
@@ -195,16 +195,16 @@ export function RegularizacaoDetalhe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-2xl font-bold text-[#0F1A2E] mb-6">
+                <h2 className="font-display text-2xl font-bold text-white mb-6">
                   Como eu resolvo, passo a passo
                 </h2>
                 <ol className="space-y-4">
                   {item.howWeSolve.map((step, i) => (
                     <li key={i} className="flex items-start gap-4">
-                      <span className="w-8 h-8 bg-[#1B3B6C] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                      <span className="w-8 h-8 bg-[#B9F227] text-[#0a1706] rounded-full flex items-center justify-center font-bold flex-shrink-0">
                         {i + 1}
                       </span>
-                      <span className="text-gray-700 pt-1">{step}</span>
+                      <span className="text-[#cbd7e8] pt-1">{step}</span>
                     </li>
                   ))}
                 </ol>
@@ -215,14 +215,14 @@ export function RegularizacaoDetalhe() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-[#F4C430] rounded-2xl p-6 flex items-start gap-4"
+                className="bg-[#B9F227] rounded-2xl p-6 flex items-start gap-4"
               >
-                <TrendingUp className="w-8 h-8 text-[#0F1A2E] flex-shrink-0" />
+                <TrendingUp className="w-8 h-8 text-[#0a1706] flex-shrink-0" />
                 <div>
-                  <p className="font-bold text-lg text-[#0F1A2E] mb-1">
+                  <p className="font-bold text-lg text-[#0a1706] mb-1">
                     Valorize seu imóvel em até {VALORIZATION_MAX}
                   </p>
-                  <p className="text-[#0F1A2E]/80">{item.benefit}</p>
+                  <p className="text-[#0a1706]/80">{item.benefit}</p>
                 </div>
               </motion.div>
             </div>
@@ -231,11 +231,11 @@ export function RegularizacaoDetalhe() {
             <div className="lg:col-span-1">
               <div className="sticky top-32 space-y-6">
                 {/* CTA */}
-                <div className="bg-[#1B3B6C] rounded-2xl p-6">
+                <div className="rounded-2xl border border-[#B9F227]/25 bg-[#0A1428] p-6 shadow-[0_0_50px_-20px_rgba(185,242,39,.35)]">
                   <h3 className="text-xl font-bold text-white mb-3">
                     Fale com o engenheiro
                   </h3>
-                  <p className="text-white/70 text-sm mb-6">
+                  <p className="text-[#b9c8e0] text-sm mb-6">
                     Me conte sua situação (ou mande uma foto da escritura) que eu
                     te digo, sem compromisso, o que dá para fazer.
                   </p>
@@ -243,7 +243,7 @@ export function RegularizacaoDetalhe() {
                     href={wa(`Olá! Quero ajuda com ${item.title.toLowerCase()} do meu imóvel.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#25D366] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#128C7E] transition-colors w-full inline-flex items-center justify-center gap-2 mb-3"
+                    className="bg-[#25D366] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#1EBE5A] transition-colors w-full inline-flex items-center justify-center gap-2 mb-3"
                   >
                     <Phone className="w-4 h-4" />
                     Chamar no WhatsApp
@@ -257,8 +257,8 @@ export function RegularizacaoDetalhe() {
                 </div>
 
                 {/* Outros tipos */}
-                <div className="bg-white border border-gray-100 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-[#0F1A2E] mb-4">
+                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <h3 className="text-lg font-bold text-white mb-4">
                     Outros tipos de regularização
                   </h3>
                   <div className="space-y-2">
@@ -268,12 +268,12 @@ export function RegularizacaoDetalhe() {
                         <Link
                           key={o.id}
                           to={`${PILLAR}/${o.slug}`}
-                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
+                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors"
                         >
-                          <div className="w-9 h-9 bg-[#1B3B6C]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <OIcon className="w-4 h-4 text-[#1B3B6C]" />
+                          <div className="w-9 h-9 bg-[#B9F227]/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <OIcon className="w-4 h-4 text-[#B9F227]" />
                           </div>
-                          <span className="text-sm font-medium text-gray-700">
+                          <span className="text-sm font-medium text-[#cbd7e8]">
                             {o.title}
                           </span>
                         </Link>
@@ -286,6 +286,6 @@ export function RegularizacaoDetalhe() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

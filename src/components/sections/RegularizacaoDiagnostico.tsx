@@ -38,11 +38,11 @@ export function RegularizacaoDiagnostico() {
 
   return (
     <div
-      className="bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E] rounded-3xl p-8 md:p-12"
+      className="bg-gradient-to-br from-[#12294A] to-[#060D1E] border border-white/10 rounded-3xl p-8 md:p-12"
       data-testid="diagnostico"
     >
       <div className="text-center max-w-2xl mx-auto mb-8">
-        <div className="inline-flex items-center gap-2 bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 bg-[#B9F227]/20 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-4">
           <HelpCircle className="w-4 h-4" />
           Diagnóstico rápido e grátis
         </div>
@@ -71,7 +71,7 @@ export function RegularizacaoDiagnostico() {
                 onClick={() => setSelected(o.slug)}
                 className="text-left flex items-start gap-3 bg-white/5 hover:bg-white/15 border border-white/15 rounded-xl p-4 text-white transition-colors"
               >
-                <CheckCircle className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0 mt-0.5" />
                 <span>{o.label}</span>
               </button>
             ))}
@@ -131,7 +131,7 @@ export function RegularizacaoDiagnostico() {
           href={wa("Olá! Não sei qual regularização meu imóvel precisa. Pode me ajudar a descobrir?")}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#F4C430] hover:underline"
+          className="text-[#B9F227] hover:underline"
         >
           Me chame no WhatsApp
         </a>{" "}

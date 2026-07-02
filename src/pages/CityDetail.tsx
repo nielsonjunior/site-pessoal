@@ -29,7 +29,7 @@ export function CityDetail() {
   }
 
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title={`Engenheiro Civil em ${city.name} - ${city.state}`}
         description={`Engenheiro Civil em ${city.name}. Serviços de regularização, ART, reformas e laudos técnicos. Orçamento grátis! Atendimento 24h.`}
@@ -43,20 +43,20 @@ export function CityDetail() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-32 pb-4 bg-gray-50">
+      <div className="pt-32 pb-4 bg-[#0A1428] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-[#1B3B6C] transition-colors">Início</Link>
+          <nav className="flex items-center gap-2 text-sm text-[#93a7c6]">
+            <Link to="/" className="hover:text-white transition-colors">Início</Link>
             <span>/</span>
-            <Link to="/cidades" className="hover:text-[#1B3B6C] transition-colors">Cidades</Link>
+            <Link to="/cidades" className="hover:text-white transition-colors">Cidades</Link>
             <span>/</span>
-            <span className="text-[#1B3B6C]">{city.name}</span>
+            <span className="text-[#B9F227]">{city.name}</span>
           </nav>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="py-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -72,11 +72,11 @@ export function CityDetail() {
             </Link>
 
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20 bg-[#F4C430]/20 rounded-2xl flex items-center justify-center">
-                <MapPin className="w-10 h-10 text-[#F4C430]" />
+              <div className="w-20 h-20 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-10 h-10 text-[#B9F227]" />
               </div>
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white">
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
                   Engenheiro Civil em {city.name}
                 </h1>
                 <p className="text-white/70 text-lg">
@@ -112,7 +112,7 @@ export function CityDetail() {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -121,11 +121,11 @@ export function CityDetail() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
               Serviços em {city.name}
             </h2>
-            <p className="text-gray-600">
-              Oferecemos todos os nossos serviços de engenharia civil em {city.name}, 
+            <p className="text-[#b9c8e0]">
+              Ofereço todos os meus serviços de engenharia civil em {city.name},
               com atendimento personalizado e qualidade garantida.
             </p>
           </motion.div>
@@ -141,12 +141,12 @@ export function CityDetail() {
               >
                 <Link
                   to={`/servicos/${service.slug}`}
-                  className="group block bg-gray-50 rounded-2xl p-6 text-center hover:bg-[#1B3B6C] transition-all duration-300"
+                  className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-colors duration-300 hover:border-[#B9F227]/40 hover:bg-[#B9F227]/[0.05]"
                 >
-                  <div className="w-14 h-14 bg-[#1B3B6C]/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 transition-colors">
-                    <service.icon className="w-7 h-7 text-[#1B3B6C] group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-[#B9F227]/15 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <service.icon className="w-7 h-7 text-[#B9F227]" />
                   </div>
-                  <h3 className="font-semibold text-[#0F1A2E] group-hover:text-white transition-colors">
+                  <h3 className="font-semibold text-white">
                     {service.name}
                   </h3>
                 </Link>
@@ -157,7 +157,7 @@ export function CityDetail() {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-[#F8F9FA]">
+      <section className="section-padding bg-[#0A1428]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -166,13 +166,13 @@ export function CityDetail() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0F1A2E] mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
                 Por Que Contratar em {city.name}?
               </h2>
-              <p className="text-gray-600 mb-8">
-                Nosso atendimento em {city.name} oferece todas as vantagens de um 
-                serviço local com a qualidade e experiência de uma empresa consolidada 
-                no mercado da engenharia civil.
+              <p className="text-[#b9c8e0] mb-8">
+                O atendimento em {city.name} une as vantagens de um serviço local
+                com a responsabilidade técnica de um engenheiro registrado no CREA,
+                que acompanha você do início ao fim do projeto.
               </p>
 
               <div className="space-y-4">
@@ -185,8 +185,8 @@ export function CityDetail() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#F4C430] flex-shrink-0" />
-                    <span className="text-gray-700">{benefit}</span>
+                    <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0" />
+                    <span className="text-[#cbd7e8]">{benefit}</span>
                   </motion.div>
                 ))}
               </div>
@@ -199,12 +199,12 @@ export function CityDetail() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="bg-[#1B3B6C] rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-4">
+              <div className="rounded-2xl border border-white/10 bg-[#060D1E] p-8 text-white">
+                <h3 className="font-display text-2xl font-bold mb-4">
                   Solicite um Orçamento
                 </h3>
-                <p className="text-white/80 mb-6">
-                  Entre em contato agora e receba uma proposta personalizada 
+                <p className="text-[#b9c8e0] mb-6">
+                  Entre em contato agora e receba uma proposta personalizada
                   para seu projeto em {city.name}.
                 </p>
                 <div className="space-y-4">
@@ -233,7 +233,7 @@ export function CityDetail() {
 
       {/* Neighborhoods */}
       {city.neighborhoods && city.neighborhoods.length > 0 && (
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-[#060D1E]">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -241,14 +241,14 @@ export function CityDetail() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold text-[#0F1A2E] mb-8 text-center">
+              <h2 className="font-display text-3xl font-bold text-white mb-8 text-center">
                 Bairros Atendidos em {city.name}
               </h2>
               <div className="flex flex-wrap justify-center gap-3">
                 {city.neighborhoods.map((neighborhood, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm"
+                    className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-[#cbd7e8] text-sm"
                   >
                     {neighborhood}
                   </span>
@@ -260,7 +260,7 @@ export function CityDetail() {
       )}
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -268,8 +268,8 @@ export function CityDetail() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Engenheiro Civil em <span className="text-[#F4C430]">{city.name}</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+              Engenheiro Civil em <span className="text-[#B9F227]">{city.name}</span>
             </h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Não perca tempo. Solicite um orçamento agora mesmo e transforme
@@ -285,7 +285,7 @@ export function CityDetail() {
               </Link>
               <a
                 href="tel:+5565996946861"
-                className="bg-white text-[#0F1A2E] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all inline-flex items-center justify-center gap-2"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 font-semibold text-white transition-colors hover:bg-white/10"
               >
                 <Phone className="w-5 h-5" />
                 Ligar Agora
@@ -294,6 +294,6 @@ export function CityDetail() {
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

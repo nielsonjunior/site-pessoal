@@ -37,7 +37,7 @@ const wa = (msg: string) =>
 
 export function RegularizacaoImoveis() {
   return (
-    <>
+    <div className="bg-[#060D1E] text-white">
       <SEO
         title="Regularização de Imóveis em Cáceres-MT — Desdobro, Usucapião e mais"
         description={`Imóvel sem documentação te trava e te faz perder dinheiro. Regularize (desdobro, remembramento, usucapião, retificação, condomínio) e valorize seu bem em até ${VALORIZATION_MAX}. Fale com um engenheiro registrado no CREA.`}
@@ -67,24 +67,24 @@ export function RegularizacaoImoveis() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-32 pb-4 bg-gray-50">
+      <div className="pt-32 pb-4 bg-[#0A1428] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-[#1B3B6C] transition-colors">
+          <nav className="flex items-center gap-2 text-sm text-[#93a7c6]">
+            <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
             <span>/</span>
-            <Link to="/servicos" className="hover:text-[#1B3B6C] transition-colors">
+            <Link to="/servicos" className="hover:text-white transition-colors">
               Serviços
             </Link>
             <span>/</span>
-            <span className="text-[#1B3B6C]">Regularização de Imóveis</span>
+            <span className="text-[#B9F227]">Regularização de Imóveis</span>
           </nav>
         </div>
       </div>
 
       {/* Hero / Dor principal */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -92,11 +92,11 @@ export function RegularizacaoImoveis() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="inline-flex items-center gap-2 bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-[#B9F227]/15 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-6">
               <TrendingUp className="w-4 h-4" />
               Valorize seu imóvel em até {VALORIZATION_MAX}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Regularização de Imóveis em Cáceres-MT
             </h1>
             <p className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed">
@@ -129,13 +129,13 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Por que isso te custa caro */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold text-[#0F1A2E] mb-4">
+            <h2 className="font-display text-3xl font-bold text-white mb-4">
               Um imóvel irregular te custa caro
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#b9c8e0]">
               Talvez você nem perceba, mas a falta de papelada limita o que você
               pode fazer com o que é seu.
             </p>
@@ -164,15 +164,15 @@ export function RegularizacaoImoveis() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-6 bg-gray-50 rounded-2xl border border-gray-100"
+                className="p-6 rounded-2xl border border-white/10 bg-white/[0.03]"
               >
-                <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-red-500" />
+                <div className="w-12 h-12 bg-red-500/15 rounded-xl flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-red-400" />
                 </div>
-                <h3 className="font-bold text-lg text-[#0F1A2E] mb-2">
+                <h3 className="font-bold text-lg text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.text}</p>
+                <p className="text-[#93a7c6] text-sm leading-relaxed">{item.text}</p>
               </motion.div>
             ))}
           </div>
@@ -180,17 +180,17 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Faixa de valorização */}
-      <section className="py-12 bg-[#0F1A2E]">
+      <section className="py-12 bg-[#0A1428]">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div className="flex items-center gap-4">
-              <TrendingUp className="w-12 h-12 text-[#F4C430] flex-shrink-0" />
+          <div className="rounded-3xl border border-[#B9F227]/25 bg-[#060D1E] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-[0_0_60px_-20px_rgba(185,242,39,.35)]">
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <TrendingUp className="w-12 h-12 text-[#B9F227] flex-shrink-0" />
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-white">
+                <p className="font-display text-2xl md:text-3xl font-bold text-white">
                   Imóvel regularizado{" "}
-                  <span className="text-[#F4C430]">valoriza até {VALORIZATION_MAX}</span>
+                  <span className="text-[#B9F227]">valoriza até {VALORIZATION_MAX}</span>
                 </p>
-                <p className="text-white/70">
+                <p className="text-[#b9c8e0]">
                   Documentação em dia transforma seu imóvel em patrimônio que rende.
                 </p>
               </div>
@@ -199,7 +199,7 @@ export function RegularizacaoImoveis() {
               href={wa("Olá! Quero saber quanto meu imóvel pode valorizar com a regularização.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-accent whitespace-nowrap"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#B9F227] px-7 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
             >
               Falar com o engenheiro
             </a>
@@ -207,14 +207,14 @@ export function RegularizacaoImoveis() {
         </div>
       </section>
 
-      {/* Os 6 tipos */}
-      <section className="section-padding bg-[#F8F9FA]">
+      {/* Os tipos */}
+      <section className="section-padding bg-[#0A1428]">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold text-[#0F1A2E] mb-4">
+            <h2 className="font-display text-3xl font-bold text-white mb-4">
               Qual é a sua situação?
             </h2>
-            <p className="text-gray-600">
+            <p className="text-[#b9c8e0]">
               Encontre abaixo o seu caso. Cada situação tem solução — e eu cuido
               de tudo, do projeto à documentação final.
             </p>
@@ -230,37 +230,37 @@ export function RegularizacaoImoveis() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (i % 2) * 0.1 }}
-                  className="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col shadow-sm hover:shadow-md transition-shadow"
+                  className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#B9F227]/40"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-[#1B3B6C]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-[#1B3B6C]" />
+                    <div className="w-12 h-12 bg-[#B9F227]/15 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-[#B9F227]" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg text-[#0F1A2E] leading-tight">
+                      <h3 className="font-bold text-lg text-white leading-tight">
                         {t.title}
                       </h3>
-                      <p className="text-sm text-gray-500">{t.leigoTitle}</p>
+                      <p className="text-sm text-[#93a7c6]">{t.leigoTitle}</p>
                     </div>
                   </div>
 
-                  <p className="font-medium text-[#1B3B6C] mb-3">{t.painHook}</p>
+                  <p className="font-medium text-[#B9F227] mb-3">{t.painHook}</p>
 
                   <ul className="space-y-2 mb-4">
                     {t.symptoms.slice(0, 3).map((s, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                        <CheckCircle className="w-4 h-4 text-[#F4C430] flex-shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2 text-sm text-[#b9c8e0]">
+                        <CheckCircle className="w-4 h-4 text-[#B9F227] flex-shrink-0 mt-0.5" />
                         {s}
                       </li>
                     ))}
                   </ul>
 
-                  <p className="text-sm text-gray-600 mb-5 mt-auto">{t.benefit}</p>
+                  <p className="text-sm text-[#93a7c6] mb-5 mt-auto">{t.benefit}</p>
 
                   <div className="flex flex-col gap-2">
                     <Link
                       to={`/servicos/regularizacao-imoveis/${t.slug}`}
-                      className="inline-flex items-center justify-center gap-1 w-full border-2 border-[#1B3B6C] text-[#1B3B6C] px-4 py-2.5 rounded-lg font-medium hover:bg-[#1B3B6C] hover:text-white transition-colors"
+                      className="inline-flex items-center justify-center gap-1 w-full border border-white/15 bg-white/5 text-white px-4 py-2.5 rounded-lg font-medium hover:bg-white/10 transition-colors"
                     >
                       Saiba mais
                       <ArrowRight className="w-4 h-4" />
@@ -271,7 +271,7 @@ export function RegularizacaoImoveis() {
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full bg-[#25D366] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#128C7E] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 w-full bg-[#25D366] text-white px-4 py-3 rounded-lg font-medium hover:bg-[#1EBE5A] transition-colors"
                     >
                       <Phone className="w-4 h-4" />
                       Resolver meu caso
@@ -285,11 +285,11 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Mini-diagnóstico interativo */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#060D1E]">
         <div className="container-custom">
           <RegularizacaoDiagnostico />
         </div>
       </section>
-    </>
+    </div>
   );
 }
