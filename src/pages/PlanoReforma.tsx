@@ -111,7 +111,7 @@ const faqs = [
   {
     question: "Quanto custa?",
     answer:
-      "Reforma Simples (100% online): R$ 350. Reforma com Vistoria: R$ 650. Os dois incluem Plano de Reforma, Memorial Descritivo e ART.",
+      "Reforma Simples (100% online): R$ 350. Reforma com Vistoria: R$ 650. Os dois incluem Plano de Reforma, Memorial Descritivo e ART, com a taxa do CREA já inclusa — sem custo extra.",
   },
   {
     question: "Quanto tempo leva para ficar pronto?",
@@ -399,7 +399,7 @@ export function PlanoReforma() {
                   {p.price}
                 </p>
                 <p className="text-sm text-[#b9c8e0]">
-                  Plano + Memorial + ART · {p.prazo}
+                  Plano + Memorial + ART (taxa inclusa) · {p.prazo}
                 </p>
                 {p.nota && (
                   <p className="mt-2 text-xs text-[#8ea3c2]">{p.nota}</p>
