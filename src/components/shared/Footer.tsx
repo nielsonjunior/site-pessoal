@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 
 const footerLinks = {
   servicos: [
+    { name: "Plano de Reforma NBR 16280", href: "/plano-de-reforma" },
     { name: "ART", href: "/servicos/art-anotacao-responsabilidade-tecnica" },
     { name: "Regularização", href: "/servicos/regularizacao-imoveis" },
     { name: "Projetos de Reforma", href: "/servicos/projetos-reforma" },
@@ -18,6 +19,7 @@ const footerLinks = {
     { name: "Orçamento", href: "/orcamento" },
   ],
   recursos: [
+    { name: "Blog", href: "/blog" },
     { name: "O que é ART?", href: "/o-que-e-art" },
     { name: "Regularização de Imóveis", href: "/servicos/regularizacao-imoveis" },
     { name: "Por Que Contratar?", href: "/por-que-contratar-engenheiro" },

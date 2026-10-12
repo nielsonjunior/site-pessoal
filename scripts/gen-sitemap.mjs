@@ -12,6 +12,7 @@ import {
   serviceSlugs,
   citySlugs,
   regularizationSlugs,
+  blogSlugs,
 } from "./site-routes.mjs";
 
 const loc = (p) => `${SITE_URL}${canonicalPath(p)}`;
@@ -20,6 +21,8 @@ const loc = (p) => `${SITE_URL}${canonicalPath(p)}`;
 const staticRoutes = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/servicos", priority: "0.9", changefreq: "monthly" },
+  { path: "/plano-de-reforma", priority: "0.9", changefreq: "monthly" },
+  { path: "/blog", priority: "0.7", changefreq: "weekly" },
   { path: "/orcamento", priority: "0.9", changefreq: "monthly" },
   { path: "/cidades", priority: "0.8", changefreq: "monthly" },
   { path: "/sobre", priority: "0.7", changefreq: "yearly" },
@@ -39,6 +42,7 @@ const dynamicRoutes = [
     changefreq: "monthly",
   })),
   ...citySlugs.map((s) => ({ path: `/cidades/${s}`, priority: "0.7", changefreq: "monthly" })),
+  ...blogSlugs.map((s) => ({ path: `/blog/${s}`, priority: "0.6", changefreq: "monthly" })),
 ];
 
 const all = [...staticRoutes, ...dynamicRoutes];

@@ -23,6 +23,8 @@ export const staticRoutes: RouteFixture[] = [
   { path: "/requisitos-legais" },
   { path: "/privacidade" },
   { path: "/termos" },
+  { path: "/plano-de-reforma", titleContains: "Plano de Reforma" },
+  { path: "/blog", titleContains: "Blog" },
 ];
 
 // Rotas dinamicas com um slug valido conhecido.
@@ -32,6 +34,7 @@ export const dynamicRoutes: RouteFixture[] = [
   { path: "/servicos/regularizacao-imoveis/usucapiao" },
   { path: "/servicos/regularizacao-imoveis/avcb" },
   { path: "/cidades/caceres" },
+  { path: "/blog/plano-de-reforma-nbr-16280", titleContains: "NBR 16280" },
 ];
 
 export const allRoutes = [...staticRoutes, ...dynamicRoutes];

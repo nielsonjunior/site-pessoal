@@ -4,3 +4,4 @@ export * from "./testimonials";
 export * from "./faq";
 export * from "./regularizacao";
 export * from "./casos";
+export * from "./blog";

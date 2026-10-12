@@ -27,6 +27,7 @@ export const SITE_URL = readSiteUrl();
 export const serviceSlugs = slugsFrom("src/data/services.ts");
 export const citySlugs = slugsFrom("src/data/cities.ts");
 export const regularizationSlugs = slugsFrom("src/data/regularizacao.ts");
+export const blogSlugs = slugsFrom("src/data/blog.ts");
 
 // Espelha canonicalUrlFor de src/config/site.ts (rota duplicada + barra final).
 const DUPLICATE = { "/contato": "/orcamento" };

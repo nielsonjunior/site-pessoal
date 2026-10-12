@@ -16,3 +16,6 @@ export { LegalRequirements } from "./LegalRequirements";
 export { NotFound } from "./NotFound";
 export { Privacy } from "./Privacy";
 export { Terms } from "./Terms";
+export { PlanoReforma } from "./PlanoReforma";
+export { Blog } from "./Blog";
+export { BlogPost } from "./BlogPost";

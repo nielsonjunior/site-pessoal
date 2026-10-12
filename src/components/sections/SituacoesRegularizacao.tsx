@@ -12,6 +12,7 @@ import {
   KeyRound,
   Scissors,
   Search,
+  Building2,
 } from "lucide-react";
 import { SITE } from "@/config/site";
 import { casos } from "@/data";
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ElementType> = {
   KeyRound,
   Scissors,
   Search,
+  Building2,
 };
 
 const wa = (msg: string) =>

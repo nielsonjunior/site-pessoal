@@ -18,6 +18,9 @@ import { LegalRequirements } from "@/pages/LegalRequirements";
 import { Privacy } from "@/pages/Privacy";
 import { Terms } from "@/pages/Terms";
 import { NotFound } from "@/pages/NotFound";
+import { PlanoReforma } from "@/pages/PlanoReforma";
+import { Blog } from "@/pages/Blog";
+import { BlogPost } from "@/pages/BlogPost";
 
 /**
  * Conteúdo do app SEM o Router nem o HelmetProvider — para ser reutilizado tanto
@@ -58,6 +61,9 @@ export function AppShell() {
               element={<WhyHireEngineer />}
             />
             <Route path="/requisitos-legais" element={<LegalRequirements />} />
+            <Route path="/plano-de-reforma" element={<PlanoReforma />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacidade" element={<Privacy />} />
             <Route path="/termos" element={<Terms />} />
             <Route path="*" element={<NotFound />} />

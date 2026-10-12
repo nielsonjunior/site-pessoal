@@ -44,6 +44,15 @@ export const casos: CasoCard[] = [
       "Olá! Minha obra foi embargada pela prefeitura por falta de alvará. Preciso regularizar.",
   },
   {
+    id: "plano-reforma",
+    frase: "“Meu síndico pediu um plano de reforma”",
+    tag: "Plano de Reforma NBR 16280 + ART",
+    icon: "Building2",
+    href: "/plano-de-reforma",
+    waMsg:
+      "Olá! Vou reformar meu apartamento e o condomínio pediu o Plano de Reforma (NBR 16280) com ART. Pode me ajudar?",
+  },
+  {
     id: "art",
     frase: "“Vou reformar/construir — preciso de engenheiro?”",
     tag: "ART",

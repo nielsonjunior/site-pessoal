@@ -12,6 +12,7 @@ import {
   serviceSlugs,
   citySlugs,
   regularizationSlugs,
+  blogSlugs,
 } from "./site-routes.mjs";
 
 const distDir = join(process.cwd(), "dist");
@@ -44,11 +45,14 @@ const staticPaths = [
   "/requisitos-legais",
   "/privacidade",
   "/termos",
+  "/plano-de-reforma",
+  "/blog",
 ];
 const dynamicPaths = [
   ...serviceSlugs.map((s) => `/servicos/${s}`),
   ...regularizationSlugs.map((s) => `/servicos/regularizacao-imoveis/${s}`),
   ...citySlugs.map((s) => `/cidades/${s}`),
+  ...blogSlugs.map((s) => `/blog/${s}`),
 ];
 const paths = [...staticPaths, ...dynamicPaths];
 

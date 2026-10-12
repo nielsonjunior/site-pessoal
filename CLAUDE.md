@@ -64,7 +64,7 @@ tests/e2e/                 Testes Playwright (smoke, navigation, routes fixture)
 `/` · `/servicos` · `/servicos/:slug` · `/sobre` · `/contato` · `/orcamento`
 · `/cidades` · `/cidades/:slug` · `/faq` · `/landing` · `/o-que-e-art`
 · `/por-que-contratar-engenheiro` · `/requisitos-legais` · `/privacidade`
-· `/termos` · `*` (NotFound)
+· `/termos` · `/plano-de-reforma` · `/blog` · `/blog/:slug` · `*` (NotFound)
 
 `/contato` e `/orcamento` renderizam a **mesma** página (`Budget`).
 
@@ -72,6 +72,11 @@ tests/e2e/                 Testes Playwright (smoke, navigation, routes fixture)
 `RegularizacaoImoveis` (hub de vendas) em vez do `ServiceDetail` genérico — a rota
 estática é declarada antes de `/servicos/:slug`. Conteúdo dos 6 tipos de
 regularização em `src/data/regularizacao.ts`. Estratégia: `docs/REGULARIZACAO-ESTRATEGIA.md`.
+
+`/plano-de-reforma` é a página de vendas do serviço **online** de Plano de Reforma
+NBR 16280 + ART para condomínios em **SP e MT** (público fora de Cáceres). Ela e o
+blog usam `<SEO titleSuffix="brand">` para o título não levar "| Cáceres-MT".
+Artigos do blog em `src/data/blog.ts` (slugs lidos por `scripts/site-routes.mjs`).
 
 ## Comandos
 
