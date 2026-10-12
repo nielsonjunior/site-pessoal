@@ -26,7 +26,7 @@ export function CTA() {
             {/* Features */}
             <div className="flex flex-wrap gap-4 mb-8">
               {[
-                { icon: Clock, text: 'Atendimento 24h' },
+                { icon: Clock, text: 'Resposta em até 24h úteis' },
                 { icon: Shield, text: 'Garantia de Qualidade' },
                 { icon: CheckCircle, text: 'Orçamento Grátis' },
               ].map((feature, index) => (
@@ -96,7 +96,7 @@ export function CTA() {
                     Seg - Sex: 8h às 18h
                   </p>
                   <p className="text-sm text-[#B9F227] font-medium">
-                    Emergências: 24h
+                    WhatsApp: resposta em até 24h úteis
                   </p>
                 </div>
               </div>

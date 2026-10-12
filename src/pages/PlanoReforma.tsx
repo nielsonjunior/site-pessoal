@@ -70,6 +70,9 @@ const pacotes = [
   {
     title: "Reforma Simples",
     subtitle: "100% online, sem visita",
+    price: "R$ 350",
+    prazo: "Entrega em até 48 horas úteis",
+    nota: "",
     items: [
       "Troca de piso e revestimentos sobre o existente",
       "Pintura, forro de gesso e marcenaria",
@@ -81,6 +84,9 @@ const pacotes = [
   {
     title: "Reforma com Vistoria",
     subtitle: "Inclui visita técnica ao imóvel",
+    price: "R$ 650",
+    prazo: "Prazo combinado após a visita",
+    nota: "Visita presencial em Cáceres-MT e região. Em outras cidades, consulte a agenda; o deslocamento é orçado à parte.",
     items: [
       "Remoção ou abertura de paredes",
       "Alterações em instalações de gás ou hidráulica",
@@ -100,7 +106,12 @@ const faqs = [
   {
     question: "Vocês atendem em qual região?",
     answer:
-      "Atendimento online para condomínios nos estados de São Paulo e Mato Grosso, onde o responsável técnico tem registro ativo no CREA (5071806455).",
+      "Atendimento online para condomínios nos estados de São Paulo e Mato Grosso, onde o responsável técnico tem registro ativo no CREA (5071806455). A vistoria presencial é feita em Cáceres-MT e região; para outras cidades, consulte a disponibilidade de agenda — o deslocamento é orçado à parte.",
+  },
+  {
+    question: "Quanto custa?",
+    answer:
+      "Reforma Simples (100% online): R$ 350. Reforma com Vistoria: R$ 650. Os dois incluem Plano de Reforma, Memorial Descritivo e ART.",
   },
   {
     question: "Quanto tempo leva para ficar pronto?",
@@ -124,8 +135,8 @@ export function PlanoReforma() {
     <div className="bg-[#060D1E] text-white">
       <SEO
         titleSuffix="brand"
-        title="Plano de Reforma NBR 16280 + ART Online em até 48h"
-        description="O síndico pediu o Plano de Reforma? Plano NBR 16280 + Memorial Descritivo + ART por engenheiro civil, 100% online, em até 48h úteis. Atendimento em SP e MT."
+        title="Plano de Reforma NBR 16280 + ART Online a partir de R$ 350"
+        description="O síndico pediu o Plano de Reforma? Plano NBR 16280 + Memorial Descritivo + ART por engenheiro civil, 100% online, a partir de R$ 350, em até 48h úteis. Atendimento em SP e MT."
         keywords={[
           "plano de reforma NBR 16280",
           "plano de reforma apartamento",
@@ -162,6 +173,10 @@ export function PlanoReforma() {
             telephone: SITE.phoneE164,
           },
           url: `${SITE.url}/plano-de-reforma`,
+          offers: [
+            { "@type": "Offer", name: "Reforma Simples (online)", price: "350.00", priceCurrency: "BRL" },
+            { "@type": "Offer", name: "Reforma com Vistoria", price: "650.00", priceCurrency: "BRL" },
+          ],
         }}
       />
 
@@ -188,7 +203,7 @@ export function PlanoReforma() {
               ABNT NBR 16280 · Reforma em condomínio
             </span>
             <h1 className="mt-5 font-display text-4xl md:text-5xl font-bold leading-tight text-white">
-              O síndico pediu o Plano de Reforma? Resolvo em até 48 horas, sem
+              O síndico pediu o Plano de Reforma? Resolvo em até 48 horas úteis, sem
               você sair de casa.
             </h1>
             <p className="mt-5 text-lg text-[#b9c8e0] leading-relaxed max-w-2xl">
@@ -242,7 +257,11 @@ export function PlanoReforma() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 border-t border-white/10 pt-5 text-sm text-[#93a7c6]">
+            <p className="mt-6 border-t border-white/10 pt-5 flex items-baseline gap-2">
+              <span className="text-sm text-[#93a7c6]">a partir de</span>
+              <span className="font-display text-3xl font-bold text-white">R$ 350</span>
+            </p>
+            <p className="mt-3 text-sm text-[#93a7c6]">
               Responsável técnico: Eng. Civil Nielson P. de Castilho Júnior ·
               CREA 5071806455
             </p>
@@ -376,6 +395,15 @@ export function PlanoReforma() {
                   {p.title}
                 </h3>
                 <p className="mt-1 text-sm text-[#8ea3c2]">{p.subtitle}</p>
+                <p className="mt-5 font-display text-4xl font-bold text-white">
+                  {p.price}
+                </p>
+                <p className="text-sm text-[#b9c8e0]">
+                  Plano + Memorial + ART · {p.prazo}
+                </p>
+                {p.nota && (
+                  <p className="mt-2 text-xs text-[#8ea3c2]">{p.nota}</p>
+                )}
                 <ul className="mt-6 mb-8 space-y-3">
                   {p.items.map((it) => (
                     <li key={it} className="flex gap-3 text-[#cbd7e8]">

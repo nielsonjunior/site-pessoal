@@ -10,6 +10,14 @@
 /** Valorização estimada de um imóvel com documentação regularizada. */
 export const VALORIZATION_MAX = "30%";
 
+/**
+ * Fonte do número: Leonardo Schneider, vice-presidente do Secovi Rio, afirmou que
+ * imóvel sem registro perde de 30% a 50% do valor por falta de segurança jurídica
+ * (Boletim do Direito Imobiliário — BDI nº 3/2014). Usamos o piso (30%).
+ */
+export const VALORIZATION_SOURCE =
+  "Segundo o Secovi Rio, imóvel sem registro pode valer de 30% a 50% menos por falta de segurança jurídica (BDI nº 3/2014).";
+
 export interface RegularizationType {
   id: string;
   slug: string;

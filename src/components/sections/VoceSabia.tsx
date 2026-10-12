@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Lightbulb, TrendingUp, ArrowRight } from "lucide-react";
 import { SITE } from "@/config/site";
-import { VALORIZATION_MAX } from "@/data";
+import { VALORIZATION_MAX, VALORIZATION_SOURCE } from "@/data";
 import { fadeUp, stagger, inView } from "@/lib/motion";
 
 const PILLAR = "/servicos/regularizacao-imoveis";
@@ -117,6 +117,7 @@ export function VoceSabia() {
               <p className="text-[#b9c8e0]">
                 Coloque a documentação em dia e transforme seu imóvel em patrimônio que rende.
               </p>
+              <p className="mt-1 text-xs text-[#8ea3c2]">{VALORIZATION_SOURCE}</p>
             </div>
           </div>
           <a

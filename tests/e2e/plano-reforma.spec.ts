@@ -35,3 +35,9 @@ test.describe("Plano de Reforma NBR 16280", () => {
     await expect(page.getByText(/404|não encontrada/i).first()).toBeVisible();
   });
 });
+
+test("mostra os preços dos pacotes", async ({ page }) => {
+  await page.goto("/plano-de-reforma");
+  await expect(page.getByText("R$ 350").first()).toBeVisible();
+  await expect(page.getByText("R$ 650").first()).toBeAttached();
+});

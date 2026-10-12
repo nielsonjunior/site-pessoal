@@ -32,7 +32,7 @@ export function CityDetail() {
     <div className="bg-[#060D1E] text-white">
       <SEO
         title={`Engenheiro Civil em ${city.name} - ${city.state}`}
-        description={`Engenheiro Civil em ${city.name}. Serviços de regularização, ART, reformas e laudos técnicos. Orçamento grátis! Atendimento 24h.`}
+        description={`Engenheiro Civil em ${city.name}. Serviços de regularização, ART, reformas e laudos técnicos. Orçamento grátis com resposta em até 24h úteis.`}
         keywords={[
           `engenheiro civil ${city.name}`,
           `regularização ${city.name}`,

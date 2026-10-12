@@ -285,7 +285,7 @@ export function About() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[#B9F227]" />
-                    <span className="text-[#b9c8e0]">Seg - Sex: 8h às 18h | Emergências: 24h</span>
+                    <span className="text-[#b9c8e0]">Seg - Sex: 8h às 18h | Resposta em até 24h úteis</span>
                   </div>
                 </div>
                 <Link

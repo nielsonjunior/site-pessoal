@@ -129,7 +129,7 @@ export const faqs: FAQ[] = [
   {
     id: "21",
     question: "Imóvel regularizado valoriza mesmo? Quanto?",
-    answer: "Sim. Um imóvel com toda a documentação em dia pode valer até cerca de 30% mais e ainda pode ser financiado pelo banco e vendido com segurança jurídica. Regularizar (desdobro, usucapião, retificação, instituição de condomínio) transforma seu imóvel em um patrimônio que rende.",
+    answer: "Sim. Segundo o Secovi Rio, um imóvel sem registro pode valer de 30% a 50% menos por falta de segurança jurídica. Com a documentação em dia, ele recupera esse valor e ainda pode ser financiado pelo banco e vendido com segurança jurídica. Regularizar (desdobro, usucapião, retificação, instituição de condomínio) transforma seu imóvel em um patrimônio que rende.",
     category: "Regularização"
   }
 ];

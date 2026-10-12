@@ -34,7 +34,7 @@ const contactInfo = [
     icon: Clock,
     title: 'Horário de Atendimento',
     content: 'Segunda a Sexta: 8h às 18h',
-    extra: 'Emergências: 24 horas',
+    extra: 'Resposta em até 24h úteis',
   },
 ];
 

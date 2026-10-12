@@ -148,7 +148,7 @@ export function Footer() {
                   <p className="text-white">
                     Seg - Sex: 8h às 18h
                     <br />
-                    <span className="text-[#F4C430]">Emergências: 24h</span>
+                    <span className="text-[#F4C430]">WhatsApp: resposta em até 24h úteis</span>
                   </p>
                 </div>
               </li>

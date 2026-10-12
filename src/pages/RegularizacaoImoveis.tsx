@@ -20,7 +20,7 @@ import { SEO, JsonLd } from "@/components/shared";
 import { RegularizacaoDiagnostico } from "@/components/sections/RegularizacaoDiagnostico";
 import { SITE } from "@/config/site";
 import { breadcrumbSchema, serviceSchema } from "@/lib/jsonld";
-import { regularizationTypes, VALORIZATION_MAX } from "@/data";
+import { regularizationTypes, VALORIZATION_MAX, VALORIZATION_SOURCE } from "@/data";
 
 const iconMap: Record<string, React.ElementType> = {
   Scissors,
@@ -193,6 +193,7 @@ export function RegularizacaoImoveis() {
                 <p className="text-[#b9c8e0]">
                   Documentação em dia transforma seu imóvel em patrimônio que rende.
                 </p>
+                <p className="mt-1 text-xs text-[#8ea3c2]">{VALORIZATION_SOURCE}</p>
               </div>
             </div>
             <a

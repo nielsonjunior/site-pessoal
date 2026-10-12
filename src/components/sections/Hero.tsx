@@ -9,7 +9,7 @@ const wa = (msg: string) =>
 const stats = [
   { value: '+12', label: 'Cidades atendidas' },
   { value: 'até 30%', label: 'de valorização possível', accent: true },
-  { value: '24h', label: 'Resposta no WhatsApp' },
+  { value: '24h', label: 'Resposta em dias úteis' },
 ];
 
 /**
@@ -91,7 +91,7 @@ export function Hero() {
             transition={{ delay: 0.5 }}
             className="mt-4 text-xs sm:text-sm text-[#8ea3c2]"
           >
-            Análise gratuita · resposta em 24h · CREA 5071806455
+            Análise gratuita · resposta em até 24h úteis · CREA 5071806455
           </motion.p>
 
           {/* stats */}
