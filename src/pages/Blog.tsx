@@ -15,8 +15,7 @@ export function Blog() {
   return (
     <div className="bg-[#060D1E] text-white">
       <SEO
-        titleSuffix="brand"
-        title="Blog | Reforma de Apartamento, NBR 16280 e ART"
+        title="Blog | Dicas para Reformar Apartamento em Condomínio"
         description="Artigos sobre reforma de apartamento em condomínio: Plano de Reforma NBR 16280, ART, o que o síndico pode exigir e como reformar com segurança."
         keywords={[
           "blog engenharia civil",

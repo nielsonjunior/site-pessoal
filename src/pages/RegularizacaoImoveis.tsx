@@ -39,7 +39,7 @@ export function RegularizacaoImoveis() {
   return (
     <div className="bg-[#060D1E] text-white">
       <SEO
-        title="Regularização de Imóveis em Cáceres-MT — Desdobro, Usucapião e mais"
+        title="Regularização de Imóveis em Cáceres-MT: Desdobro e Usucapião"
         description={`Imóvel sem documentação te trava e te faz perder dinheiro. Regularize (desdobro, remembramento, usucapião, retificação, condomínio) e valorize seu bem em até ${VALORIZATION_MAX}. Fale com um engenheiro registrado no CREA.`}
         keywords={[
           "regularização de imóveis Cáceres",

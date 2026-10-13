@@ -20,7 +20,7 @@ describe("blog", () => {
   });
 
   it("busca por slug", () => {
-    expect(getBlogPostBySlug("plano-de-reforma-nbr-16280")?.title).toMatch(/NBR 16280/);
+    expect(getBlogPostBySlug("plano-de-reforma-nbr-16280")?.title).toMatch(/plano de reforma/i);
     expect(getBlogPostBySlug("nao-existe")).toBeUndefined();
   });
 

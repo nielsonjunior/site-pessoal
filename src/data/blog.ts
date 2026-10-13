@@ -28,10 +28,10 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: "plano-de-reforma-nbr-16280",
-    title: "Plano de Reforma NBR 16280: o que é e quando o condomínio pode exigir",
-    cardTitle: "Plano de Reforma NBR 16280: o que é?",
+    title: "O condomínio pediu um plano de reforma: o que é e como conseguir",
+    cardTitle: "Que documento é esse que o condomínio pede?",
     metaDescription:
-      "Entenda o que é o Plano de Reforma da NBR 16280, quando o síndico pode exigir, o que o documento precisa ter e quem pode assinar.",
+      "O condomínio pediu um plano de reforma antes da obra? Entenda em palavras simples que documento é esse, quando é obrigatório e quem pode assinar.",
     keywords: [
       "plano de reforma NBR 16280",
       "NBR 16280 reforma apartamento",
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
       "O síndico pediu um plano de reforma e você nunca ouviu falar disso? Veja o que a norma diz e o que precisa entregar antes de começar a obra.",
     sections: [
       {
-        heading: "O que é a NBR 16280",
+        heading: "Que regra é essa (NBR 16280)",
         paragraphs: [
           "A ABNT NBR 16280 é a norma brasileira que trata de reformas em edificações. Ela está em vigor desde 2014 e criou um sistema de gestão para que obras dentro de apartamentos e salas comerciais não coloquem em risco o prédio e os vizinhos.",
           "O ponto central da norma é simples: antes de começar, o proprietário apresenta ao responsável pelo condomínio (normalmente o síndico) um plano descrevendo o que será feito, como e por quem.",
@@ -83,7 +83,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "sindico-pode-proibir-reforma",
     title: "O síndico pode proibir minha reforma? O que diz a NBR 16280",
-    cardTitle: "O síndico pode proibir minha reforma?",
+    cardTitle: "O síndico pode barrar minha reforma?",
     metaDescription:
       "Saiba o que o síndico pode e não pode exigir na reforma do seu apartamento, segundo a NBR 16280, e como evitar que a obra fique parada.",
     keywords: [
@@ -132,7 +132,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "art-para-reforma-de-apartamento",
     title: "ART para reforma de apartamento: quando precisa e como funciona",
-    cardTitle: "ART para reforma: quando precisa?",
+    cardTitle: "ART para reforma: o que é e quando precisa?",
     metaDescription:
       "Descubra quando a reforma do apartamento precisa de ART, o que ela garante, como é emitida e por que o condomínio pede esse documento.",
     keywords: [

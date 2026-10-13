@@ -45,12 +45,12 @@ export const casos: CasoCard[] = [
   },
   {
     id: "plano-reforma",
-    frase: "“Meu síndico pediu um plano de reforma”",
-    tag: "Plano de Reforma NBR 16280 + ART",
+    frase: "“Vou reformar e o condomínio pediu documento de engenheiro”",
+    tag: "Liberação de reforma no condomínio",
     icon: "Building2",
     href: "/plano-de-reforma",
     waMsg:
-      "Olá! Vou reformar meu apartamento e o condomínio pediu o Plano de Reforma (NBR 16280) com ART. Pode me ajudar?",
+      "Olá! Vou reformar meu apartamento e o condomínio pediu um documento de engenheiro para liberar a obra. Pode me ajudar?",
   },
   {
     id: "art",

@@ -10,7 +10,7 @@ const navLinks = [
     href: "/servicos",
     dropdown: [
       { name: "Todos os Serviços", href: "/servicos" },
-      { name: "Plano de Reforma (condomínio)", href: "/plano-de-reforma" },
+      { name: "Liberar reforma no condomínio", href: "/plano-de-reforma" },
       { name: "ART", href: "/servicos/art-anotacao-responsabilidade-tecnica" },
       { name: "Regularização", href: "/servicos/regularizacao-imoveis" },
       { name: "Reformas", href: "/servicos/projetos-reforma" },

@@ -34,7 +34,7 @@ export const dynamicRoutes: RouteFixture[] = [
   { path: "/servicos/regularizacao-imoveis/usucapiao" },
   { path: "/servicos/regularizacao-imoveis/avcb" },
   { path: "/cidades/caceres" },
-  { path: "/blog/plano-de-reforma-nbr-16280", titleContains: "NBR 16280" },
+  { path: "/blog/plano-de-reforma-nbr-16280", titleContains: "plano de reforma" },
 ];
 
 export const allRoutes = [...staticRoutes, ...dynamicRoutes];

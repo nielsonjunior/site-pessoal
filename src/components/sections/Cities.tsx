@@ -97,12 +97,12 @@ export function Cities() {
                 atendimento na sua cidade.
               </p>
               <p className="text-[#b9c8e0] mb-6">
-                <strong className="text-white">Mora em condomínio em SP ou MT?</strong>{' '}
+                <strong className="text-white">Vai reformar apartamento em SP ou MT?</strong>{' '}
                 O{' '}
                 <Link to="/plano-de-reforma" className="text-[#B9F227] hover:underline">
-                  Plano de Reforma NBR 16280 com ART
+                  documento de engenheiro que o condomínio pede
                 </Link>{' '}
-                é feito 100% online, inclusive para Campinas e São Paulo.
+                é feito 100% pela internet, inclusive para Campinas e São Paulo.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

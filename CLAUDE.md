@@ -74,8 +74,13 @@ estática é declarada antes de `/servicos/:slug`. Conteúdo dos 6 tipos de
 regularização em `src/data/regularizacao.ts`. Estratégia: `docs/REGULARIZACAO-ESTRATEGIA.md`.
 
 `/plano-de-reforma` é a página de vendas do serviço **online** de Plano de Reforma
-NBR 16280 + ART para condomínios em **SP e MT** (público fora de Cáceres). Ela e o
-blog usam `<SEO titleSuffix="brand">` para o título não levar "| Cáceres-MT".
+NBR 16280 + ART para condomínios em **SP e MT** (público fora de Cáceres). O texto
+fala a língua do leigo ("documento de engenheiro que o condomínio pede"); "NBR 16280"
+aparece só como explicação.
+
+**Títulos (SEO):** o `SEO` acrescenta só `| NP Castilho Engenharia` — o Google mostra
+~60 caracteres, então ponha as palavras-chave no começo do `title` da página.
+Páginas `noIndex` (privacidade, termos) ficam FORA do sitemap.
 Artigos do blog em `src/data/blog.ts` (slugs lidos por `scripts/site-routes.mjs`).
 
 ## Comandos

@@ -30,8 +30,6 @@ const staticRoutes = [
   { path: "/o-que-e-art", priority: "0.6", changefreq: "yearly" },
   { path: "/por-que-contratar-engenheiro", priority: "0.6", changefreq: "yearly" },
   { path: "/requisitos-legais", priority: "0.6", changefreq: "yearly" },
-  { path: "/privacidade", priority: "0.3", changefreq: "yearly" },
-  { path: "/termos", priority: "0.3", changefreq: "yearly" },
 ];
 
 const dynamicRoutes = [

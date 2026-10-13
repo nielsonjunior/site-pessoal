@@ -44,10 +44,11 @@ export function WhatsAppButton({
               initial={{ opacity: 0, y: 10, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.9 }}
-              className="bg-white rounded-xl shadow-xl p-4 max-w-xs mb-2 relative"
+              className="hidden sm:block bg-white rounded-xl shadow-xl p-4 max-w-xs mb-2 relative"
             >
               <button
                 onClick={() => setShowTooltip(false)}
+                aria-label="Fechar aviso"
                 className="absolute top-2 right-2 text-gray-400 hover:text-gray-600"
               >
                 <X className="w-4 h-4" />

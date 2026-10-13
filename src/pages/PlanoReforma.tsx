@@ -23,7 +23,7 @@ const wa = (msg: string) =>
   `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
 
 const WA_PEDIDO = wa(
-  "Olá! Vou reformar meu apartamento e o condomínio pediu o Plano de Reforma (NBR 16280) com ART. Pode me passar um orçamento?",
+  "Olá! Vou reformar meu apartamento e o condomínio pediu um documento de engenheiro (plano de reforma com ART) para liberar a obra. Pode me passar um orçamento?",
 );
 const WA_SINDICO = wa(
   "Olá! Sou síndico(a)/administradora e quero indicar um engenheiro para os planos de reforma do condomínio. Podemos conversar?",
@@ -32,15 +32,15 @@ const WA_SINDICO = wa(
 const entregaveis = [
   {
     title: "Plano de Reforma",
-    text: "Elaborado conforme a ABNT NBR 16280, no formato que o condomínio precisa para analisar e liberar a obra.",
+    text: "O documento que explica a sua obra para o síndico aprovar. Feito do jeito que a norma técnica (NBR 16280) pede.",
   },
   {
     title: "Memorial Descritivo",
-    text: "Serviços, materiais, cronograma, horários, riscos e cuidados com as áreas comuns.",
+    text: "A lista do que vai ser feito, com quais materiais, em quanto tempo e em quais horários.",
   },
   {
-    title: "ART no CREA",
-    text: "Anotação de Responsabilidade Técnica emitida por engenheiro civil registrado.",
+    title: "ART (assinatura do engenheiro)",
+    text: "O registro no CREA que mostra que um engenheiro civil é o responsável técnico pela sua reforma.",
   },
   {
     title: "Ajustes pedidos pelo condomínio",
@@ -99,6 +99,11 @@ const pacotes = [
 
 const faqs = [
   {
+    question: "Que documento é esse que o condomínio está pedindo?",
+    answer:
+      "Desde 2014, uma norma técnica (a ABNT NBR 16280) permite que o condomínio exija um documento antes de qualquer obra dentro do apartamento. Ele se chama Plano de Reforma e explica o que vai ser feito, como e por quem. Quando a obra mexe em paredes, elétrica, água ou gás, esse documento precisa ser assinado por engenheiro, com a ART (o registro no CREA).",
+  },
+  {
     question: "O engenheiro precisa ir até o apartamento?",
     answer:
       "Para reformas simples, não: fotos, medidas e planta bastam. Quando a obra mexe em paredes, estrutura, gás ou parte elétrica pesada, a vistoria no local é obrigatória e entra no pacote com vistoria.",
@@ -111,7 +116,7 @@ const faqs = [
   {
     question: "Quanto custa?",
     answer:
-      "Reforma Simples (100% online): R$ 350. Reforma com Vistoria: R$ 650. Os dois incluem Plano de Reforma, Memorial Descritivo e ART, com a taxa do CREA já inclusa — sem custo extra.",
+      "Reforma Simples (100% online): R$ 350. Reforma com Vistoria: R$ 650. Os dois incluem Plano de Reforma, Memorial Descritivo e ART, com a taxa do CREA já inclusa — sem custo extra.",
   },
   {
     question: "Quanto tempo leva para ficar pronto?",
@@ -134,10 +139,12 @@ export function PlanoReforma() {
   return (
     <div className="bg-[#060D1E] text-white">
       <SEO
-        titleSuffix="brand"
-        title="Plano de Reforma NBR 16280 + ART Online a partir de R$ 350"
-        description="O síndico pediu o Plano de Reforma? Plano NBR 16280 + Memorial Descritivo + ART por engenheiro civil, 100% online, a partir de R$ 350, em até 48h úteis. Atendimento em SP e MT."
+        title="Plano de Reforma para Condomínio + ART | R$ 350, pronto em 48h"
+        description="O condomínio pediu um documento de engenheiro para liberar sua reforma? Plano de Reforma + ART pela internet, a partir de R$ 350, pronto em até 48h úteis. SP e MT."
         keywords={[
+          "documento para reforma de apartamento",
+          "condomínio pediu engenheiro para reforma",
+          "autorização de reforma condomínio",
           "plano de reforma NBR 16280",
           "plano de reforma apartamento",
           "ART para reforma de apartamento",
@@ -151,7 +158,7 @@ export function PlanoReforma() {
       <JsonLd
         data={breadcrumbSchema([
           { name: "Início", path: "/" },
-          { name: "Plano de Reforma NBR 16280", path: "/plano-de-reforma" },
+          { name: "Documento para reforma no condomínio", path: "/plano-de-reforma" },
         ])}
       />
       <JsonLd data={faqPageSchema(faqs)} />
@@ -188,7 +195,7 @@ export function PlanoReforma() {
               Início
             </Link>
             <span>/</span>
-            <span className="text-[#B9F227]">Plano de Reforma</span>
+            <span className="text-[#B9F227]">Reforma no condomínio</span>
           </nav>
         </div>
       </div>
@@ -200,17 +207,17 @@ export function PlanoReforma() {
           <motion.div initial="hidden" animate="show" variants={fadeUp}>
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227]">
               <Building2 className="h-4 w-4" />
-              ABNT NBR 16280 · Reforma em condomínio
+              Reforma de apartamento · Condomínio
             </span>
             <h1 className="mt-5 font-display text-4xl md:text-5xl font-bold leading-tight text-white">
-              O síndico pediu o Plano de Reforma? Resolvo em até 48 horas úteis, sem
-              você sair de casa.
+              Vai reformar e o condomínio pediu um documento de engenheiro?
+              Eu resolvo pela internet.
             </h1>
             <p className="mt-5 text-lg text-[#b9c8e0] leading-relaxed max-w-2xl">
-              Plano de Reforma + Memorial Descritivo + ART assinados por
-              engenheiro civil registrado no CREA. Você manda fotos e a
-              descrição da obra pelo celular e recebe o documento pronto para
-              protocolar no condomínio.
+              Faço o documento que o síndico exige para liberar a sua obra
+              (o Plano de Reforma), assinado por engenheiro civil com ART. Você
+              manda fotos pelo WhatsApp e recebe tudo pronto para entregar no
+              condomínio em até 48 horas úteis.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
@@ -220,7 +227,7 @@ export function PlanoReforma() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3.5 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
               >
                 <Phone className="h-5 w-5" />
-                Quero meu Plano de Reforma
+                Quero liberar minha reforma
               </a>
               <a
                 href="#como-funciona"
@@ -279,7 +286,7 @@ export function PlanoReforma() {
             variants={fadeUp}
             className="font-display text-3xl md:text-4xl font-semibold text-white"
           >
-            Sem o plano aprovado, a obra não começa.
+            Sem esse documento, o síndico pode barrar a obra.
           </motion.h2>
           <motion.div
             initial="hidden"
@@ -289,11 +296,11 @@ export function PlanoReforma() {
             className="space-y-4 text-lg leading-relaxed text-[#b9c8e0]"
           >
             <p>
-              A NBR 16280 permite que o condomínio exija um plano de reforma
-              antes de qualquer obra dentro do apartamento. Quando a reforma
-              mexe em paredes, elétrica, hidráulica, gás ou impermeabilização,
-              o plano precisa ser assinado por engenheiro ou arquiteto, com ART
-              ou RRT.
+              Trocar piso, mexer na cozinha, no banheiro ou na parede: antes
+              de começar, o condomínio pode exigir um documento explicando a
+              obra. Quando a reforma mexe em paredes, elétrica, água ou gás,
+              esse documento precisa ser assinado por engenheiro. É uma regra
+              de segurança do prédio (norma NBR 16280).
             </p>
             <p>
               O problema é que achar um profissional que venha até o prédio,
@@ -307,7 +314,7 @@ export function PlanoReforma() {
               to="/blog/plano-de-reforma-nbr-16280"
               className="inline-flex items-center gap-1 text-[#B9F227] hover:underline"
             >
-              Entenda o que a norma exige
+              Entenda que documento é esse
               <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
@@ -414,7 +421,7 @@ export function PlanoReforma() {
                 </ul>
                 <a
                   href={wa(
-                    `Olá! Quero um orçamento do pacote "${p.title}" para o Plano de Reforma do meu apartamento.`,
+                    `Olá! Quero um orçamento do pacote "${p.title}" para liberar a reforma do meu apartamento no condomínio.`,
                   )}
                   target="_blank"
                   rel="noopener noreferrer"

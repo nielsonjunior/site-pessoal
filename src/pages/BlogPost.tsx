@@ -7,7 +7,7 @@ import { breadcrumbSchema } from "@/lib/jsonld";
 import { NotFound } from "./NotFound";
 
 const WA = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(
-  "Olá! Li o artigo no site e preciso do Plano de Reforma (NBR 16280) com ART para o meu apartamento.",
+  "Olá! Li o artigo no site e preciso do documento de engenheiro para liberar a reforma do meu apartamento.",
 )}`;
 
 export function BlogPost() {
@@ -21,7 +21,6 @@ export function BlogPost() {
   return (
     <div className="bg-[#060D1E] text-white">
       <SEO
-        titleSuffix="brand"
         title={post.title}
         description={post.metaDescription}
         keywords={post.keywords}
@@ -111,11 +110,11 @@ export function BlogPost() {
 
             <aside className="mt-14 rounded-2xl border border-[#B9F227]/25 bg-[#0A1428] p-8 text-center shadow-[0_0_50px_-20px_rgba(185,242,39,.35)]">
               <h2 className="font-display text-2xl font-semibold text-white">
-                Precisa do Plano de Reforma com ART?
+                Precisa liberar sua reforma no condomínio?
               </h2>
               <p className="mt-3 text-[#b9c8e0]">
-                Faço o Plano de Reforma NBR 16280, o Memorial Descritivo e a ART
-                online, para condomínios em SP e MT.
+                Faço o documento que o síndico pede (Plano de Reforma com ART),
+                pela internet, a partir de R$ 350. Atendo SP e MT.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
                 <a

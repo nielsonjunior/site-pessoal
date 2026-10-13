@@ -11,11 +11,6 @@ interface SEOProps {
   /** Sobrescreve o caminho canonico (ex.: "/orcamento"). Por padrao usa a rota atual. */
   canonicalPath?: string;
   noIndex?: boolean;
-  /**
-   * Sufixo do <title>. "local" (padrão) = "| Nome | Cáceres-MT"; "brand" = só
-   * "| NP Castilho Engenharia" — para páginas com público fora de MT (SP).
-   */
-  titleSuffix?: 'local' | 'brand';
 }
 
 export function SEO({
@@ -25,15 +20,12 @@ export function SEO({
   ogImage = SITE.ogImage,
   ogType = 'website',
   canonicalPath,
-  noIndex = false,
-  titleSuffix = 'local'
+  noIndex = false
 }: SEOProps) {
   const { pathname } = useLocation();
   const siteName = `${SITE.name} | ${SITE.city}-${SITE.state}`;
-  const fullTitle =
-    titleSuffix === 'brand'
-      ? `${title} | ${SITE.shortName}`
-      : `${title} | ${siteName}`;
+  // Sufixo curto: o Google mostra ~60 caracteres do título.
+  const fullTitle = `${title} | ${SITE.shortName}`;
 
   const canonicalUrl = canonicalPath
     ? `${SITE.url}${canonicalPath}`
