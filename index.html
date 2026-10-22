@@ -8,6 +8,13 @@
     <meta name="theme-color" content="#1B3B6C" />
     <meta name="google-site-verification" content="RDriA1W315yrSAL8IVkqaQPEVi-orrlTOfyeDIlam4w" />
     <!-- title e meta description sao gerenciados por react-helmet-async (ver src/components/shared/SEO.tsx) -->
+    <!-- Vercel Web Analytics e Speed Insights: scripts servidos pelo proprio dominio (/_vercel/*), sem pacote npm -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
   </head>
   <body>
     <div id="root"></div>
