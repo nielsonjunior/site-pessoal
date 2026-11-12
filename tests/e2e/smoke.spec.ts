@@ -15,6 +15,12 @@ for (const route of allRoutes) {
     const pageErrors: string[] = [];
     page.on("pageerror", (err) => pageErrors.push(err.message));
 
+    // Os scripts do Vercel Analytics/Speed Insights (/_vercel/*) só existem na
+    // Vercel; no dev server dariam 404. Responde vazio para não poluir o console.
+    await page.route("**/_vercel/**", (r) =>
+      r.fulfill({ contentType: "application/javascript", body: "" }),
+    );
+
     const response = await page.goto(route.path, { waitUntil: "networkidle" });
 
     // O servidor (SPA) deve responder 200 para qualquer rota.

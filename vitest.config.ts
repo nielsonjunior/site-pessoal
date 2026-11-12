@@ -14,7 +14,7 @@ export default mergeConfig(
       css: true,
       // Apenas testes unitarios/de componente. Os E2E ficam em tests/e2e e
       // rodam no Playwright.
-      include: ["src/**/*.{test,spec}.{ts,tsx}"],
+      include: ["src/**/*.{test,spec}.{ts,tsx}", "tests/api/**/*.test.ts"],
       exclude: ["tests/e2e/**", "node_modules/**", "dist/**"],
       coverage: {
         provider: "v8",

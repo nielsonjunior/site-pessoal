@@ -1,7 +1,10 @@
 {
   "buildCommand": "npm run build:static",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "crons": [
+    { "path": "/api/social-cleanup", "schedule": "0 9 * * 1" }
   ],
   "headers": [
     {

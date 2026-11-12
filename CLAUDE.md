@@ -32,7 +32,7 @@ Telefone/WhatsApp oficial: **+55 65 99694-6861** (`https://wa.me/5565996946861`)
 - **react-helmet-async** para `<title>`/meta por página (SEO)
 - **framer-motion** para animações
 - **lucide-react** (ícones), **recharts**, **sonner** (toasts)
-- Deploy: **Vercel** (`vercel.json` faz rewrite SPA de tudo para `/index.html`)
+- Deploy: **Vercel** (`vercel.json` faz rewrite SPA de tudo, menos `/api/*`, para `/index.html`); funções em `api/` com **@vercel/blob**
 - Alias de import: **`@/` → `./src/`**
 
 > **Node v24** está instalado em `C:\Program Files\nodejs`. Se um terminal já
@@ -57,6 +57,8 @@ src/
   lib/                     utils (cn = clsx + tailwind-merge)
   test/                    Infra de testes (setup.ts, test-utils.tsx) — ver docs/TESTING.md
 tests/e2e/                 Testes Playwright (smoke, navigation, routes fixture)
+tests/api/                 Testes Vitest das funções serverless
+api/                       Funções serverless da Vercel (upload/limpeza de imagens do Instagram)
 ```
 
 ### Rotas (espelhadas em `tests/e2e/routes.ts`)
@@ -88,6 +90,32 @@ Artigos do blog em `src/data/blog.ts` (slugs lidos por `scripts/site-routes.mjs`
 Pasta pública usada para publicar no Instagram (o Instagram busca a imagem por URL).
 Tudo que for colocado em `public/social/` fica em `https://www.npcastilho.eng.br/social/<arquivo>`.
 Só JPG 1080x1350 dos posts; não é página do site, não entra no sitemap nem nas rotas.
+
+## API serverless (`api/`) — upload de imagens do Instagram
+
+Funções da Vercel (Node), fora do bundle do Vite. Usadas por uma rotina automática
+que **não tem acesso ao GitHub**: ela manda o JPG por HTTP em vez de commitar em
+`public/social/`. As imagens vão para o **Vercel Blob** (não para o repositório).
+
+| Rota | O que faz |
+|---|---|
+| `POST /api/social-upload?name=<arquivo>.jpg` | Corpo = JPEG cru (`Content-Type: image/jpeg`), até 8 MB, nome só `[a-z0-9-_.]` terminando em `.jpg`/`.jpeg`. Grava em `social/<name>` no Blob, público, sem sufixo aleatório (sobrescreve). Responde `{ "url": "<url pública>" }`. |
+| `GET /api/social-upload` | 405, não lista nada. |
+| `GET /api/social-cleanup` | Apaga blobs de `social/` com mais de 30 dias. Roda pelo **Cron da Vercel** toda segunda 09:00 UTC (`crons` no `vercel.json`). |
+
+- **Autenticação:** `Authorization: Bearer <SOCIAL_UPLOAD_TOKEN>` (comparação em tempo
+  constante). Sem token ou errado → 401. Validação falhou → 400 `{ "error": "..." }`.
+  O cleanup aceita `CRON_SECRET` (que a Vercel manda no Cron) ou o `SOCIAL_UPLOAD_TOKEN`.
+- **Variáveis de ambiente — só na Vercel, nunca no código/repositório:**
+  `SOCIAL_UPLOAD_TOKEN` (segredo do upload), `BLOB_READ_WRITE_TOKEN` (criado pela
+  Vercel ao conectar o Blob Store ao projeto) e `CRON_SECRET` (para o Cron se autenticar).
+- **Limite real de tamanho:** a Vercel recusa corpo de função acima de **4,5 MB**
+  (413) antes do código rodar; os JPG 1080x1350 dos posts ficam bem abaixo disso.
+- O rewrite SPA do `vercel.json` é `/((?!api/).*)` para **não** capturar `/api/*`.
+- Testes: `tests/api/*.test.ts` (Vitest, ambiente node, `@vercel/blob` mockado).
+  Arquivos dentro de `api/` viram função — **não** coloque testes nem helpers lá
+  (helper, se precisar, em `api/_nome.ts`: prefixo `_` não vira rota).
+- Nos E2E, o smoke responde vazio para `/_vercel/*` (scripts do Analytics só existem na Vercel).
 
 ## Comandos
 
