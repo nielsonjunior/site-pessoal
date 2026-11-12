@@ -83,6 +83,12 @@ aparece só como explicação.
 Páginas `noIndex` (privacidade, termos) ficam FORA do sitemap.
 Artigos do blog em `src/data/blog.ts` (slugs lidos por `scripts/site-routes.mjs`).
 
+## Imagens para redes sociais (`public/social/`)
+
+Pasta pública usada para publicar no Instagram (o Instagram busca a imagem por URL).
+Tudo que for colocado em `public/social/` fica em `https://www.npcastilho.eng.br/social/<arquivo>`.
+Só JPG 1080x1350 dos posts; não é página do site, não entra no sitemap nem nas rotas.
+
 ## Comandos
 
 ```bash
