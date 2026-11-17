@@ -231,12 +231,12 @@ export function LandingPage() {
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-[#111418] mb-2">
-                    {submitType === 'whatsapp' ? 'Abrindo WhatsApp!' : 'Orçamento enviado!'}
+                    {submitType === 'whatsapp' ? 'Abrindo o WhatsApp' : 'Recebi a sua mensagem'}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
                     {submitType === 'whatsapp'
-                      ? 'O WhatsApp foi aberto com os seus dados. Retornarei em até 24 horas.'
-                      : 'Recebi sua solicitação por e-mail e retornarei em até 24 horas.'}
+                      ? 'O WhatsApp foi aberto com a sua mensagem. É só tocar em enviar.'
+                      : 'Vou ler o que você escreveu e te respondo pelo WhatsApp ou pelo e-mail que você deixou. Se tiver fotos do imóvel ou documentos, pode mandar no WhatsApp.'}
                   </p>
                   <button
                     onClick={() => { setIsSubmitted(false); setSubmitType(null); }}

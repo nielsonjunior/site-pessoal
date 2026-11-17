@@ -32,7 +32,7 @@ describe("Budget — envio do orçamento por e-mail", () => {
     await user.click(screen.getByRole("button", { name: /Enviar por e-mail/i }));
 
     await waitFor(() =>
-      expect(screen.getByText(/Orçamento enviado/i)).toBeInTheDocument(),
+      expect(screen.getByText(/Recebi a sua mensagem/i)).toBeInTheDocument(),
     );
     expect(fetch).toHaveBeenCalledWith(
       expect.stringContaining("formsubmit.co/ajax/"),

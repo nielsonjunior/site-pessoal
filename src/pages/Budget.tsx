@@ -238,21 +238,41 @@ export function Budget() {
                     {status === "sent" ? (
                       <>
                         <h2 className="text-2xl font-bold text-[#111418] mb-4">
-                          Orçamento enviado! ✅
+                          Recebi a sua mensagem
                         </h2>
-                        <p className="text-gray-600 mb-6">
-                          Recebi sua solicitação por e-mail e retornarei em até
-                          24 horas. Se preferir falar agora, é só chamar no
-                          WhatsApp.
+                        <p className="text-gray-600 mb-6 max-w-xl mx-auto">
+                          Vou ler o que você escreveu e te respondo pelo
+                          WhatsApp ou pelo e-mail que você deixou.
                         </p>
+                        <div className="text-left max-w-xl mx-auto mb-6 rounded-[4px] border-l-4 border-[#F28A2E] bg-[#FDF0E4] px-5 py-4">
+                          <p className="font-semibold text-[#111418] mb-2">
+                            Para eu fazer o orçamento mais rápido, separe:
+                          </p>
+                          <ul className="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                            <li>Fotos do terreno ou do imóvel</li>
+                            <li>Matrícula ou escritura e o carnê do IPTU</li>
+                            <li>Planta ou projeto, se já tiver</li>
+                            <li>O endereço ou a localização no mapa</li>
+                          </ul>
+                        </div>
+                        <a
+                          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Mandei uma mensagem pelo site. Seguem as fotos e os documentos.")}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 mb-4 rounded-[4px] bg-[#25D366] px-5 py-3 font-bold text-white hover:bg-[#128C7E]"
+                        >
+                          <MessageCircle className="w-4 h-4" />
+                          Mandar fotos e documentos no WhatsApp
+                        </a>
+                        <div />
                       </>
                     ) : (
                       <>
                         <h2 className="text-2xl font-bold text-[#111418] mb-4">
-                          Redirecionando para o WhatsApp!
+                          Abrindo o WhatsApp
                         </h2>
                         <p className="text-gray-600 mb-6">
-                          O WhatsApp foi aberto com o resumo do seu orçamento.
+                          O WhatsApp foi aberto com a sua mensagem. É só tocar em enviar.
                           Caso não tenha aberto automaticamente,{" "}
                           <a
                             href={lastWhatsappUrl}
@@ -283,7 +303,7 @@ export function Budget() {
                       }}
                       className="btn-primary"
                     >
-                      Solicitar novo orçamento
+                      Enviar outra mensagem
                     </Button>
                   </div>
                 ) : (
