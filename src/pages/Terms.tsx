@@ -10,7 +10,7 @@ export function Terms() {
         noIndex={true}
       />
 
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={false}
@@ -26,11 +26,11 @@ export function Terms() {
         </div>
       </section>
 
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom max-w-3xl mx-auto">
           <motion.div
             initial={false}
-            className="hero-in hero-in-delay space-y-8 text-[#b9c8e0]"
+            className="hero-in hero-in-delay space-y-8 text-[#C9CCD2]"
           >
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">1. Aceitação dos Termos</h2>
@@ -76,7 +76,7 @@ export function Terms() {
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>E-mail: contato@npcastilho.eng.br</li>
-                <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#B9F227] hover:underline">(65) 99694-6861</a></li>
+                <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#F28A2E] hover:underline">(65) 99694-6861</a></li>
                 <li>Responsável: Nielson Pinheiro de Castilho Junior</li>
                 <li>CREA 5071806455 — Cáceres, MT</li>
               </ul>

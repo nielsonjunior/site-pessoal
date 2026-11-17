@@ -17,7 +17,7 @@ const stats = [
  */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#060D1E] text-white lg:min-h-[92vh] flex items-center">
+    <section className="relative overflow-hidden bg-[#000000] text-white lg:min-h-[92vh] flex items-center">
       <Aurora />
       {/* borda interna sutil, como um "frame" premium */}
       <div className="pointer-events-none absolute inset-3 sm:inset-4 rounded-3xl border border-white/10" />
@@ -25,9 +25,9 @@ export function Hero() {
       <div className="relative z-10 container-custom pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="max-w-3xl mx-auto text-center">
           <span
-            className="hero-in inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs sm:text-sm font-medium text-[#cfe0f6] backdrop-blur-sm"
+            className="hero-in inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs sm:text-sm font-medium text-[#E4E6EA] backdrop-blur-sm"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#B9F227] shadow-[0_0_10px_#B9F227]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#F28A2E] shadow-[0_0_10px_#F28A2E]" />
             Engenheiro Civil em Cáceres-MT e região
           </span>
 
@@ -36,13 +36,13 @@ export function Hero() {
             style={{ animationDelay: "0.1s" }}
           >
             Seu imóvel é seu.{' '}
-            <span className="text-[#B9F227] [text-shadow:0_0_34px_rgba(185,242,39,.35)]">
+            <span className="text-[#F28A2E] [text-shadow:0_0_34px_rgba(242,138,46,.35)]">
               O papel comprova isso?
             </span>
           </h1>
 
           <p
-            className="hero-in mx-auto mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#b9c8e0]"
+            className="hero-in mx-auto mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#C9CCD2]"
             style={{ animationDelay: "0.2s" }}
           >
             Sem a documentação em dia, não dá pra{' '}
@@ -57,7 +57,7 @@ export function Hero() {
           >
             <a
               href="#situacoes"
-              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#B9F227] px-7 py-4 text-[15px] font-semibold text-[#0a1706] font-display shadow-[0_14px_40px_-10px_rgba(185,242,39,.6)] transition-transform hover:-translate-y-0.5"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-7 py-4 text-[15px] font-semibold text-[#0F141B] font-display shadow-[0_14px_40px_-10px_rgba(242,138,46,.6)] transition-transform hover:-translate-y-0.5"
             >
               Descobrir o meu caso
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-black/10">
@@ -76,7 +76,7 @@ export function Hero() {
           </div>
 
           <p
-            className="hero-in mt-4 text-xs sm:text-sm text-[#8ea3c2]"
+            className="hero-in mt-4 text-xs sm:text-sm text-[#9AA0A8]"
             style={{ animationDelay: "0.5s" }}
           >
             Análise gratuita · resposta em até 24h úteis · CREA 5071806455
@@ -91,12 +91,12 @@ export function Hero() {
               <div key={i} className="text-center">
                 <p className="font-display text-xl sm:text-3xl font-semibold text-white leading-none">
                   {s.accent ? (
-                    <>até <span className="text-[#B9F227]">30%</span></>
+                    <>até <span className="text-[#F28A2E]">30%</span></>
                   ) : (
                     s.value
                   )}
                 </p>
-                <p className="mt-2 text-[11px] sm:text-sm text-[#93a7c6] leading-tight">
+                <p className="mt-2 text-[11px] sm:text-sm text-[#A7ABB2] leading-tight">
                   {s.label}
                 </p>
               </div>

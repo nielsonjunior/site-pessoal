@@ -54,13 +54,13 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#0A1428]/85 backdrop-blur-md border-b border-white/10 transition-shadow duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#0B0C0F]/85 backdrop-blur-md border-b border-white/10 transition-shadow duration-300 ${
         isScrolled ? "shadow-[0_10px_30px_-15px_rgba(0,0,0,0.6)]" : ""
       }`}
     >
       {/* Top Bar */}
       <div
-        className={`bg-[#1B3B6C] text-white text-xs sm:text-sm py-2 transition-all duration-300 ${
+        className={`bg-[#1A1D22] text-white text-xs sm:text-sm py-2 transition-all duration-300 ${
           isScrolled ? "hidden" : "block"
         }`}
       >
@@ -70,7 +70,7 @@ export function Header() {
               <Phone className="w-4 h-4 flex-shrink-0" />
               <a
                 href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
-                className="hover:text-[#F4C430] transition-colors"
+                className="hover:text-[#F28A2E] transition-colors"
               >
                 (65) 99694-6861
               </a>
@@ -133,9 +133,9 @@ export function Header() {
                 >
                   <Link
                     to={link.href}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-1 ${
+                    className={`px-3 py-2 rounded-full text-[12px] font-semibold uppercase tracking-[0.1em] transition-all flex items-center gap-1 ${
                       isActive(link.href)
-                        ? "text-[#B9F227] bg-white/10"
+                        ? "text-[#F28A2E] bg-white/10"
                         : "text-gray-200 hover:text-white hover:bg-white/10"
                     }`}
                   >
@@ -154,14 +154,14 @@ export function Header() {
                         /* pt-2 cria uma "ponte" sobre o vão, sem fechar o menu ao mover o mouse */
                         className="absolute top-full left-0 pt-2 w-56 z-[60]"
                       >
-                        <div className="bg-[#0A1428] rounded-xl shadow-2xl ring-1 ring-white/10 border border-white/10 overflow-hidden">
+                        <div className="bg-[#0B0C0F] rounded-xl shadow-2xl ring-1 ring-white/10 border border-white/10 overflow-hidden">
                           {link.dropdown.map((item) => (
                             <Link
                               key={item.name}
                               to={item.href}
                               className={`block px-4 py-3 text-sm transition-colors ${
                                 isActive(item.href)
-                                  ? "bg-white/10 text-[#B9F227]"
+                                  ? "bg-white/10 text-[#F28A2E]"
                                   : "text-gray-200 hover:bg-white/5 hover:text-white"
                               }`}
                             >
@@ -178,7 +178,7 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
-              <Link to="/orcamento" className="btn-accent text-sm">
+              <Link to="/orcamento" className="btn-accent !text-[12px] !px-4">
                 Solicitar Orçamento
               </Link>
             </div>
@@ -208,7 +208,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#0A1428] border-t border-white/10 shadow-lg overflow-hidden"
+            className="lg:hidden bg-[#0B0C0F] border-t border-white/10 shadow-lg overflow-hidden"
           >
             <div className="container-custom py-4">
               <div className="flex flex-col gap-2">
@@ -218,7 +218,7 @@ export function Header() {
                       to={link.href}
                       className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                         isActive(link.href)
-                          ? "bg-white/10 text-[#B9F227]"
+                          ? "bg-white/10 text-[#F28A2E]"
                           : "text-gray-200 hover:bg-white/10"
                       }`}
                     >
@@ -232,7 +232,7 @@ export function Header() {
                             to={item.href}
                             className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
                               isActive(item.href)
-                                ? "text-[#B9F227] font-medium"
+                                ? "text-[#F28A2E] font-medium"
                                 : "text-gray-400 hover:text-white"
                             }`}
                           >

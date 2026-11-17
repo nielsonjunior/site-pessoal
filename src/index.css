@@ -1,6 +1,5 @@
 /* Fontes hospedadas no próprio site (variáveis: 1 arquivo cobre todos os pesos). */
-@import "@fontsource-variable/inter/wght.css";
-@import "@fontsource-variable/space-grotesk/wght.css";
+@import "@fontsource-variable/montserrat/wght.css";
 
 @tailwind base;
 @tailwind components;
@@ -14,25 +13,25 @@
     --card-foreground: 220 30% 10%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 30% 10%;
-    --primary: 216 55% 27%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 216 40% 37%;
+    --primary: 28 88% 56%;
+    --primary-foreground: 216 25% 8%;
+    --secondary: 216 10% 18%;
     --secondary-foreground: 0 0% 100%;
     --muted: 210 20% 96%;
     --muted-foreground: 220 10% 45%;
-    --accent: 44 90% 57%;
+    --accent: 28 88% 56%;
     --accent-foreground: 220 30% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 13% 88%;
     --input: 220 13% 88%;
-    --ring: 216 55% 27%;
+    --ring: 28 88% 56%;
     --radius: 0.5rem;
     
-    --color-primary: #1B3B6C;
-    --color-secondary: #2C4F8C;
-    --color-accent: #F4C430;
-    --color-dark: #0F1A2E;
+    --color-primary: #1A1D22;
+    --color-secondary: #2A2E35;
+    --color-accent: #F28A2E;
+    --color-dark: #111418;
     --color-light: #F8F9FA;
     --color-white: #FFFFFF;
     --color-gray: #6C757D;
@@ -59,25 +58,25 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter Variable', 'Inter', sans-serif;
+    font-family: 'Montserrat Variable', 'Helvetica Neue', Arial, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk Variable', 'Inter Variable', sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Montserrat Variable', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-[#1B3B6C] text-white px-6 py-3 rounded-xl font-medium
-           hover:bg-[#2C4F8C] transition-all duration-300
+    @apply bg-[#1A1D22] text-white px-6 py-3 rounded-[4px] font-bold uppercase tracking-[0.1em] text-[13px]
+           hover:bg-[#2A2E35] transition-all duration-300
            hover:shadow-brand hover:-translate-y-0.5;
   }
 
   .btn-accent {
-    @apply bg-[#F4C430] text-[#0F1A2E] px-6 py-3 rounded-xl font-semibold
-           hover:bg-[#E5B520] transition-all duration-300
+    @apply bg-[#F28A2E] text-[#111418] px-6 py-3 rounded-[4px] font-bold uppercase tracking-[0.1em] text-[13px]
+           hover:bg-[#E07A20] transition-all duration-300
            hover:shadow-brand hover:-translate-y-0.5;
   }
   
@@ -90,7 +89,7 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-[#1B3B6C] to-[#2C4F8C] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#1A1D22] to-[#2A2E35] bg-clip-text text-transparent;
   }
   
   .card-hover {
@@ -98,11 +97,11 @@
   }
   
   .gradient-blue {
-    @apply bg-gradient-to-br from-[#1B3B6C] to-[#2C4F8C];
+    @apply bg-gradient-to-br from-[#1A1D22] to-[#2A2E35];
   }
   
   .gradient-dark {
-    @apply bg-gradient-to-br from-[#0F1A2E] to-[#1B3B6C];
+    @apply bg-gradient-to-br from-[#111418] to-[#1A1D22];
   }
 }
 
@@ -171,12 +170,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1B3B6C;
+  background: #1A1D22;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2C4F8C;
+  background: #2A2E35;
 }
 
 /* Form styles */
@@ -185,7 +184,7 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-  @apply ring-2 ring-[#1B3B6C] ring-opacity-50 border-[#1B3B6C];
+  @apply ring-2 ring-[#1A1D22] ring-opacity-50 border-[#1A1D22];
 }
 
 /* WhatsApp button animation */

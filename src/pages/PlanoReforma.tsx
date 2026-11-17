@@ -137,7 +137,7 @@ const faqs = [
 
 export function PlanoReforma() {
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title="Plano de Reforma para Condomínio + ART | R$ 350, pronto em 48h"
         description="O condomínio pediu um documento de engenheiro para liberar sua reforma? Plano de Reforma + ART pela internet, a partir de R$ 350, pronto em até 48h úteis. SP e MT."
@@ -188,24 +188,24 @@ export function PlanoReforma() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-28 pb-4 bg-[#0A1428] border-b border-white/10">
+      <div className="pt-28 pb-4 bg-[#0B0C0F] border-b border-white/10">
         <div className="container-custom">
-          <nav aria-label="Trilha de navegação" className="flex items-center gap-2 text-sm text-[#93a7c6]">
+          <nav aria-label="Trilha de navegação" className="flex items-center gap-2 text-sm text-[#A7ABB2]">
             <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
             <span>/</span>
-            <span className="text-[#B9F227]">Reforma no condomínio</span>
+            <span className="text-[#F28A2E]">Reforma no condomínio</span>
           </nav>
         </div>
       </div>
 
       {/* Hero */}
-      <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <Aurora className="opacity-40" />
         <div className="relative z-10 container-custom grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
           <motion.div initial={false} className="hero-in">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227]">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E]">
               <Building2 className="h-4 w-4" />
               Reforma de apartamento · Condomínio
             </span>
@@ -213,7 +213,7 @@ export function PlanoReforma() {
               Vai reformar e o condomínio pediu um documento de engenheiro?
               Eu resolvo pela internet.
             </h1>
-            <p className="mt-5 text-lg text-[#b9c8e0] leading-relaxed max-w-2xl">
+            <p className="mt-5 text-lg text-[#C9CCD2] leading-relaxed max-w-2xl">
               Faço o documento que o síndico exige para liberar a sua obra
               (o Plano de Reforma), assinado por engenheiro civil com ART. Você
               manda fotos pelo WhatsApp e recebe tudo pronto para entregar no
@@ -237,7 +237,7 @@ export function PlanoReforma() {
                 <ArrowRight className="h-5 w-5" />
               </a>
             </div>
-            <p className="mt-5 flex items-center gap-2 text-sm text-[#93a7c6]">
+            <p className="mt-5 flex items-center gap-2 text-sm text-[#A7ABB2]">
               <MapPin className="h-4 w-4 flex-shrink-0" />
               Atendimento online para condomínios em todo o estado de São
               Paulo e Mato Grosso.
@@ -246,27 +246,27 @@ export function PlanoReforma() {
 
           <motion.div
             initial={false}
-            className="hero-in hero-in-delay rounded-2xl border border-white/10 bg-[#0A1428]/80 p-7 backdrop-blur"
+            className="hero-in hero-in-delay rounded-2xl border border-white/10 bg-[#0B0C0F]/80 p-7 backdrop-blur"
           >
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#8ea3c2]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#9AA0A8]">
               Você recebe
             </p>
             <ul className="mt-5 space-y-4">
               {entregaveis.map((e) => (
                 <li key={e.title} className="flex gap-3">
-                  <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#B9F227]" />
+                  <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#F28A2E]" />
                   <div>
                     <p className="font-semibold text-white">{e.title}</p>
-                    <p className="text-sm text-[#b9c8e0]">{e.text}</p>
+                    <p className="text-sm text-[#C9CCD2]">{e.text}</p>
                   </div>
                 </li>
               ))}
             </ul>
             <p className="mt-6 border-t border-white/10 pt-5 flex items-baseline gap-2">
-              <span className="text-sm text-[#93a7c6]">a partir de</span>
+              <span className="text-sm text-[#A7ABB2]">a partir de</span>
               <span className="font-display text-3xl font-bold text-white">R$ 350</span>
             </p>
-            <p className="mt-3 text-sm text-[#93a7c6]">
+            <p className="mt-3 text-sm text-[#A7ABB2]">
               Responsável técnico: Eng. Civil Nielson P. de Castilho Júnior ·
               CREA 5071806455
             </p>
@@ -275,7 +275,7 @@ export function PlanoReforma() {
       </section>
 
       {/* Problema */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom grid lg:grid-cols-[1fr_1.5fr] gap-10">
           <motion.h2
             initial="hidden"
@@ -291,7 +291,7 @@ export function PlanoReforma() {
             whileInView="show"
             viewport={inView}
             variants={fadeUp}
-            className="space-y-4 text-lg leading-relaxed text-[#b9c8e0]"
+            className="space-y-4 text-lg leading-relaxed text-[#C9CCD2]"
           >
             <p>
               Trocar piso, mexer na cozinha, no banheiro ou na parede: antes
@@ -310,7 +310,7 @@ export function PlanoReforma() {
             </p>
             <Link
               to="/blog/plano-de-reforma-nbr-16280"
-              className="inline-flex items-center gap-1 text-[#B9F227] hover:underline"
+              className="inline-flex items-center gap-1 text-[#F28A2E] hover:underline"
             >
               Entenda que documento é esse
               <ArrowRight className="h-4 w-4" />
@@ -320,7 +320,7 @@ export function PlanoReforma() {
       </section>
 
       {/* Como funciona */}
-      <section id="como-funciona" className="section-padding bg-[#0A1428]">
+      <section id="como-funciona" className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -329,7 +329,7 @@ export function PlanoReforma() {
             variants={fadeUp}
             className="max-w-2xl mb-10"
           >
-            <span className="text-sm font-semibold uppercase tracking-widest text-[#B9F227]">
+            <span className="text-sm font-semibold uppercase tracking-widest text-[#F28A2E]">
               Como funciona
             </span>
             <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold text-white">
@@ -350,15 +350,15 @@ export function PlanoReforma() {
                 className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-display text-4xl font-bold text-[#B9F227]">
+                  <span className="font-display text-4xl font-bold text-[#F28A2E]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p.icon className="h-6 w-6 text-[#8ea3c2]" aria-hidden="true" />
+                  <p.icon className="h-6 w-6 text-[#9AA0A8]" aria-hidden="true" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold text-white">
                   {p.title}
                 </h3>
-                <p className="mt-2 text-[#b9c8e0] leading-relaxed">{p.text}</p>
+                <p className="mt-2 text-[#C9CCD2] leading-relaxed">{p.text}</p>
               </motion.li>
             ))}
           </motion.ol>
@@ -366,7 +366,7 @@ export function PlanoReforma() {
       </section>
 
       {/* Pacotes */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -375,7 +375,7 @@ export function PlanoReforma() {
             variants={fadeUp}
             className="max-w-2xl mb-10"
           >
-            <span className="text-sm font-semibold uppercase tracking-widest text-[#B9F227]">
+            <span className="text-sm font-semibold uppercase tracking-widest text-[#F28A2E]">
               Pacotes
             </span>
             <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold text-white">
@@ -392,27 +392,27 @@ export function PlanoReforma() {
                 variants={fadeUp}
                 className={`flex flex-col rounded-2xl border p-7 ${
                   p.highlight
-                    ? "border-[#B9F227]/40 bg-[#B9F227]/[0.05]"
+                    ? "border-[#F28A2E]/40 bg-[#F28A2E]/[0.05]"
                     : "border-white/10 bg-white/[0.03]"
                 }`}
               >
                 <h3 className="font-display text-2xl font-semibold text-white">
                   {p.title}
                 </h3>
-                <p className="mt-1 text-sm text-[#8ea3c2]">{p.subtitle}</p>
+                <p className="mt-1 text-sm text-[#9AA0A8]">{p.subtitle}</p>
                 <p className="mt-5 font-display text-4xl font-bold text-white">
                   {p.price}
                 </p>
-                <p className="text-sm text-[#b9c8e0]">
+                <p className="text-sm text-[#C9CCD2]">
                   Plano + Memorial + ART (taxa inclusa) · {p.prazo}
                 </p>
                 {p.nota && (
-                  <p className="mt-2 text-xs text-[#8ea3c2]">{p.nota}</p>
+                  <p className="mt-2 text-xs text-[#9AA0A8]">{p.nota}</p>
                 )}
                 <ul className="mt-6 mb-8 space-y-3">
                   {p.items.map((it) => (
-                    <li key={it} className="flex gap-3 text-[#cbd7e8]">
-                      <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#B9F227]" />
+                    <li key={it} className="flex gap-3 text-[#D9DBDF]">
+                      <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-[#F28A2E]" />
                       {it}
                     </li>
                   ))}
@@ -434,8 +434,8 @@ export function PlanoReforma() {
               </motion.div>
             ))}
           </div>
-          <p className="mt-6 flex gap-2 text-[#93a7c6]">
-            <ShieldCheck className="h-5 w-5 flex-shrink-0 text-[#B9F227]" />
+          <p className="mt-6 flex gap-2 text-[#A7ABB2]">
+            <ShieldCheck className="h-5 w-5 flex-shrink-0 text-[#F28A2E]" />
             Não sabe em qual se encaixa? Mande a descrição da obra que eu
             indico o pacote certo antes de você pagar qualquer coisa. Remoção de
             parede e mudanças em estrutura nunca são assinadas só por foto.
@@ -444,17 +444,17 @@ export function PlanoReforma() {
       </section>
 
       {/* Síndicos */}
-      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#0A1428]">
+      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#0B0C0F]">
         <div className="container-custom flex flex-col lg:flex-row gap-8 lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#B9F227]">
+            <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-[#F28A2E]">
               <ClipboardList className="h-4 w-4" />
               Para síndicos e administradoras
             </span>
             <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold text-white">
               Indique um engenheiro de confiança para os moradores.
             </h2>
-            <p className="mt-4 text-lg text-[#b9c8e0] leading-relaxed">
+            <p className="mt-4 text-lg text-[#C9CCD2] leading-relaxed">
               Planos de reforma padronizados, no mesmo formato, com prazo curto
               e documentação completa. Menos papelada para conferir e menos
               obra irregular no prédio.
@@ -473,7 +473,7 @@ export function PlanoReforma() {
       </section>
 
       {/* FAQ */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom max-w-3xl">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-white mb-8">
             Perguntas frequentes
@@ -483,11 +483,11 @@ export function PlanoReforma() {
               <details key={f.question} className="group py-5">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-white">
                   {f.question}
-                  <span className="text-[#B9F227] transition-transform group-open:rotate-45" aria-hidden="true">
+                  <span className="text-[#F28A2E] transition-transform group-open:rotate-45" aria-hidden="true">
                     +
                   </span>
                 </summary>
-                <p className="mt-3 text-[#b9c8e0] leading-relaxed">{f.answer}</p>
+                <p className="mt-3 text-[#C9CCD2] leading-relaxed">{f.answer}</p>
               </details>
             ))}
           </div>
@@ -495,13 +495,13 @@ export function PlanoReforma() {
       </section>
 
       {/* Artigos */}
-      <section className="section-padding bg-[#0A1428]">
+      <section className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <h2 className="font-display text-3xl font-semibold text-white">
               Tire suas dúvidas antes de reformar
             </h2>
-            <Link to="/blog" className="inline-flex items-center gap-1 text-[#B9F227] hover:underline">
+            <Link to="/blog" className="inline-flex items-center gap-1 text-[#F28A2E] hover:underline">
               Ver todos os artigos
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -511,10 +511,10 @@ export function PlanoReforma() {
               <Link
                 key={p.slug}
                 to={`/blog/${p.slug}`}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#B9F227]/40"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#F28A2E]/40"
               >
                 <p className="font-display text-lg font-semibold text-white">{p.cardTitle}</p>
-                <p className="mt-2 text-sm text-[#b9c8e0]">{p.excerpt}</p>
+                <p className="mt-2 text-sm text-[#C9CCD2]">{p.excerpt}</p>
               </Link>
             ))}
           </div>
@@ -522,7 +522,7 @@ export function PlanoReforma() {
       </section>
 
       {/* CTA final */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom text-center">
           <h2 className="mx-auto max-w-3xl font-display text-3xl md:text-4xl font-semibold text-white">
             Sua reforma não precisa ficar parada esperando papel.
@@ -536,7 +536,7 @@ export function PlanoReforma() {
             <Phone className="h-5 w-5" />
             Chamar no WhatsApp
           </a>
-          <p className="mt-3 text-[#93a7c6]">{SITE.phoneDisplay}</p>
+          <p className="mt-3 text-[#A7ABB2]">{SITE.phoneDisplay}</p>
         </div>
       </section>
     </div>

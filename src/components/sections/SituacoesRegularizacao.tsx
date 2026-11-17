@@ -43,7 +43,7 @@ export function SituacoesRegularizacao() {
   return (
     <section
       id="situacoes"
-      className="relative overflow-hidden bg-[#060D1E] text-white section-padding"
+      className="relative overflow-hidden bg-[#000000] text-white section-padding"
     >
       <Aurora className="opacity-40" />
 
@@ -55,13 +55,13 @@ export function SituacoesRegularizacao() {
           variants={fadeUp}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227]">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E]">
             Resolvo a dor do seu imóvel
           </span>
           <h2 className="mt-4 font-display text-3xl md:text-4xl font-semibold text-white">
             Qual é o seu caso?
           </h2>
-          <p className="mt-3 text-[#b9c8e0] text-lg">
+          <p className="mt-3 text-[#C9CCD2] text-lg">
             Você não precisa saber o nome técnico. Se identificar com uma frase,
             o problema é seu — e tem solução.
           </p>
@@ -80,15 +80,15 @@ export function SituacoesRegularizacao() {
               <motion.article
                 key={c.id}
                 variants={fadeUp}
-                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-colors hover:border-[#B9F227]/40 hover:bg-[#B9F227]/[0.05]"
+                className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-colors hover:border-[#F28A2E]/40 hover:bg-[#F28A2E]/[0.05]"
               >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#B9F227]/15 text-[#B9F227]">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#F28A2E]/15 text-[#F28A2E]">
                   <Icon className="h-6 w-6" />
                 </div>
                 <p className="font-display text-lg font-semibold leading-snug text-white">
                   {c.frase}
                 </p>
-                <p className="mb-5 mt-1 text-xs uppercase tracking-wide text-[#8ea3c2]">
+                <p className="mb-5 mt-1 text-xs uppercase tracking-wide text-[#9AA0A8]">
                   {c.tag}
                 </p>
                 <div className="mt-auto flex flex-col gap-2">

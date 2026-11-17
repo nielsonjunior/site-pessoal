@@ -249,13 +249,13 @@ export function Budget() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#111418]">
         <div className="container-custom">
           <motion.div
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block bg-[#B9F227]/20 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span className="inline-block bg-[#F28A2E]/20 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-4">
               Orçamento Grátis
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -270,7 +270,7 @@ export function Budget() {
       </section>
 
       {/* Form Section */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Form */}
@@ -289,7 +289,7 @@ export function Budget() {
                     </div>
                     {status === "sent" ? (
                       <>
-                        <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+                        <h2 className="text-2xl font-bold text-[#111418] mb-4">
                           Orçamento enviado! ✅
                         </h2>
                         <p className="text-gray-600 mb-6">
@@ -300,7 +300,7 @@ export function Budget() {
                       </>
                     ) : (
                       <>
-                        <h2 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+                        <h2 className="text-2xl font-bold text-[#111418] mb-4">
                           Redirecionando para o WhatsApp!
                         </h2>
                         <p className="text-gray-600 mb-6">
@@ -341,7 +341,7 @@ export function Budget() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
-                    <h2 className="text-2xl font-bold text-[#0F1A2E] mb-6">
+                    <h2 className="text-2xl font-bold text-[#111418] mb-6">
                       Informações do Projeto
                     </h2>
 
@@ -474,7 +474,7 @@ export function Budget() {
                             key={service.id}
                             className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
                               selectedServices.includes(service.id)
-                                ? "border-[#1B3B6C] bg-[#1B3B6C]/5"
+                                ? "border-[#1A1D22] bg-[#1A1D22]/5"
                                 : "border-gray-200 hover:border-gray-300"
                             }`}
                           >
@@ -484,7 +484,7 @@ export function Budget() {
                                 handleServiceToggle(service.id)
                               }
                             />
-                            <service.icon className="w-5 h-5 text-[#1B3B6C]" />
+                            <service.icon className="w-5 h-5 text-[#1A1D22]" />
                             <span className="text-sm font-medium">
                               {service.label}
                             </span>
@@ -566,10 +566,10 @@ export function Budget() {
                 className="sticky top-32 space-y-6"
               >
                 {/* Info Card */}
-                <div className="bg-[#1B3B6C] rounded-2xl p-6 text-white">
+                <div className="bg-[#1A1D22] rounded-2xl p-6 text-white">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#B9F227]/20 rounded-xl flex items-center justify-center">
-                      <Calculator className="w-6 h-6 text-[#B9F227]" />
+                    <div className="w-12 h-12 bg-[#F28A2E]/20 rounded-xl flex items-center justify-center">
+                      <Calculator className="w-6 h-6 text-[#F28A2E]" />
                     </div>
                     <div>
                       <h3 className="font-semibold">Orçamento Grátis</h3>
@@ -578,19 +578,19 @@ export function Budget() {
                   </div>
                   <ul className="space-y-3 text-sm">
                     <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#B9F227]" />
+                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
                       Análise técnica do projeto
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#B9F227]" />
+                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
                       Proposta detalhada
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#B9F227]" />
+                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
                       Prazo de resposta: 24h
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#B9F227]" />
+                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
                       Condições especiais
                     </li>
                   </ul>
@@ -619,12 +619,12 @@ export function Budget() {
                   <h3 className="font-semibold text-white mb-2">
                     Ligue para mim
                   </h3>
-                  <p className="text-sm text-[#b9c8e0] mb-4">
+                  <p className="text-sm text-[#C9CCD2] mb-4">
                     Atendimento de segunda a sexta, das 8h às 18h.
                   </p>
                   <a
                     href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-[#B9F227] font-medium"
+                    className="flex items-center gap-2 text-[#F28A2E] font-medium"
                   >
                     <Phone className="w-5 h-5" />
                     (65) 99694-6861

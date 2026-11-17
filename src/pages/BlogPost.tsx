@@ -19,7 +19,7 @@ export function BlogPost() {
   const path = `/blog/${post.slug}`;
 
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title={post.title}
         description={post.metaDescription}
@@ -46,9 +46,9 @@ export function BlogPost() {
         }}
       />
 
-      <div className="pt-28 pb-4 bg-[#0A1428] border-b border-white/10">
+      <div className="pt-28 pb-4 bg-[#0B0C0F] border-b border-white/10">
         <div className="container-custom">
-          <nav aria-label="Trilha de navegação" className="flex flex-wrap items-center gap-2 text-sm text-[#93a7c6]">
+          <nav aria-label="Trilha de navegação" className="flex flex-wrap items-center gap-2 text-sm text-[#A7ABB2]">
             <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
@@ -57,13 +57,13 @@ export function BlogPost() {
               Blog
             </Link>
             <span>/</span>
-            <span className="text-[#B9F227]">{post.cardTitle}</span>
+            <span className="text-[#F28A2E]">{post.cardTitle}</span>
           </nav>
         </div>
       </div>
 
       <article>
-        <div className="py-14 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+        <div className="py-14 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
           <div className="container-custom max-w-3xl">
             <Link
               to="/blog"
@@ -75,7 +75,7 @@ export function BlogPost() {
             <h1 className="font-display text-3xl md:text-5xl font-bold leading-tight text-white">
               {post.title}
             </h1>
-            <p className="mt-4 text-sm text-[#8ea3c2]">
+            <p className="mt-4 text-sm text-[#9AA0A8]">
               Por Eng. Civil Nielson P. de Castilho Júnior · CREA 5071806455 ·{" "}
               {post.readingMinutes} min de leitura
             </p>
@@ -84,22 +84,22 @@ export function BlogPost() {
 
         <div className="section-padding">
           <div className="container-custom max-w-3xl">
-            <p className="text-xl text-[#cbd7e8] leading-relaxed">{post.excerpt}</p>
+            <p className="text-xl text-[#D9DBDF] leading-relaxed">{post.excerpt}</p>
             {post.sections.map((s) => (
               <section key={s.heading} className="mt-10">
                 <h2 className="font-display text-2xl md:text-3xl font-semibold text-white">
                   {s.heading}
                 </h2>
                 {s.paragraphs.map((p, i) => (
-                  <p key={i} className="mt-4 text-[#b9c8e0] text-lg leading-relaxed">
+                  <p key={i} className="mt-4 text-[#C9CCD2] text-lg leading-relaxed">
                     {p}
                   </p>
                 ))}
                 {s.list && (
                   <ul className="mt-5 space-y-3">
                     {s.list.map((item) => (
-                      <li key={item} className="flex gap-3 text-[#cbd7e8]">
-                        <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-[#B9F227]" />
+                      <li key={item} className="flex gap-3 text-[#D9DBDF]">
+                        <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-[#F28A2E]" />
                         {item}
                       </li>
                     ))}
@@ -108,11 +108,11 @@ export function BlogPost() {
               </section>
             ))}
 
-            <aside className="mt-14 rounded-2xl border border-[#B9F227]/25 bg-[#0A1428] p-8 text-center shadow-[0_0_50px_-20px_rgba(185,242,39,.35)]">
+            <aside className="mt-14 rounded-2xl border border-[#F28A2E]/25 bg-[#0B0C0F] p-8 text-center shadow-[0_0_50px_-20px_rgba(242,138,46,.35)]">
               <h2 className="font-display text-2xl font-semibold text-white">
                 Precisa liberar sua reforma no condomínio?
               </h2>
-              <p className="mt-3 text-[#b9c8e0]">
+              <p className="mt-3 text-[#C9CCD2]">
                 Faço o documento que o síndico pede (Plano de Reforma com ART),
                 pela internet, a partir de R$ 350. Atendo SP e MT.
               </p>
@@ -149,10 +149,10 @@ export function BlogPost() {
               <Link
                 key={p.slug}
                 to={`/blog/${p.slug}`}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#B9F227]/40"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#F28A2E]/40"
               >
                 <p className="font-display text-lg font-semibold text-white">{p.cardTitle}</p>
-                <p className="mt-2 text-sm text-[#b9c8e0]">{p.excerpt}</p>
+                <p className="mt-2 text-sm text-[#C9CCD2]">{p.excerpt}</p>
               </Link>
             ))}
           </div>

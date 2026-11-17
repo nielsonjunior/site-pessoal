@@ -75,13 +75,13 @@ export function Contact() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#111418]">
         <div className="container-custom">
           <motion.div
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block bg-[#F4C430]/20 text-[#F4C430] px-4 py-2 rounded-full text-sm font-medium mb-4">
+            <span className="inline-block bg-[#F28A2E]/20 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-4">
               Contato
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -108,20 +108,20 @@ export function Contact() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-gray-50 rounded-2xl p-6 text-center"
               >
-                <div className="w-14 h-14 bg-[#1B3B6C]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <info.icon className="w-7 h-7 text-[#1B3B6C]" />
+                <div className="w-14 h-14 bg-[#1A1D22]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <info.icon className="w-7 h-7 text-[#1A1D22]" />
                 </div>
-                <h3 className="font-semibold text-[#0F1A2E] mb-2">{info.title}</h3>
+                <h3 className="font-semibold text-[#111418] mb-2">{info.title}</h3>
                 <p className="text-gray-600 text-sm mb-2">{info.content}</p>
                 {info.extra && (
-                  <p className="text-[#F4C430] text-sm font-medium">{info.extra}</p>
+                  <p className="text-[#F28A2E] text-sm font-medium">{info.extra}</p>
                 )}
                 {info.link && (
                   <a
                     href={info.link}
                     target={info.external ? '_blank' : undefined}
                     rel={info.external ? 'noopener noreferrer' : undefined}
-                    className="text-[#1B3B6C] text-sm font-medium hover:underline inline-block mt-2"
+                    className="text-[#1A1D22] text-sm font-medium hover:underline inline-block mt-2"
                   >
                     {info.linkText}
                   </a>
@@ -149,7 +149,7 @@ export function Contact() {
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="w-10 h-10 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#0F1A2E] mb-4">
+                    <h3 className="text-2xl font-bold text-[#111418] mb-4">
                       Mensagem Enviada!
                     </h3>
                     <p className="text-gray-600 mb-6">
@@ -173,7 +173,7 @@ export function Contact() {
                   </div>
                 ) : (
                   <>
-                    <h2 className="text-2xl font-bold text-[#0F1A2E] mb-2">
+                    <h2 className="text-2xl font-bold text-[#111418] mb-2">
                       Envie uma Mensagem
                     </h2>
                     <p className="text-gray-600 mb-6">
@@ -290,21 +290,21 @@ export function Contact() {
                 </a>
               </div>
 
-              <div className="bg-[#1B3B6C] rounded-2xl p-8 text-white">
+              <div className="bg-[#1A1D22] rounded-2xl p-8 text-white">
                 <h3 className="text-xl font-bold mb-4">
                   Registro Profissional
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#F4C430]" />
+                    <CheckCircle className="w-5 h-5 text-[#F28A2E]" />
                     <span>Engenheiro Civil registrado no CREA 5071806455</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#F4C430]" />
+                    <CheckCircle className="w-5 h-5 text-[#F28A2E]" />
                     <span>Registro: 5071806455</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#F4C430]" />
+                    <CheckCircle className="w-5 h-5 text-[#F28A2E]" />
                     <span>Responsabilidade Técnica Garantida</span>
                   </div>
                 </div>
@@ -324,7 +324,7 @@ export function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl font-bold text-[#0F1A2E] mb-4">
+            <h2 className="text-3xl font-bold text-[#111418] mb-4">
               Nossa Localização
             </h2>
             <p className="text-gray-600">

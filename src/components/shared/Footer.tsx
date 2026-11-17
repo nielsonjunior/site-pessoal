@@ -30,7 +30,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0F1A2E] text-white">
+    <footer className="bg-[#111418] text-white">
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -62,9 +62,9 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram @npcastilho.eng"
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#F4C430] transition-colors group"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#F28A2E] transition-colors group"
               >
-                <Instagram className="w-5 h-5 text-white group-hover:text-[#0F1A2E]" />
+                <Instagram className="w-5 h-5 text-white group-hover:text-[#111418]" />
               </a>
             </div>
             <p className="text-gray-500 text-xs mt-3">@npcastilho.eng</p>
@@ -78,7 +78,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-[#F4C430] transition-colors text-sm"
+                    className="text-gray-400 hover:text-[#F28A2E] transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -95,7 +95,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-[#F4C430] transition-colors text-sm"
+                    className="text-gray-400 hover:text-[#F28A2E] transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -109,31 +109,31 @@ export function Footer() {
             <h4 className="font-semibold text-lg mb-6">Contato</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-[#F28A2E] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-gray-400">Telefone/WhatsApp</p>
                   <a
                     href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
-                    className="text-white hover:text-[#F4C430] transition-colors"
+                    className="text-white hover:text-[#F28A2E] transition-colors"
                   >
                     (65) 99694-6861
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-[#F28A2E] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-gray-400">E-mail</p>
                   <a
                     href="mailto:contato@npcastilho.eng.br"
-                    className="text-white hover:text-[#F4C430] transition-colors"
+                    className="text-white hover:text-[#F28A2E] transition-colors"
                   >
                     contato@npcastilho.eng.br
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#F28A2E] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-gray-400">Localização</p>
                   <p className="text-white">
@@ -142,13 +142,13 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-[#F4C430] flex-shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-[#F28A2E] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-gray-400">Atendimento</p>
                   <p className="text-white">
                     Seg - Sex: 8h às 18h
                     <br />
-                    <span className="text-[#F4C430]">WhatsApp: resposta em até 24h úteis</span>
+                    <span className="text-[#F28A2E]">WhatsApp: resposta em até 24h úteis</span>
                   </p>
                 </div>
               </li>

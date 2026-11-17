@@ -14,7 +14,7 @@ const benefits = [
 
 export function Cities() {
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title="Cidades Atendidas - Engenheiro Civil Cáceres e Região"
         description="Atendo em Cáceres, Mirassol d'Oeste, Araputanga, Barra do Bugres, Porto Esperidião e toda a região. Engenheiro civil perto de você!"
@@ -27,13 +27,13 @@ export function Cities() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
+            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
               Onde Atuo
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -48,7 +48,7 @@ export function Cities() {
       </section>
 
       {/* Cities Grid */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {cities.map((city, index) => (
@@ -61,15 +61,15 @@ export function Cities() {
               >
                 <Link
                   to={`/cidades/${city.slug}`}
-                  className="group block h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors duration-300 hover:border-[#B9F227]/40 hover:bg-[#B9F227]/[0.05]"
+                  className="group block h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors duration-300 hover:border-[#F28A2E]/40 hover:bg-[#F28A2E]/[0.05]"
                 >
-                  <div className="w-14 h-14 bg-[#B9F227]/15 rounded-xl flex items-center justify-center mb-4">
-                    <MapPin className="w-7 h-7 text-[#B9F227]" />
+                  <div className="w-14 h-14 bg-[#F28A2E]/15 rounded-xl flex items-center justify-center mb-4">
+                    <MapPin className="w-7 h-7 text-[#F28A2E]" />
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-1">
                     {city.name}
                   </h3>
-                  <p className="text-sm text-[#93a7c6]">
+                  <p className="text-sm text-[#A7ABB2]">
                     {city.state}
                   </p>
                 </Link>
@@ -80,7 +80,7 @@ export function Cities() {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-[#0A1428]">
+      <section className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -89,13 +89,13 @@ export function Cities() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
+              <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
                 Por Que Escolher
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
                 Atendimento Local com Qualidade Garantida
               </h2>
-              <p className="text-[#b9c8e0] mb-8">
+              <p className="text-[#C9CCD2] mb-8">
                 Atuar em Cáceres-MT e região me permite oferecer um atendimento próximo,
                 personalizado e eficiente, com conhecimento das características locais,
                 das necessidades dos clientes e das particularidades técnicas de cada projeto.
@@ -111,8 +111,8 @@ export function Cities() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0" />
-                    <span className="text-[#cbd7e8]">{benefit}</span>
+                    <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0" />
+                    <span className="text-[#D9DBDF]">{benefit}</span>
                   </motion.div>
                 ))}
               </div>
@@ -125,18 +125,18 @@ export function Cities() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="rounded-2xl border border-white/10 bg-[#060D1E] p-8 text-white">
+              <div className="rounded-2xl border border-white/10 bg-[#000000] p-8 text-white">
                 <h3 className="font-display text-2xl font-bold mb-4">
                   Não encontrou sua cidade?
                 </h3>
-                <p className="text-[#b9c8e0] mb-6">
+                <p className="text-[#C9CCD2] mb-6">
                   Atendo em Cáceres e toda a região metropolitana.
                   Entre em contato para verificar disponibilidade na sua região.
                 </p>
                 <div className="space-y-4">
                   <a
                     href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-white hover:text-[#B9F227] transition-colors"
+                    className="flex items-center gap-3 text-white hover:text-[#F28A2E] transition-colors"
                   >
                     <Phone className="w-5 h-5" />
                     (65) 99694-6861
@@ -156,7 +156,7 @@ export function Cities() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -174,7 +174,7 @@ export function Cities() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/orcamento"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-8 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
               >
                 Solicitar Orçamento
                 <ArrowRight className="w-5 h-5" />

@@ -51,7 +51,7 @@ export function RegularizacaoDetalhe() {
   const others = regularizationTypes.filter((t) => t.id !== item.id);
 
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title={`${item.title} em Cáceres-MT`}
         description={`${item.painHook} ${item.benefit} Engenheiro registrado no CREA — fale no WhatsApp.`}
@@ -74,9 +74,9 @@ export function RegularizacaoDetalhe() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-32 pb-4 bg-[#0A1428] border-b border-white/10">
+      <div className="pt-32 pb-4 bg-[#0B0C0F] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex flex-wrap items-center gap-2 text-sm text-[#93a7c6]">
+          <nav className="flex flex-wrap items-center gap-2 text-sm text-[#A7ABB2]">
             <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
@@ -89,13 +89,13 @@ export function RegularizacaoDetalhe() {
               Regularização
             </Link>
             <span>/</span>
-            <span className="text-[#B9F227]">{item.title}</span>
+            <span className="text-[#F28A2E]">{item.title}</span>
           </nav>
         </div>
       </div>
 
       {/* Hero / Dor */}
-      <section className="py-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="py-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <Link
             to={PILLAR}
@@ -108,13 +108,13 @@ export function RegularizacaoDetalhe() {
             initial={false}
             className="hero-in max-w-3xl"
           >
-            <div className="w-16 h-16 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center mb-6">
-              <Icon className="w-8 h-8 text-[#B9F227]" />
+            <div className="w-16 h-16 bg-[#F28A2E]/15 rounded-2xl flex items-center justify-center mb-6">
+              <Icon className="w-8 h-8 text-[#F28A2E]" />
             </div>
             <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               {item.title} em Cáceres-MT
             </h1>
-            <p className="text-[#B9F227] text-lg md:text-xl font-medium mb-4">
+            <p className="text-[#F28A2E] text-lg md:text-xl font-medium mb-4">
               {item.painHook}
             </p>
             <p className="text-white/80 text-lg mb-8">{item.leigoTitle}.</p>
@@ -132,7 +132,7 @@ export function RegularizacaoDetalhe() {
       </section>
 
       {/* Conteúdo PASPA */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main */}
@@ -152,8 +152,8 @@ export function RegularizacaoDetalhe() {
                       key={i}
                       className="flex items-start gap-3 p-4 rounded-xl border border-white/10 bg-white/[0.03]"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0 mt-0.5" />
-                      <span className="text-[#cbd7e8]">{s}</span>
+                      <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0 mt-0.5" />
+                      <span className="text-[#D9DBDF]">{s}</span>
                     </div>
                   ))}
                 </div>
@@ -168,7 +168,7 @@ export function RegularizacaoDetalhe() {
                 <h2 className="font-display text-2xl font-bold text-white mb-4">
                   O que é {item.title.toLowerCase()}?
                 </h2>
-                <p className="text-[#b9c8e0] text-lg leading-relaxed">
+                <p className="text-[#C9CCD2] text-lg leading-relaxed">
                   {item.whatIsIt}
                 </p>
               </motion.div>
@@ -184,7 +184,7 @@ export function RegularizacaoDetalhe() {
                   <AlertTriangle className="w-6 h-6 text-red-400" />
                   O que acontece se você não resolver
                 </h2>
-                <p className="text-[#cbd7e8] leading-relaxed">{item.ifNotResolved}</p>
+                <p className="text-[#D9DBDF] leading-relaxed">{item.ifNotResolved}</p>
               </motion.div>
 
               {/* Como eu resolvo */}
@@ -199,10 +199,10 @@ export function RegularizacaoDetalhe() {
                 <ol className="space-y-4">
                   {item.howWeSolve.map((step, i) => (
                     <li key={i} className="flex items-start gap-4">
-                      <span className="w-8 h-8 bg-[#B9F227] text-[#0a1706] rounded-full flex items-center justify-center font-bold flex-shrink-0">
+                      <span className="w-8 h-8 bg-[#F28A2E] text-[#0F141B] rounded-full flex items-center justify-center font-bold flex-shrink-0">
                         {i + 1}
                       </span>
-                      <span className="text-[#cbd7e8] pt-1">{step}</span>
+                      <span className="text-[#D9DBDF] pt-1">{step}</span>
                     </li>
                   ))}
                 </ol>
@@ -213,14 +213,14 @@ export function RegularizacaoDetalhe() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-[#B9F227] rounded-2xl p-6 flex items-start gap-4"
+                className="bg-[#F28A2E] rounded-2xl p-6 flex items-start gap-4"
               >
-                <TrendingUp className="w-8 h-8 text-[#0a1706] flex-shrink-0" />
+                <TrendingUp className="w-8 h-8 text-[#0F141B] flex-shrink-0" />
                 <div>
-                  <p className="font-bold text-lg text-[#0a1706] mb-1">
+                  <p className="font-bold text-lg text-[#0F141B] mb-1">
                     Valorize seu imóvel em até {VALORIZATION_MAX}
                   </p>
-                  <p className="text-[#0a1706]/80">{item.benefit}</p>
+                  <p className="text-[#0F141B]/80">{item.benefit}</p>
                 </div>
               </motion.div>
             </div>
@@ -229,11 +229,11 @@ export function RegularizacaoDetalhe() {
             <div className="lg:col-span-1">
               <div className="sticky top-32 space-y-6">
                 {/* CTA */}
-                <div className="rounded-2xl border border-[#B9F227]/25 bg-[#0A1428] p-6 shadow-[0_0_50px_-20px_rgba(185,242,39,.35)]">
+                <div className="rounded-2xl border border-[#F28A2E]/25 bg-[#0B0C0F] p-6 shadow-[0_0_50px_-20px_rgba(242,138,46,.35)]">
                   <h3 className="text-xl font-bold text-white mb-3">
                     Fale com o engenheiro
                   </h3>
-                  <p className="text-[#b9c8e0] text-sm mb-6">
+                  <p className="text-[#C9CCD2] text-sm mb-6">
                     Me conte sua situação (ou mande uma foto da escritura) que eu
                     te digo, sem compromisso, o que dá para fazer.
                   </p>
@@ -268,10 +268,10 @@ export function RegularizacaoDetalhe() {
                           to={`${PILLAR}/${o.slug}`}
                           className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 transition-colors"
                         >
-                          <div className="w-9 h-9 bg-[#B9F227]/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <OIcon className="w-4 h-4 text-[#B9F227]" />
+                          <div className="w-9 h-9 bg-[#F28A2E]/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <OIcon className="w-4 h-4 text-[#F28A2E]" />
                           </div>
-                          <span className="text-sm font-medium text-[#cbd7e8]">
+                          <span className="text-sm font-medium text-[#D9DBDF]">
                             {o.title}
                           </span>
                         </Link>

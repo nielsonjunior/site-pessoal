@@ -38,11 +38,11 @@ export function RegularizacaoDiagnostico() {
 
   return (
     <div
-      className="bg-gradient-to-br from-[#12294A] to-[#060D1E] border border-white/10 rounded-3xl p-8 md:p-12"
+      className="bg-gradient-to-br from-[#1A1D22] to-[#000000] border border-white/10 rounded-3xl p-8 md:p-12"
       data-testid="diagnostico"
     >
       <div className="text-center max-w-2xl mx-auto mb-8">
-        <div className="inline-flex items-center gap-2 bg-[#B9F227]/20 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-4">
+        <div className="inline-flex items-center gap-2 bg-[#F28A2E]/20 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-4">
           <HelpCircle className="w-4 h-4" />
           Diagnóstico rápido e grátis
         </div>
@@ -71,7 +71,7 @@ export function RegularizacaoDiagnostico() {
                 onClick={() => setSelected(o.slug)}
                 className="text-left flex items-start gap-3 bg-white/5 hover:bg-white/15 border border-white/15 rounded-xl p-4 text-white transition-colors"
               >
-                <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0 mt-0.5" />
                 <span>{o.label}</span>
               </button>
             ))}
@@ -86,11 +86,11 @@ export function RegularizacaoDiagnostico() {
             role="status"
           >
             <p className="text-sm text-gray-500 mb-1">Você provavelmente precisa de:</p>
-            <h3 className="text-2xl font-bold text-[#0F1A2E] mb-3">
+            <h3 className="text-2xl font-bold text-[#111418] mb-3">
               {result.title}
             </h3>
             <p className="text-gray-600 mb-4 leading-relaxed">{result.whatIsIt}</p>
-            <p className="text-[#1B3B6C] font-medium mb-6">{result.benefit}</p>
+            <p className="text-[#1A1D22] font-medium mb-6">{result.benefit}</p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
@@ -106,7 +106,7 @@ export function RegularizacaoDiagnostico() {
               </a>
               <Link
                 to={`${PILLAR}/${result.slug}`}
-                className="bg-[#1B3B6C] text-white px-5 py-3 rounded-lg font-medium hover:bg-[#0F1A2E] transition-colors inline-flex items-center justify-center gap-2 flex-1"
+                className="bg-[#1A1D22] text-white px-5 py-3 rounded-lg font-medium hover:bg-[#111418] transition-colors inline-flex items-center justify-center gap-2 flex-1"
               >
                 Ver página completa
                 <ArrowRight className="w-4 h-4" />
@@ -116,7 +116,7 @@ export function RegularizacaoDiagnostico() {
             <button
               type="button"
               onClick={() => setSelected(null)}
-              className="mt-5 text-sm text-gray-500 hover:text-[#1B3B6C] inline-flex items-center gap-1 transition-colors"
+              className="mt-5 text-sm text-gray-500 hover:text-[#1A1D22] inline-flex items-center gap-1 transition-colors"
             >
               <RotateCcw className="w-4 h-4" />
               Refazer o diagnóstico
@@ -131,7 +131,7 @@ export function RegularizacaoDiagnostico() {
           href={wa("Olá! Não sei qual regularização meu imóvel precisa. Pode me ajudar a descobrir?")}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#B9F227] hover:underline"
+          className="text-[#F28A2E] hover:underline"
         >
           Me chame no WhatsApp
         </a>{" "}

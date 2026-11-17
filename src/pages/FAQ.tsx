@@ -26,7 +26,7 @@ export function FAQ() {
   };
 
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title="Perguntas Frequentes - Engenharia Civil"
         description="Tire suas dúvidas sobre engenharia civil, ART, regularização de imóveis, reformas e muito mais. Confira nossas respostas!"
@@ -40,13 +40,13 @@ export function FAQ() {
       <JsonLd data={faqPageSchema(faqs)} />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
+            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
               FAQ
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -59,13 +59,13 @@ export function FAQ() {
 
             {/* Search */}
             <div className="relative max-w-xl mx-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#93a7c6]" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#A7ABB2]" />
               <input
                 type="text"
                 placeholder="Buscar pergunta..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-xl border border-white/15 bg-white/10 text-white placeholder:text-[#93a7c6] focus:outline-none focus:ring-2 focus:ring-[#B9F227]"
+                className="w-full pl-12 pr-4 py-4 rounded-xl border border-white/15 bg-white/10 text-white placeholder:text-[#A7ABB2] focus:outline-none focus:ring-2 focus:ring-[#F28A2E]"
               />
             </div>
           </motion.div>
@@ -73,15 +73,15 @@ export function FAQ() {
       </section>
 
       {/* Categories */}
-      <section className="py-8 bg-[#0A1428] border-b border-white/10">
+      <section className="py-8 bg-[#0B0C0F] border-b border-white/10">
         <div className="container-custom">
           <div className="flex flex-wrap gap-3 justify-center">
             <button
               onClick={() => setSelectedCategory(null)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === null
-                  ? 'bg-[#B9F227] text-[#0a1706]'
-                  : 'bg-white/5 text-[#cbd7e8] border border-white/10 hover:bg-white/10'
+                  ? 'bg-[#F28A2E] text-[#0F141B]'
+                  : 'bg-white/5 text-[#D9DBDF] border border-white/10 hover:bg-white/10'
               }`}
             >
               Todas
@@ -92,8 +92,8 @@ export function FAQ() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
-                    ? 'bg-[#B9F227] text-[#0a1706]'
-                    : 'bg-white/5 text-[#cbd7e8] border border-white/10 hover:bg-white/10'
+                    ? 'bg-[#F28A2E] text-[#0F141B]'
+                    : 'bg-white/5 text-[#D9DBDF] border border-white/10 hover:bg-white/10'
                 }`}
               >
                 {category}
@@ -104,7 +104,7 @@ export function FAQ() {
       </section>
 
       {/* FAQ List */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom max-w-4xl">
           <div className="space-y-4">
             {filteredFaqs.map((faq, index) => (
@@ -121,13 +121,13 @@ export function FAQ() {
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="px-3 py-1 bg-[#B9F227]/15 text-[#B9F227] rounded-full text-xs font-medium">
+                    <span className="px-3 py-1 bg-[#F28A2E]/15 text-[#F28A2E] rounded-full text-xs font-medium">
                       {faq.category}
                     </span>
                     <span className="font-medium text-white">{faq.question}</span>
                   </div>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#93a7c6] flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-[#A7ABB2] flex-shrink-0 transition-transform ${
                       openId === faq.id ? 'rotate-180' : ''
                     }`}
                   />
@@ -143,7 +143,7 @@ export function FAQ() {
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-6 pt-2">
-                        <p className="text-[#b9c8e0] leading-relaxed">{faq.answer}</p>
+                        <p className="text-[#C9CCD2] leading-relaxed">{faq.answer}</p>
                       </div>
                     </motion.div>
                   )}
@@ -154,7 +154,7 @@ export function FAQ() {
 
           {filteredFaqs.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-[#93a7c6]">
+              <p className="text-[#A7ABB2]">
                 Nenhuma pergunta encontrada. Tente outra busca ou entre em contato.
               </p>
             </div>
@@ -163,7 +163,7 @@ export function FAQ() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -190,7 +190,7 @@ export function FAQ() {
             >
               <Link
                 to="/orcamento"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-8 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
               >
                 Fale Conosco
                 <ArrowRight className="w-5 h-5" />

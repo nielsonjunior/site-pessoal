@@ -37,7 +37,7 @@ const wa = (msg: string) =>
 
 export function RegularizacaoImoveis() {
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title="Regularização de Imóveis em Cáceres-MT: Desdobro e Usucapião"
         description={`Imóvel sem documentação te trava e te faz perder dinheiro. Regularize (desdobro, remembramento, usucapião, retificação, condomínio) e valorize seu bem em até ${VALORIZATION_MAX}. Fale com um engenheiro registrado no CREA.`}
@@ -67,9 +67,9 @@ export function RegularizacaoImoveis() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-32 pb-4 bg-[#0A1428] border-b border-white/10">
+      <div className="pt-32 pb-4 bg-[#0B0C0F] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-[#93a7c6]">
+          <nav className="flex items-center gap-2 text-sm text-[#A7ABB2]">
             <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
@@ -78,19 +78,19 @@ export function RegularizacaoImoveis() {
               Serviços
             </Link>
             <span>/</span>
-            <span className="text-[#B9F227]">Regularização de Imóveis</span>
+            <span className="text-[#F28A2E]">Regularização de Imóveis</span>
           </nav>
         </div>
       </div>
 
       {/* Hero / Dor principal */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={false}
             className="hero-in max-w-3xl"
           >
-            <span className="inline-flex items-center gap-2 bg-[#B9F227]/15 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 bg-[#F28A2E]/15 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-6">
               <TrendingUp className="w-4 h-4" />
               Valorize seu imóvel em até {VALORIZATION_MAX}
             </span>
@@ -127,13 +127,13 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Por que isso te custa caro */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="font-display text-3xl font-bold text-white mb-4">
               Um imóvel irregular te custa caro
             </h2>
-            <p className="text-[#b9c8e0]">
+            <p className="text-[#C9CCD2]">
               Talvez você nem perceba, mas a falta de papelada limita o que você
               pode fazer com o que é seu.
             </p>
@@ -170,7 +170,7 @@ export function RegularizacaoImoveis() {
                 <h3 className="font-bold text-lg text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[#93a7c6] text-sm leading-relaxed">{item.text}</p>
+                <p className="text-[#A7ABB2] text-sm leading-relaxed">{item.text}</p>
               </motion.div>
             ))}
           </div>
@@ -178,27 +178,27 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Faixa de valorização */}
-      <section className="py-12 bg-[#0A1428]">
+      <section className="py-12 bg-[#0B0C0F]">
         <div className="container-custom">
-          <div className="rounded-3xl border border-[#B9F227]/25 bg-[#060D1E] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-[0_0_60px_-20px_rgba(185,242,39,.35)]">
+          <div className="rounded-3xl border border-[#F28A2E]/25 bg-[#000000] p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left shadow-[0_0_60px_-20px_rgba(242,138,46,.35)]">
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <TrendingUp className="w-12 h-12 text-[#B9F227] flex-shrink-0" />
+              <TrendingUp className="w-12 h-12 text-[#F28A2E] flex-shrink-0" />
               <div>
                 <p className="font-display text-2xl md:text-3xl font-bold text-white">
                   Imóvel regularizado{" "}
-                  <span className="text-[#B9F227]">valoriza até {VALORIZATION_MAX}</span>
+                  <span className="text-[#F28A2E]">valoriza até {VALORIZATION_MAX}</span>
                 </p>
-                <p className="text-[#b9c8e0]">
+                <p className="text-[#C9CCD2]">
                   Documentação em dia transforma seu imóvel em patrimônio que rende.
                 </p>
-                <p className="mt-1 text-xs text-[#8ea3c2]">{VALORIZATION_SOURCE}</p>
+                <p className="mt-1 text-xs text-[#9AA0A8]">{VALORIZATION_SOURCE}</p>
               </div>
             </div>
             <a
               href={wa("Olá! Quero saber quanto meu imóvel pode valorizar com a regularização.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#B9F227] px-7 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#F28A2E] px-7 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
             >
               Falar com o engenheiro
             </a>
@@ -207,13 +207,13 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Os tipos */}
-      <section className="section-padding bg-[#0A1428]">
+      <section className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="font-display text-3xl font-bold text-white mb-4">
               Qual é a sua situação?
             </h2>
-            <p className="text-[#b9c8e0]">
+            <p className="text-[#C9CCD2]">
               Encontre abaixo o seu caso. Cada situação tem solução — e eu cuido
               de tudo, do projeto à documentação final.
             </p>
@@ -229,32 +229,32 @@ export function RegularizacaoImoveis() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (i % 2) * 0.1 }}
-                  className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#B9F227]/40"
+                  className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-[#F28A2E]/40"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-[#B9F227]/15 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-[#B9F227]" />
+                    <div className="w-12 h-12 bg-[#F28A2E]/15 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-[#F28A2E]" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg text-white leading-tight">
                         {t.title}
                       </h3>
-                      <p className="text-sm text-[#93a7c6]">{t.leigoTitle}</p>
+                      <p className="text-sm text-[#A7ABB2]">{t.leigoTitle}</p>
                     </div>
                   </div>
 
-                  <p className="font-medium text-[#B9F227] mb-3">{t.painHook}</p>
+                  <p className="font-medium text-[#F28A2E] mb-3">{t.painHook}</p>
 
                   <ul className="space-y-2 mb-4">
                     {t.symptoms.slice(0, 3).map((s, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-[#b9c8e0]">
-                        <CheckCircle className="w-4 h-4 text-[#B9F227] flex-shrink-0 mt-0.5" />
+                      <li key={idx} className="flex items-start gap-2 text-sm text-[#C9CCD2]">
+                        <CheckCircle className="w-4 h-4 text-[#F28A2E] flex-shrink-0 mt-0.5" />
                         {s}
                       </li>
                     ))}
                   </ul>
 
-                  <p className="text-sm text-[#93a7c6] mb-5 mt-auto">{t.benefit}</p>
+                  <p className="text-sm text-[#A7ABB2] mb-5 mt-auto">{t.benefit}</p>
 
                   <div className="flex flex-col gap-2">
                     <Link
@@ -284,7 +284,7 @@ export function RegularizacaoImoveis() {
       </section>
 
       {/* Mini-diagnóstico interativo */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <RegularizacaoDiagnostico />
         </div>

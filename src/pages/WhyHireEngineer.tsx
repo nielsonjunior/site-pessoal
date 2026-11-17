@@ -59,7 +59,7 @@ const differences = [
 
 export function WhyHireEngineer() {
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title="Por Que Contratar um Engenheiro Civil?"
         description="Descubra a importância de contratar um engenheiro civil para suas obras e reformas. Segurança, qualidade e conformidade legal garantidas."
@@ -72,14 +72,14 @@ export function WhyHireEngineer() {
       />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <div className="w-20 h-20 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <HardHat className="w-10 h-10 text-[#B9F227]" />
+            <div className="w-20 h-20 bg-[#F28A2E]/15 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <HardHat className="w-10 h-10 text-[#F28A2E]" />
             </div>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
               Por Que Contratar um Engenheiro Civil?
@@ -93,7 +93,7 @@ export function WhyHireEngineer() {
       </section>
 
       {/* Reasons */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -104,7 +104,7 @@ export function WhyHireEngineer() {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
               Benefícios de Contratar um Engenheiro
             </h2>
-            <p className="text-[#b9c8e0]">
+            <p className="text-[#C9CCD2]">
               A presença de um engenheiro civil traz vantagens significativas para qualquer projeto
             </p>
           </motion.div>
@@ -119,14 +119,14 @@ export function WhyHireEngineer() {
                 transition={{ delay: index * 0.1 }}
                 className="flex gap-4 p-6 rounded-2xl border border-white/10 bg-white/[0.03]"
               >
-                <div className="w-14 h-14 bg-[#B9F227]/15 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <reason.icon className="w-7 h-7 text-[#B9F227]" />
+                <div className="w-14 h-14 bg-[#F28A2E]/15 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <reason.icon className="w-7 h-7 text-[#F28A2E]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-2">
                     {reason.title}
                   </h3>
-                  <p className="text-[#93a7c6]">{reason.description}</p>
+                  <p className="text-[#A7ABB2]">{reason.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -135,7 +135,7 @@ export function WhyHireEngineer() {
       </section>
 
       {/* When Required */}
-      <section className="section-padding bg-[#0A1428]">
+      <section className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -147,7 +147,7 @@ export function WhyHireEngineer() {
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
                 Quando é Obrigatório?
               </h2>
-              <p className="text-[#b9c8e0] mb-8">
+              <p className="text-[#C9CCD2] mb-8">
                 De acordo com a legislação, é obrigatório o acompanhamento de engenheiro
                 civil nas seguintes situações:
               </p>
@@ -162,8 +162,8 @@ export function WhyHireEngineer() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0" />
-                    <span className="text-[#cbd7e8]">{item}</span>
+                    <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0" />
+                    <span className="text-[#D9DBDF]">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -174,23 +174,23 @@ export function WhyHireEngineer() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="rounded-2xl border border-white/10 bg-[#060D1E] p-8 text-white"
+              className="rounded-2xl border border-white/10 bg-[#000000] p-8 text-white"
             >
               <h3 className="font-display text-2xl font-bold mb-4">
                 Engenheiro vs Arquiteto
               </h3>
-              <p className="text-[#b9c8e0] mb-6">
+              <p className="text-[#C9CCD2] mb-6">
                 Entenda a diferença entre esses dois profissionais importantes:
               </p>
 
               <div className="space-y-6">
                 {differences.map((prof, index) => (
                   <div key={index}>
-                    <h4 className="font-semibold text-[#B9F227] mb-2">{prof.role}</h4>
+                    <h4 className="font-semibold text-[#F28A2E] mb-2">{prof.role}</h4>
                     <ul className="space-y-1">
                       {prof.responsibilities.map((resp, i) => (
-                        <li key={i} className="text-[#cbd7e8] text-sm flex items-center gap-2">
-                          <span className="w-1 h-1 bg-[#B9F227]/70 rounded-full" />
+                        <li key={i} className="text-[#D9DBDF] text-sm flex items-center gap-2">
+                          <span className="w-1 h-1 bg-[#F28A2E]/70 rounded-full" />
                           {resp}
                         </li>
                       ))}
@@ -204,7 +204,7 @@ export function WhyHireEngineer() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -221,7 +221,7 @@ export function WhyHireEngineer() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/orcamento"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-8 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
               >
                 Solicitar Orçamento
                 <ArrowRight className="w-5 h-5" />

@@ -29,7 +29,7 @@ export function CityDetail() {
   }
 
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title={`Engenheiro Civil em ${city.name} - ${city.state}`}
         description={`Engenheiro Civil em ${city.name}. Serviços de regularização, ART, reformas e laudos técnicos. Orçamento grátis com resposta em até 24h úteis.`}
@@ -43,20 +43,20 @@ export function CityDetail() {
       />
 
       {/* Breadcrumb */}
-      <div className="pt-32 pb-4 bg-[#0A1428] border-b border-white/10">
+      <div className="pt-32 pb-4 bg-[#0B0C0F] border-b border-white/10">
         <div className="container-custom">
-          <nav className="flex items-center gap-2 text-sm text-[#93a7c6]">
+          <nav className="flex items-center gap-2 text-sm text-[#A7ABB2]">
             <Link to="/" className="hover:text-white transition-colors">Início</Link>
             <span>/</span>
             <Link to="/cidades" className="hover:text-white transition-colors">Cidades</Link>
             <span>/</span>
-            <span className="text-[#B9F227]">{city.name}</span>
+            <span className="text-[#F28A2E]">{city.name}</span>
           </nav>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="py-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={false}
@@ -71,8 +71,8 @@ export function CityDetail() {
             </Link>
 
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-20 h-20 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-10 h-10 text-[#B9F227]" />
+              <div className="w-20 h-20 bg-[#F28A2E]/15 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-10 h-10 text-[#F28A2E]" />
               </div>
               <div>
                 <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
@@ -111,7 +111,7 @@ export function CityDetail() {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -123,7 +123,7 @@ export function CityDetail() {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
               Serviços em {city.name}
             </h2>
-            <p className="text-[#b9c8e0]">
+            <p className="text-[#C9CCD2]">
               Ofereço todos os meus serviços de engenharia civil em {city.name},
               com atendimento personalizado e qualidade garantida.
             </p>
@@ -140,10 +140,10 @@ export function CityDetail() {
               >
                 <Link
                   to={`/servicos/${service.slug}`}
-                  className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-colors duration-300 hover:border-[#B9F227]/40 hover:bg-[#B9F227]/[0.05]"
+                  className="group block rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-colors duration-300 hover:border-[#F28A2E]/40 hover:bg-[#F28A2E]/[0.05]"
                 >
-                  <div className="w-14 h-14 bg-[#B9F227]/15 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <service.icon className="w-7 h-7 text-[#B9F227]" />
+                  <div className="w-14 h-14 bg-[#F28A2E]/15 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <service.icon className="w-7 h-7 text-[#F28A2E]" />
                   </div>
                   <h3 className="font-semibold text-white">
                     {service.name}
@@ -156,7 +156,7 @@ export function CityDetail() {
       </section>
 
       {/* Benefits Section */}
-      <section className="section-padding bg-[#0A1428]">
+      <section className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -168,7 +168,7 @@ export function CityDetail() {
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
                 Por Que Contratar em {city.name}?
               </h2>
-              <p className="text-[#b9c8e0] mb-8">
+              <p className="text-[#C9CCD2] mb-8">
                 O atendimento em {city.name} une as vantagens de um serviço local
                 com a responsabilidade técnica de um engenheiro registrado no CREA,
                 que acompanha você do início ao fim do projeto.
@@ -184,8 +184,8 @@ export function CityDetail() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0" />
-                    <span className="text-[#cbd7e8]">{benefit}</span>
+                    <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0" />
+                    <span className="text-[#D9DBDF]">{benefit}</span>
                   </motion.div>
                 ))}
               </div>
@@ -198,11 +198,11 @@ export function CityDetail() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="rounded-2xl border border-white/10 bg-[#060D1E] p-8 text-white">
+              <div className="rounded-2xl border border-white/10 bg-[#000000] p-8 text-white">
                 <h3 className="font-display text-2xl font-bold mb-4">
                   Solicite um Orçamento
                 </h3>
-                <p className="text-[#b9c8e0] mb-6">
+                <p className="text-[#C9CCD2] mb-6">
                   Entre em contato agora e receba uma proposta personalizada
                   para seu projeto em {city.name}.
                 </p>
@@ -232,7 +232,7 @@ export function CityDetail() {
 
       {/* Neighborhoods */}
       {city.neighborhoods && city.neighborhoods.length > 0 && (
-        <section className="section-padding bg-[#060D1E]">
+        <section className="section-padding bg-[#000000]">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -247,7 +247,7 @@ export function CityDetail() {
                 {city.neighborhoods.map((neighborhood, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-[#cbd7e8] text-sm"
+                    className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.04] text-[#D9DBDF] text-sm"
                   >
                     {neighborhood}
                   </span>
@@ -259,7 +259,7 @@ export function CityDetail() {
       )}
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -268,7 +268,7 @@ export function CityDetail() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Engenheiro Civil em <span className="text-[#B9F227]">{city.name}</span>
+              Engenheiro Civil em <span className="text-[#F28A2E]">{city.name}</span>
             </h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
               Não perca tempo. Solicite um orçamento agora mesmo e transforme

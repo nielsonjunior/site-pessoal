@@ -152,7 +152,7 @@ export function LandingPage() {
   };
 
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title="Engenheiro Civil Cáceres MT - Nielson Pinheiro | Orçamento Grátis"
         description="Engenheiro Civil em Cáceres-MT e região. Nielson Pinheiro - ART, regularização de imóveis, reformas e laudos. Orçamento grátis em 24h!"
@@ -167,14 +167,14 @@ export function LandingPage() {
       />
 
       {/* Hero Section */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="pt-28 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={false}
               className="hero-in"
             >
-              <div className="inline-flex items-center gap-2 bg-[#B9F227]/15 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 bg-[#F28A2E]/15 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4" />
                 CREA 5071806455
               </div>
@@ -230,7 +230,7 @@ export function LandingPage() {
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F1A2E] mb-2">
+                  <h3 className="text-xl font-bold text-[#111418] mb-2">
                     {submitType === 'whatsapp' ? 'Abrindo WhatsApp!' : 'Orçamento enviado!'}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
@@ -240,14 +240,14 @@ export function LandingPage() {
                   </p>
                   <button
                     onClick={() => { setIsSubmitted(false); setSubmitType(null); }}
-                    className="text-[#1B3B6C] underline text-sm"
+                    className="text-[#1A1D22] underline text-sm"
                   >
                     Enviar nova solicitação
                   </button>
                 </div>
               ) : (
                 <>
-                  <h3 className="text-2xl font-bold text-[#0F1A2E] mb-2">
+                  <h3 className="text-2xl font-bold text-[#111418] mb-2">
                     Solicite seu Orçamento
                   </h3>
                   <p className="text-gray-600 text-sm mb-6">
@@ -298,7 +298,7 @@ export function LandingPage() {
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1B3B6C] focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#1A1D22] focus:border-transparent"
                         required
                       >
                         <option value="">Selecione um serviço</option>
@@ -350,7 +350,7 @@ export function LandingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-12 bg-[#060D1E]">
+      <section className="py-12 bg-[#000000]">
         <div className="container-custom">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {benefits.map((benefit, index) => (
@@ -362,8 +362,8 @@ export function LandingPage() {
                 transition={{ delay: index * 0.05 }}
                 className="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/[0.03]"
               >
-                <CheckCircle className="w-5 h-5 text-[#B9F227] flex-shrink-0" />
-                <span className="text-[#cbd7e8] text-sm font-medium">{benefit}</span>
+                <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0" />
+                <span className="text-[#D9DBDF] text-sm font-medium">{benefit}</span>
               </motion.div>
             ))}
           </div>
@@ -371,7 +371,7 @@ export function LandingPage() {
       </section>
 
       {/* Services */}
-      <section className="section-padding bg-[#0A1428]">
+      <section className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -382,7 +382,7 @@ export function LandingPage() {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Meus Serviços
             </h2>
-            <p className="text-[#b9c8e0]">
+            <p className="text-[#C9CCD2]">
               Soluções completas em engenharia civil para você em Cáceres e região
             </p>
           </motion.div>
@@ -400,10 +400,10 @@ export function LandingPage() {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {service.title}
                 </h3>
-                <p className="text-[#93a7c6] text-sm mb-4">
+                <p className="text-[#A7ABB2] text-sm mb-4">
                   {service.description}
                 </p>
-                <p className="text-[#B9F227] font-semibold">{service.price}</p>
+                <p className="text-[#F28A2E] font-semibold">{service.price}</p>
               </motion.div>
             ))}
           </div>
@@ -411,7 +411,7 @@ export function LandingPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-[#1B3B6C]">
+      <section className="py-12 bg-[#1A1D22]">
         <div className="container-custom">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
@@ -427,7 +427,7 @@ export function LandingPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <p className="font-display text-3xl md:text-4xl font-bold text-[#B9F227]">{stat.value}</p>
+                <p className="font-display text-3xl md:text-4xl font-bold text-[#F28A2E]">{stat.value}</p>
                 <p className="text-white/70 text-sm">{stat.label}</p>
               </motion.div>
             ))}
@@ -436,7 +436,7 @@ export function LandingPage() {
       </section>
 
       {/* Por que confiar (sem depoimentos inventados) */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -447,7 +447,7 @@ export function LandingPage() {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Por que confiar no meu trabalho
             </h2>
-            <p className="text-[#b9c8e0]">Atendo Cáceres e região com seriedade, técnica e transparência.</p>
+            <p className="text-[#C9CCD2]">Atendo Cáceres e região com seriedade, técnica e transparência.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -460,11 +460,11 @@ export function LandingPage() {
                 transition={{ delay: index * 0.1 }}
                 className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
               >
-                <div className="w-12 h-12 bg-[#B9F227]/15 rounded-xl flex items-center justify-center mb-4">
-                  <c.icon className="w-6 h-6 text-[#B9F227]" />
+                <div className="w-12 h-12 bg-[#F28A2E]/15 rounded-xl flex items-center justify-center mb-4">
+                  <c.icon className="w-6 h-6 text-[#F28A2E]" />
                 </div>
                 <h3 className="font-semibold text-white mb-1">{c.title}</h3>
-                <p className="text-[#93a7c6] text-sm leading-relaxed">{c.text}</p>
+                <p className="text-[#A7ABB2] text-sm leading-relaxed">{c.text}</p>
               </motion.div>
             ))}
           </div>
@@ -472,7 +472,7 @@ export function LandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -489,7 +489,7 @@ export function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#orcamento"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#B9F227] px-8 py-4 font-semibold text-[#0a1706] transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
               >
                 Solicitar Orçamento Agora
                 <ArrowRight className="w-5 h-5" />

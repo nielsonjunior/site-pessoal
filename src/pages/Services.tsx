@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function Services() {
   return (
-    <div className="bg-[#060D1E] text-white">
+    <div className="bg-[#000000] text-white">
       <SEO
         title="Serviços de Engenharia Civil - ART, Regularização, Reformas"
         description="Serviços completos de engenharia civil: ART, regularização de imóveis, projetos de reforma, ampliação, laudos técnicos e consultoria. Solicite orçamento!"
@@ -30,13 +30,13 @@ export function Services() {
       />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom">
           <motion.div
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
+            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
               Nossos Serviços
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -69,7 +69,7 @@ export function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-[#060D1E]">
+      <section className="section-padding bg-[#000000]">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => {
@@ -82,10 +82,10 @@ export function Services() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="h-full flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:border-[#B9F227]/40">
+                  <div className="h-full flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:border-[#F28A2E]/40">
                     {/* Image */}
-                    <div className="h-48 bg-gradient-to-br from-[#12294A] to-[#1B3B6C] flex items-center justify-center">
-                      <Icon className="w-20 h-20 text-[#B9F227]/25" />
+                    <div className="h-48 bg-gradient-to-br from-[#1A1D22] to-[#1A1D22] flex items-center justify-center">
+                      <Icon className="w-20 h-20 text-[#F28A2E]/25" />
                     </div>
 
                     {/* Content */}
@@ -93,15 +93,15 @@ export function Services() {
                       <h2 className="font-display text-xl font-bold text-white mb-3">
                         {service.title}
                       </h2>
-                      <p className="text-[#93a7c6] text-sm mb-4 flex-grow">
+                      <p className="text-[#A7ABB2] text-sm mb-4 flex-grow">
                         {service.shortDescription}
                       </p>
 
                       {/* Benefits */}
                       <ul className="space-y-2 mb-6">
                         {service.benefits.slice(0, 3).map((benefit, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-[#93a7c6]">
-                            <CheckCircle className="w-4 h-4 text-[#B9F227] flex-shrink-0 mt-0.5" />
+                          <li key={i} className="flex items-start gap-2 text-sm text-[#A7ABB2]">
+                            <CheckCircle className="w-4 h-4 text-[#F28A2E] flex-shrink-0 mt-0.5" />
                             {benefit}
                           </li>
                         ))}
@@ -110,7 +110,7 @@ export function Services() {
                       {/* CTA */}
                       <Link
                         to={`/servicos/${service.slug}`}
-                        className="inline-flex items-center gap-2 text-[#B9F227] font-medium hover:gap-3 transition-all"
+                        className="inline-flex items-center gap-2 text-[#F28A2E] font-medium hover:gap-3 transition-all"
                       >
                         Saiba mais
                         <ArrowRight className="w-4 h-4" />
@@ -125,7 +125,7 @@ export function Services() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-[#0A1428]">
+      <section className="section-padding bg-[#0B0C0F]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -134,13 +134,13 @@ export function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227] mb-4">
+              <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
                 Por Que Me Escolher
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
                 Excelência Técnica e Compromisso com Resultados
               </h2>
-              <p className="text-[#b9c8e0] mb-8">
+              <p className="text-[#C9CCD2] mb-8">
                 Sou engenheiro civil registrado no CREA e atendo você diretamente,
                 com responsabilidade técnica (ART) e compromisso em cada projeto.
               </p>
@@ -162,10 +162,10 @@ export function Services() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-8 h-8 bg-[#B9F227]/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-[#B9F227]" />
+                    <div className="w-8 h-8 bg-[#F28A2E]/15 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
                     </div>
-                    <span className="text-[#cbd7e8]">{item}</span>
+                    <span className="text-[#D9DBDF]">{item}</span>
                   </motion.div>
                 ))}
               </div>
@@ -182,7 +182,7 @@ export function Services() {
                 <h3 className="font-display text-2xl font-bold text-white mb-6">
                   Em Breve
                 </h3>
-                <p className="text-[#b9c8e0] mb-6">
+                <p className="text-[#C9CCD2] mb-6">
                   Estou expandindo os serviços para atender ainda melhor você:
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -191,8 +191,8 @@ export function Services() {
                       key={index}
                       className="flex items-center gap-2 p-3 rounded-lg border border-white/10 bg-white/[0.04]"
                     >
-                      <div className="w-2 h-2 bg-[#B9F227] rounded-full" />
-                      <span className="text-sm text-[#cbd7e8]">{service}</span>
+                      <div className="w-2 h-2 bg-[#F28A2E] rounded-full" />
+                      <span className="text-sm text-[#D9DBDF]">{service}</span>
                     </div>
                   ))}
                 </div>
@@ -203,7 +203,7 @@ export function Services() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#12294A] to-[#060D1E]">
+      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

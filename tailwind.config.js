@@ -50,8 +50,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['"Inter Variable"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk Variable"', '"Inter Variable"', 'ui-sans-serif', 'sans-serif'],
+        sans: ['"Montserrat Variable"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        display: ['"Montserrat Variable"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -62,9 +62,9 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        // Sombras de marca (azul suave) — sensação "premium" sem peso preto.
-        brand: "0 18px 40px -18px rgba(27, 59, 108, 0.30)",
-        "brand-lg": "0 30px 60px -22px rgba(27, 59, 108, 0.38)",
+        // Sombras de marca (escuras, neutras).
+        brand: "0 18px 40px -18px rgba(0,0,0, 0.30)",
+        "brand-lg": "0 30px 60px -22px rgba(0,0,0, 0.38)",
       },
       keyframes: {
         "accordion-down": {
