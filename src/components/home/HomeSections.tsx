@@ -85,7 +85,6 @@ export function HomeAbout() {
           <p>Sou o Nielson Pinheiro de Castilho Júnior, engenheiro civil em Cáceres-MT.</p>
           <p>Faço o projeto da sua obra, tiro o alvará, acompanho a construção e cuido dos papéis do imóvel na prefeitura e no cartório.</p>
           <p>Quem atende, faz o projeto e vai na obra sou eu.</p>
-          <div className="creds"><span>CREA 5071806455</span><span>Cáceres-MT</span><span>ART em todo serviço</span></div>
         </div>
         <div className="gallery">
           {GALERIA.map((g, i) => <img key={g.src} className={i === gi ? "on" : undefined} src={g.src} alt={g.alt} loading="lazy" />)}
@@ -259,7 +258,7 @@ export function HomeContact() {
     <section className="sec contact" id="contato">
       <div className="wrap">
         <div>
-          <span className="eyebrow">Primeira conversa sem custo</span>
+          <span className="eyebrow">Contato</span>
           <h2 style={{ marginTop: 10 }}>Me conte o que você precisa</h2>
           <p className="phone">WhatsApp (65) 99694-6861 · <a href="mailto:contato@npcastilho.eng.br?subject=Contato%20pelo%20site">contato@npcastilho.eng.br</a></p>
         </div>

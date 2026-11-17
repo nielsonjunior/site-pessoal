@@ -6,23 +6,23 @@ import { SEO } from '@/components/shared';
 const reasons = [
   {
     icon: Shield,
-    title: 'Segurança Estrutural',
-    description: 'O engenheiro civil avalia a viabilidade técnica das alterações, garantindo que a estrutura do imóvel não seja comprometida.',
+    title: 'A casa não trinca',
+    description: 'O engenheiro calcula a base, as colunas e a laje e vê quais paredes podem ser mexidas numa reforma.',
   },
   {
     icon: Award,
-    title: 'Conformidade Legal',
-    description: 'Profissional habilitado garante que a obra atenda às normas técnicas e legislação vigente, evitando problemas futuros.',
+    title: 'Os papéis saem certos',
+    description: 'Com projeto aprovado e ART, a obra tem alvará, habite-se e pode ser vendida ou financiada depois.',
   },
   {
     icon: Users,
-    title: 'Economia de Recursos',
-    description: 'O planejamento técnico evita desperdícios de materiais e retrabalhos, otimizando o orçamento da obra.',
+    title: 'Você gasta menos',
+    description: 'Com projeto e orçamento, você compra o material certo e não refaz serviço.',
   },
   {
     icon: Clock,
-    title: 'Garantia de Qualidade',
-    description: 'O acompanhamento técnico assegura que os serviços sejam executados conforme especificações técnicas.',
+    title: 'A obra sai como foi desenhada',
+    description: 'O engenheiro vai na obra nas etapas importantes e confere o que está sendo feito.',
   },
 ];
 
@@ -82,11 +82,10 @@ export function WhyHireEngineer() {
               <HardHat className="w-10 h-10 text-[#F28A2E]" />
             </div>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-              Por Que Contratar um Engenheiro Civil?
+              Por que contratar um engenheiro civil
             </h1>
             <p className="text-white/70 text-lg">
-              Entenda a importância de ter um profissional qualificado para garantir
-              a segurança, qualidade e conformidade legal do seu projeto.
+              O que muda na sua obra quando tem um engenheiro do começo ao fim.
             </p>
           </motion.div>
         </div>
@@ -102,11 +101,8 @@ export function WhyHireEngineer() {
             className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Benefícios de Contratar um Engenheiro
+              O que você ganha
             </h2>
-            <p className="text-[#C9CCD2]">
-              A presença de um engenheiro civil traz vantagens significativas para qualquer projeto
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -145,11 +141,10 @@ export function WhyHireEngineer() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                Quando é Obrigatório?
+                Quando é obrigatório
               </h2>
               <p className="text-[#C9CCD2] mb-8">
-                De acordo com a legislação, é obrigatório o acompanhamento de engenheiro
-                civil nas seguintes situações:
+                A lei exige um responsável técnico com ART nestes casos:
               </p>
 
               <div className="space-y-4">
@@ -180,7 +175,7 @@ export function WhyHireEngineer() {
                 Engenheiro vs Arquiteto
               </h3>
               <p className="text-[#C9CCD2] mb-6">
-                Entenda a diferença entre esses dois profissionais importantes:
+                Os dois trabalham juntos em muitas obras. O que cada um costuma fazer:
               </p>
 
               <div className="space-y-6">
@@ -212,11 +207,10 @@ export function WhyHireEngineer() {
             viewport={{ once: true }}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Contrate um Engenheiro Civil Qualificado
+              Vai construir ou reformar
             </h2>
             <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-              Invista em segurança e qualidade para seu projeto. Solicite um orçamento
-              sem compromisso e converse com um profissional experiente.
+              Me chame no WhatsApp e conte o que você quer fazer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

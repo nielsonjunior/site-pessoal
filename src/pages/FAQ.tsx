@@ -29,7 +29,7 @@ export function FAQ() {
     <div className="bg-[#000000] text-white">
       <SEO
         title="Perguntas Frequentes - Engenharia Civil"
-        description="Tire suas dúvidas sobre engenharia civil, ART, regularização de imóveis, reformas e muito mais. Confira nossas respostas!"
+        description="Respostas sobre ART, regularização de imóveis, reforma, ampliação, laudos e obra, com engenheiro civil em Cáceres-MT."
         keywords={[
           'perguntas frequentes engenharia',
           'dúvidas ART',
@@ -53,8 +53,7 @@ export function FAQ() {
               Perguntas Frequentes
             </h1>
             <p className="text-white/70 text-lg mb-8">
-              Tire suas dúvidas sobre os serviços de engenharia civil.
-              Se não encontrar o que procura, entre em contato.
+              Respostas curtas sobre ART, regularização, reforma e obra.
             </p>
 
             {/* Search */}
@@ -173,11 +172,10 @@ export function FAQ() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-                Ainda tem dúvidas?
+                Não achou a sua pergunta
               </h2>
               <p className="text-white/70 text-lg">
-                Estou pronto para ajudar. Entre em contato e terei
-                prazer em esclarecer todas as suas questões.
+                Me pergunte pelo WhatsApp.
               </p>
             </motion.div>
 
@@ -192,7 +190,7 @@ export function FAQ() {
                 to="/orcamento"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
               >
-                Fale Conosco
+                Pedir orçamento
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a

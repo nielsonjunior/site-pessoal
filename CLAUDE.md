@@ -176,6 +176,14 @@ npm run test:all         # unit + e2e
 
 Detalhes do harness de testes: **`docs/TESTING.md`**.
 
+## Regras de texto (pedido do dono, 17/11/2026)
+
+- Linguagem simples, frases curtas, primeira pessoa do singular (é um engenheiro só: nada de "nossa equipe", "atendemos").
+- Sem frase feita de IA: "soluções completas", "excelência", "transformar seu projeto em realidade", "qualidade garantida", "apaixonado por", "Não perca tempo".
+- Sem instrução óbvia ("role a tela", "toque numa opção", "confira") e sem número ou promessa sem base (prazo em horas, "garantia em todos os serviços", forma de pagamento, bairros não conferidos).
+- A mesma informação não se repete na mesma tela: CREA fica no cabeçalho e no rodapé; contato fica no rodapé; região fica no mapa e na página de cidades.
+- O cabeçalho não tem mais a faixa de cima (telefone/CREA/região). O mini-diagnóstico da regularização saiu (repetia a lista de casos).
+
 ## SEO / Rendering (ver `docs/SEO-PLAN.md`)
 
 - **SSG por pré-render (SSR Node-only, sem navegador):** `npm run build:static` =

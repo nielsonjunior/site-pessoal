@@ -11,110 +11,73 @@ export const cities: City[] = [
     name: "Cáceres",
     state: "MT",
     slug: "caceres",
-    description: "Cidade sede do escritório. Atendimento completo em Cáceres e toda a região com serviços de engenharia civil de alta qualidade, incluindo ART, regularização, reformas e laudos técnicos.",
-    neighborhoods: [
-      "Centro", "Jardim Guanabara", "Nova Esperança", "Coophamil",
-      "Jardim Ipanema", "São Luís", "Jardim Expander", "Aeroporto"
-    ]
+    description: "Meu escritório fica em Cáceres. Faço projeto, obra, regularização e laudo na cidade, com visita ao local."
   },
   {
     name: "Mirassol d'Oeste",
     state: "MT",
     slug: "mirassol-doeste",
-    description: "Atendimento em Mirassol d'Oeste para regularização de imóveis, ART, projetos de reforma e laudos técnicos. Engenheiro civil com conhecimento da legislação local.",
-    neighborhoods: [
-      "Centro", "Residencial dos Lagos", "Jardim Paulista", "Vila Nova", "Jardim Florianópolis"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Mirassol d'Oeste, com visita ao local."
   },
   {
     name: "Araputanga",
     state: "MT",
     slug: "araputanga",
-    description: "Serviços de engenharia civil em Araputanga para projetos residenciais, comerciais e regularização de imóveis junto à prefeitura local.",
-    neighborhoods: [
-      "Centro", "Jardim Brasil", "Vila Esperança", "Jardim das Palmeiras"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Araputanga, com visita ao local."
   },
   {
     name: "São José dos Quatro Marcos",
     state: "MT",
     slug: "sao-jose-quatro-marcos",
-    description: "Engenheiro civil em São José dos Quatro Marcos para ART, regularização de imóveis, reformas e laudos técnicos com atendimento rápido.",
-    neighborhoods: [
-      "Centro", "Jardim Bela Vista", "Vila Industrial", "Residencial Primavera"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em São José dos Quatro Marcos, com visita ao local."
   },
   {
     name: "Barra do Bugres",
     state: "MT",
     slug: "barra-do-bugres",
-    description: "Atendimento em Barra do Bugres para projetos e regularização de imóveis, reformas residenciais e comerciais com garantia de qualidade.",
-    neighborhoods: [
-      "Centro", "Jardim Primavera", "Vila Operária", "Jardim das Acácias"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Barra do Bugres, com visita ao local."
   },
   {
     name: "Lambari d'Oeste",
     state: "MT",
     slug: "lambari-doeste",
-    description: "Serviços completos de engenharia civil em Lambari d'Oeste, com atendimento personalizado para regularização e projetos de reforma.",
-    neighborhoods: [
-      "Centro", "Jardim Novo Mundo", "Vila São Francisco"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Lambari d'Oeste, com visita ao local."
   },
   {
     name: "Porto Esperidião",
     state: "MT",
     slug: "porto-esperidiao",
-    description: "Engenheiro civil em Porto Esperidião e região da fronteira com a Bolívia. Atendimento para projetos rurais, urbanos e regularização.",
-    neighborhoods: [
-      "Centro", "Vila São Paulo", "Jardim América"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Porto Esperidião, na cidade e na zona rural."
   },
   {
     name: "Indiavaí",
     state: "MT",
     slug: "indiavai",
-    description: "Atendimento em Indiavaí para regularização de imóveis e projetos de engenharia civil residenciais e comerciais.",
-    neighborhoods: [
-      "Centro", "Jardim Progresso"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Indiavaí, com visita ao local."
   },
   {
     name: "Glória d'Oeste",
     state: "MT",
     slug: "gloria-doeste",
-    description: "Serviços de engenharia civil em Glória d'Oeste, com foco em regularização de imóveis e laudos técnicos.",
-    neighborhoods: [
-      "Centro", "Jardim das Flores", "Vila Real"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Glória d'Oeste, com visita ao local."
   },
   {
     name: "Salto do Céu",
     state: "MT",
     slug: "salto-do-ceu",
-    description: "Atendimento em Salto do Céu para projetos de engenharia civil, regularização e ART com conhecimento da legislação municipal.",
-    neighborhoods: [
-      "Centro", "Jardim Vitória"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Salto do Céu, com visita ao local."
   },
   {
     name: "Reserva do Cabaçal",
     state: "MT",
     slug: "reserva-do-cabacal",
-    description: "Engenheiro civil atendendo em Reserva do Cabaçal para projetos de regularização, ART e laudos técnicos.",
-    neighborhoods: [
-      "Centro", "Setor A", "Setor B"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Reserva do Cabaçal, com visita ao local."
   },
   {
     name: "Pontes e Lacerda",
     state: "MT",
     slug: "pontes-e-lacerda",
-    description: "Serviços de engenharia civil em Pontes e Lacerda, atendimento para regularização de imóveis, ART e projetos de reforma e ampliação.",
-    neighborhoods: [
-      "Centro", "Jardim Paraíso", "Vila Industrial", "Bairro Novo"
-    ]
+    description: "Faço projeto, obra, regularização e laudo em Pontes e Lacerda, com visita ao local."
   }
 ];
 

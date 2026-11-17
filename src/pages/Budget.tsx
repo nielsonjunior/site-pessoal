@@ -5,7 +5,6 @@ import {
   Phone,
   Mail,
   Loader2,
-  Calculator,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/shared";
@@ -187,7 +186,7 @@ export function Budget() {
     <>
       <SEO
         title="Solicitar Orçamento - Engenheiro Civil em Cáceres"
-        description="Solicite um orçamento gratuito para serviços de engenharia civil. ART, regularização, reformas, laudos e mais. Resposta em até 24h!"
+        description="Peça orçamento de projeto, obra, reforma, regularização de imóvel, laudo ou ART com engenheiro civil em Cáceres-MT."
         keywords={[
           "orçamento engenharia civil",
           "solicitar orçamento engenheiro",
@@ -203,15 +202,12 @@ export function Budget() {
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block bg-[#F28A2E]/20 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-4">
-              Orçamento Grátis
-            </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Solicite seu Orçamento
+              Pedir orçamento
             </h1>
             <p className="text-white/70 text-lg">
-              Preencha o formulário abaixo com as informações do seu projeto.
-              Retornaremos em até 24 horas com uma proposta personalizada.
+              Conte o que você precisa. Eu respondo pelo WhatsApp ou pelo e-mail
+              que você deixar.
             </p>
           </motion.div>
         </div>
@@ -499,43 +495,11 @@ export function Budget() {
                 transition={{ duration: 0.6 }}
                 className="sticky top-32 space-y-6"
               >
-                {/* Info Card */}
-                <div className="bg-[#1A1D22] rounded-2xl p-6 text-white">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-[#F28A2E]/20 rounded-xl flex items-center justify-center">
-                      <Calculator className="w-6 h-6 text-[#F28A2E]" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">Orçamento Grátis</h3>
-                      <p className="text-sm text-white/70">Sem compromisso</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-3 text-sm">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
-                      Análise técnica do projeto
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
-                      Proposta detalhada
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
-                      Prazo de resposta: 24h
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
-                      Condições especiais
-                    </li>
-                  </ul>
-                </div>
-
                 {/* WhatsApp Card */}
                 <div className="bg-[#25D366] rounded-2xl p-6 text-white">
-                  <h3 className="font-semibold mb-2">Prefere pelo WhatsApp?</h3>
+                  <h3 className="font-semibold mb-2">Pelo WhatsApp</h3>
                   <p className="text-sm text-white/90 mb-4">
-                    Envie suas informações diretamente pelo WhatsApp para um
-                    atendimento mais rápido.
+                    Dá para mandar áudio, fotos do imóvel e documentos.
                   </p>
                   <a
                     href="https://wa.me/5565996946861?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
@@ -551,13 +515,13 @@ export function Budget() {
                 {/* Phone Card */}
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                   <h3 className="font-semibold text-white mb-2">
-                    Ligue para mim
+                    Telefone
                   </h3>
                   <p className="text-sm text-[#C9CCD2] mb-4">
-                    Atendimento de segunda a sexta, das 8h às 18h.
+                    Segunda a sexta, das 8h às 18h.
                   </p>
                   <a
-                    href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
+                    href="tel:+5565996946861"
                     className="flex items-center gap-2 text-[#F28A2E] font-medium"
                   >
                     <Phone className="w-5 h-5" />

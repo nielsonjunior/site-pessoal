@@ -5,7 +5,6 @@ import {
   ArrowRight,
   CheckCircle,
   AlertTriangle,
-  TrendingUp,
   Phone,
   Scissors,
   Combine,
@@ -21,7 +20,6 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/jsonld";
 import {
   getRegularizationBySlug,
   regularizationTypes,
-  VALORIZATION_MAX,
 } from "@/data";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -209,20 +207,7 @@ export function RegularizacaoDetalhe() {
               </motion.div>
 
               {/* Valorização */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="bg-[#F28A2E] rounded-2xl p-6 flex items-start gap-4"
-              >
-                <TrendingUp className="w-8 h-8 text-[#0F141B] flex-shrink-0" />
-                <div>
-                  <p className="font-bold text-lg text-[#0F141B] mb-1">
-                    Valorize seu imóvel em até {VALORIZATION_MAX}
-                  </p>
-                  <p className="text-[#0F141B]/80">{item.benefit}</p>
-                </div>
-              </motion.div>
+              <p className="rounded-[4px] border-l-4 border-[#F28A2E] bg-white/[0.04] p-5 text-[#D9DBDF]">{item.benefit}</p>
             </div>
 
             {/* Sidebar */}

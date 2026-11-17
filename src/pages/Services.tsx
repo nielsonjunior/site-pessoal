@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { FileCheck, Home, Hammer, Maximize2, ClipboardCheck, Users, ArrowRight, CheckCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/shared';
-import { services, futureServices } from '@/data';
+import { services } from '@/data';
 
 const iconMap: Record<string, React.ElementType> = {
   FileCheck,
@@ -18,7 +18,7 @@ export function Services() {
     <div className="bg-[#000000] text-white">
       <SEO
         title="Serviços de Engenharia Civil - ART, Regularização, Reformas"
-        description="Serviços completos de engenharia civil: ART, regularização de imóveis, projetos de reforma, ampliação, laudos técnicos e consultoria. Solicite orçamento!"
+        description="Construção, reforma, ampliação, regularização de imóveis, laudos e ART com engenheiro civil em Cáceres-MT."
         keywords={[
           'serviços engenharia civil',
           'ART',
@@ -36,15 +36,11 @@ export function Services() {
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
-              Nossos Serviços
-            </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Soluções Completas em Engenharia Civil
+              Serviços de engenharia civil
             </h1>
             <p className="text-white/70 text-lg mb-8">
-              Ofereço uma gama completa de serviços de engenharia civil,
-              desde a regularização de imóveis até projetos de construção.
+              Construção, reforma, ampliação, papéis do imóvel, laudos e ART.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -124,84 +120,6 @@ export function Services() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-[#0B0C0F]">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
-                Por Que Me Escolher
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                Excelência Técnica e Compromisso com Resultados
-              </h2>
-              <p className="text-[#C9CCD2] mb-8">
-                Sou engenheiro civil registrado no CREA e atendo você diretamente,
-                com responsabilidade técnica (ART) e compromisso em cada projeto.
-              </p>
-
-              <div className="space-y-4">
-                {[
-                  'Engenheiro registrado no CREA (5071806455)',
-                  'Atendimento direto com o engenheiro',
-                  'Atendimento personalizado',
-                  'Orçamento sem compromisso',
-                  'Garantia em todos os serviços',
-                  'Prazos rigorosamente cumpridos',
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-3"
-                  >
-                    <div className="w-8 h-8 bg-[#F28A2E]/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-[#F28A2E]" />
-                    </div>
-                    <span className="text-[#D9DBDF]">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-                <h3 className="font-display text-2xl font-bold text-white mb-6">
-                  Em Breve
-                </h3>
-                <p className="text-[#C9CCD2] mb-6">
-                  Estou expandindo os serviços para atender ainda melhor você:
-                </p>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {futureServices.map((service, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-2 p-3 rounded-lg border border-white/10 bg-white/[0.04]"
-                    >
-                      <div className="w-2 h-2 bg-[#F28A2E] rounded-full" />
-                      <span className="text-sm text-[#D9DBDF]">{service}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
         <div className="container-custom text-center">
@@ -212,11 +130,11 @@ export function Services() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Precisa de um Serviço Específico?
+              Não achou o que precisa
             </h2>
             <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-              Entre em contato e descubra como posso ajudar com seu projeto.
-              Ofereço soluções personalizadas para cada necessidade.
+              Me conte pelo WhatsApp. Se for trabalho de engenheiro civil, eu
+              resolvo ou te digo quem resolve.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -226,12 +144,15 @@ export function Services() {
                 Solicitar Orçamento
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link
-                to="/orcamento"
+              <a
+                href="https://wa.me/5565996946861"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white/10 text-white border border-white/20 px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-all inline-flex items-center justify-center gap-2"
               >
-                Fale Conosco
-              </Link>
+                <Phone className="w-5 h-5" />
+                WhatsApp
+              </a>
             </div>
           </motion.div>
         </div>

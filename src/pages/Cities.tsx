@@ -1,23 +1,15 @@
 import { Link } from 'react-router-dom';
-import { MapPin, ArrowRight, Phone, CheckCircle } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/shared';
 import { cities } from '@/data';
-
-const benefits = [
-  'Atendimento rápido em Cáceres e região',
-  'Conhecimento das legislações locais',
-  'Atendimento personalizado',
-  'Orçamento sem compromisso',
-  'Garantia em todos os serviços',
-];
 
 export function Cities() {
   return (
     <div className="bg-[#000000] text-white">
       <SEO
         title="Cidades Atendidas - Engenheiro Civil Cáceres e Região"
-        description="Atendo em Cáceres, Mirassol d'Oeste, Araputanga, Barra do Bugres, Porto Esperidião e toda a região. Engenheiro civil perto de você!"
+        description="Engenheiro civil em Cáceres, Mirassol d'Oeste, Araputanga, Barra do Bugres, Pontes e Lacerda e outras cidades do oeste de Mato Grosso."
         keywords={[
           'engenheiro civil Cáceres',
           'engenheiro civil Mirassol d\'Oeste',
@@ -33,15 +25,11 @@ export function Cities() {
             initial={false}
             className="hero-in text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
-              Onde Atuo
-            </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Cidades Atendidas
             </h1>
             <p className="text-white/70 text-lg">
-              Ofereço serviços de engenharia civil em Cáceres e toda a região
-              metropolitana, sempre com qualidade e compromisso.
+              Cáceres e mais 11 cidades, sempre com visita ao local.
             </p>
           </motion.div>
         </div>
@@ -79,119 +67,26 @@ export function Cities() {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="section-padding bg-[#0B0C0F]">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#F28A2E] mb-4">
-                Por Que Escolher
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                Atendimento Local com Qualidade Garantida
-              </h2>
-              <p className="text-[#C9CCD2] mb-8">
-                Atuar em Cáceres-MT e região me permite oferecer um atendimento próximo,
-                personalizado e eficiente, com conhecimento das características locais,
-                das necessidades dos clientes e das particularidades técnicas de cada projeto.
-              </p>
-
-              <div className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0" />
-                    <span className="text-[#D9DBDF]">{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="rounded-2xl border border-white/10 bg-[#000000] p-8 text-white">
-                <h3 className="font-display text-2xl font-bold mb-4">
-                  Não encontrou sua cidade?
-                </h3>
-                <p className="text-[#C9CCD2] mb-6">
-                  Atendo em Cáceres e toda a região metropolitana.
-                  Entre em contato para verificar disponibilidade na sua região.
-                </p>
-                <div className="space-y-4">
-                  <a
-                    href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-white hover:text-[#F28A2E] transition-colors"
-                  >
-                    <Phone className="w-5 h-5" />
-                    (65) 99694-6861
-                  </a>
-                  <Link
-                    to="/orcamento"
-                    className="btn-accent w-full inline-flex items-center justify-center gap-2"
-                  >
-                    Entre em Contato
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+        <div className="container-custom text-center max-w-2xl mx-auto">
+          <h2 className="font-display text-3xl font-bold text-white mb-4">
+            A sua cidade não está na lista
+          </h2>
+          <p className="text-[#C9CCD2] mb-8">
+            Me chame no WhatsApp e conte onde é. Dependendo do serviço e da distância, eu vou até aí.
+          </p>
+          <a
+            href={`https://wa.me/5565996946861?text=${encodeURIComponent("Olá! Você atende na minha cidade?")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-[4px] bg-[#25D366] px-8 py-4 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
           >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Engenheiro Civil em Cáceres
-            </h2>
-            <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-              Atendo em Cáceres e toda a região metropolitana. Solicite um orçamento
-              e descubra como posso ajudar no seu projeto.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/orcamento"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
-              >
-                Solicitar Orçamento
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <a
-                href="https://wa.me/5565996946861"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
-              >
-                <Phone className="w-5 h-5" />
-                WhatsApp
-              </a>
-            </div>
-          </motion.div>
+            <Phone className="w-5 h-5" />
+            Chamar no WhatsApp
+          </a>
         </div>
       </section>
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, CheckCircle, ArrowRight, Star, Send, Mail, ShieldCheck, MessageCircle, Calculator } from 'lucide-react';
+import { Phone, CheckCircle, ArrowRight, Send, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/shared';
 import { Button } from '@/components/ui/button';
@@ -10,54 +10,22 @@ import { leadWhatsappSchema, validate } from '@/lib/validation';
 const WHATSAPP_NUMBER = '5565996946861';
 const EMAIL = 'contato@npcastilho.eng.br';
 
-const benefits = [
-  'Engenheiro Civil registrado CREA 5071806455',
-  'Orçamento em até 24 horas',
-  'Atendimento em Cáceres e região de MT',
-  'Garantia em todos os serviços',
-  'Responsabilidade técnica (ART) em cada serviço',
-  'Atendimento humanizado e personalizado',
-];
-
 const services = [
   {
     title: 'ART',
-    description: 'Anotação de Responsabilidade Técnica para obras e serviços',
-    price: 'Consulte',
+    description: 'O documento do CREA que a prefeitura, o banco e o condomínio pedem',
   },
   {
     title: 'Regularização',
-    description: 'Regularização completa de imóveis junto à prefeitura',
-    price: 'Consulte',
+    description: 'Habite-se, construção no documento e imóvel no seu nome',
   },
   {
     title: 'Reformas',
-    description: 'Projetos e acompanhamento de reformas residenciais',
-    price: 'Consulte',
+    description: 'Projeto, orçamento e ART para reformar sem risco',
   },
   {
     title: 'Laudos',
-    description: 'Laudos técnicos para diversas finalidades',
-    price: 'Consulte',
-  },
-];
-
-// Compromissos verificáveis (o dono está começando — sem depoimentos inventados).
-const compromissos = [
-  {
-    icon: ShieldCheck,
-    title: 'Engenheiro registrado no CREA',
-    text: 'Responsabilidade técnica (CREA 5071806455) e ART em cada serviço.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Atendimento direto comigo',
-    text: 'Do orçamento à entrega, você fala diretamente com o engenheiro.',
-  },
-  {
-    icon: Calculator,
-    title: 'Orçamento grátis e sem compromisso',
-    text: 'Você sabe o que vai pagar antes de decidir. Resposta em até 24h.',
+    description: 'Rachadura, infiltração, vistoria e avaliação do imóvel',
   },
 ];
 
@@ -155,7 +123,7 @@ export function LandingPage() {
     <div className="bg-[#000000] text-white">
       <SEO
         title="Engenheiro Civil Cáceres MT - Nielson Pinheiro | Orçamento Grátis"
-        description="Engenheiro Civil em Cáceres-MT e região. Nielson Pinheiro - ART, regularização de imóveis, reformas e laudos. Orçamento grátis em 24h!"
+        description="Engenheiro civil em Cáceres-MT. Nielson Pinheiro: casa nova, reforma, regularização de imóveis, laudos e ART."
         keywords={[
           'engenheiro civil Cáceres',
           'engenheiro civil Cáceres MT',
@@ -174,37 +142,20 @@ export function LandingPage() {
               initial={false}
               className="hero-in"
             >
-              <div className="inline-flex items-center gap-2 bg-[#F28A2E]/15 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <Star className="w-4 h-4" />
-                CREA 5071806455
-              </div>
-
               <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 Engenheiro Civil em Cáceres-MT
               </h1>
 
               <p className="text-white/80 text-lg mb-6">
-                Especialista em <strong className="text-white">ART, Regularização de Imóveis, Reformas e Laudos Técnicos</strong>.
-                Atendimento em Cáceres-MT e região com orçamento em 24h.
+                Casa nova, reforma, regularização do imóvel, laudos e ART.
               </p>
-
-              <div className="flex flex-wrap gap-3 mb-8">
-                {['ART', 'Regularização', 'Reformas', 'Laudos'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-white/10 text-white px-3 py-1 rounded-full text-sm"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#orcamento"
                   className="btn-accent inline-flex items-center justify-center gap-2 text-lg"
                 >
-                  Solicitar Orçamento Grátis
+                  Pedir orçamento
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a
@@ -248,10 +199,10 @@ export function LandingPage() {
               ) : (
                 <>
                   <h3 className="text-2xl font-bold text-[#111418] mb-2">
-                    Solicite seu Orçamento
+                    Pedir orçamento
                   </h3>
                   <p className="text-gray-600 text-sm mb-6">
-                    Preencha o formulário e receba uma proposta em 24h.
+                    Deixe seu contato que eu te respondo.
                   </p>
 
                   <form className="space-y-4">
@@ -338,34 +289,10 @@ export function LandingPage() {
                       </Button>
                     </div>
 
-                    <p className="text-xs text-gray-500 text-center">
-                      Seus dados estão seguros. Não enviamos spam.
-                    </p>
                   </form>
                 </>
               )}
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-12 bg-[#000000]">
-        <div className="container-custom">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                className="flex items-center gap-3 p-4 rounded-xl border border-white/10 bg-white/[0.03]"
-              >
-                <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0" />
-                <span className="text-[#D9DBDF] text-sm font-medium">{benefit}</span>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -380,11 +307,8 @@ export function LandingPage() {
             className="text-center mb-12"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-              Meus Serviços
+              O que eu faço
             </h2>
-            <p className="text-[#C9CCD2]">
-              Soluções completas em engenharia civil para você em Cáceres e região
-            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -403,110 +327,12 @@ export function LandingPage() {
                 <p className="text-[#A7ABB2] text-sm mb-4">
                   {service.description}
                 </p>
-                <p className="text-[#F28A2E] font-semibold">{service.price}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-12 bg-[#1A1D22]">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {[
-              { value: 'CREA', label: '5071806455' },
-              { value: '+12', label: 'Cidades atendidas' },
-              { value: '24h', label: 'Orçamento' },
-              { value: 'MT', label: 'Mato Grosso' },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <p className="font-display text-3xl md:text-4xl font-bold text-[#F28A2E]">{stat.value}</p>
-                <p className="text-white/70 text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Por que confiar (sem depoimentos inventados) */}
-      <section className="section-padding bg-[#000000]">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-              Por que confiar no meu trabalho
-            </h2>
-            <p className="text-[#C9CCD2]">Atendo Cáceres e região com seriedade, técnica e transparência.</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {compromissos.map((c, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
-              >
-                <div className="w-12 h-12 bg-[#F28A2E]/15 rounded-xl flex items-center justify-center mb-4">
-                  <c.icon className="w-6 h-6 text-[#F28A2E]" />
-                </div>
-                <h3 className="font-semibold text-white mb-1">{c.title}</h3>
-                <p className="text-[#A7ABB2] text-sm leading-relaxed">{c.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="section-padding bg-gradient-to-br from-[#1A1D22] to-[#000000]">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-              Precisa de Engenheiro em Cáceres-MT?
-            </h2>
-            <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-              Solicite seu orçamento agora mesmo e receba uma proposta
-              personalizada em até 24 horas. Atendimento em Cáceres e toda a região.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#orcamento"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
-              >
-                Solicitar Orçamento Agora
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="https://wa.me/5565996946861"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-colors hover:bg-[#1EBE5A]"
-              >
-                <Phone className="w-5 h-5" />
-                Falar no WhatsApp
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

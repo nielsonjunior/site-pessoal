@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -58,42 +58,6 @@ export function Header() {
         isScrolled ? "shadow-[0_10px_30px_-15px_rgba(0,0,0,0.6)]" : ""
       }`}
     >
-      {/* Top Bar */}
-      <div
-        className={`bg-[#1A1D22] text-white text-xs sm:text-sm py-2 transition-all duration-300 ${
-          isScrolled ? "hidden" : "block"
-        }`}
-      >
-        <div className="container-custom flex justify-between items-center gap-2">
-          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-            <span className="flex items-center gap-1">
-              <Phone className="w-4 h-4 flex-shrink-0" />
-              <a
-                href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer"
-                className="hover:text-[#F28A2E] transition-colors"
-              >
-                (65) 99694-6861
-              </a>
-            </span>
-            <span className="hidden sm:inline">|</span>
-            <span className="hidden sm:inline">CREA 5071806455</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="hidden md:inline">
-              Atendimento em Cáceres e região
-            </span>
-            <a
-              href="https://wa.me/5565996946861"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-block bg-[#25D366] text-white px-3 py-1 rounded-full text-xs font-medium hover:bg-[#128C7E] transition-colors"
-            >
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Header */}
       <nav
         className={`transition-all duration-300 ${isScrolled ? "py-2" : "py-4"}`}

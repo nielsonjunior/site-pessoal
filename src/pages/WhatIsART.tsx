@@ -19,18 +19,18 @@ const whenToIssue = [
 ];
 
 const consequences = [
-  "Multas e autuações pelo CREA",
-  "Impedimento de obtenção de alvará de construção",
-  "Dificuldade para obter habite-se",
-  "Problemas em financiamentos bancários",
-  "Responsabilização civil e criminal",
+  "Multa do CREA",
+  "A prefeitura não dá o alvará",
+  "Não sai o habite-se",
+  "O banco não libera o financiamento",
+  "Se der problema, não há engenheiro responsável",
 ];
 
 export function WhatIsART() {
   return (
     <div className="bg-[#000000] text-white">
       <SEO
-        title="O que é ART - Anotação de Responsabilidade Técnica | Guia Completo"
+        title="O que é ART - Anotação de Responsabilidade Técnica"
         description="Entenda o que é ART, por que ela é obrigatória, quando emitir e como funciona. Guia completo sobre Anotação de Responsabilidade Técnica."
         keywords={[
           "o que é ART",
@@ -78,7 +78,7 @@ export function WhatIsART() {
                   O que é ART?
                 </h1>
                 <p className="text-white/70 text-lg">
-                  Guia Completo sobre Anotação de Responsabilidade Técnica
+                  O documento do CREA que diz quem é o engenheiro responsável
                 </p>
               </div>
             </div>
@@ -97,31 +97,25 @@ export function WhatIsART() {
             className="max-w-none"
           >
             <h2 className="font-display text-3xl font-bold text-white mb-6">
-              Entendendo a ART
+              O que é
             </h2>
 
             <p className="text-[#C9CCD2] mb-6 leading-relaxed">
-              A <strong className="text-white">Anotação de Responsabilidade Técnica (ART)</strong> é um
-              documento emitido pelos Conselhos Regionais de Engenharia e
-              Agronomia (CREA) que identifica o profissional responsável técnico
-              pela execução de obras, serviços, empreitadas ou atividades
-              técnicas.
+              A <strong className="text-white">Anotação de Responsabilidade Técnica (ART)</strong> é
+              registrada no CREA e mostra qual engenheiro responde por uma obra, um
+              projeto, um laudo ou outro serviço técnico. Ela é exigida pela Lei
+              6.496/1977.
             </p>
 
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 my-8">
               <h3 className="text-xl font-bold text-white mb-4">
-                Por que a ART é obrigatória?
+                Para que serve
               </h3>
-              <p className="text-[#C9CCD2] mb-4">
-                A ART é obrigatória por lei federal e serve para:
-              </p>
               <ul className="space-y-3">
                 {[
-                  "Garantir a identificação do profissional responsável técnico",
-                  "Assegurar a qualidade e segurança dos serviços executados",
-                  "Proteger o contratante contra possíveis problemas",
-                  "Permitir o controle social da atividade profissional",
-                  "Viabilizar a contratação de seguros e garantias",
+                  "Mostrar quem é o engenheiro responsável pelo serviço",
+                  "A prefeitura, o banco, o cartório e o condomínio pedem",
+                  "Se der problema, você sabe a quem cobrar",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-[#F28A2E] flex-shrink-0 mt-0.5" />
@@ -132,11 +126,8 @@ export function WhatIsART() {
             </div>
 
             <h3 className="font-display text-2xl font-bold text-white mb-4">
-              Quando emitir a ART?
+              Quando precisa
             </h3>
-            <p className="text-[#C9CCD2] mb-4">
-              A ART deve ser emitida em diversas situações:
-            </p>
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {whenToIssue.map((item, index) => (
                 <div
@@ -150,22 +141,18 @@ export function WhatIsART() {
             </div>
 
             <h3 className="font-display text-2xl font-bold text-white mb-4">
-              Como emitir a ART?
+              Como é feita
             </h3>
             <p className="text-[#C9CCD2] mb-6 leading-relaxed">
-              A emissão da ART é feita através do sistema online do CREA, pelo
-              próprio profissional engenheiro ou empresa contratada. O processo
-              é simples e rápido, e o documento é emitido em formato digital com
-              validade jurídica.
+              O engenheiro preenche e registra a ART no site do CREA e paga a taxa.
+              O documento sai em PDF, com número para consulta. Antes de registrar,
+              o engenheiro precisa conhecer o serviço que vai assinar.
             </p>
 
             <div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-8 my-8">
               <h3 className="text-xl font-bold text-red-300 mb-4">
-                Consequências de não ter ART
+                Sem ART
               </h3>
-              <p className="text-red-200/90 mb-4">
-                A ausência da ART pode acarretar sérios problemas:
-              </p>
               <ul className="space-y-3">
                 {consequences.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
@@ -176,15 +163,6 @@ export function WhatIsART() {
               </ul>
             </div>
 
-            <h3 className="font-display text-2xl font-bold text-white mb-4">
-              Conclusão
-            </h3>
-            <p className="text-[#C9CCD2] mb-8 leading-relaxed">
-              A ART é um documento fundamental para a regularidade técnica e
-              legal de obras e serviços de engenharia. Sempre contrate um
-              profissional registrado no CREA e exija a emissão da ART para
-              garantir a segurança e qualidade do seu projeto.
-            </p>
           </motion.div>
 
           {/* CTA */}
@@ -196,11 +174,10 @@ export function WhatIsART() {
             className="mt-12 rounded-2xl border border-[#F28A2E]/25 bg-[#0B0C0F] p-8 text-center shadow-[0_0_50px_-20px_rgba(242,138,46,.35)]"
           >
             <h3 className="font-display text-2xl font-bold text-white mb-4">
-              Precisa de uma ART?
+              Precisa de uma ART
             </h3>
             <p className="text-[#C9CCD2] mb-6">
-              Entre em contato e solicite sua ART com um engenheiro civil
-              registrado no CREA (5071806455).
+              Me conte o que é o serviço. Eu vou ao local, confiro e emito a ART.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

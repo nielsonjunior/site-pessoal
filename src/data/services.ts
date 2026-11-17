@@ -3,6 +3,7 @@ export interface Service {
   title: string;
   shortDescription: string;
   fullDescription: string;
+  /** o que o cliente recebe (concreto, sem promessa genérica) */
   benefits: string[];
   icon: string;
   image: string;
@@ -16,139 +17,117 @@ export const services: Service[] = [
   {
     id: "1",
     title: "Anotação de Responsabilidade Técnica (ART)",
-    shortDescription: "Regularize suas obras e serviços técnicos com segurança jurídica e conformidade legal.",
-    fullDescription: "A ART (Anotação de Responsabilidade Técnica) é um documento obrigatório que identifica o profissional responsável técnico pela execução de obras, serviços, empreitadas ou atividades técnicas. Emitida pelo CREA, é essencial para garantir a legalidade do projeto e a segurança de todos os envolvidos.",
+    shortDescription: "O documento do CREA que diz qual engenheiro é o responsável pela obra ou pelo serviço.",
+    fullDescription: "A prefeitura, o banco, o cartório e o condomínio pedem a ART para aceitar uma obra, uma reforma, um laudo ou um projeto. Ela mostra no CREA qual engenheiro responde pelo serviço.\n\nAntes de emitir, eu vou ao local e confiro o que está sendo feito. Só assino o que eu vi e o que está de acordo com as normas.",
     benefits: [
-      "Garantia de conformidade legal da obra",
-      "Proteção contra autuações e multas",
-      "Segurança jurídica para proprietários",
-      "Possibilidade de financiamentos bancários",
-      "Validação técnica do projeto executado",
-      "Responsabilidade técnica documentada"
+      "ART emitida no CREA",
+      "Visita ao local antes de assinar",
+      "Serve para prefeitura, banco, cartório e condomínio",
     ],
     icon: "FileCheck",
     image: "/images/engineer-office.jpg",
     slug: "art-anotacao-responsabilidade-tecnica",
     keywords: ["ART", "Anotação de Responsabilidade Técnica", "engenheiro ART", "regularização ART", "CREA"],
     metaTitle: "ART - Anotação de Responsabilidade Técnica | Engenheiro Civil",
-    metaDescription: "Emita sua ART com engenheiro civil registrado no CREA. Regularize obras e serviços técnicos com segurança jurídica. Solicite orçamento agora!"
+    metaDescription: "ART emitida por engenheiro civil registrado no CREA, com visita ao local. Para obra, reforma, laudo e projeto em Cáceres-MT.",
   },
   {
     id: "2",
     title: "Regularização de Imóveis",
-    shortDescription: "Regularize seu imóvel junto à prefeitura e órgãos competentes de forma rápida e segura.",
-    fullDescription: "A regularização de imóveis é o processo de legalização de construções junto aos órgãos públicos competentes. Inclui a obtenção de habite-se, alvará de construção, certificado de conclusão e todos os documentos necessários para tornar seu imóvel regular perante a lei.",
+    shortDescription: "Habite-se, construção no documento, medida do terreno e imóvel no seu nome.",
+    fullDescription: "Imóvel com papel atrasado não pode ser vendido, financiado nem passado para os filhos sem problema. Os casos mais comuns são casa sem habite-se, construção que não está na matrícula, medida do terreno errada e imóvel que nunca foi para o nome do dono.\n\nEu meço o terreno e a casa, faço a planta e o memorial, emito a ART e acompanho na prefeitura e no cartório até sair.",
     benefits: [
-      "Obtenção do Habite-se oficial",
-      "Valorização do imóvel",
-      "Possibilidade de venda e financiamento",
-      "Segurança jurídica na transação",
-      "Regularização de débitos municipais",
-      "Acesso a serviços públicos"
+      "Medição do terreno e da casa",
+      "Planta e memorial descritivo",
+      "ART",
+      "Acompanhamento na prefeitura e no cartório",
     ],
     icon: "Home",
     image: "/images/engineer-site.jpg",
     slug: "regularizacao-imoveis",
     keywords: ["regularização de imóveis", "habite-se", "imóvel irregular", "regularização de obra", "engenheiro regularização"],
     metaTitle: "Regularização de Imóveis | Habite-se e Documentação",
-    metaDescription: "Regularize seu imóvel com engenheiro civil especializado. Obtenha habite-se, alvará e toda documentação necessária. Orçamento sem compromisso!"
+    metaDescription: "Habite-se, construção na matrícula, medida do terreno e imóvel no seu nome. Medição, planta, memorial e ART em Cáceres-MT.",
   },
   {
     id: "3",
     title: "Projetos de Reforma",
-    shortDescription: "Transforme seu espaço com projetos de reforma personalizados e execução de qualidade.",
-    fullDescription: "Desenvolvemos projetos de reforma residencial e comercial completos, desde a concepção arquitetônica até a execução. Nossos projetos consideram suas necessidades, orçamento e prazo, garantindo uma reforma segura e dentro das normas técnicas.",
+    shortDescription: "Projeto, orçamento e ART para reformar sem risco para a estrutura.",
+    fullDescription: "Antes de quebrar parede, trocar telhado ou mexer em banheiro e cozinha, eu vou ao local e vejo o que pode ser mexido. Algumas paredes seguram a casa e não podem sair sem reforço.\n\nFaço o projeto da reforma, o orçamento do material e da mão de obra e a ART. Em apartamento, faço também o plano de reforma que o condomínio pede.",
     benefits: [
-      "Projeto personalizado às suas necessidades",
-      "Execução dentro das normas técnicas",
-      "Acompanhamento técnico completo",
-      "Otimização de custos e prazos",
-      "Garantia estrutural da reforma",
-      "Documentação técnica completa"
+      "Visita ao local",
+      "Projeto da reforma",
+      "Orçamento",
+      "ART",
+      "Plano de reforma do condomínio, quando for apartamento",
     ],
     icon: "Hammer",
     image: "/images/hero-house.jpg",
     slug: "projetos-reforma",
     keywords: ["projeto de reforma", "reforma residencial", "reforma comercial", "engenheiro reforma", "reforma apartamento"],
     metaTitle: "Projetos de Reforma Residencial e Comercial",
-    metaDescription: "Projetos de reforma personalizados com acompanhamento técnico completo. Transforme seu espaço com segurança e qualidade. Solicite orçamento!"
+    metaDescription: "Projeto de reforma, orçamento e ART. Vejo antes o que pode ser mexido sem risco para a estrutura. Cáceres-MT e região.",
   },
   {
     id: "4",
     title: "Ampliação de Imóveis",
-    shortDescription: "Amplie seu espaço com projetos estruturais seguros e aprovação nos órgãos competentes.",
-    fullDescription: "Projetos de ampliação residencial e comercial que maximizam o uso do seu espaço. Realizamos estudo de viabilidade, projeto estrutural, elétrico e hidráulico, além de toda a documentação necessária para aprovação em prefeitura e execução da obra.",
+    shortDescription: "Quarto, garagem, área gourmet ou mais um andar, com projeto e alvará.",
+    fullDescription: "Primeiro eu vejo se o terreno e as regras da prefeitura deixam aumentar e se a estrutura da casa aguenta, principalmente para subir um andar.\n\nDepois faço o projeto da parte nova, o cálculo da estrutura e os projetos de água, esgoto e elétrica, aprovo na prefeitura e acompanho a obra. No fim, a área nova entra no documento do imóvel.",
     benefits: [
-      "Aproveitamento máximo do espaço",
-      "Projeto estrutural seguro",
-      "Aprovação em prefeitura garantida",
-      "Integração com a construção existente",
-      "Aumento da área construída legalmente",
-      "Valorização do patrimônio"
+      "Análise do terreno e da estrutura",
+      "Projeto e cálculo da estrutura",
+      "Alvará",
+      "ART",
+      "Área nova no documento",
     ],
     icon: "Maximize2",
     image: "/images/about-detail.jpg",
     slug: "ampliacao-imoveis",
     keywords: ["ampliação de imóveis", "aumentar casa", "construir segundo andar", "ampliação residencial", "engenheiro ampliação"],
     metaTitle: "Ampliação de Imóveis | Projetos de Ampliação Residencial",
-    metaDescription: "Amplie seu imóvel com segurança estrutural e aprovação garantida. Projetos completos para ampliação residencial e comercial. Orçamento grátis!"
+    metaDescription: "Quarto, garagem ou mais um andar: confiro se a estrutura aguenta, faço o projeto, aprovo na prefeitura e coloco a área nova no documento.",
   },
   {
     id: "5",
     title: "Laudos Técnicos",
-    shortDescription: "Laudos técnicos detalhados para avaliação estrutural, vistorias e perícias.",
-    fullDescription: "Elaboração de laudos técnicos completos para diversas finalidades: avaliação estrutural, vistoria de imóveis, perícia judicial, laudo de insalubridade, avaliação de patrimônio e diagnóstico de patologias construtivas. Todos os laudos são assinados por engenheiro civil registrado no CREA.",
+    shortDescription: "Rachadura, infiltração, vistoria para compra e avaliação do imóvel.",
+    fullDescription: "Rachadura, infiltração, mofo e piso que afunda têm causa. Eu vou ao local, descubro o que está acontecendo e explico no laudo, com fotos, o que precisa ser feito.\n\nTambém faço vistoria antes de comprar um imóvel, laudo de vizinhança antes de uma obra grande ao lado e laudo de avaliação, que diz quanto o imóvel vale para venda, herança ou divisão de bens.",
     benefits: [
-      "Avaliação técnica profissional",
-      "Documento válido judicialmente",
-      "Identificação de problemas estruturais",
-      "Base para decisões estratégicas",
-      "Conformidade com normas técnicas",
- "Assinatura CREA válida"
+      "Vistoria no local",
+      "Laudo com fotos",
+      "O que fazer para resolver",
+      "ART do laudo",
     ],
     icon: "ClipboardCheck",
     image: "/images/about-engineer.jpg",
     slug: "laudos-tecnicos",
     keywords: ["laudo técnico", "avaliação estrutural", "vistoria de imóveis", "perícia judicial", "laudo engenheiro"],
-    metaTitle: "Laudos Técnicos | Avaliação Estrutural e Vistorias",
-    metaDescription: "Laudos técnicos completos assinados por engenheiro civil do CREA. Avaliação estrutural, vistorias e perícias. Solicite seu laudo agora!"
+    metaTitle: "Laudos Técnicos | Rachadura, Vistoria e Avaliação",
+    metaDescription: "Laudo de rachadura e infiltração, vistoria antes da compra e avaliação de imóvel, com fotos e ART. Cáceres-MT e região.",
   },
   {
     id: "6",
     title: "Consultoria em Engenharia",
-    shortDescription: "Consultoria especializada para obras, projetos e gestão de construção civil.",
-    fullDescription: "Oferecemos consultoria técnica especializada em engenharia civil para auxiliar em todas as etapas do seu projeto. Desde a concepção até a entrega final, nossa equipe fornece orientação técnica, análise de viabilidade, gestão de obras e suporte em decisões estratégicas.",
+    shortDescription: "Uma visita para tirar dúvidas antes de comprar, construir ou reformar.",
+    fullDescription: "Às vezes você só precisa de uma opinião técnica antes de decidir: se vale comprar um terreno ou uma casa, se a obra que está sendo feita está certa, se o orçamento do pedreiro faz sentido.\n\nEu vou ao local, olho com você e explico o que vi. Se precisar, passo por escrito.",
     benefits: [
-      "Orientação técnica especializada",
-      "Análise de viabilidade de projetos",
-      "Gestão técnica de obras",
-      "Otimização de recursos",
-      "Redução de riscos",
-      "Tomada de decisão embasada"
+      "Visita ao local",
+      "Explicação do que foi visto",
+      "Relatório por escrito, se precisar",
     ],
     icon: "Users",
     image: "/images/engineer-site.jpg",
     slug: "consultoria-engenharia",
     keywords: ["consultoria engenharia", "consultoria construção civil", "assessoria técnica obra", "gestão de obras"],
-    metaTitle: "Consultoria em Engenharia Civil | Assessoria Técnica",
-    metaDescription: "Consultoria especializada em engenharia civil. Orientação técnica, gestão de obras e análise de viabilidade. Agende sua consultoria!"
-  }
-];
-
-export const futureServices = [
-  "Projetos de Construção",
-  "Projetos Estruturais",
-  "Construção de Edifícios",
-  "Gerenciamento de Obras",
-  "Vistoria Técnica",
-  "Avaliação de Imóveis",
-  "Serviços Completos de Engenharia"
+    metaTitle: "Consultoria em Engenharia Civil | Visita Técnica",
+    metaDescription: "Visita técnica para decidir antes de comprar, construir ou reformar. Engenheiro civil em Cáceres-MT.",
+  },
 ];
 
 export const getServiceBySlug = (slug: string): Service | undefined => {
-  return services.find(service => service.slug === slug);
+  return services.find((service) => service.slug === slug);
 };
 
 export const getAllServiceSlugs = (): string[] => {
-  return services.map(service => service.slug);
+  return services.map((service) => service.slug);
 };

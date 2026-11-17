@@ -56,12 +56,11 @@ export function HomeHero() {
           />
           <div className="shade" />
           <div className="hero-copy wrap">
-            <span className="eyebrow">Engenheiro civil em Cáceres-MT e região</span>
             <h1>
               Eu cuido da sua obra
               <br />e dos papéis do seu imóvel
             </h1>
-            <p>Projeto, alvará, obra e regularização em Cáceres e região</p>
+            <p>Projeto, alvará, acompanhamento de obra e regularização</p>
             <div className="hero-ctas">
               <a className="btn btn-lime" href={wa()} target="_blank" rel="noopener noreferrer">
                 Falar no WhatsApp
@@ -82,9 +81,6 @@ export function HomeHero() {
             <path className="draw" pathLength={1} d="M90 120V680" />
           </svg>
           <div className="take-copy wrap">
-            <span className="eyebrow" style={{ color: "var(--ink-on-lime)" }}>
-              Engenheiro civil · CREA 5071806455
-            </span>
             <h2>Do projeto ao habite-se</h2>
             <p className="source" style={{ fontSize: 16, opacity: 1 }}>
               Todo serviço sai com ART no CREA

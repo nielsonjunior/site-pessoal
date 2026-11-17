@@ -129,7 +129,7 @@ export function ServiceDetail() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="font-display text-3xl font-bold text-white mb-6">
-                  Sobre o Serviço
+                  Como funciona
                 </h2>
                 <div className="max-w-none text-[#C9CCD2] leading-relaxed space-y-4 mb-12">
                   {service.fullDescription.split('\n\n').map((paragraph, index) => (
@@ -138,7 +138,7 @@ export function ServiceDetail() {
                 </div>
 
                 <h3 className="font-display text-2xl font-bold text-white mb-6">
-                  Benefícios
+                  O que você recebe
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {service.benefits.map((benefit, index) => (
@@ -167,32 +167,6 @@ export function ServiceDetail() {
                 transition={{ duration: 0.6 }}
                 className="sticky top-32"
               >
-                {/* CTA Card */}
-                <div className="rounded-2xl border border-[#F28A2E]/25 bg-[#0B0C0F] p-6 mb-6 shadow-[0_0_50px_-20px_rgba(242,138,46,.35)]">
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    Solicite um Orçamento
-                  </h3>
-                  <p className="text-[#C9CCD2] text-sm mb-6">
-                    Entre em contato agora e receba um orçamento personalizado para seu projeto.
-                  </p>
-                  <Link
-                    to="/orcamento"
-                    className="btn-accent w-full inline-flex items-center justify-center gap-2 mb-3"
-                  >
-                    Solicitar Orçamento
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <a
-                    href="https://wa.me/5565996946861"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white/10 text-white border border-white/20 px-4 py-3 rounded-lg font-medium hover:bg-white/20 transition-all w-full inline-flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-4 h-4" />
-                    WhatsApp
-                  </a>
-                </div>
-
                 {/* Other Services */}
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                   <h3 className="text-lg font-bold text-white mb-4">
@@ -238,8 +212,7 @@ export function ServiceDetail() {
               Dúvidas sobre {service.title}?
             </h2>
             <p className="text-[#C9CCD2] mb-8">
-              Confira nossa página de perguntas frequentes ou entre em contato
-              para tirar todas as suas dúvidas.
+              Veja as perguntas frequentes ou me chame no WhatsApp.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -249,12 +222,14 @@ export function ServiceDetail() {
                 Ver FAQ
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link
-                to="/orcamento"
+              <a
+                href={`https://wa.me/5565996946861?text=${encodeURIComponent("Olá! Tenho uma dúvida sobre " + service.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-7 py-3.5 font-medium text-white transition-colors hover:bg-white/10"
               >
-                Fale Conosco
-              </Link>
+                WhatsApp
+              </a>
             </div>
           </motion.div>
         </div>

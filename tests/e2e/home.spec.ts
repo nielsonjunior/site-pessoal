@@ -62,13 +62,17 @@ test.describe("Home — história da casa própria", () => {
       await expect(page.locator(`#situacoes a[href="${href}"]`).first()).toBeAttached();
   });
 
-  test("sem números de enfeite nem instruções óbvias, com o CREA", async ({ page }) => {
+  test("sem números de enfeite, instruções óbvias nem repetição", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("main h1")).toBeVisible();
     const body = await page.locator(".nh").innerText();
     expect(body).not.toContain("500+");
     expect(body).not.toMatch(/\+12|24 ?h/);
     expect(body).not.toMatch(/Role para|Role a tela|Toque numa/i);
-    expect(body).toContain("CREA 5071806455");
+    // o CREA aparece uma vez no cabeçalho, não repetido na página
+    expect(await page.locator("body").innerText()).toContain("CREA 5071806455");
+    expect(body).not.toContain("CREA 5071806455");
+    // o topo não repete a região (já está no mapa)
+    expect(await page.locator(".nh .hero-copy").innerText()).not.toMatch(/região/i);
   });
 });

@@ -17,7 +17,6 @@ import {
   Flame,
 } from "lucide-react";
 import { SEO, JsonLd } from "@/components/shared";
-import { RegularizacaoDiagnostico } from "@/components/sections/RegularizacaoDiagnostico";
 import { SITE } from "@/config/site";
 import { breadcrumbSchema, serviceSchema } from "@/lib/jsonld";
 import { regularizationTypes, VALORIZATION_MAX, VALORIZATION_SOURCE } from "@/data";
@@ -90,17 +89,13 @@ export function RegularizacaoImoveis() {
             initial={false}
             className="hero-in max-w-3xl"
           >
-            <span className="inline-flex items-center gap-2 bg-[#F28A2E]/15 text-[#F28A2E] px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <TrendingUp className="w-4 h-4" />
-              Valorize seu imóvel em até {VALORIZATION_MAX}
-            </span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Regularização de Imóveis em Cáceres-MT
             </h1>
             <p className="text-white/80 text-lg md:text-xl mb-8 leading-relaxed">
-              Um imóvel sem documentação em dia não pode ser vendido, financiado
-              nem herdado com segurança — e ainda vale menos do que deveria.
-              Coloco seu patrimônio em ordem, do levantamento à matrícula nova.
+              Imóvel com papel atrasado não pode ser vendido, financiado nem passado
+              para os filhos sem problema. Eu meço, faço a planta e acompanho na
+              prefeitura e no cartório até sair o documento novo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -133,10 +128,6 @@ export function RegularizacaoImoveis() {
             <h2 className="font-display text-3xl font-bold text-white mb-4">
               Um imóvel irregular te custa caro
             </h2>
-            <p className="text-[#C9CCD2]">
-              Talvez você nem perceba, mas a falta de papelada limita o que você
-              pode fazer com o que é seu.
-            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -189,7 +180,7 @@ export function RegularizacaoImoveis() {
                   <span className="text-[#F28A2E]">valoriza até {VALORIZATION_MAX}</span>
                 </p>
                 <p className="text-[#C9CCD2]">
-                  Documentação em dia transforma seu imóvel em patrimônio que rende.
+                  Com os papéis em dia, ele pode ser vendido e financiado.
                 </p>
                 <p className="mt-1 text-xs text-[#9AA0A8]">{VALORIZATION_SOURCE}</p>
               </div>
@@ -213,10 +204,6 @@ export function RegularizacaoImoveis() {
             <h2 className="font-display text-3xl font-bold text-white mb-4">
               Qual é a sua situação?
             </h2>
-            <p className="text-[#C9CCD2]">
-              Encontre abaixo o seu caso. Cada situação tem solução — e eu cuido
-              de tudo, do projeto à documentação final.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -283,12 +270,6 @@ export function RegularizacaoImoveis() {
         </div>
       </section>
 
-      {/* Mini-diagnóstico interativo */}
-      <section className="section-padding bg-[#000000]">
-        <div className="container-custom">
-          <RegularizacaoDiagnostico />
-        </div>
-      </section>
     </div>
   );
 }

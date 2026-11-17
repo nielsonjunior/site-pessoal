@@ -1,24 +1,24 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Phone, FileText, Scale, Building, AlertTriangle } from 'lucide-react';
+import { CheckCircle, Phone, FileText, Scale, Building, AlertTriangle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/shared';
 
 const legalFramework = [
   {
     law: 'Lei Federal 5.194/1966',
-    description: 'Regula o exercício das profissões de Engenheiro, Arquiteto e Engenheiro Agrônomo.',
+    description: 'Regula a profissão do engenheiro e do engenheiro agrônomo e cria o sistema Confea/CREA.',
   },
   {
     law: 'Lei Federal 6.496/1977',
-    description: 'Dispõe sobre o Conselho Federal e Conselhos Regionais de Engenharia e Agronomia.',
+    description: 'Cria a ART: toda obra ou serviço de engenharia precisa dela.',
   },
   {
-    law: 'Resolução 218/1973',
-    description: 'Normas de autorização para o exercício da profissão de Engenheiro.',
+    law: 'Resolução Confea 218/1973',
+    description: 'Diz o que cada tipo de engenheiro pode fazer.',
   },
   {
-    law: 'Código de Ética Profissional',
-    description: 'Normas éticas que regem a conduta dos profissionais de engenharia.',
+    law: 'Código de Ética (Resolução Confea 1.002/2002)',
+    description: 'Regras de conduta do engenheiro com o cliente e com a sociedade.',
   },
 ];
 
@@ -35,22 +35,20 @@ const requiredDocuments = [
   },
   {
     title: 'Projeto Técnico Aprovado',
-    description: 'Projeto arquitetônico e estrutural aprovado pelos órgãos competentes.',
+    description: 'Projeto da obra aprovado na prefeitura antes de começar.',
     icon: Scale,
   },
   {
     title: 'Habite-se',
-    description: 'Certificado de conclusão de obra emitido pela prefeitura.',
+    description: 'Documento da prefeitura que diz que a obra está pronta e pode ser usada.',
     icon: CheckCircle,
   },
 ];
 
 const penalties = [
-  'Advertência escrita',
-  'Multa administrativa',
-  'Suspensão do exercício profissional',
-  'Cassação do registro no CREA',
-  'Responsabilização civil e criminal',
+  'Multa e embargo da obra pela prefeitura',
+  'Dificuldade para tirar o habite-se, vender ou financiar',
+  'Para o engenheiro: advertência, multa, suspensão ou cancelamento do registro no CREA',
 ];
 
 export function LegalRequirements() {
@@ -81,8 +79,7 @@ export function LegalRequirements() {
               Requisitos Legais
             </h1>
             <p className="text-white/70 text-lg">
-              Conheça a legislação e documentação necessária para obras
-              e serviços de engenharia civil.
+              As leis e os documentos que valem para uma obra.
             </p>
           </motion.div>
         </div>
@@ -98,11 +95,8 @@ export function LegalRequirements() {
             className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Marco Legal da Engenharia
+              As leis
             </h2>
-            <p className="text-[#C9CCD2]">
-              A profissão de engenheiro civil é regulamentada por diversas leis e normas
-            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -135,11 +129,8 @@ export function LegalRequirements() {
             className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Documentação Necessária
+              Os documentos da obra
             </h2>
-            <p className="text-[#C9CCD2]">
-              Conheça os principais documentos exigidos para obras e serviços
-            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-6">
@@ -170,7 +161,7 @@ export function LegalRequirements() {
       {/* Penalties */}
       <section className="section-padding bg-[#000000]">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -181,12 +172,8 @@ export function LegalRequirements() {
                 <AlertTriangle className="w-8 h-8 text-red-400" />
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-                Penalidades por Descumprimento
+                O que acontece se não fizer
               </h2>
-              <p className="text-[#C9CCD2] mb-8">
-                O não cumprimento das normas legais pode acarretar diversas penalidades
-                para o profissional e para o proprietário da obra:
-              </p>
 
               <div className="space-y-4">
                 {penalties.map((penalty, index) => (
@@ -205,39 +192,6 @@ export function LegalRequirements() {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="rounded-2xl border border-white/10 bg-[#0B0C0F] p-8 text-white"
-            >
-              <h3 className="font-display text-2xl font-bold mb-4">
-                Garanta a Regularidade do seu Projeto
-              </h3>
-              <p className="text-[#C9CCD2] mb-6">
-                Conte com um engenheiro civil registrado no CREA para garantir
-                que seu projeto esteja em total conformidade com a legislação.
-              </p>
-              <div className="space-y-4">
-                <Link
-                  to="/orcamento"
-                  className="btn-accent w-full inline-flex items-center justify-center gap-2"
-                >
-                  Solicitar Orçamento
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <a
-                  href="https://wa.me/5565996946861"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-white/10 text-white border border-white/20 px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-all w-full inline-flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-5 h-5" />
-                  WhatsApp
-                </a>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -251,25 +205,26 @@ export function LegalRequirements() {
             viewport={{ once: true }}
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-              Precisa de Ajuda com a Documentação?
+              Precisa de ajuda com os documentos
             </h2>
             <p className="text-white/70 text-lg mb-8 max-w-2xl mx-auto">
-              Posso auxiliar em todo o processo de regularização
-              e obtenção de documentos para sua obra.
+              Eu cuido do projeto, da ART e da regularização na prefeitura e no cartório.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/orcamento"
+              <a
+                href="https://wa.me/5565996946861"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F28A2E] px-8 py-4 font-semibold text-[#0F141B] transition-transform hover:-translate-y-0.5"
               >
-                Fale Conosco
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+                <Phone className="w-5 h-5" />
+                Chamar no WhatsApp
+              </a>
               <Link
                 to="/servicos/regularizacao-imoveis"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 font-medium text-white transition-colors hover:bg-white/10"
               >
-                Serviço de Regularização
+                Regularização de imóveis
               </Link>
             </div>
           </motion.div>

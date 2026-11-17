@@ -52,9 +52,8 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Engenheiro Civil especializado em projetos, regularização de
-              imóveis, ART e laudos técnicos. Atendimento em Cáceres e toda
-              a região de Mato Grosso.
+              Projeto e acompanhamento de obra, reforma, regularização de
+              imóveis, laudos e ART. Escritório em Cáceres-MT.
             </p>
             <div className="flex gap-3">
               <a
@@ -146,9 +145,7 @@ export function Footer() {
                 <div>
                   <p className="text-sm text-gray-400">Atendimento</p>
                   <p className="text-white">
-                    Seg - Sex: 8h às 18h
-                    <br />
-                    <span className="text-[#F28A2E]">WhatsApp: resposta em até 24h úteis</span>
+                    Segunda a sexta, das 8h às 18h
                   </p>
                 </div>
               </li>
@@ -178,11 +175,6 @@ export function Footer() {
                 Termos de Uso
               </Link>
             </div>
-          </div>
-          <div className="mt-4 pt-4 border-t border-white/5 text-center">
-            <p className="text-gray-500 text-xs">
-              Engenheiro Civil - CREA 5071806455 | Responsável Técnico: Nielson Pinheiro de Castilho Junior | Cáceres-MT
-            </p>
           </div>
         </div>
       </div>
