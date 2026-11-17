@@ -57,6 +57,7 @@ test.describe("titulos (SEO via react-helmet)", () => {
   test("toda pagina tem um <title> nao vazio", async ({ page }) => {
     for (const route of staticRoutes) {
       await page.goto(route.path);
+      await page.locator("main h1").first().waitFor(); // página vem sob demanda (lazy)
       const title = await page.title();
       expect(title.trim().length, `title de ${route.path}`).toBeGreaterThan(0);
     }
@@ -66,6 +67,7 @@ test.describe("titulos (SEO via react-helmet)", () => {
 test("rota inexistente cai na pagina 404 (NotFound)", async ({ page }) => {
   await page.goto("/rota-que-nao-existe-123");
   await expect(page.locator("main")).toBeVisible();
-  // A SPA responde 200 e renderiza o componente NotFound no client.
+  // Em produção a Vercel serve o dist/404.html (status 404); no dev, a SPA
+  // renderiza o componente NotFound no client.
   await expect(page.getByText(/404|nao encontrad|não encontrad/i).first()).toBeVisible();
 });

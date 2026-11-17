@@ -190,6 +190,8 @@ export function Budget() {
     try {
       const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
         method: "POST",
+        // Sem resposta em 15s, desiste e mostra o erro (o botão não fica preso em "Enviando").
+        signal: AbortSignal.timeout(15000),
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -250,10 +252,8 @@ export function Budget() {
       <section className="pt-32 pb-16 bg-gradient-to-br from-[#1B3B6C] to-[#0F1A2E]">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            initial={false}
+            className="hero-in text-center max-w-3xl mx-auto"
           >
             <span className="inline-block bg-[#B9F227]/20 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-4">
               Orçamento Grátis

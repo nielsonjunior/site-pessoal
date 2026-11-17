@@ -27,12 +27,13 @@ Telefone/WhatsApp oficial: **+55 65 99694-6861** (`https://wa.me/5565996946861`)
 ## Stack
 
 - **React 19** + **TypeScript** (strict) + **Vite 7**
-- **Tailwind CSS 3.4** + **shadcn/ui** (componentes em `src/components/ui`, ~53 arquivos — tratá-los como dependência de terceiros; não testar nem editar sem necessidade)
+- **Tailwind CSS 3.4** + **shadcn/ui** (componentes em `src/components/ui`, só os 6 usados — button, checkbox, input, label, select, textarea; adicione outros com o CLI do shadcn quando precisar — tratá-los como dependência de terceiros; não testar nem editar sem necessidade)
 - **react-router-dom 7** (SPA, BrowserRouter)
 - **react-helmet-async** para `<title>`/meta por página (SEO)
 - **framer-motion** para animações
 - **lucide-react** (ícones), **recharts**, **sonner** (toasts)
-- Deploy: **Vercel** (`vercel.json` faz rewrite SPA de tudo, menos `/api/*`, para `/index.html`); funções em `api/` com **@vercel/blob**
+- Deploy: **Vercel** (sem rewrite SPA: toda rota é pré-renderizada e endereço desconhecido recebe `dist/404.html` com status 404); funções em `api/` com **@vercel/blob**
+- **Fontes:** Inter e Space Grotesk **variáveis, hospedadas no site** (`@fontsource-variable/*`, importadas no `src/index.css`). Não voltar para o Google Fonts.
 - Alias de import: **`@/` → `./src/`**
 
 > **Node v24** está instalado em `C:\Program Files\nodejs`. Se um terminal já
@@ -53,7 +54,6 @@ src/
     shared/                Header, Footer, SEO, WhatsAppButton
     ui/                    shadcn/ui (terceiros)
   data/                    Conteúdo tipado: services, cities, testimonials, faq (+ helpers getXBySlug)
-  hooks/                   use-mobile
   lib/                     utils (cn = clsx + tailwind-merge)
   test/                    Infra de testes (setup.ts, test-utils.tsx) — ver docs/TESTING.md
 tests/e2e/                 Testes Playwright (smoke, navigation, routes fixture)
@@ -111,7 +111,7 @@ que **não tem acesso ao GitHub**: ela manda o JPG por HTTP em vez de commitar e
   Vercel ao conectar o Blob Store ao projeto) e `CRON_SECRET` (para o Cron se autenticar).
 - **Limite real de tamanho:** a Vercel recusa corpo de função acima de **4,5 MB**
   (413) antes do código rodar; os JPG 1080x1350 dos posts ficam bem abaixo disso.
-- O rewrite SPA do `vercel.json` é `/((?!api/).*)` para **não** capturar `/api/*`.
+- O `vercel.json` não tem rewrite SPA, então `/api/*` nunca é capturado por ele.
 - Testes: `tests/api/*.test.ts` (Vitest, ambiente node, `@vercel/blob` mockado).
   Arquivos dentro de `api/` viram função — **não** coloque testes nem helpers lá
   (helper, se precisar, em `api/_nome.ts`: prefixo `_` não vira rota).
@@ -130,6 +130,7 @@ npm run build:server     # bundle SSR (vite --ssr) usado pelo prerender
 npm run prerender        # só o prerender (requer dist/ e dist-server/ já buildados)
 npm run gen:sitemap      # regenera public/sitemap.xml a partir de src/data
 npm run gen:og           # regenera public/images/og-image.jpg (Playwright)
+node scripts/gen-webp.mjs # gera os .webp exibidos no site a partir dos originais (Playwright)
 npm run lint             # eslint
 
 npm test                 # Vitest (unit/componente), modo run
@@ -177,11 +178,19 @@ Detalhes do harness de testes: **`docs/TESTING.md`**.
 
 - **SSG por pré-render (SSR Node-only, sem navegador):** `npm run build:static` =
   build cliente + `build:server` (bundle SSR `vite build --ssr src/entry-server.tsx`)
-  + `scripts/prerender.mjs`, que usa `renderToString`/`StaticRouter`/Helmet para gerar
-  `dist/<rota>/index.html` com conteúdo + título/meta/canonical/JSON-LD. **Roda só em
+  + `scripts/prerender.mjs`, que usa `prerender` (react-dom/static, espera o `React.lazy`)/`StaticRouter`/Helmet para gerar
+  `dist/<rota>/index.html` (e `dist/404.html` a partir da rota `*`) com conteúdo + título/meta/canonical/JSON-LD. **Roda só em
   Node** (Chromium do Playwright NÃO funciona no build da Vercel). O `vercel.json` já
   define `buildCommand: npm run build:static`. `AppShell` é o app sem Router (usado por
   `App.tsx`/BrowserRouter no cliente e `entry-server.tsx`/StaticRouter no SSR).
+- **Performance (auditoria 17/11/2026):** cada página é um `React.lazy` em `AppShell.tsx`
+  (JS por rota); o cliente usa `hydrateRoot` quando o HTML veio pré-renderizado
+  (`main.tsx`). **O topo das páginas não pode começar com `opacity: 0`** (framer-motion
+  `initial`): use a classe CSS `hero-in` (`index.css`), que já começa visível e não espera o
+  JS — senão o LCP piora. `whileInView` só abaixo da dobra. Imagens exibidas em **WebP**
+  com `srcSet` (`scripts/gen-webp.mjs`); originais .jpg/.png ficam para favicon/og/JSON-LD.
+  `/images/*` tem cache de 7 dias e `/assets/*` imutável (`vercel.json`). E2E que lê o DOM
+  logo após `goto` deve esperar `main h1` (página carrega sob demanda no dev).
 - **Fonte única de domínio/NAP:** `src/config/site.ts` (usado por SEO, canonical,
   sitemap, Analytics e — futuramente — JSON-LD). Domínio: `https://www.npcastilho.eng.br`.
 - **SEO por página:** componente `SEO` (`src/components/shared/SEO.tsx`) gera title,

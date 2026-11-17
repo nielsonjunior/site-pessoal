@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Fontes hospedadas no próprio site (variáveis: 1 arquivo cobre todos os pesos). */
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource-variable/space-grotesk/wght.css";
 
 @tailwind base;
 @tailwind components;
@@ -57,11 +59,11 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter Variable', 'Inter', sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-family: 'Space Grotesk Variable', 'Inter Variable', sans-serif;
     letter-spacing: -0.02em;
   }
 }
@@ -194,4 +196,20 @@ input:focus, textarea:focus, select:focus {
 @keyframes whatsapp-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
   50% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+}
+
+/* Entrada do topo das páginas: CSS puro, roda sem esperar o JavaScript e já
+   começa visível (opacidade > 0), para não atrasar o LCP. */
+.hero-in {
+  animation: hero-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-in-delay {
+  animation-delay: 0.2s;
+}
+@keyframes hero-in {
+  from { opacity: 0.35; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-in { animation: none; }
 }

@@ -103,7 +103,7 @@ export function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 min-w-0">
               <img
-                src="/images/logo.png"
+                src="/images/logo-112.webp"
                 alt="NP Castilho Engenharia"
                 className="w-12 h-12 object-cover rounded-full flex-shrink-0"
                 width={48}

@@ -105,10 +105,8 @@ export function RegularizacaoDetalhe() {
             Voltar para Regularização
           </Link>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            initial={false}
+            className="hero-in max-w-3xl"
           >
             <div className="w-16 h-16 bg-[#B9F227]/15 rounded-2xl flex items-center justify-center mb-6">
               <Icon className="w-8 h-8 text-[#B9F227]" />

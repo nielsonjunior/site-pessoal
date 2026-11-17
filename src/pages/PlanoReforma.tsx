@@ -204,7 +204,7 @@ export function PlanoReforma() {
       <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <Aurora className="opacity-40" />
         <div className="relative z-10 container-custom grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
-          <motion.div initial="hidden" animate="show" variants={fadeUp}>
+          <motion.div initial={false} className="hero-in">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-[#B9F227]">
               <Building2 className="h-4 w-4" />
               Reforma de apartamento · Condomínio
@@ -245,10 +245,8 @@ export function PlanoReforma() {
           </motion.div>
 
           <motion.div
-            initial="hidden"
-            animate="show"
-            variants={fadeUp}
-            className="rounded-2xl border border-white/10 bg-[#0A1428]/80 p-7 backdrop-blur"
+            initial={false}
+            className="hero-in hero-in-delay rounded-2xl border border-white/10 bg-[#0A1428]/80 p-7 backdrop-blur"
           >
             <p className="text-xs font-semibold uppercase tracking-widest text-[#8ea3c2]">
               Você recebe

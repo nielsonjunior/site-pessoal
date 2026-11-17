@@ -55,7 +55,7 @@ export function RegularizacaoDiagnostico() {
         </p>
       </div>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         {!result ? (
           <motion.div
             key="perguntas"

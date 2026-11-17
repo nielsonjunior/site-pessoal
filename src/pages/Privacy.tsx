@@ -13,10 +13,8 @@ export function Privacy() {
       <section className="pt-32 pb-16 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
+            initial={false}
+            className="hero-in text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Política de Privacidade
@@ -31,10 +29,8 @@ export function Privacy() {
       <section className="section-padding bg-[#060D1E]">
         <div className="container-custom max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-8 text-[#b9c8e0]"
+            initial={false}
+            className="hero-in hero-in-delay space-y-8 text-[#b9c8e0]"
           >
             <div>
               <h2 className="text-2xl font-bold text-white mb-4">1. Informações Coletadas</h2>

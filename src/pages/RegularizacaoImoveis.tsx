@@ -87,10 +87,8 @@ export function RegularizacaoImoveis() {
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#12294A] to-[#060D1E]">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
+            initial={false}
+            className="hero-in max-w-3xl"
           >
             <span className="inline-flex items-center gap-2 bg-[#B9F227]/15 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-6">
               <TrendingUp className="w-4 h-4" />

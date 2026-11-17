@@ -15,10 +15,8 @@ export function NotFound() {
       <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#12294A] to-[#060D1E] pt-20">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto"
+            initial={false}
+            className="hero-in text-center max-w-2xl mx-auto"
           >
             {/* 404 Graphic */}
             <div className="relative mb-8">

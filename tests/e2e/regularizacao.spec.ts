@@ -32,6 +32,7 @@ test.describe("Página-pilar de Regularização", () => {
     page,
   }) => {
     await page.goto(URL);
+    await page.locator("main h1").first().waitFor(); // página vem sob demanda (lazy)
     // CTAs do conteúdo usam mensagem pré-preenchida (text=); os links do Header
     // (topo) não têm text=, então são naturalmente excluídos.
     const waMsgLinks = page.locator(

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { ArrowUpRight, Phone } from 'lucide-react';
 import { Aurora } from '@/components/shared/Aurora';
 import { SITE } from '@/config/site';
@@ -25,45 +24,36 @@ export function Hero() {
 
       <div className="relative z-10 container-custom pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="max-w-3xl mx-auto text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs sm:text-sm font-medium text-[#cfe0f6] backdrop-blur-sm"
+          <span
+            className="hero-in inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs sm:text-sm font-medium text-[#cfe0f6] backdrop-blur-sm"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#B9F227] shadow-[0_0_10px_#B9F227]" />
             Engenheiro Civil em Cáceres-MT e região
-          </motion.span>
+          </span>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.6 }}
-            className="mt-6 font-display font-semibold leading-[1.05] text-white text-[34px] sm:text-5xl lg:text-6xl"
+          <h1
+            className="hero-in mt-6 font-display font-semibold leading-[1.05] text-white text-[34px] sm:text-5xl lg:text-6xl"
+            style={{ animationDelay: "0.1s" }}
           >
             Seu imóvel é seu.{' '}
             <span className="text-[#B9F227] [text-shadow:0_0_34px_rgba(185,242,39,.35)]">
               O papel comprova isso?
             </span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="mx-auto mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#b9c8e0]"
+          <p
+            className="hero-in mx-auto mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-[#b9c8e0]"
+            style={{ animationDelay: "0.2s" }}
           >
             Sem a documentação em dia, não dá pra{' '}
             <b className="font-semibold text-white">vender, financiar nem deixar de herança</b>{' '}
             — e você pode estar perdendo até 30% do valor. Eu resolvo a papelada.
             Você fala direto comigo.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+          <div
+            className="hero-in mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+            style={{ animationDelay: "0.3s" }}
           >
             <a
               href="#situacoes"
@@ -83,23 +73,19 @@ export function Hero() {
               <Phone className="h-4 w-4" />
               Falar no WhatsApp
             </a>
-          </motion.div>
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-4 text-xs sm:text-sm text-[#8ea3c2]"
+          <p
+            className="hero-in mt-4 text-xs sm:text-sm text-[#8ea3c2]"
+            style={{ animationDelay: "0.5s" }}
           >
             Análise gratuita · resposta em até 24h úteis · CREA 5071806455
-          </motion.p>
+          </p>
 
           {/* stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="relative mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/10 pt-8"
+          <div
+            className="hero-in relative mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-3 border-t border-white/10 pt-8"
+            style={{ animationDelay: "0.6s" }}
           >
             {stats.map((s, i) => (
               <div key={i} className="text-center">
@@ -115,7 +101,7 @@ export function Hero() {
                 </p>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

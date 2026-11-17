@@ -35,7 +35,9 @@ export function About() {
               {/* Main Image */}
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/images/about-engineer.jpg"
+                  src="/images/about-engineer-1248.webp"
+                  srcSet="/images/about-engineer-640.webp 640w, /images/about-engineer-1248.webp 1248w"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   alt="Engenheiro civil acompanhando obra em Cáceres-MT"
                   className="w-full h-[500px] object-cover"
                   width={800}

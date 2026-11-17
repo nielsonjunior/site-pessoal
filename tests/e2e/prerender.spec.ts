@@ -52,4 +52,28 @@ test.describe("HTML pre-renderizado (SSG)", () => {
     const html = read("index.html")!;
     expect(html).toMatch(/Solicitar Or[çc]amento/i);
   });
+
+  test("titulo do topo ja vem visivel no HTML (nao espera o JS para aparecer)", () => {
+    for (const rel of ["index.html", "sobre/index.html", "plano-de-reforma/index.html"]) {
+      const h1 = read(rel)!.match(/<h1[^>]*>/)?.[0] ?? "";
+      expect(h1, `h1 de ${rel}`).not.toBe("");
+      expect(h1, `h1 de ${rel}`).not.toContain("opacity:0");
+    }
+  });
+
+  test("paginas carregadas com lazy saem completas (sem renderizar no cliente)", () => {
+    for (const rel of ["index.html", "sobre/index.html", "blog/plano-de-reforma-nbr-16280/index.html"]) {
+      const html = read(rel)!;
+      expect(html, rel).toContain("<h1");
+      // <!--$!--> = Suspense que nao resolveu no servidor e seria desenhado so no navegador
+      expect(html, rel).not.toContain("<!--$!-->");
+    }
+  });
+
+  test("404.html pre-renderizado com a pagina de nao encontrado (noindex)", () => {
+    const html = read("404.html");
+    expect(html, "dist/404.html deve existir").toBeTruthy();
+    expect(html!).toMatch(/N[ãa]o Encontrada/i);
+    expect(html!).toMatch(/<meta name="robots" content="noindex/);
+  });
 });

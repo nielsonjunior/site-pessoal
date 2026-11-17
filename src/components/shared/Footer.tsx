@@ -38,7 +38,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img
-                src="/images/logo.png"
+                src="/images/logo-112.webp"
                 alt="NP Castilho Engenharia"
                 className="w-14 h-14 object-cover rounded-full"
                 width={56}

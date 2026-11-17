@@ -37,8 +37,30 @@ describe("Budget — envio do orçamento por e-mail", () => {
     );
     expect(fetch).toHaveBeenCalledWith(
       expect.stringContaining("formsubmit.co/ajax/"),
-      expect.objectContaining({ method: "POST" }),
+      expect.objectContaining({ method: "POST", signal: expect.any(AbortSignal) }),
     );
+  });
+
+  it("mostra erro e libera o botão se o FormSubmit não responder (timeout)", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => {
+        throw new DOMException("The operation timed out.", "TimeoutError");
+      }),
+    );
+    const user = userEvent.setup();
+    renderWithProviders(<Budget />);
+
+    await user.type(screen.getByLabelText(/Nome completo/i), "Juninho Castilho");
+    await user.type(screen.getByLabelText(/E-mail/i), "cliente@teste.com");
+    await user.type(screen.getByLabelText(/Telefone/i), "65999999999");
+    await user.click(screen.getAllByRole("checkbox")[0]);
+    await user.click(screen.getByRole("button", { name: /Enviar por e-mail/i }));
+
+    await waitFor(() =>
+      expect(screen.getByText(/Falha de conexão/i)).toBeInTheDocument(),
+    );
+    expect(screen.getByRole("button", { name: /Enviar por e-mail/i })).toBeEnabled();
   });
 
   it("não envia e avisa quando faltam campos obrigatórios", async () => {

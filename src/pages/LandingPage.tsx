@@ -115,6 +115,8 @@ export function LandingPage() {
     try {
       const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
         method: 'POST',
+        // Sem resposta em 15s, desiste e mostra o erro (o botão não fica preso em "Enviando").
+        signal: AbortSignal.timeout(15000),
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
@@ -169,9 +171,8 @@ export function LandingPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={false}
+              className="hero-in"
             >
               <div className="inline-flex items-center gap-2 bg-[#B9F227]/15 text-[#B9F227] px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4" />
@@ -220,10 +221,8 @@ export function LandingPage() {
 
             {/* Quick Form (cartão branco de propósito — inputs claros) */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-xl"
+              initial={false}
+              className="hero-in hero-in-delay bg-white rounded-2xl p-8 shadow-xl"
               id="orcamento"
             >
               {isSubmitted ? (

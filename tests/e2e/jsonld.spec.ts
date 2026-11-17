@@ -1,7 +1,13 @@
 import { test, expect, type Page } from "@playwright/test";
 
+/** As páginas são carregadas sob demanda (React.lazy): espera o conteúdo montar. */
+async function pageReady(page: Page) {
+  await page.locator("main h1").first().waitFor();
+}
+
 /** Lê e faz parse de todos os blocos JSON-LD da página; falha se algum for inválido. */
 async function getTypes(page: Page): Promise<string[]> {
+  await pageReady(page);
   const blocks = await page
     .locator('script[type="application/ld+json"]')
     .allTextContents();
@@ -38,6 +44,7 @@ test("página-filha tem Service e BreadcrumbList", async ({ page }) => {
 
 test("página de FAQ expõe FAQPage com perguntas", async ({ page }) => {
   await page.goto("/faq");
+  await pageReady(page);
   const blocks = await page
     .locator('script[type="application/ld+json"]')
     .allTextContents();

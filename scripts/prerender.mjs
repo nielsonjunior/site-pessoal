@@ -54,13 +54,17 @@ const dynamicPaths = [
   ...citySlugs.map((s) => `/cidades/${s}`),
   ...blogSlugs.map((s) => `/blog/${s}`),
 ];
-const paths = [...staticPaths, ...dynamicPaths];
+// Página 404: rota que não existe cai no `*` (NotFound). Vai para dist/404.html,
+// que a Vercel serve com status 404 para qualquer endereço desconhecido. Assim o
+// HTML bate com o que o React desenha ao hidratar (não é o HTML da home).
+const NOT_FOUND_PATH = "/__404";
+const paths = [...staticPaths, ...dynamicPaths, NOT_FOUND_PATH];
 
 let count = 0;
 let failed = 0;
 for (const p of paths) {
   try {
-    const { html, helmet } = render(p);
+    const { html, helmet } = await render(p);
     const head = [
       helmet?.title?.toString() ?? "",
       helmet?.meta?.toString() ?? "",
@@ -74,7 +78,11 @@ for (const p of paths) {
       .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
 
     const outPath =
-      p === "/" ? join(distDir, "index.html") : join(distDir, p, "index.html");
+      p === "/"
+        ? join(distDir, "index.html")
+        : p === NOT_FOUND_PATH
+          ? join(distDir, "404.html")
+          : join(distDir, p, "index.html");
     mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, page, "utf8");
     count++;

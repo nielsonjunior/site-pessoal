@@ -125,7 +125,9 @@ export function Cities() {
             </div>
             <div>
               <img
-                src="/images/map-caceres.jpg"
+                src="/images/map-caceres-1000.webp"
+                srcSet="/images/map-caceres-640.webp 640w, /images/map-caceres-1000.webp 1000w"
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 alt="Área de atendimento em engenharia civil - Cáceres-MT e 12 cidades da região"
                 className="w-full h-auto rounded-xl shadow-sm"
                 width={1000}
