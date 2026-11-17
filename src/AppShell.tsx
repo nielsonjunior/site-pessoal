@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import "@/components/home/home.css";
 import { Routes, Route } from "react-router-dom";
 import { Header, Footer, WhatsAppButton, Analytics, JsonLd } from "@/components/shared";
 import { localBusinessSchema, websiteSchema } from "@/lib/jsonld";

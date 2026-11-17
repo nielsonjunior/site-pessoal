@@ -33,7 +33,7 @@ Telefone/WhatsApp oficial: **+55 65 99694-6861** (`https://wa.me/5565996946861`)
 - **framer-motion** para animações
 - **lucide-react** (ícones), **recharts**, **sonner** (toasts)
 - Deploy: **Vercel** (sem rewrite SPA: toda rota é pré-renderizada e endereço desconhecido recebe `dist/404.html` com status 404); funções em `api/` com **@vercel/blob**
-- **Fontes:** Inter e Space Grotesk **variáveis, hospedadas no site** (`@fontsource-variable/*`, importadas no `src/index.css`). Não voltar para o Google Fonts.
+- **Fontes:** Inter e Space Grotesk **variáveis, hospedadas no site** (`@fontsource-variable/*`, importadas no `src/index.css`). A home usa **Montserrat** variável (`@fontsource-variable/montserrat`, importada em `src/components/home/home.css`). Não voltar para o Google Fonts.
 - Alias de import: **`@/` → `./src/`**
 
 > **Node v24** está instalado em `C:\Program Files\nodejs`. Se um terminal já
@@ -50,7 +50,8 @@ src/
   index.css / App.css      Estilos globais; classes utilitárias custom (container-custom, btn-accent)
   pages/                   Uma página por rota (Home, Services, ServiceDetail, About, Budget, Cities, CityDetail, FAQ, LandingPage, WhatIsART, WhyHireEngineer, LegalRequirements, Privacy, Terms, NotFound)
   components/
-    sections/              Blocos da Home (Hero, Services, About, Testimonials, CTA, Cities)
+    home/                  Home atual (17/11/2026): topo preso, história da casa própria pela rolagem, serviços, casos, mapa. CSS próprio em home.css, todo preso a .nh (carregado no AppShell)
+    sections/              Blocos da home antiga (não usados na home; podem servir a outras páginas)
     shared/                Header, Footer, SEO, WhatsAppButton
     ui/                    shadcn/ui (terceiros)
   data/                    Conteúdo tipado: services, cities, testimonials, faq (+ helpers getXBySlug)
@@ -149,7 +150,8 @@ npm run test:all         # unit + e2e
 - Componentes exportados via `index.ts` de barril em `sections/`, `shared/`, `pages/`, `data/`.
 - SEO por página: usar `react-helmet-async` (ver `components/shared/SEO.tsx`).
 - TS é **strict** com `noUnusedLocals`/`noUnusedParameters` — não deixe imports/vars sem uso.
-- Cores da marca: azul `#1B3B6C`, amarelo/accent `#F4C430`, WhatsApp verde `#25D366`.
+- Cores da marca: azul `#1B3B6C`, amarelo/accent `#F4C430`, WhatsApp verde `#25D366`. A home nova usa preto e laranja `#F28A2E` (tokens no topo de `home.css`).
+- **Home (história da casa própria):** textos em `src/data/home.ts`; imagens em `public/images/historia/<id>-1280.webp` e `-640.webp` (cenas geradas, ilustrativas). Sem instruções óbvias ("role", "toque") e sem números de enfeite: o dono pediu texto sem cara de IA. Com movimento reduzido (e no HTML pré-renderizado) os capítulos aparecem empilhados.
 
 ## Como o Claude deve trabalhar aqui (instruções do dono)
 
