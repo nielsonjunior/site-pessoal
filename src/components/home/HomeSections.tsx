@@ -261,7 +261,7 @@ export function HomeContact() {
         <div>
           <span className="eyebrow">Primeira conversa sem custo</span>
           <h2 style={{ marginTop: 10 }}>Me conte o que você precisa</h2>
-          <p className="phone">WhatsApp (65) 99694-6861 · contato@npcastilho.eng.br</p>
+          <p className="phone">WhatsApp (65) 99694-6861 · <a href="mailto:contato@npcastilho.eng.br?subject=Contato%20pelo%20site">contato@npcastilho.eng.br</a></p>
         </div>
         <a className="btn btn-wa" href={wa("Olá! Quero uma análise do meu imóvel.")} target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
       </div>

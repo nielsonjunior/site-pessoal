@@ -65,7 +65,7 @@ export function Privacy() {
                 Conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018), você tem o direito
                 de solicitar acesso, correção ou exclusão dos seus dados pessoais. Para exercer
                 esses direitos, entre em contato pelo e-mail{" "}
-                <a href="mailto:contato@npcastilho.eng.br" className="text-[#F28A2E] hover:underline">
+                <a href="mailto:contato@npcastilho.eng.br?subject=Contato%20pelo%20site" className="text-[#F28A2E] hover:underline">
                   contato@npcastilho.eng.br
                 </a>.
               </p>
@@ -77,7 +77,7 @@ export function Privacy() {
                 Dúvidas sobre esta política? Entre em contato:
               </p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
-                <li>E-mail: contato@npcastilho.eng.br</li>
+                <li>E-mail: <a href="mailto:contato@npcastilho.eng.br?subject=Contato%20pelo%20site" className="text-[#F28A2E] hover:underline">contato@npcastilho.eng.br</a></li>
                 <li>WhatsApp: <a href="https://wa.me/5565996946861" target="_blank" rel="noopener noreferrer" className="text-[#F28A2E] hover:underline">(65) 99694-6861</a></li>
                 <li>Responsável: Nielson Pinheiro de Castilho Junior</li>
                 <li>CREA 5071806455 — Cáceres, MT</li>

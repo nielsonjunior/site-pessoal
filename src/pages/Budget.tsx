@@ -6,12 +6,6 @@ import {
   Mail,
   Loader2,
   Calculator,
-  FileCheck,
-  Home,
-  Hammer,
-  Maximize2,
-  ClipboardCheck,
-  Users,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { SEO } from "@/components/shared";
@@ -26,21 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
 import { leadWhatsappSchema, leadEmailSchema, validate } from "@/lib/validation";
-
-const services = [
-  {
-    id: "art",
-    label: "Anotação de Responsabilidade Técnica (ART)",
-    icon: FileCheck,
-  },
-  { id: "regularizacao", label: "Regularização de Imóveis", icon: Home },
-  { id: "reforma", label: "Projetos de Reforma", icon: Hammer },
-  { id: "ampliacao", label: "Ampliação de Imóveis", icon: Maximize2 },
-  { id: "laudo", label: "Laudos Técnicos", icon: ClipboardCheck },
-  { id: "consultoria", label: "Consultoria em Engenharia", icon: Users },
-];
 
 const propertyTypes = [
   { value: "residencial", label: "Residencial" },
@@ -71,7 +51,6 @@ export function Budget() {
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const [lastWhatsappUrl, setLastWhatsappUrl] = useState("");
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -82,22 +61,10 @@ export function Budget() {
     message: "",
   });
 
-  const handleServiceToggle = (serviceId: string) => {
-    setSelectedServices((prev) =>
-      prev.includes(serviceId)
-        ? prev.filter((id) => id !== serviceId)
-        : [...prev, serviceId],
-    );
-  };
-
   const WHATSAPP_NUMBER = "5565996946861";
   const EMAIL = "contato@npcastilho.eng.br";
 
   const buildMessage = () => {
-    const selectedServiceLabels = selectedServices
-      .map((id) => services.find((s) => s.id === id)?.label)
-      .filter(Boolean) as string[];
-
     const propertyTypeLabel =
       propertyTypes.find((t) => t.value === formData.propertyType)?.label ||
       formData.propertyType;
@@ -116,13 +83,6 @@ export function Budget() {
     if (formData.propertySize)
       message += `Metragem: ${formData.propertySize} m²\n`;
 
-    if (selectedServiceLabels.length > 0) {
-      message += `\nServiços Desejados:\n`;
-      selectedServiceLabels.forEach((label) => {
-        message += `✅ ${label}\n`;
-      });
-    }
-
     if (formData.message) {
       message += `\nDetalhes do Projeto:\n${formData.message}`;
     }
@@ -130,25 +90,17 @@ export function Budget() {
   };
 
   const buildFields = () => {
-    const selectedServiceLabels = selectedServices
-      .map((id) => services.find((s) => s.id === id)?.label)
-      .filter(Boolean) as string[];
     const propertyTypeLabel =
       propertyTypes.find((t) => t.value === formData.propertyType)?.label || "";
     const cityLabel =
       cities.find(
         (c) => c.toLowerCase().replace(/\s+/g, "-") === formData.city,
       ) || formData.city;
-    return { selectedServiceLabels, propertyTypeLabel, cityLabel };
+    return { propertyTypeLabel, cityLabel };
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    if (selectedServices.length === 0) {
-      setErrorMsg("Selecione ao menos um serviço.");
-      setStatus("error");
-      return;
-    }
     const err = validate(leadWhatsappSchema, {
       name: formData.name,
       phone: formData.phone,
@@ -169,11 +121,6 @@ export function Budget() {
   // Envia o orçamento por e-mail de verdade (sem mailto), via FormSubmit.
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (selectedServices.length === 0) {
-      setErrorMsg("Selecione ao menos um serviço.");
-      setStatus("error");
-      return;
-    }
     const err = validate(leadEmailSchema, {
       name: formData.name,
       email: formData.email,
@@ -186,7 +133,7 @@ export function Budget() {
     }
     setStatus("sending");
     setErrorMsg("");
-    const { selectedServiceLabels, propertyTypeLabel, cityLabel } = buildFields();
+    const { propertyTypeLabel, cityLabel } = buildFields();
     try {
       const res = await fetch(`https://formsubmit.co/ajax/${EMAIL}`, {
         method: "POST",
@@ -205,7 +152,6 @@ export function Budget() {
           Cidade: cityLabel || "-",
           "Tipo de Imóvel": propertyTypeLabel || "-",
           Metragem: formData.propertySize ? `${formData.propertySize} m²` : "-",
-          "Serviços Desejados": selectedServiceLabels.join(", ") || "-",
           Detalhes: formData.message || "-",
         }),
       });
@@ -213,6 +159,8 @@ export function Budget() {
       if (res.ok && (data.success === "true" || data.success === true)) {
         setStatus("sent");
       } else {
+        // Ex.: o FormSubmit pede ativação do endereço na 1ª mensagem.
+        console.warn("FormSubmit:", data);
         setErrorMsg(
           "Não foi possível enviar agora. Tente novamente ou use o WhatsApp.",
         );
@@ -323,7 +271,6 @@ export function Budget() {
                         setStatus("idle");
                         setErrorMsg("");
                         setLastWhatsappUrl("");
-                        setSelectedServices([]);
                         setFormData({
                           name: "",
                           email: "",
@@ -340,7 +287,8 @@ export function Budget() {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleEmailSubmit} noValidate>
+                    {/* Enter no formulário envia por e-mail (canal principal); o WhatsApp é o botão ao lado. */}
                     <h2 className="text-2xl font-bold text-[#111418] mb-6">
                       Informações do Projeto
                     </h2>
@@ -460,39 +408,6 @@ export function Budget() {
                       </div>
                     </div>
 
-                    {/* Services */}
-                    <div className="space-y-4 mb-8">
-                      <h3 className="text-lg font-semibold text-gray-700">
-                        Serviços Desejados *
-                      </h3>
-                      <p className="text-sm text-gray-500">
-                        Selecione um ou mais serviços
-                      </p>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {services.map((service) => (
-                          <div
-                            key={service.id}
-                            className={`flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all ${
-                              selectedServices.includes(service.id)
-                                ? "border-[#1A1D22] bg-[#1A1D22]/5"
-                                : "border-gray-200 hover:border-gray-300"
-                            }`}
-                          >
-                            <Checkbox
-                              checked={selectedServices.includes(service.id)}
-                              onCheckedChange={() =>
-                                handleServiceToggle(service.id)
-                              }
-                            />
-                            <service.icon className="w-5 h-5 text-[#1A1D22]" />
-                            <span className="text-sm font-medium">
-                              {service.label}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
                     {/* Message */}
                     <div className="space-y-4 mb-8">
                       <h3 className="text-lg font-semibold text-gray-700">
@@ -519,19 +434,18 @@ export function Budget() {
 
                     <div className="grid grid-cols-2 gap-3">
                       <Button
-                        type="submit"
+                        type="button"
                         onClick={handleSubmit}
                         className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white flex items-center justify-center gap-2"
-                        disabled={selectedServices.length === 0 || status === "sending"}
+                        disabled={status === "sending"}
                       >
                         <MessageCircle className="w-4 h-4" />
                         WhatsApp
                       </Button>
                       <Button
-                        type="button"
-                        onClick={handleEmailSubmit}
+                        type="submit"
                         className="w-full btn-primary flex items-center justify-center gap-2"
-                        disabled={selectedServices.length === 0 || status === "sending"}
+                        disabled={status === "sending"}
                       >
                         {status === "sending" ? (
                           <>

@@ -28,7 +28,6 @@ describe("Budget — envio do orçamento por e-mail", () => {
     await user.type(screen.getByLabelText(/Nome completo/i), "Juninho Castilho");
     await user.type(screen.getByLabelText(/E-mail/i), "cliente@teste.com");
     await user.type(screen.getByLabelText(/Telefone/i), "65999999999");
-    await user.click(screen.getAllByRole("checkbox")[0]); // 1 serviço
 
     await user.click(screen.getByRole("button", { name: /Enviar por e-mail/i }));
 
@@ -54,7 +53,6 @@ describe("Budget — envio do orçamento por e-mail", () => {
     await user.type(screen.getByLabelText(/Nome completo/i), "Juninho Castilho");
     await user.type(screen.getByLabelText(/E-mail/i), "cliente@teste.com");
     await user.type(screen.getByLabelText(/Telefone/i), "65999999999");
-    await user.click(screen.getAllByRole("checkbox")[0]);
     await user.click(screen.getByRole("button", { name: /Enviar por e-mail/i }));
 
     await waitFor(() =>
@@ -63,11 +61,28 @@ describe("Budget — envio do orçamento por e-mail", () => {
     expect(screen.getByRole("button", { name: /Enviar por e-mail/i })).toBeEnabled();
   });
 
+  it("apertar Enter envia por e-mail, não pelo WhatsApp", async () => {
+    const open = vi.spyOn(window, "open").mockImplementation(() => null);
+    const user = userEvent.setup();
+    renderWithProviders(<Budget />);
+    await user.type(screen.getByLabelText(/Nome completo/i), "Juninho Castilho");
+    await user.type(screen.getByLabelText(/E-mail/i), "cliente@teste.com");
+    await user.type(screen.getByLabelText(/Telefone/i), "65999999999{Enter}");
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+    expect(open).not.toHaveBeenCalled();
+  });
+
+  it("não pede para escolher serviço (o cliente descreve no texto)", () => {
+    renderWithProviders(<Budget />);
+    expect(screen.queryAllByRole("checkbox")).toHaveLength(0);
+    expect(screen.queryByText(/Serviços Desejados/i)).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Enviar por e-mail/i })).toBeEnabled();
+  });
+
   it("não envia e avisa quando faltam campos obrigatórios", async () => {
     const user = userEvent.setup();
     renderWithProviders(<Budget />);
 
-    await user.click(screen.getAllByRole("checkbox")[0]); // só seleciona serviço
     await user.click(screen.getByRole("button", { name: /Enviar por e-mail/i }));
 
     // Validação (zod) barra o envio e exibe o 1º erro (nome vazio).

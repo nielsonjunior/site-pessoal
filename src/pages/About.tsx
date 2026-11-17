@@ -275,7 +275,7 @@ export function About() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-[#F28A2E]" />
-                    <a href="mailto:contato@npcastilho.eng.br" className="hover:text-[#F28A2E] transition-colors">
+                    <a href="mailto:contato@npcastilho.eng.br?subject=Contato%20pelo%20site" className="hover:text-[#F28A2E] transition-colors">
                       contato@npcastilho.eng.br
                     </a>
                   </div>

@@ -19,7 +19,7 @@ const contactInfo = [
     icon: Mail,
     title: 'E-mail',
     content: 'contato@npcastilho.eng.br',
-    link: 'mailto:contato@npcastilho.eng.br',
+    link: 'mailto:contato@npcastilho.eng.br?subject=Contato%20pelo%20site',
     linkText: 'Enviar e-mail',
   },
   {

@@ -58,6 +58,8 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    /* sem "ancoragem" da rolagem: ao trocar de página o topo não escorrega uns pixels */
+    overflow-anchor: none;
     font-family: 'Montserrat Variable', 'Helvetica Neue', Arial, sans-serif;
   }
   

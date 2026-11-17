@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import "@/components/home/home.css";
 import { Routes, Route } from "react-router-dom";
-import { Header, Footer, WhatsAppButton, Analytics, JsonLd } from "@/components/shared";
+import { Header, Footer, WhatsAppButton, Analytics, JsonLd, ScrollToTop } from "@/components/shared";
 import { localBusinessSchema, websiteSchema } from "@/lib/jsonld";
 
 // Cada página vira um arquivo JS próprio, baixado só quando a rota é aberta.
@@ -35,6 +35,7 @@ const BlogPost = lazy(() => import("@/pages/BlogPost").then((m) => ({ default: m
 export function AppShell() {
   return (
     <>
+      <ScrollToTop />
       <Analytics />
       <JsonLd data={localBusinessSchema()} />
       <JsonLd data={websiteSchema()} />

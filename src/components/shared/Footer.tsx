@@ -125,7 +125,7 @@ export function Footer() {
                 <div>
                   <p className="text-sm text-gray-400">E-mail</p>
                   <a
-                    href="mailto:contato@npcastilho.eng.br"
+                    href="mailto:contato@npcastilho.eng.br?subject=Contato%20pelo%20site"
                     className="text-white hover:text-[#F28A2E] transition-colors"
                   >
                     contato@npcastilho.eng.br
