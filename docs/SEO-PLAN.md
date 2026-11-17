@@ -146,7 +146,7 @@ sem `npm run test:all` verde — conforme a harness.
 3. **Decisão de rendering**: Opção A (SSG, recomendada), B (Playwright) ou C.
 4. **Analytics**: GA4, Plausible, ou nenhum por enquanto.
 5. Confirmar o **e-mail/telefone/Instagram** oficiais para o schema
-   (atual: nielsin.junior@gmail.com · (65) 99694-6861 · @npcastilho.eng).
+   (atual: contato@npcastilho.eng.br · (65) 99694-6861 · @npcastilho.eng).
 
 ## Como a qualidade será garantida (alinhado à harness)
 - Testes E2E que fazem `fetch` do HTML renderizado e verificam: `<title>`,

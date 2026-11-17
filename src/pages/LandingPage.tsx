@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { leadWhatsappSchema, validate } from '@/lib/validation';
 
 const WHATSAPP_NUMBER = '5565996946861';
-const EMAIL = 'nielsin.junior@gmail.com';
+const EMAIL = 'contato@npcastilho.eng.br';
 
 const benefits = [
   'Engenheiro Civil registrado CREA 5071806455',

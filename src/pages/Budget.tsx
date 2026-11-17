@@ -91,7 +91,7 @@ export function Budget() {
   };
 
   const WHATSAPP_NUMBER = "5565996946861";
-  const EMAIL = "nielsin.junior@gmail.com";
+  const EMAIL = "contato@npcastilho.eng.br";
 
   const buildMessage = () => {
     const selectedServiceLabels = selectedServices

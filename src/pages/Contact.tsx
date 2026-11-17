@@ -18,8 +18,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'E-mail',
-    content: 'nielsin.junior@gmail.com',
-    link: 'mailto:nielsin.junior@gmail.com',
+    content: 'contato@npcastilho.eng.br',
+    link: 'mailto:contato@npcastilho.eng.br',
     linkText: 'Enviar e-mail',
   },
   {

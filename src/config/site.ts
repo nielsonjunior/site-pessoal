@@ -13,7 +13,7 @@ export const SITE = {
   phoneDisplay: "(65) 99694-6861",
   phoneE164: "+5565996946861",
   whatsapp: "5565996946861",
-  email: "nielsin.junior@gmail.com",
+  email: "contato@npcastilho.eng.br",
   instagram: "https://www.instagram.com/npcastilho.eng",
   city: "Cáceres",
   state: "MT",
